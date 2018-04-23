@@ -1,0 +1,103 @@
+\begin{Proceso}{SPR-8}{Entrega de Expedientes}{
+		Este proceso tiene el mismo objetivo que el que se realiza actualmente, pero se modificará para incluir al \refElem{Calmecac} y mejorar la comunicación entre el \refElem{Aspirante} y el \refElem{DepartamentoDeGestionEscolar}.
+	}
+	{SPR.8.X}
+	\PRccsection{Datos para control interno}
+	\PRccitem{Versión}{1}
+	\PRccitem{Autor}{Francisco Isidoro Mera Torres}
+	\PRccitem{Evaluador}{Ulises Veléz Saldaña}
+	\PRccitem{Prioridad}{Alta}
+	\PRccitem{Estatus}{Corrección}
+	\PRccitem{Complejidad}{Media}
+	\PRccitem{Volatilidad}{Baja}
+	\PRccitem{Madurez}{Media}
+	\PRccsection{Control de cambios}
+	\PRccitem{Versión 0}{
+		\begin{Titemize}
+			%\RCitem{ PC1}{Corregir la ortografía}{\DONE}
+			%\TODO es para solicitar un cambio \TOCHK Es para informar que se atendió el TODO(ya hizo las correcciones),\DONE Es para indicar que el e valuador reviso los cambios.
+		\end{Titemize}
+	}
+	\PRitem{Participantes}{
+		\refElem{DepartamentoDeInformaticaYEstadisticaEscolar},\refElem{DepartamentoDeGestionEscolar},\refElem{Aspirante},\refElem{Calmecac}
+	}
+	\PRitem{Objetivo}{
+		Hacer entrega de los documentos proporcionados por los aspirantes.
+	}
+	\PRitem{Interrelación con otros procesos}{	
+		\begin{Titemize}
+			\Titem \refPR{SPR-5}.
+		\end{Titemize}
+	}
+	\PRitem{Proveedores}{
+		\refElem{DepartamentoDeInformaticaYEstadisticaEscolar}
+	}
+	\PRitem{Entradas}{
+		\begin{Titemize}
+			\Titem Expedientes de los aspirantes
+			\Titem Criterio para generar Citas
+			\Titem Citas
+		\end{Titemize}		
+	}
+	\PRitem{Consumidores}{
+		\refElem{DepartamentoDeGestionEscolar},\refElem{Aspirante}
+	}
+	\PRitem{Salidas}{
+		\begin{Titemize}
+			\Titem Expedientes
+			\Titem Citas
+		\end{Titemize}		
+	}
+	\PRitem{Precondiciones}{
+		\begin{Titemize}
+			\Titem Los aspirantes se convirtieron en alumnos.
+		\end{Titemize}
+	}
+	\PRitem{Postcondiciones}{
+		\begin{Titemize}
+			\Titem El \refElem{Aspirante} es reconocido oficialmente como alumno del Instituto.
+		\end{Titemize}
+		
+	}
+	\PRitem{Frecuencia}{
+		Programado
+		% Periódico: Cada cierto tiempo: diario, semanal, anual, etc.
+		% Programado: Alguien en algún momento establece la fecha.
+		% Eventual: Cada que ocurre un evento que no se puede prever ni programar.
+	}
+	\PRitem{Tipo}{
+		Prcoeso Clave
+	}
+	% Operacion: Proceso asociado a las actividades propias de la operación del RENIECYT.
+	% Mejora continua: Porcesos asociados a actividades de mejora continua del proceso actual.
+	% Soporte: Procesos asociados a actividades indirectas necesarias para operar el RENIECYT.
+	\PRitem{Áreas de Mejora}{
+		\refElem{PI-AO1}
+	}
+\end{Proceso}
+
+La figura \cdtRefImg{spr:EntregarExpedientes}{SPR8-Entregar Expedientes} muestra las actividades que componen el presente subproceso.
+
+\Pfig[1]{procesosfortalecidos/pin/SPR8-EntregadeExpedientes}{spr:EntregarExpedientes}{SPR8-Entrega de Expedientes}
+
+\begin{PDescripcion}
+	
+	\Ppaso [\Einicio] El proceso comienza cuando el \refElem{DepartamentoDeGestionEscolar} recibió los expedientes de los alumnos por parte del \refElem{DepartamentoDeInformaticaYEstadisticaEscolar}.
+	
+	\Ppaso [\iCompuerta] Si el \refElem{DepartamentoDeGestionEscolar} desea usar el \refElem{Calmecac} para realizar la entrega de estos expedientes se continúa con la tarea \cdtRefTask{CUSolicitarHorariosDeEntrega}{CU-Solicitar Horarios de Entrega}, si no se realiza la tarea \cdtRefTask{GeneraCitas}{GeneraCitas}.
+	
+	\Ppaso [\itarea] \cdtLabelTask{CUSolicitarHorariosDeEntrega}{CU-Solicitar Horarios de Entrega} Esta tarea es nueva y consiste en envíar al \refElem{Calmecac} el criterio que debe usar para generar las citas de entrega de expedientes.
+	
+	\Ppaso [\itarea] \cdtLabelTask{GeneraCitas}{Generar Citas} Esta tarea es igual a la que se realiza actualmente.
+	
+	\Ppaso [\iCompuerta] Si el \refElem{DepartamentoDeGestionEscolar} desea envíar las citas por correo realizará la tarea \cdtRefTask{CUEnviarCitas}{CU-Enviar Citas},si no realizará la tarea \cdtRefTask{PublicaCitas}{Pública Citas}.
+	
+	\Ppaso [\itarea] \cdtLabelTask{CUEnviarCitas}{CU-Enviar Citas} Esta tarea es nueva y consiste en que el \refElem{DepartamentoDeGestionEscolar} le envíe al \refElem{Aspirante}, por medio del \refElem{Calmecac}, su cita. Continúa con la tarea \cdtRefTask{EntregaExpedientes}{Entregar Expedientes}.
+	
+	\Ppaso [\itarea] \cdtLabelTask{PublicaCitas}{Pública Citas} Esta tarea es igual a la que se realiza actualmente.
+	
+	\Ppaso [\itarea] \cdtLabelTask{EntregaExpedientes}{Entrega Expedientes} El \refElem{DepartamentoDeGestionEscolar} le hará entrega al \refElem{Aspirante} de sus documentos junto con su número de boleta y concluye el proceso. 
+	
+	
+	
+\end{PDescripcion}

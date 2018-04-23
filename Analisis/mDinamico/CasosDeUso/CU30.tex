@@ -1,0 +1,62 @@
+\begin{UseCase}{CU30}{Eliminar Centros de Recoleción}{
+		Permite al Administrador eliminar un Centro de Recolección autorizado que se encuentre en la base de datos del sistema SIESM.\\
+}
+	\UCitem{Versión}{0.1}
+	\UCccsection{Datos para el control Interno}	
+	\UCitem{Autor}{Eduardo Pérez Gómez}
+	\UCccitem{Evaluador}{Ulises Veléz Saldaña}
+	\UCitem{Operación}{Eliminar}
+	\UCccitem{Prioridad}{Alta}
+	\UCccitem{Complejidad}{Media}
+	\UCccitem{Volatilidad}{Media}
+	\UCccitem{Madurez}{Media}
+	\UCitem{Estatus}{Edición}
+	\UCitem{Fecha del último estatus}{28 de marzo de 2018}
+	\UCccsection{Revisión Version 0.1}
+	\UCccitem{Fecha}{}
+	\UCccitem{Evaluador}{Ulises Veléz Saldaña}
+	\UCccitem{Resultado}{}
+	\UCccitem{Observaciones}{}
+	\UCsection{Atributos}
+	\UCitem{Actor(es)}{\refElem{administrador}}
+	\UCitem{Propósito}{Que el Administrador pueda eliminar un Centro de Recolección en el sistema SIESM.}
+	\UCitem{Entradas}{Nombre del centro de recolección, Calle, Numero, Colonia, Delegación y Persona a cargo.}
+	\UCitem{Origen}{Teclado}
+	\UCitem{Salidas}{Centro de recolección registrado.}
+	\UCitem{Precondiciones}{Ninguna}
+	\UCitem{Postcondiciones}{El centro de recoleccion quedara registrado en el sistema de SEIMS.}
+	\UCitem{Reglas de Negocio}{Ninguna}
+	\UCitem{Errores}{Ninguno}
+	\UCitem{Disparador(es)}{No aplica}
+	\UCitem{Condiciones de Término}{Se muestra la IUX.}
+	\UCitem{Efectos Colaterales}{No aplica.}
+	
+\end{UseCase}
+
+
+%Trayectoria Principal : Happy Path
+
+\begin{UCtrayectoria}
+	\item\UCactor Selecciona el Centro de Recoleción que desea eliminar via la IU23 Pantalla Eliminar Centros de Recoleción.
+	\UCpaso Muestra el MSG5-"¿Esta seguro que desea eliminar el Centro de Recoleción?".
+	\item\UCactor Confirma la operación presionando el botón.
+	\UCpaso Verifica si existe conexión a internet \refTray{A}.
+	\UCpaso Elimina el Centro de Recoleción.
+	\UCpaso Verifica si el registro se elimino correctamente \refTray{B}.
+	\UCpaso Muestra el MSG7-"Centro de Recoleción eliminado correctamente"
+	\item\UCactor Presiona el botón aceptar.
+\end{UCtrayectoria}
+
+
+\begin{UCtrayectoriaA}{A}{Cuando no hay conexion a internet}
+	\UCpaso Muestra el MSG2-"No se tiene conexion a internet, se guardaran los cambios hasta su nueva conexion.".
+	\item\UCactor Presiona el botón aceptar.
+	\UCpaso Elimina el Centro de Recoleciónn en la base de datos local.	
+	\UCpaso[] Termina el caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Cuando no se elimino correctamente}
+	\UCpaso Muestra el MSG2-"No se tiene conexion a la BD, intentelo mas tarde.".
+	\item\UCactor Presiona el botón aceptar.
+	\UCpaso[] Termina el caso de uso.
+\end{UCtrayectoriaA}

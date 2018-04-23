@@ -1,0 +1,53 @@
+\chapter{Proceso fortalecido Gestión de Profesores}
+\label{ch:PF-GP}
+\section{AF-GP Arquitectura}
+%\begin{Proceso}{AF-GP}{Arquitectura del proceso fortalecido Gestión de Profesores}{
+%		%El Proceso de gestión de profesores corresponde al mecanismo por medio del cual la \refElem{UnidadAcademica}, solicita la información actualizada de los Profesores con el objeto de iniciar la \textbf{Planeación de Horarios}, dicha infromación se solicita a al Dirección de \refElem{CapitalHumano} del Instituto. %		}
+%	{PG.X}
+%%	\PRccsection{Datos para control interno}
+%%	\PRccitem{Versión}{1}
+%%	\PRccitem{Elaboró}{Chadwick Carreto Arellano}
+%%	\PRccitem{Supervisó}{Jaime López Rabadán}
+%%	\PRccitem{Prioridad}{Alta}
+%%	\PRccitem{Estatus}{Corrección}
+%%	\PRccitem{Complejidad}{Media}
+%%	\PRccitem{Volatilidad}{Media}
+%%	\PRccitem{Madurez}{Media}
+%	\PRsection{Atributos del proceso}
+%	\PRitem{Participantes}{
+%		\refElem{UnidadAcademica}, \refElem{CapitalHumano}, \refElem{Calmecac}
+%	}
+%	\PRitem{Objetivo}{
+%		Obtener la información actualizada de los profesores para la generación de los horarios con los que se realizara la propuesta de estructura académica.
+%	}
+%	\PRitem{Interrelación con otros procesos}{	
+%		\begin{Titemize}
+% 			\Titem Estructura Académica
+%		\end{Titemize}
+%	}
+%	\PRitem{Entradas}{
+%		\begin{Titemize}
+% 			\Titem Planeación Académica.
+% 			\Titem \refElem{Horarios}.
+% 			\Titem Horarios Anteriores.
+% 			\Titem Profesores de periodos anteriores.
+% %		\end{Titemize}
+%	}
+%	\PRitem{Salidas}{
+%		\begin{Titemize}
+%           \Titem Propuesta de Horarios con Profesores
+% 			\Titem \refElem{Horario}.% 			
+%		\end{Titemize}		
+%	}
+%	
+%\end{Proceso}
+	La figura \cdtRefImg{afpi:procGral}{AF-GP Obtención de Profesores} muestra el proceso general modificado. Los cambios están centrados en la incorporación del \refElem{Calmecac}, la obtención de la información actualizada de los profesores mediante el Calmécac, ademas de la definicion del tipo de profesor que cubrira las horas necesarias para completar las horas que se requiren frente a grupo.
+\begin{Citemize}
+	\item Se propone que el Calmécac permita cargar la información actualizada de los profesores por medio de un servicio Web proporcionado por la Dirección de Capital Humano.
+	\item Al fortalecer la obtención de la infromación actualizada de los profesores, se podra generar una planeacion de los horarios  (ver capítulo~\ref{PF-PHR}) y de la Estructura Académica (ver capítulo~\ref{PF-EA}), con esto se conseguira un mayor nivel de integridad en la información que integra el Calmécac.
+\end{Citemize}
+
+	La descripción detallada de esta mejora se encuentra en la sección~\ref{sec:PF-GP:obtenciondeprofesores}.
+
+	\Pfig[1]{procesosfortalecidos/pgp/procGral}{afpgp:procGral}{AF-GP Arquitectura del proceso fortalecido de Gestión de Profesores.Para poder leer este diagrama ir a la seccion \ref{section:CodigoColores}}
+

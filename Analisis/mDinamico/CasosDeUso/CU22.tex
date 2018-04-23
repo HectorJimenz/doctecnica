@@ -1,0 +1,56 @@
+\begin{UseCase}{CU22}{Modificar Mapa Offline}{
+		Permite al Ciudadano modificar los datos de un Mapa Offline que se encuentre en la base de datos del sistema SIESM.\\
+		
+}
+	\UCitem{Versión}{0.1}
+	\UCccsection{Datos para el control Interno}	
+	\UCitem{Autor}{Eduardo Pérez Gómez}
+	\UCccitem{Evaluador}{Ulises Veléz Saldaña}
+	\UCitem{Operación}{Modificar}
+	\UCccitem{Prioridad}{Alta}
+	\UCccitem{Complejidad}{Media}
+	\UCccitem{Volatilidad}{Media}
+	\UCccitem{Madurez}{Media}
+	\UCitem{Estatus}{Edición}
+	\UCitem{Fecha del último estatus}{28 de marzo de 2018}
+	\UCccsection{Revisión Version 0.1}
+	\UCccitem{Fecha}{}
+	\UCccitem{Evaluador}{Ulises Veléz Saldaña}
+	\UCccitem{Resultado}{}
+	\UCccitem{Observaciones}{}
+	\UCsection{Atributos}
+	\UCitem{Actor(es)}{\refElem{ciudadano}}
+	\UCitem{Propósito}{Que el Ciudadano pueda modificar los datos de un Mapa Offline en el sistema SIESM.}
+	\UCitem{Entradas}{Nombre del Mapa Offline, Rango de la region y Descripción.}
+	\UCitem{Origen}{Teclado}
+	\UCitem{Salidas}{Mapa Offline modificado.}
+	\UCitem{Precondiciones}{Que el Mapa Offline este descargado previamente en el sistema SIESM.}
+	\UCitem{Postcondiciones}{El Mapa Offline quedara modificado en la cuenta del Ciudadano.}
+	\UCitem{Reglas de Negocio}{Ninguna}
+	\UCitem{Errores}{Ninguno}
+	\UCitem{Disparador(es)}{No aplica}
+	\UCitem{Condiciones de Término}{Se muestra la IUX.}
+	\UCitem{Efectos Colaterales}{No aplica.}
+	
+\end{UseCase}
+
+
+%Trayectoria Principal : Happy Path
+
+\begin{UCtrayectoria}
+	\item\UCactor Selecciona opcion modificar Mapa Offline via la IU23 Pantalla Menu Mapas Offline.
+	\item\UCactor Modifica Nombre del Mapa Offline, Rango de la region y Descripción via la IU23 Pantalla Modificar Mapa Offline.
+	\item\UCactor Confirma la operación presionando el botón.
+	\UCpaso Verifica que los datos esten completos \refTray{A}.
+	\UCpaso Modifica el Mapa Offline.
+	\UCpaso Muestra el MSG8-"Mapa Offline modificado correctamente"
+	\item\UCactor Presiona el botón aceptar.
+\end{UCtrayectoria}
+
+
+\begin{UCtrayectoriaA}{A}{Cuando todos los campos no estan completos}
+	\UCpaso Muestra el MSG1-"Faltan campos por llenar".
+	\UCpaso Muestra la IU23 Pantalla Modificar Mapa Offline con los campos anteriormente llenados y marcando en rojo los faltantes.
+	\item\UCactor Introduce los campos faltantes via la IU23 Pantalla Modificar Mapa Offline.
+	\UCpaso Continua en el paso 4 del CU22.
+\end{UCtrayectoriaA}

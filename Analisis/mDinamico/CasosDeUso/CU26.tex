@@ -1,0 +1,55 @@
+\begin{UseCase}{CU26}{Cambiar Sonido de Alerta Sismica}{
+    Perimite configurar el tipo de sonido de alerta sismica que le servira al ciudadano cuando llegue haber un sismo en la CDMX y de esta manera pueda saber que habra un sismo y pueda buscar algun refugio cercano.
+    }
+  \UCitem{Versión}{0.1}
+  \UCccsection{Datos para el control Interno}  
+  \UCitem{Autor}{Héctor Iván Jimenez Romero}
+  \UCccitem{Evaluador}{Ulises Veléz Saldaña}
+  \UCitem{Operación}{Visualizar}
+  \UCccitem{Prioridad}{Media}
+  \UCccitem{Complejidad}{Media}
+  \UCccitem{Volatilidad}{Media}
+  \UCccitem{Madurez}{Media}
+  \UCitem{Estatus}{Edición}
+  \UCitem{Fecha del último estatus}{28 de marzo de 2018}
+  \UCccsection{Revisión Version 0.1}
+  \UCccitem{Fecha}{}
+  \UCccitem{Evaluador}{Ulises Veléz Saldaña}
+  \UCccitem{Resultado}{}
+  \UCccitem{Observaciones}{}
+  \UCsection{Atributos}
+  \UCitem{Actor(es)}{\refElem{ciudadano} \refElem{administrador}}
+  \UCitem{Propósito}{Brindar una lista de sonidos que le sean de mejor agrado al actor.}
+  \UCitem{Entradas}{Modifica sonido de alerta , sonido predeterminado.}
+  \UCitem{Origen}{Teclado}
+  \UCitem{Salidas}{Cambio de alerta con sonido de su preferencia.}
+  \UCitem{Precondiciones}{ninguna}
+  \UCitem{Postcondiciones}{Ninguna}
+  \UCitem{Reglas de Negocio}{Ninguna}
+  \UCitem{Errores}{Ninguno}
+  \UCitem{Disparador(es)}{}
+  \UCitem{Condiciones de Término}{Ninguna}
+  \UCitem{Efectos Colaterales}{No aplica.}
+  \end{UseCase}
+ 
+ 
+%Trayectoria Principal : Happy Path
+\begin{UCtrayectoria}
+	\item \UCactor Despliega IU02-"Configuracion de alertas sismicas" del CU25.
+	\item \UCactor Selecciona Pestaña-"Cambiar Sonido de Alerta" \refTray{A}
+	\item \UCactor Selecciona el tipo de sonido de alerta.
+	\item \UCactor Oprime boton \IUbutton{Guardar cambios}.
+	\UCpaso Cambia tipo de sonido.
+\end{UCtrayectoria}
+
+
+\begin{UCtrayectoriaA}{A}{Cuando no selecciona ningun tipo de sonido de alerta.}
+	\UCpaso Cambia al sonido predeterminado del tipo de sonido de alerta.
+\end{UCtrayectoriaA}
+
+
+ 
+ 
+
+ 
+ 

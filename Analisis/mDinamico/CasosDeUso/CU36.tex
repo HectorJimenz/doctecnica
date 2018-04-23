@@ -1,0 +1,67 @@
+\begin{UseCase}{CU36}{Modificar Albergue}{
+		Permite al Administrador modificar los datos de un Albergue autorizado que se encuentre en la base de datos del sistema SIESM.\\
+		
+}
+	\UCitem{Versión}{0.1}
+	\UCccsection{Datos para el control Interno}	
+	\UCitem{Autor}{Eduardo Pérez Gómez}
+	\UCccitem{Evaluador}{Ulises Veléz Saldaña}
+	\UCitem{Operación}{Modificar}
+	\UCccitem{Prioridad}{Alta}
+	\UCccitem{Complejidad}{Media}
+	\UCccitem{Volatilidad}{Media}
+	\UCccitem{Madurez}{Media}
+	\UCitem{Estatus}{Edición}
+	\UCitem{Fecha del último estatus}{28 de marzo de 2018}
+	\UCccsection{Revisión Version 0.1}
+	\UCccitem{Fecha}{}
+	\UCccitem{Evaluador}{Ulises Veléz Saldaña}
+	\UCccitem{Resultado}{}
+	\UCccitem{Observaciones}{}
+	\UCsection{Atributos}
+	\UCitem{Actor(es)}{\refElem{administrador}}
+	\UCitem{Propósito}{Que el Administrador pueda modificar los datos de un Albergue en el sistema SIESM.}
+	\UCitem{Entradas}{Nombre del albergue, Calle, Numero, Colonia, Delegación y Persona a cargo.}
+	\UCitem{Origen}{Teclado}
+	\UCitem{Salidas}{Albergue modificado.}
+	\UCitem{Precondiciones}{Que el albergue este registado previamente en el sistema SIESM.}
+	\UCitem{Postcondiciones}{El albegue quedara modificado en el sistema de SEIMS.}
+	\UCitem{Reglas de Negocio}{Ninguna}
+	\UCitem{Errores}{Ninguno}
+	\UCitem{Disparador(es)}{No aplica}
+	\UCitem{Condiciones de Término}{Se muestra la IUX.}
+	\UCitem{Efectos Colaterales}{No aplica.}
+	
+\end{UseCase}
+
+
+%Trayectoria Principal : Happy Path
+
+\begin{UCtrayectoria}
+	\item\UCactor Selecciona opcion modificar albergue via la IU23 Pantalla Menu Albergues.
+	\item\UCactor Modifica Nombre del Albergue, Calle, Numero, Colonia, Delegación y Persona a cargo en el sistema via la IU23 Pantalla Modificar Albergue.
+	\item\UCactor Confirma la operación presionando el botón.
+	\UCpaso Verifica que los datos esten completos \refTray{A}.
+	\UCpaso Despliega la IU23 Pantalla con datos del Albergue con los datos que ingreso para su confirmación.
+	\item\UCactor Confirma los datos presionando el botón.
+	\UCpaso Verifica si existe conexión a internet \refTray{B}.
+	\UCpaso Modifica el albergue.
+	\UCpaso Verifica si la modificación se realizo correctamente \refTray{C}.
+	\UCpaso Muestra el MSG4-"Albergue modificado correctamente"
+	\item\UCactor Presiona el botón aceptar.
+\end{UCtrayectoria}
+
+
+\begin{UCtrayectoriaA}{A}{Cuando todos los campos no estan completos}
+	\UCpaso Muestra el MSG1-"Faltan campos por llenar".
+	\UCpaso Muestra la IU23 Pantalla Modificar Albergue con los campos anteriormente llenados y marcando en rojo los faltantes.
+	\item\UCactor Introduce los campos faltantes via la IU23 Pantalla Modificar Albergue.
+	\UCpaso Continua en el paso 3 del CU36.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Cuando no hay conexion a internet}
+	\UCpaso Muestra el MSG2-"No se tiene conexion a internet, se guardaran los cambios hasta su nueva conexion.".
+	\item\UCactor Presiona el botón aceptar.
+	\UCpaso Modifica el albergue en la base de datos local.	
+	\UCpaso[] Termina el caso de uso.
+\end{UCtrayectoriaA}

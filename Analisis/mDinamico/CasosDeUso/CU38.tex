@@ -1,0 +1,65 @@
+\begin{UseCase}{CU38}{Autorizar Propuesta de Albergue}{
+		Permite al Administrador autorizar una propuesta de Albergue que se encuentre en la base de datos del sistema SIESM.\\
+}
+	\UCitem{Versión}{0.1}
+	\UCccsection{Datos para el control Interno}	
+	\UCitem{Autor}{Eduardo Pérez Gómez}
+	\UCccitem{Evaluador}{Ulises Veléz Saldaña}
+	\UCitem{Operación}{Autorizar}
+	\UCccitem{Prioridad}{Alta}
+	\UCccitem{Complejidad}{Media}
+	\UCccitem{Volatilidad}{Media}
+	\UCccitem{Madurez}{Media}
+	\UCitem{Estatus}{Edición}
+	\UCitem{Fecha del último estatus}{28 de marzo de 2018}
+	\UCccsection{Revisión Version 0.1}
+	\UCccitem{Fecha}{}
+	\UCccitem{Evaluador}{Ulises Veléz Saldaña}
+	\UCccitem{Resultado}{}
+	\UCccitem{Observaciones}{}
+	\UCsection{Atributos}
+	\UCitem{Actor(es)}{\refElem{administrador}}
+	\UCitem{Propósito}{Que el Administrador pueda autorizar una propuesta de Albergue creada por un Ciudadano en el sistema SIESM.}
+	\UCitem{Entradas}{Ninguna}
+	\UCitem{Origen}{No aplica}
+	\UCitem{Salidas}{Propuesta de Albergue autorizada.}
+	\UCitem{Precondiciones}{Ninguna}
+	\UCitem{Postcondiciones}{El Albergue quedara autorizado en el sistema de SEIMS.}
+	\UCitem{Reglas de Negocio}{Ninguna}
+	\UCitem{Errores}{Ninguno}
+	\UCitem{Disparador(es)}{No aplica}
+	\UCitem{Condiciones de Término}{Se muestra la IUX.}
+	\UCitem{Efectos Colaterales}{No aplica.}
+	
+\end{UseCase}
+
+
+%Trayectoria Principal : Happy Path
+
+\begin{UCtrayectoria}
+	\item\UCactor Selecciona opcion autorizar propuestas Albergue via la IU23 Pantalla Menu Albergues.
+	\item\UCactor Selecciona el Albergue que desea autorizar via la IU23 Pantalla Autorizar Albergue.
+	\UCpaso Muestra el MSG5-"¿Esta seguro que desea autorizar la propuesta?".
+	\item\UCactor Confirma la operación presionando el botón.
+	\UCpaso Verifica si existe conexión a internet \refTray{A}.
+	\UCpaso Autoriza la propuesta del Albergue.
+	\UCpaso Copia el registro de la propuesta del Albergue a la tabla Albergues.
+	\UCpaso Verifica si el registro se autorizo y se creo correctamente \refTray{B}.
+	\UCpaso Muestra el MSG6-"Albergue autorizado correctamente"
+	\item\UCactor Presiona el botón aceptar.
+\end{UCtrayectoria}
+
+
+\begin{UCtrayectoriaA}{A}{Cuando no hay conexion a internet}
+	\UCpaso Muestra el MSG2-"No se tiene conexion a internet, se guardaran los cambios hasta su nueva conexion.".
+	\item\UCactor Presiona el botón aceptar.
+	\UCpaso Autoriza la propuesta del Albergue en la base de datos local.	
+	\UCpaso Copia el registro de la propuesta del Albergue a la tabla Albergues en la base de datos local.
+	\UCpaso[] Termina el caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Cuando no se autorizo correctamente}
+	\UCpaso Muestra el MSG2-"No se tiene conexion a la BD, intentelo mas tarde.".
+	\item\UCactor Presiona el botón aceptar.
+	\UCpaso[] Termina el caso de uso.
+\end{UCtrayectoriaA}

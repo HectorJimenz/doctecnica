@@ -1,0 +1,83 @@
+\begin{Proceso}{PF}{Obtención de profesores}{
+		%Narrrar el PF-Arquitectura de Procesos
+		
+	}
+	{PG.1}
+	\PRccsection{Datos para control interno}
+	\PRccitem{Versión}{1}
+	\PRccitem{Autor}{Chadwick Carreto Arellano}
+	\PRccitem{Evaluador}{Jose Jaime Lopez Rabadan}
+	\PRccitem{Prioridad}{Alta}
+	\PRccitem{Estatus}{Corrección/Aprobado}
+	\PRccitem{Complejidad}{Alta/Media/Baja}
+	\PRccitem{Volatilidad}{Alta/Media/Baja}
+	\PRccitem{Madurez}{Alta/Media/Baja}
+	\PRccsection{Control de cambios}
+	\PRccitem{Versión 1}{
+			\begin{Titemize}
+				%\RCitem{ PC1}{Corregir la ortografía}{\DONE}
+				%\TODO es para solicitar un cambio \TOCHK Es para informar que se atendió el TODO(ya hizo las correcciones),\DONE Es para indicar que el e valuador reviso los cambios.
+			\end{Titemize}
+	}
+	\PRitem{Participantes}{
+		 Unidad Academica \refElem{UnidadAcademica}, CALMÉCAC\refElem{CALMECAC}, Dirección de Capital Humano\refElem{CapitalHumano}.
+	}
+	\PRitem{Objetivo}{
+		Definir el proceso de obtencion de profesores para poder generar en primera instancia la planeación de los horarios y en segunda instancia para definir la estructura académica.
+	}
+	\PRitem{Interrelación con otros procesos}{	
+		\begin{Titemize}
+ 			\Titem Horarios.
+ 			\Titem Estructura Académica.
+		\end{Titemize}
+	}
+	\PRitem{Entradas}{
+		\begin{Titemize}
+ 			\Titem Nombre 
+ 			\Titem RFC
+ 			\Titem Número de empleado
+ 			\Titem Grado Académico
+ 			\Titem Especialidad
+ 		    \Titem Fecha de Ingreso
+ 			\Titem Carga máxima 
+ 			\Titem Turno / Horario Laboral
+ 			\Titem Horas Base
+ 			\Titem Horas Interinato
+ 			\Titem Horas de Actividades Complementarias
+ 			\Titem Categoría/Dictamen
+ 			\Titem Carga Máxima
+ 			\Titem Horas frente a grupo
+ 			\Titem Descarga Académica
+ 			\Titem Clave de Unidad Académica
+ 			\Titem Nombre de la Unidad Académica
+ 			\Titem Materias Impartidas
+		\end{Titemize}		
+	}
+	\PRitem{Salidas}{
+		\begin{Titemize}
+ 			\Titem 	Información de profesores para Planeación de Horarios.
+		\end{Titemize}		
+	}
+	
+\end{Proceso}
+
+	La figura \cdtRefImg{arq:AG-GP}{AG-GP Obtención de Profesores} muestra los procesos que componen el presente proceso general.
+
+	%	\Pfig[0.1]{pgp/imagenes/ArquitecturaFortalecida.jpg}{pg:procGral}{Proceso general - Obtención de Profesores PGP}
+
+
+%Descripción de procesos
+\begin{PDescripcion}
+	\Ppaso \textbf{Obtención de Profesores:} El proceso de obtención de profesores para la generación de la planeación academica inicia con una solicitud de información de profesores por parte de la Unidad Académica (UA), esto lo realizara por medio del sistema CALMECAC el cual solicitara esta información directamente por medio de un Servicio Web a la Dirección de Capital Humano (DCH), dicha solicitud regresa un catálogo con la infromación de los profesores filtrado por su unidad académica. 
+	Con esta información se inicia la planeación horarios del siguiente semestre, se registra a los profesores candidaros y se revisa si el personal con el que se cuenta es suficiente para cubrir las necesidades de grupos. 
+	En caso de no cubrirse las necesidades de grupos se ven las opciones de profesores invitados, estos pueden ser internos o externos.
+	Si son internos se solicitara la información del Profesor al Sistema CALMECAC el cual realiza una consulta via Servicio Web a la DCH para obtener la información del Docente filtrandolo por su unidad academica de origen y se registra, en caso de ser un profesor externo al instituto este se registrara de forma temporal en el sistema CALMECAC. 
+	Cuando se concluye esta planeación de horarios, se puede definier de forma casi exacta el número de Horas de Interinato que requerira la Unidad Academica.     
+\end{PDescripcion}
+
+%Factores criticos
+\begin{FCDescripcion}
+	\FCpaso Obtener de forma automática (por medio de un Servicio Web) la información de los Profesores de la Unidad Académica. 
+	\FCpaso Obtener de forma automática (por medio de un Servicio Web) la información de los Profesores de otra Unidad Académica. 
+	\FCpaso Registrar candidatos y profesores externos. 
+\end{FCDescripcion}

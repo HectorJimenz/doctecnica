@@ -1,0 +1,103 @@
+\begin{Proceso}{SPR-6}{Inscribir Aspirantes}{
+		En este subproceso el \refElem{DepartamentoDeGestionEscolar} asignará aspirantes a los grupos creados por la \refElem{EstructuraAcademica} (ver capítulo ~\ref{ch:PF-EA}).
+	}
+	{SPR.6.X}
+	\PRccsection{Datos para control interno}
+	\PRccitem{Versión}{1}
+	\PRccitem{Autor}{Francisco Isidoro Mera Torres}
+	\PRccitem{Evaluador}{Ulises Veléz Saldaña}
+	\PRccitem{Prioridad}{Alta}
+	\PRccitem{Estatus}{Corrección}
+	\PRccitem{Complejidad}{Media}
+	\PRccitem{Volatilidad}{Baja}
+	\PRccitem{Madurez}{Media}
+	\PRccsection{Control de cambios}
+	\PRccitem{Versión 0}{
+		\begin{Titemize}
+			%\RCitem{ PC1}{Corregir la ortografía}{\DONE}
+			%\TODO es para solicitar un cambio \TOCHK Es para informar que se atendió el TODO(ya hizo las correcciones),\DONE Es para indicar que el e valuador reviso los cambios.
+		\end{Titemize}
+	}
+	\PRitem{Participantes}{
+		\refElem{DepartamentoDeGestionEscolar},\refElem{DepartamentoDeRegistroYSupervisionEscolar}
+	}
+	\PRitem{Objetivo}{
+		Asignar aspirantes a grupos.
+	}
+	\PRitem{Interrelación con otros procesos}{	
+		\begin{Titemize}
+			\Titem \refPR{SPR-2}
+		\end{Titemize}
+	}
+	\PRitem{Proveedores}{
+		\refElem{DepartamentoDeRegistroYSupervisionEscolar}
+	}
+	\PRitem{Entradas}{
+		\begin{Titemize}
+			\Titem Aspirantes con \refElem{Preboleta}
+		\end{Titemize}		
+	}
+	\PRitem{Consumidores}{
+		\refElem{DepartamentoDeGestionEscolar}
+	}
+	\PRitem{Salidas}{
+		\begin{Titemize}
+			\Titem Aspirantes registrados con \refElem{Horario}.
+		\end{Titemize}		
+	}
+	\PRitem{Precondiciones}{
+		\begin{Titemize}
+			\Titem Aspirantes asignados a unidades académicas
+			\Titem Que los aspirantes estén en el registro. %DUDA: Existe la posibilidad de que al revisar papeles aspirantes que no hayan ingresado por el proceso de admisión se encuentren ahí??
+			\Titem Que los aspirantes cuenten con una \refElem{Preboleta}
+		\end{Titemize}
+	}
+	\PRitem{Postcondiciones}{
+		\begin{Titemize}
+			\Titem El \refElem{Aspirante} queda inscritó a un grupo.
+		\end{Titemize}
+		
+	}
+	\PRitem{Frecuencia}{
+		Eventual
+		% Periódico: Cada cierto tiempo: diario, semanal, anual, etc.
+		% Programado: Alguien en algún momento establece la fecha.
+		% Eventual: Cada que ocurre un evento que no se puede prever ni programar.
+	}
+	\PRitem{Tipo}{
+		Proceso clave.
+	}
+	% Operacion: Proceso asociado a las actividades propias de la operación del RENIECYT.
+	% Mejora continua: Porcesos asociados a actividades de mejora continua del proceso actual.
+	% Soporte: Procesos asociados a actividades indirectas necesarias para operar el RENIECYT.
+	\PRitem{Áreas de Mejora}{
+		\refElem{PI-AO3},\refElem{PI-AO6}
+	}
+\end{Proceso}
+
+La figura \cdtRefImg{spr:InscribirAs}{SPR6-Inscribir Aspirantes} muestra las actividades que componen el presente subproceso.
+
+\Pfig[1]{procesosfortalecidos/pin/SPR6-InscribirAspirantes}{spr:InscribirAs}{SPR6-Inscribir Aspirantes}
+
+\begin{PDescripcion}
+	
+	\Ppaso \textbf{Departamento de Gestión Escolar}
+	
+	\begin{enumerate}
+		\Ppaso [\Einicio] El subproceso comienza cuando el \refElem{DepartamentoDeGestionEscolar} recibe el mensaje \refMSG{MSG10}{NTF - Se han cargado aspirantes} por parte del \refElem{Calmecac}.
+		
+		\Ppaso [\iCompuerta] Si el \refElem{DepartamentoDeGestionEscolar} inscribe a los aspirantes en la \refElem{UnidadAcademica} por medio de un criterio continúa con la tarea \cdtRefTask{CUDefinirCriterio}{CU-Definir Criterio de Asignación}, sino lo desea crear o no existe este criterio continúa con la tarea \cdtRefTask{CUAsignarAspirantesAGrupoManualmente}{CU-Asignar Aspirantes a Grupo Manualmente}.
+		
+		\Ppaso [\itarea] \cdtLabelTask{CUDefinirCriterio}{CU-Definir Criterio de Asignación} Esta tarea es nueva ya que sólo pocas unidades académicas lo implementan.Consiste en permitirle al \refElem{DepartamentoDeGestionEscolar} elegir un criterio para inscribir a los aspirantes a  los grupos. Si existen errores o conflictos en el \refElem{Calmecac} para usar este criterio se continúa con la tarea \cdtRefTask{CUCorregirInscripcionManualmente}{CU-Corregir Inscripción a Grupo Manualmente}, si no continúa con la tarea de \cdtRefTask{CUGenerarHorario}{CU-Generar Horarios}.
+		
+		\Ppaso [\itarea] \cdtLabelTask{CUCorregirInscripcionManualmente}{CU-Corregir Inscripción a Grupo Manualmente} Cuando el \refElem{Calmecac} encuentra errores o conflictos en el criterio de inscripción con los cuales realiza la inscripción los agrega a una lista para que el \refElem{DepartamentoDeGestionEscolar} realize la inscripción de estos aspirantes manualmente.Continúa con la tarea \cdtRefTask{CUGenerarHorario}{CU-Generar Horarios}.
+		
+		
+		\Ppaso [\itarea] \cdtLabelTask{CUAsignarAspirantesAGrupoManualmente}{CU-Asignar Aspirantes a Grupo Manualmente} Está tarea es igual a la se realiza actualmente.
+		
+		\Ppaso [\itarea] \cdtLabelTask{CUGenerarHorario}{CU-Generar Horarios} Está tarea es nueva y consiste en que el \refElem{DepartamentoDeGestionEscolar} ingrese a los aspirantes asignados a los grupos al \refElem{Calmecac} y recibe los documentos que indican el horario de cada aspirante. Con esta tarea concluye la operación.
+	\end{enumerate}
+	
+	
+	%DUDA: Gestión escolar también puede confirmar o deshacer esta operación?
+\end{PDescripcion}

@@ -1,0 +1,69 @@
+%========================================================
+%Proceso General
+%========================================================
+
+%========================================================
+%Revisión
+%-------------------------------------------
+
+% \UCccitem{Versión}{1}
+% \UCccsection{Análisis de Procesos }
+% \UCccitem{Autor}{nombreAutor}
+% \UCccitem{Evaluador}{nombreEvaluador}
+% \UCccitem{Prioridad}{Alta} %Alta, media, baja
+% \UCccitem{Estatus}{} %Edición, Terminado, Corrección, Aprobado 
+% \UCccitem{Complejidad}{Alta} %Alta, Media, Baja
+% \UCccitem{Volatilidad}{Alta} %Alta, Media, Baja
+% \UCccitem{Madurez}{Media}  %Alta, Media, Baja
+% \UCccsection{Control de cambios}
+% \UCccitem{Versión 0}{
+% \begin{UClist}
+% \RCitem{ Pxn T1}{Corregir la ortografía}{\DONE}
+% \TODO es para solicitar un cambio, \TOCHK Es para informar que se atendió el TODO, \DONE Es para indicar que el evaluador reviso los cambios.
+% \end{UClist}
+%}
+
+%========================================================
+% Descripción general del proceso
+%-----------------------------------------------
+\begin{procesoGeneral}{PG-GPA}{Proceso General de Gestión de Programas Académicos} {
+		
+		%-------------------------------------------
+		%Resumen
+	    El Proceso General de Gestión de Programas Académicos toma en cuenta la elaboración de propuestas de nuevos programas académicos\footnote{ver \refElem{ProgramaAcademico}} o el rediseño de los mismos dentro de las unidades académicas\footnote{ver \refElem{UnidadAcademica}}}, los cuales al ser aprobados de manera local, son presentados ante la \refElem{DES}para que se dictamine su aprobación o la notificación de los ajustes pertinentes para la mejora del mismo. Cuando los programas académicos son aprobados por la \refElem{DES}, pasan a una siguiente etapa de aprobación, la cual se lleva a cabo por parte del \refElem{ConsejoGeneralConsultivo}, y en caso de que sean aprobadas, cada programa académico pasa a la \refElem{DAE}, para que se realice el registro digital en el \refElem{SAES}. De no proceder la aprobación por parte de la \refElem{DAE}, se notifican los ajustes pertinentes para ajustar cada \refElem{ProgramaAcademico} a los lineamientos vigentes que especifica el IPN.
+
+		%-------------------------------------------
+		%Diagrama del proceso
+		\noindent La Figura \cdtRefImg{pGeneral:PP-GPA}{Proceso General de Gestión de Programas Académicos} muestra los suprocesos que se realizan para llevar a cabo el proceso descrito anteriormente.
+		
+		\Pfig[1.0]{pgpa/imagenes/MacroProcesoValidacionProgramasAcademicos}{pGeneral:PP-GPA}{PG-GPA Gestión de Programas Académicos}
+	{PG-GPA}{Gestión de Programas Académicos}
+
+\end{procesoGeneral}
+
+%========================================================
+%Descripción de tareas
+%-----------------------------------------------
+\begin{PDescripcion}
+	
+	%Actor: GPAV1.0
+	\Ppaso \textbf{GPAV1.0}
+	
+	\begin{enumerate}
+		%Subproceso 1
+		\Ppaso[\PSubProceso] \cdtLabelTask{PP-GPA1.1:GPAV1.0}{ \textbf{Diseño/Rediseño de Programas Académicos}.} Proceso en el que cada \refElem{UnidadAcademica} realiza su justificación para realizar un rediseño de un \refElem{ProgramaAcademico} o la propuesta de un nuevo programa. Es aquí donde se realiza una evaluación local mediante el \refElem{ConsejoTecnicoConsultivoEscolar} de cada unidad, quien dictamina si procede o no el envío de la propuesta a la \refElem{DES}para su validación inicial de forma general en el instituto.		
+
+		%Subproceso 2
+		\Ppaso[\PSubProceso] \cdtLabelTask{PP-IR3.1:SAEV2.0}{ \textbf{Aprobación-DES de Programas Académicos}.} En éste proceso se realiza la evalución inicial de las propuestas en el instituto, siendo el primer filtro normativo y de calidad. Si existen ajustes a las propuestas de programas académicos, se notifica a la unidad correspondiente para que se lleven a cabo las correcciones necesarias. De ser aprobada la propuesta, ésta se envía al \refElem{ConsejoGeneralConsultivo} para su aprobación final.
+
+		%Subproceso 3
+		\Ppaso[\PSubProceso] \cdtLabelTask{PP-IR3.1:SAEV2.0}{ \textbf{Aprobación de Programas Académicos del \refElem{ConsejoGeneralConsultivo}}.} En éste proceso se realiza la evaluación final de las propuestas realizadas en el instituto, evaluando elementos de publicación y operación de cada \refElem{ProgramaAcademico}. Si existen ajustes a las propuestas, se notifica a la unidad correspondiente para que se lleven a cabo las correcciones necesarias. De ser aprobada la propuesta, ésta se envía al \refElem{DAE} para su registro oficial en el \refElem{SAES}.
+
+		%Subproceso 4
+		\Ppaso[\PSubProceso] \cdtLabelTask{PP-IR3.1:SAEV2.0}{ \textbf{Registro-DAE de Programas Académicos}.} En éste proceso se realiza el registro oficial de cada \refElem{ProgramaAcademico} aprobado en el \refElem{SAES}, proporcionando los detalles necesarios de cada programa y aportar en la generación de la \refElem{EstructuraAcademica} particular de cada unidad.
+		
+		
+	\end{enumerate}
+
+
+\end{PDescripcion}

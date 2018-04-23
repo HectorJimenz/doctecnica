@@ -1,0 +1,234 @@
+\BOOKMARK [0][-]{chapter.1}{Planteamiento del problema}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Introducci\363n}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{Problem\341tica}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{Objetivo}{chapter.1}% 4
+\BOOKMARK [2][-]{subsection.1.3.1}{Objetivo General}{section.1.3}% 5
+\BOOKMARK [2][-]{subsection.1.3.2}{Objetivos Espec\355ficos}{section.1.3}% 6
+\BOOKMARK [1][-]{section.1.4}{Alcance}{chapter.1}% 7
+\BOOKMARK [1][-]{section.1.5}{Justificaci\363n}{chapter.1}% 8
+\BOOKMARK [1][-]{section.1.6}{Definici\363n de t\351rminos}{chapter.1}% 9
+\BOOKMARK [0][-]{chapter.2}{Marco Te\363rico}{}% 10
+\BOOKMARK [1][-]{section.2.1}{Sistemas de alarma s\355smica}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.2}{Transmisi\363n de alarma s\355smica}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.3}{Sistema de informaci\363n georeferenciado}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.4}{Diferencia entre Geolocalizaci\363n y Georeferenciaci\363n}{chapter.2}% 14
+\BOOKMARK [1][-]{section.2.5}{GPS}{chapter.2}% 15
+\BOOKMARK [2][-]{subsection.2.5.1}{Segmento espacial}{section.2.5}% 16
+\BOOKMARK [2][-]{subsection.2.5.2}{Segmento de control}{section.2.5}% 17
+\BOOKMARK [2][-]{subsection.2.5.3}{Segmento de usuario}{section.2.5}% 18
+\BOOKMARK [1][-]{section.2.6}{DGPS}{chapter.2}% 19
+\BOOKMARK [2][-]{subsection.2.6.1}{Estructura del DGPS}{section.2.6}% 20
+\BOOKMARK [1][-]{section.2.7}{Integracion con la telefon\355a m\363vil}{chapter.2}% 21
+\BOOKMARK [1][-]{section.2.8}{Memoria Cach\351}{chapter.2}% 22
+\BOOKMARK [2][-]{subsection.2.8.1}{\277Como Funciona la memoria cach\351}{section.2.8}% 23
+\BOOKMARK [2][-]{subsection.2.8.2}{Tipos de Memoria Cach\351}{section.2.8}% 24
+\BOOKMARK [1][-]{section.2.9}{Versiones de Android en M\351xico}{chapter.2}% 25
+\BOOKMARK [1][-]{section.2.10}{Diferencia entre GDP y DGPS}{chapter.2}% 26
+\BOOKMARK [1][-]{section.2.11}{Mapas interactivos}{chapter.2}% 27
+\BOOKMARK [2][-]{subsection.2.11.1}{Mapas offline}{section.2.11}% 28
+\BOOKMARK [1][-]{section.2.12}{Estado del arte}{chapter.2}% 29
+\BOOKMARK [0][-]{chapter.3}{Reglas de Negocio}{}% 30
+\BOOKMARK [1][-]{section.3.1}{Introducci\363n al Cap\355tulo}{chapter.3}% 31
+\BOOKMARK [1][-]{section.3.2}{Reglas de Protecci\363n Civil}{chapter.3}% 32
+\BOOKMARK [2][-]{subsection.3.2.1}{RPC101 CONDICIONES DE UN REFUGIO.}{section.3.2}% 33
+\BOOKMARK [2][-]{subsection.3.2.2}{RPC102 CONDICIONES DE UN ALBERGUE.}{section.3.2}% 34
+\BOOKMARK [2][-]{subsection.3.2.3}{RPC103 CONDICIONES DE UN CENTRO DE ACOPIO.}{section.3.2}% 35
+\BOOKMARK [2][-]{subsection.3.2.4}{RPC104 CONOCIMIENTO DE RIEGO SISMICO.}{section.3.2}% 36
+\BOOKMARK [2][-]{subsection.3.2.5}{RPC105 ALERTA SISMICA}{section.3.2}% 37
+\BOOKMARK [2][-]{subsection.3.2.6}{RPC106 AUTOCUIDADO}{section.3.2}% 38
+\BOOKMARK [2][-]{subsection.3.2.7}{RPC107 AUTORIDADES LOCALES}{section.3.2}% 39
+\BOOKMARK [2][-]{subsection.3.2.8}{RPC108 CENTRO DE COMANDO}{section.3.2}% 40
+\BOOKMARK [2][-]{subsection.3.2.9}{RPC109 GESTION INTEGRAL DE RIESGOS}{section.3.2}% 41
+\BOOKMARK [2][-]{subsection.3.2.10}{RPC110 GRUPOS VOLUNTARIOS}{section.3.2}% 42
+\BOOKMARK [2][-]{subsection.3.2.11}{RPC111 CONSEJO NACIONAL DE PROTECCION CIVIL}{section.3.2}% 43
+\BOOKMARK [2][-]{subsection.3.2.12}{RPC112 PROGRAMAS DE PROTECCION CIVIL}{section.3.2}% 44
+\BOOKMARK [2][-]{subsection.3.2.13}{RPC113 SISTEMA NACIONAL EN LOS SISTEMAS DE ALARMAS TEMPRANAS}{section.3.2}% 45
+\BOOKMARK [2][-]{subsection.3.2.14}{RPC114 ELABORACION DE PROGRAMAS INTERNOS DE PROTECCI\323N CIVIL}{section.3.2}% 46
+\BOOKMARK [2][-]{subsection.3.2.15}{RPC115 CULTURA DE PROTECCI\323N CIVIL}{section.3.2}% 47
+\BOOKMARK [-1][-]{part.1}{I Modelo Din\341mico}{}% 48
+\BOOKMARK [0][-]{chapter.4}{Modelo de Casos de Uso}{part.1}% 49
+\BOOKMARK [1][-]{section.4.1}{Introducci\363n al Cap\355tulo}{chapter.4}% 50
+\BOOKMARK [0][-]{chapter.5}{Casos de Uso}{part.1}% 51
+\BOOKMARK [1][-]{section.5.1}{CU1 Crear Usuario}{chapter.5}% 52
+\BOOKMARK [2][-]{subsection.5.1.1}{Resumen}{section.5.1}% 53
+\BOOKMARK [2][-]{subsection.5.1.2}{Descripci\363n}{section.5.1}% 54
+\BOOKMARK [2][-]{subsection.5.1.3}{Trayectorias del Caso de Uso}{section.5.1}% 55
+\BOOKMARK [1][-]{section.5.2}{CU2 Inicio de Sesion}{chapter.5}% 56
+\BOOKMARK [2][-]{subsection.5.2.1}{Resumen}{section.5.2}% 57
+\BOOKMARK [2][-]{subsection.5.2.2}{Descripci\363n}{section.5.2}% 58
+\BOOKMARK [2][-]{subsection.5.2.3}{Trayectorias del Caso de Uso}{section.5.2}% 59
+\BOOKMARK [1][-]{section.5.3}{CU05 Gestionar Propuesta de Centros de Recolecci\363n}{chapter.5}% 60
+\BOOKMARK [2][-]{subsection.5.3.1}{Resumen}{section.5.3}% 61
+\BOOKMARK [2][-]{subsection.5.3.2}{Descripci\363n}{section.5.3}% 62
+\BOOKMARK [2][-]{subsection.5.3.3}{Trayectorias del Caso de Uso}{section.5.3}% 63
+\BOOKMARK [1][-]{section.5.4}{CU06 Crea propuesta de centro de recolecci\363n}{chapter.5}% 64
+\BOOKMARK [2][-]{subsection.5.4.1}{Resumen}{section.5.4}% 65
+\BOOKMARK [2][-]{subsection.5.4.2}{Descripci\363n}{section.5.4}% 66
+\BOOKMARK [2][-]{subsection.5.4.3}{Trayectorias del Caso de Uso}{section.5.4}% 67
+\BOOKMARK [1][-]{section.5.5}{CU07 Modificar propuesta de centro de recolecci\363n}{chapter.5}% 68
+\BOOKMARK [2][-]{subsection.5.5.1}{Resumen}{section.5.5}% 69
+\BOOKMARK [2][-]{subsection.5.5.2}{Descripci\363n}{section.5.5}% 70
+\BOOKMARK [2][-]{subsection.5.5.3}{Trayectorias del Caso de Uso}{section.5.5}% 71
+\BOOKMARK [1][-]{section.5.6}{CU08 Elimina propuesta de centro de recolecci\363n}{chapter.5}% 72
+\BOOKMARK [2][-]{subsection.5.6.1}{Resumen}{section.5.6}% 73
+\BOOKMARK [2][-]{subsection.5.6.2}{Descripci\363n}{section.5.6}% 74
+\BOOKMARK [2][-]{subsection.5.6.3}{Trayectorias del Caso de Uso}{section.5.6}% 75
+\BOOKMARK [1][-]{section.5.7}{CU09 Ver propuesta de centro de recolecci\363n}{chapter.5}% 76
+\BOOKMARK [2][-]{subsection.5.7.1}{Resumen}{section.5.7}% 77
+\BOOKMARK [2][-]{subsection.5.7.2}{Descripci\363n}{section.5.7}% 78
+\BOOKMARK [2][-]{subsection.5.7.3}{Trayectorias del Caso de Uso}{section.5.7}% 79
+\BOOKMARK [1][-]{section.5.8}{CU10 Gestionar Propuesta de Albergue}{chapter.5}% 80
+\BOOKMARK [2][-]{subsection.5.8.1}{Resumen}{section.5.8}% 81
+\BOOKMARK [2][-]{subsection.5.8.2}{Descripci\363n}{section.5.8}% 82
+\BOOKMARK [2][-]{subsection.5.8.3}{Trayectorias del Caso de Uso}{section.5.8}% 83
+\BOOKMARK [1][-]{section.5.9}{CU11 Crear Propuesta de Albergue}{chapter.5}% 84
+\BOOKMARK [2][-]{subsection.5.9.1}{Resumen}{section.5.9}% 85
+\BOOKMARK [2][-]{subsection.5.9.2}{Descripci\363n}{section.5.9}% 86
+\BOOKMARK [2][-]{subsection.5.9.3}{Trayectorias del Caso de Uso}{section.5.9}% 87
+\BOOKMARK [1][-]{section.5.10}{CU12 Modificar Propuesta de Albergue}{chapter.5}% 88
+\BOOKMARK [2][-]{subsection.5.10.1}{Resumen}{section.5.10}% 89
+\BOOKMARK [2][-]{subsection.5.10.2}{Descripci\363n}{section.5.10}% 90
+\BOOKMARK [2][-]{subsection.5.10.3}{Trayectorias del Caso de Uso}{section.5.10}% 91
+\BOOKMARK [1][-]{section.5.11}{CU13 Eliminar Propuesta Albergue}{chapter.5}% 92
+\BOOKMARK [2][-]{subsection.5.11.1}{Resumen}{section.5.11}% 93
+\BOOKMARK [2][-]{subsection.5.11.2}{Descripci\363n}{section.5.11}% 94
+\BOOKMARK [2][-]{subsection.5.11.3}{Trayectorias del Caso de Uso}{section.5.11}% 95
+\BOOKMARK [1][-]{section.5.12}{CU14 Ver Propuesta de Albergues}{chapter.5}% 96
+\BOOKMARK [2][-]{subsection.5.12.1}{Resumen}{section.5.12}% 97
+\BOOKMARK [2][-]{subsection.5.12.2}{Descripci\363n}{section.5.12}% 98
+\BOOKMARK [2][-]{subsection.5.12.3}{Trayectorias del Caso de Uso}{section.5.12}% 99
+\BOOKMARK [1][-]{section.5.13}{CU15 Gestionar Propuesta de Refugios}{chapter.5}% 100
+\BOOKMARK [2][-]{subsection.5.13.1}{Resumen}{section.5.13}% 101
+\BOOKMARK [2][-]{subsection.5.13.2}{Descripci\363n}{section.5.13}% 102
+\BOOKMARK [2][-]{subsection.5.13.3}{Trayectorias del Caso de Uso}{section.5.13}% 103
+\BOOKMARK [1][-]{section.5.14}{CU16 Crear Propuesta de Refugio}{chapter.5}% 104
+\BOOKMARK [2][-]{subsection.5.14.1}{Resumen}{section.5.14}% 105
+\BOOKMARK [2][-]{subsection.5.14.2}{Descripci\363n}{section.5.14}% 106
+\BOOKMARK [2][-]{subsection.5.14.3}{Trayectorias del Caso de Uso}{section.5.14}% 107
+\BOOKMARK [1][-]{section.5.15}{CU17 Modificar Propuesta de Refugio}{chapter.5}% 108
+\BOOKMARK [2][-]{subsection.5.15.1}{Resumen}{section.5.15}% 109
+\BOOKMARK [2][-]{subsection.5.15.2}{Descripci\363n}{section.5.15}% 110
+\BOOKMARK [2][-]{subsection.5.15.3}{Trayectorias del Caso de Uso}{section.5.15}% 111
+\BOOKMARK [1][-]{section.5.16}{CU18 Eliminar Propuesta de Refugio}{chapter.5}% 112
+\BOOKMARK [2][-]{subsection.5.16.1}{Resumen}{section.5.16}% 113
+\BOOKMARK [2][-]{subsection.5.16.2}{Descripci\363n}{section.5.16}% 114
+\BOOKMARK [2][-]{subsection.5.16.3}{Trayectorias del Caso de Uso}{section.5.16}% 115
+\BOOKMARK [1][-]{section.5.17}{CU19 Ver Propuesta de Refugio}{chapter.5}% 116
+\BOOKMARK [2][-]{subsection.5.17.1}{Resumen}{section.5.17}% 117
+\BOOKMARK [2][-]{subsection.5.17.2}{Descripci\363n}{section.5.17}% 118
+\BOOKMARK [2][-]{subsection.5.17.3}{Trayectorias del Caso de Uso}{section.5.17}% 119
+\BOOKMARK [1][-]{section.5.18}{CU25 Configurar alertas s\355smicas}{chapter.5}% 120
+\BOOKMARK [2][-]{subsection.5.18.1}{Resumen}{section.5.18}% 121
+\BOOKMARK [2][-]{subsection.5.18.2}{Descripci\363n}{section.5.18}% 122
+\BOOKMARK [2][-]{subsection.5.18.3}{Trayectorias del Caso de Uso}{section.5.18}% 123
+\BOOKMARK [1][-]{section.5.19}{CU26 Cambiar Sonido de Alerta Sismica}{chapter.5}% 124
+\BOOKMARK [2][-]{subsection.5.19.1}{Resumen}{section.5.19}% 125
+\BOOKMARK [2][-]{subsection.5.19.2}{Descripci\363n}{section.5.19}% 126
+\BOOKMARK [2][-]{subsection.5.19.3}{Trayectorias del Caso de Uso}{section.5.19}% 127
+\BOOKMARK [1][-]{section.5.20}{CU20 Gestionar Mapas Offline}{chapter.5}% 128
+\BOOKMARK [2][-]{subsection.5.20.1}{Resumen}{section.5.20}% 129
+\BOOKMARK [2][-]{subsection.5.20.2}{Descripci\363n}{section.5.20}% 130
+\BOOKMARK [2][-]{subsection.5.20.3}{Trayectorias del Caso de Uso}{section.5.20}% 131
+\BOOKMARK [1][-]{section.5.21}{CU21 Guardar nuevo Mapa Offline}{chapter.5}% 132
+\BOOKMARK [2][-]{subsection.5.21.1}{Resumen}{section.5.21}% 133
+\BOOKMARK [2][-]{subsection.5.21.2}{Descripci\363n}{section.5.21}% 134
+\BOOKMARK [2][-]{subsection.5.21.3}{Trayectorias del Caso de Uso}{section.5.21}% 135
+\BOOKMARK [1][-]{section.5.22}{CU22 Modificar Mapa Offline}{chapter.5}% 136
+\BOOKMARK [2][-]{subsection.5.22.1}{Resumen}{section.5.22}% 137
+\BOOKMARK [2][-]{subsection.5.22.2}{Descripci\363n}{section.5.22}% 138
+\BOOKMARK [2][-]{subsection.5.22.3}{Trayectorias del Caso de Uso}{section.5.22}% 139
+\BOOKMARK [1][-]{section.5.23}{CU23 Eliminar Mapas Offline}{chapter.5}% 140
+\BOOKMARK [2][-]{subsection.5.23.1}{Resumen}{section.5.23}% 141
+\BOOKMARK [2][-]{subsection.5.23.2}{Descripci\363n}{section.5.23}% 142
+\BOOKMARK [2][-]{subsection.5.23.3}{Trayectorias del Caso de Uso}{section.5.23}% 143
+\BOOKMARK [1][-]{section.5.24}{CU24 Ver Mapas Offline}{chapter.5}% 144
+\BOOKMARK [2][-]{subsection.5.24.1}{Resumen}{section.5.24}% 145
+\BOOKMARK [2][-]{subsection.5.24.2}{Descripci\363n}{section.5.24}% 146
+\BOOKMARK [2][-]{subsection.5.24.3}{Trayectorias del Caso de Uso}{section.5.24}% 147
+\BOOKMARK [1][-]{section.5.25}{CU27 Gestionar Centros de Recolecci\363n}{chapter.5}% 148
+\BOOKMARK [2][-]{subsection.5.25.1}{Resumen}{section.5.25}% 149
+\BOOKMARK [2][-]{subsection.5.25.2}{Descripci\363n}{section.5.25}% 150
+\BOOKMARK [2][-]{subsection.5.25.3}{Trayectorias del Caso de Uso}{section.5.25}% 151
+\BOOKMARK [1][-]{section.5.26}{CU28 Crear Centros de Recoleci\363n}{chapter.5}% 152
+\BOOKMARK [2][-]{subsection.5.26.1}{Resumen}{section.5.26}% 153
+\BOOKMARK [2][-]{subsection.5.26.2}{Descripci\363n}{section.5.26}% 154
+\BOOKMARK [2][-]{subsection.5.26.3}{Trayectorias del Caso de Uso}{section.5.26}% 155
+\BOOKMARK [1][-]{section.5.27}{CU29 Modificar Centros de Recoleci\363n}{chapter.5}% 156
+\BOOKMARK [2][-]{subsection.5.27.1}{Resumen}{section.5.27}% 157
+\BOOKMARK [2][-]{subsection.5.27.2}{Descripci\363n}{section.5.27}% 158
+\BOOKMARK [2][-]{subsection.5.27.3}{Trayectorias del Caso de Uso}{section.5.27}% 159
+\BOOKMARK [1][-]{section.5.28}{CU30 Eliminar Centros de Recoleci\363n}{chapter.5}% 160
+\BOOKMARK [2][-]{subsection.5.28.1}{Resumen}{section.5.28}% 161
+\BOOKMARK [2][-]{subsection.5.28.2}{Descripci\363n}{section.5.28}% 162
+\BOOKMARK [2][-]{subsection.5.28.3}{Trayectorias del Caso de Uso}{section.5.28}% 163
+\BOOKMARK [1][-]{section.5.29}{CU31 Autorizar Propuesta de Centro de Recolecci\363n}{chapter.5}% 164
+\BOOKMARK [2][-]{subsection.5.29.1}{Resumen}{section.5.29}% 165
+\BOOKMARK [2][-]{subsection.5.29.2}{Descripci\363n}{section.5.29}% 166
+\BOOKMARK [2][-]{subsection.5.29.3}{Trayectorias del Caso de Uso}{section.5.29}% 167
+\BOOKMARK [1][-]{section.5.30}{CU32 Rechazar Propuesta de Centro de Recolecci\363n}{chapter.5}% 168
+\BOOKMARK [2][-]{subsection.5.30.1}{Resumen}{section.5.30}% 169
+\BOOKMARK [2][-]{subsection.5.30.2}{Descripci\363n}{section.5.30}% 170
+\BOOKMARK [2][-]{subsection.5.30.3}{Trayectorias del Caso de Uso}{section.5.30}% 171
+\BOOKMARK [1][-]{section.5.31}{CU33 Ver Centros de Recolecci\363n}{chapter.5}% 172
+\BOOKMARK [2][-]{subsection.5.31.1}{Resumen}{section.5.31}% 173
+\BOOKMARK [2][-]{subsection.5.31.2}{Descripci\363n}{section.5.31}% 174
+\BOOKMARK [2][-]{subsection.5.31.3}{Trayectorias del Caso de Uso}{section.5.31}% 175
+\BOOKMARK [1][-]{section.5.32}{CU34 Gestionar Albergues}{chapter.5}% 176
+\BOOKMARK [2][-]{subsection.5.32.1}{Resumen}{section.5.32}% 177
+\BOOKMARK [2][-]{subsection.5.32.2}{Descripci\363n}{section.5.32}% 178
+\BOOKMARK [2][-]{subsection.5.32.3}{Trayectorias del Caso de Uso}{section.5.32}% 179
+\BOOKMARK [1][-]{section.5.33}{CU35 Crear Albergue}{chapter.5}% 180
+\BOOKMARK [2][-]{subsection.5.33.1}{Resumen}{section.5.33}% 181
+\BOOKMARK [2][-]{subsection.5.33.2}{Descripci\363n}{section.5.33}% 182
+\BOOKMARK [2][-]{subsection.5.33.3}{Trayectorias del Caso de Uso}{section.5.33}% 183
+\BOOKMARK [1][-]{section.5.34}{CU36 Modificar Albergue}{chapter.5}% 184
+\BOOKMARK [2][-]{subsection.5.34.1}{Resumen}{section.5.34}% 185
+\BOOKMARK [2][-]{subsection.5.34.2}{Descripci\363n}{section.5.34}% 186
+\BOOKMARK [2][-]{subsection.5.34.3}{Trayectorias del Caso de Uso}{section.5.34}% 187
+\BOOKMARK [1][-]{section.5.35}{CU37 Eliminar Albergue}{chapter.5}% 188
+\BOOKMARK [2][-]{subsection.5.35.1}{Resumen}{section.5.35}% 189
+\BOOKMARK [2][-]{subsection.5.35.2}{Descripci\363n}{section.5.35}% 190
+\BOOKMARK [2][-]{subsection.5.35.3}{Trayectorias del Caso de Uso}{section.5.35}% 191
+\BOOKMARK [1][-]{section.5.36}{CU38 Autorizar Propuesta de Albergue}{chapter.5}% 192
+\BOOKMARK [2][-]{subsection.5.36.1}{Resumen}{section.5.36}% 193
+\BOOKMARK [2][-]{subsection.5.36.2}{Descripci\363n}{section.5.36}% 194
+\BOOKMARK [2][-]{subsection.5.36.3}{Trayectorias del Caso de Uso}{section.5.36}% 195
+\BOOKMARK [1][-]{section.5.37}{CU39 Rechazar Propuesta de Albergue}{chapter.5}% 196
+\BOOKMARK [2][-]{subsection.5.37.1}{Resumen}{section.5.37}% 197
+\BOOKMARK [2][-]{subsection.5.37.2}{Descripci\363n}{section.5.37}% 198
+\BOOKMARK [2][-]{subsection.5.37.3}{Trayectorias del Caso de Uso}{section.5.37}% 199
+\BOOKMARK [1][-]{section.5.38}{CU40 Ver Albergues}{chapter.5}% 200
+\BOOKMARK [2][-]{subsection.5.38.1}{Resumen}{section.5.38}% 201
+\BOOKMARK [2][-]{subsection.5.38.2}{Descripci\363n}{section.5.38}% 202
+\BOOKMARK [2][-]{subsection.5.38.3}{Trayectorias del Caso de Uso}{section.5.38}% 203
+\BOOKMARK [1][-]{section.5.39}{CU41 Gestionar Refugios}{chapter.5}% 204
+\BOOKMARK [2][-]{subsection.5.39.1}{Resumen}{section.5.39}% 205
+\BOOKMARK [2][-]{subsection.5.39.2}{Descripci\363n}{section.5.39}% 206
+\BOOKMARK [2][-]{subsection.5.39.3}{Trayectorias del Caso de Uso}{section.5.39}% 207
+\BOOKMARK [1][-]{section.5.40}{CU42 Crear Refugios}{chapter.5}% 208
+\BOOKMARK [2][-]{subsection.5.40.1}{Resumen}{section.5.40}% 209
+\BOOKMARK [2][-]{subsection.5.40.2}{Descripci\363n}{section.5.40}% 210
+\BOOKMARK [2][-]{subsection.5.40.3}{Trayectorias del Caso de Uso}{section.5.40}% 211
+\BOOKMARK [1][-]{section.5.41}{CU43 Modificar Refugio}{chapter.5}% 212
+\BOOKMARK [2][-]{subsection.5.41.1}{Resumen}{section.5.41}% 213
+\BOOKMARK [2][-]{subsection.5.41.2}{Descripci\363n}{section.5.41}% 214
+\BOOKMARK [2][-]{subsection.5.41.3}{Trayectorias del Caso de Uso}{section.5.41}% 215
+\BOOKMARK [1][-]{section.5.42}{CU44 Eliminar Refugio}{chapter.5}% 216
+\BOOKMARK [2][-]{subsection.5.42.1}{Resumen}{section.5.42}% 217
+\BOOKMARK [2][-]{subsection.5.42.2}{Descripci\363n}{section.5.42}% 218
+\BOOKMARK [2][-]{subsection.5.42.3}{Trayectorias del Caso de Uso}{section.5.42}% 219
+\BOOKMARK [1][-]{section.5.43}{CU45 Autorizar Propuesta de Refugio}{chapter.5}% 220
+\BOOKMARK [2][-]{subsection.5.43.1}{Resumen}{section.5.43}% 221
+\BOOKMARK [2][-]{subsection.5.43.2}{Descripci\363n}{section.5.43}% 222
+\BOOKMARK [2][-]{subsection.5.43.3}{Trayectorias del Caso de Uso}{section.5.43}% 223
+\BOOKMARK [1][-]{section.5.44}{CU46 Rechazar Propuesta de Refugio}{chapter.5}% 224
+\BOOKMARK [2][-]{subsection.5.44.1}{Resumen}{section.5.44}% 225
+\BOOKMARK [2][-]{subsection.5.44.2}{Descripci\363n}{section.5.44}% 226
+\BOOKMARK [2][-]{subsection.5.44.3}{Trayectorias del Caso de Uso}{section.5.44}% 227
+\BOOKMARK [1][-]{section.5.45}{CU47 Ver Refugios}{chapter.5}% 228
+\BOOKMARK [2][-]{subsection.5.45.1}{Resumen}{section.5.45}% 229
+\BOOKMARK [2][-]{subsection.5.45.2}{Descripci\363n}{section.5.45}% 230
+\BOOKMARK [2][-]{subsection.5.45.3}{Trayectorias del Caso de Uso}{section.5.45}% 231
+\BOOKMARK [0][-]{chapter.6}{Propuesta Programada}{part.1}% 232
+\BOOKMARK [0][-]{chapter.7}{Trabajo Realizado}{part.1}% 233
+\BOOKMARK [0][-]{chapter.8}{Conclusiones y Bibliograf\355a}{part.1}% 234

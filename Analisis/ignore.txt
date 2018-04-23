@@ -1,0 +1,11 @@
+analisis.aux
+analisis.lof
+analisis.log
+analisis.out
+analisis.synctex.gz
+analisis.tex.backup
+analisis.toc
+analisis.pdf
+analisis.bbl
+analisis.blg
+

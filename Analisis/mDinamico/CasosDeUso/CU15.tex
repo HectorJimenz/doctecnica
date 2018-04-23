@@ -1,0 +1,50 @@
+\begin{UseCase}{CU15}{Gestionar Propuesta de Refugios}{
+		Permite administrar todos los Refugios Propuestos que se encuentren registradas en la base de datos del sistema SIESM.\\
+		
+}
+	\UCitem{Versión}{0.1}
+	\UCccsection{Datos para el control Interno}	
+	\UCitem{Autor}{Héctor Iván Jiménez Romero}
+	\UCccitem{Evaluador}{Ulises Veléz Saldaña}
+	\UCitem{Operación}{Visualizar}
+	\UCccitem{Prioridad}{Alta}
+	\UCccitem{Complejidad}{Media}
+	\UCccitem{Volatilidad}{Media}
+	\UCccitem{Madurez}{Media}
+	\UCitem{Estatus}{Edición}
+	\UCitem{Fecha del último estatus}{28 de marzo de 2018}
+	\UCccsection{Revisión Version 0.1}
+	\UCccitem{Fecha}{}
+	\UCccitem{Evaluador}{Ulises Veléz Saldaña}
+	\UCccitem{Resultado}{}
+	\UCccitem{Observaciones}{}
+	\UCsection{Atributos}
+	\UCitem{Actor(es)}{\refElem{administrador}}
+	\UCitem{Propósito}{Contar con un medio en el que el actor pueda gestionar la información de los Refugios Propuestos enviadas por los Ciudadanos.}
+	\UCitem{Entradas}{Ninguna}
+	\UCitem{Origen}{No aplica}
+	\UCitem{Salidas}{No aplica}
+	\UCitem{Precondiciones}{Ninguna}
+	\UCitem{Postcondiciones}{Ninguna}
+	\UCitem{Reglas de Negocio}{Ninguna}
+	\UCitem{Errores}{Ninguno}
+	\UCitem{Disparador(es)}{}
+	\UCitem{Condiciones de Término}{Se muestra la IUX.}
+	\UCitem{Efectos Colaterales}{Se podra crear, modificar, eliminar, ver, propuestas de los Refugios.}
+	
+\end{UseCase}
+
+
+%Trayectoria Principal : Happy Path
+\begin{UCtrayectoria}
+	\item \UCactor Selecciona opcion gestionar propuesta de Refugio via la \IUref{IU07}{Pantalla de gestión de Refugios.}(ver figura~\ref{IU07}) 
+	\UCpaso Verifica la conexión a internet.\refTray{A}
+	\UCpaso Despliega la \IUref{IU07}{Pantalla de gestión de Refugios.}(ver figura~\ref{IU07})  ya registrados y con la información general acerca de lo que es un Refugio.
+	\item \UCactor Vizualizara su propuesta de refugio en el sistema.
+	\item \UCactor Podra modificar , eliminar o crear una nueva propuesta de refugio. 
+\end{UCtrayectoria}
+ 
+ \begin{UCtrayectoriaA}{A}{ Cuando no se tenga acceso a internet.}
+  \UCpaso Muestra un MNSG02-"Conectese a internet".
+  \item \UCactor Regresa al paso 1 del CU15.
+\end{UCtrayectoriaA}

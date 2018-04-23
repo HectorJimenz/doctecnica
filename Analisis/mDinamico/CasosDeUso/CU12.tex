@@ -1,0 +1,67 @@
+\begin{UseCase}{CU12}{Modificar Propuesta de  Albergue}{
+		Permite al Ciudadano modificar los datos de un Albergue Propuesto que se encuentre en la base de datos del sistema SIESM.\\
+		
+}
+	\UCitem{Versión}{0.1}
+	\UCccsection{Datos para el control Interno}	
+	\UCitem{Autor}{Héctor Iván Jiménez Romero}
+	\UCccitem{Evaluador}{Ulises Veléz Saldaña}
+	\UCitem{Operación}{Modificar}
+	\UCccitem{Prioridad}{Alta}
+	\UCccitem{Complejidad}{Media}
+	\UCccitem{Volatilidad}{Media}
+	\UCccitem{Madurez}{Media}
+	\UCitem{Estatus}{Edición}
+	\UCitem{Fecha del último estatus}{28 de marzo de 2018}
+	\UCccsection{Revisión Version 0.1}
+	\UCccitem{Fecha}{}
+	\UCccitem{Evaluador}{Ulises Veléz Saldaña}
+	\UCccitem{Resultado}{}
+	\UCccitem{Observaciones}{}
+	\UCsection{Atributos}
+	\UCitem{Actor(es)}{\refElem{administrador}}
+	\UCitem{Propósito}{Que el Ciudadano pueda modificar los datos de un Albergue Propuesto en el sistema SIESM.}
+	\UCitem{Entradas}{Nombre del albergue, Calle, Numero, Colonia, Delegación y Persona a cargo.}
+	\UCitem{Origen}{Teclado}
+	\UCitem{Salidas}{Albergue Propuesto  modificado.}
+	\UCitem{Precondiciones}{Que el albergue Propuesto este registado previamente en el sistema SIESM.}
+	\UCitem{Postcondiciones}{El albegue quedara modificado en el sistema de SEIMS.}
+	\UCitem{Reglas de Negocio}{Ninguna}
+	\UCitem{Errores}{Ninguno}
+	\UCitem{Disparador(es)}{No aplica}
+	\UCitem{Condiciones de Término}{Se muestra la IUX.}
+	\UCitem{Efectos Colaterales}{No aplica.}
+	
+\end{UseCase}
+
+
+%Trayectoria Principal : Happy Path
+
+\begin{UCtrayectoria}
+	\item\UCactor Selecciona opcion editar  Albergue propuesto via la \IUref{IU10}{Pantalla de Gestión de Mis Propuestas de Albergues.}(ver figura~\ref{IU10}) 
+	\item\UCactor Modifica Nombre del Albergue Propuesto, Calle, Numero, Colonia, Delegación y Persona a cargo en el sistema via la \IUref{IU26}{Pantalla de Modificación de Propuesta de Albergue.}(ver figura~\ref{IU26}) 
+	\item\UCactor Oprime boton - \IUbutton{Siguiente}
+	\UCpaso Verifica que los datos esten completos \refTray{A}.
+	\UCpaso Despliega la \IUref{IU10}{Pantalla de Gestión de Mis Propuestas de Albergues.} (ver figura~\ref{IU10})  con los datos que ingreso al sistema.
+	\item\UCactor Oprime boton - \IUbutton{Guadar}
+	\UCpaso Verifica si existe conexión a internet \refTray{B}.
+	\UCpaso Modifica el Albergue propuesto.
+	\UCpaso Verifica si la modificación se realizo correctamente \refTray{C}.
+	\UCpaso Muestra el MSG15-"Albergue Propuesto modificado correctamente"
+	\item\UCactor Oprime boton - \IUbutton{Aceptar}.
+\end{UCtrayectoria}
+
+
+\begin{UCtrayectoriaA}{A}{Cuando todos los campos no estan completos}
+	\UCpaso Muestra el MSG7-"Faltan campos por llenar".
+	\UCpaso Muestra la \IUref{IU26}{Pantalla de Modificación de Propuesta de Albergue.}(ver figura~\ref{IU26}) con los campos anteriormente llenados y marcando en rojo los faltantes.
+	\item\UCactor Introduce los campos faltantes via la \IUref{IU26}{Pantalla de Modificación de Propuesta de Albergue.}(ver figura~\ref{IU26}) .
+	\UCpaso Continua en el paso 3 del CU12.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Cuando no hay conexion a internet}
+	\UCpaso Muestra el MSG16-"No se tiene conexion a internet, se guardaran los cambios hasta su nueva conexion.".
+	\item\UCactor Oprime boton - \IUbutton{Aceptar}.
+	\UCpaso Modifica el Albergue propuesto  en la base de datos local.	
+	\UCpaso[] Termina el caso de uso.
+\end{UCtrayectoriaA}

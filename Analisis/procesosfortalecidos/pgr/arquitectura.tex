@@ -1,0 +1,71 @@
+\chapter{Proceso Fortalecido Gestión de Reinscripciones}
+\hypertarget{chapter:PFGR}{}
+\section{AF-GR Arquitectura}
+%\begin{Proceso}{AF-GI}{Arquitectura del proceso fortalecido Gestión de Inscripciones}{
+%		%El Proceso de Ingreso corresponde al mecanismo por medio del cual un \refElem{Aspirante}, que realizó todos los trámites correspondientes al \textbf{Proceso de Admisión} y fue seleccionado para pertenecer a una unidad académica se convierte en \refElem{Alumno} del Instituto. El alumno es el centro de la vida académica y el principal usuario de todos los servicios que ofrece el Instituto. 
+%		}
+%	{PG.X}
+%%	\PRccsection{Datos para control interno}
+%%	\PRccitem{Versión}{1}
+%%	\PRccitem{Elaboró}{Francisco Isidoro Mera Torres}
+%%	\PRccitem{Supervisó}{Ulises Vélez Saldaña}
+%%	\PRccitem{Prioridad}{Alta}
+%%	\PRccitem{Estatus}{Corrección}
+%%	\PRccitem{Complejidad}{Media}
+%%	\PRccitem{Volatilidad}{Media}
+%%	\PRccitem{Madurez}{Media}
+%	\PRsection{Atributos del proceso}
+%	\PRitem{Participantes}{
+%		\refElem{AbogadoGeneral}, \refElem{Alumno}, \refElem{Aspirante},\refElem{Calmecac}, \refElem{ComisionEspecial}, \refElem{DepartamentoDeRegistroYSupervisionEscolar}, \refElem{SubdireccionAcademica}
+%	}
+%	\PRitem{Objetivo}{
+%		Asignar aspirantes a programas y unidades académicas otorgándoles una boleta y una identificación institucional.
+%	}
+%	\PRitem{Interrelación con otros procesos}{	
+%		\begin{Titemize}
+% 			\Titem Estructura Académica
+%		\end{Titemize}
+%	}
+%	\PRitem{Entradas}{
+%		\begin{Titemize}
+% 			\Titem Estructura Académica.
+% 			\Titem \refElem{HojaDeResultadoDelExamenDeAdmision}.
+% 			\Titem Aspirantes Aceptados.
+% 			\Titem Aspirantes Admitidos.
+% 			\Titem \refElem{CalendarioAcademico}.
+% 			\Titem \refElem{Convocatoria} y Calendario de Admisión.
+% 			\Titem Programas Académicos Vigentes.
+% 			\Titem Expedientes de Aspirantes.
+%		\end{Titemize}
+%	}
+%	\PRitem{Salidas}{
+%		\begin{Titemize}
+% 			\Titem \refElem{Horario}.
+% 			\Titem \refElem{Boleta} y/o \refElem{Preboleta}.
+% 			\Titem \refElem{CredencialDeAlumno}.
+% 			\Titem Notificación de documentación falsa o alterada.
+%		\end{Titemize}		
+%	}
+%	
+%\end{Proceso}
+
+
+							%%%% A PARTIR DE AQUI SE COMIENZA LA DESCRIPCIÓN DE LA ARQUITECTURA %%%%%%
+
+La figura \cdtRefImg{afpgr:procGral}{AF-GR Gestión de Reinscripciones} muestra la arquitectura del proceso fortalecido para la gestión de reinscripciones. Los cambios estarán centrados en la operación de la reinscripción del alumno a través del \refElem{Calmecac}, la mejora en la comunicación entre los diferentes actores: \refElem{DAE}, \refElem{DepartamentoDeGestionEscolar}, \refElem{UnidadAcademica}, \refElem{Alumno}. Se muestra el proceso de las reinscripciones de los alumnos a las diferentes unidades académicas auxiliandose de procesos modelados en el \refElem{Calmecac} como: los Programas Académicos, Estructura Académica, Gestión de ETS, Gestión de dictámenes del \refElem{ConsejoGeneralConsultivo} y \refElem{ConsejoTecnicoConsultivoEscolar}.
+\\
+A continuación se mencionan las diferentes propuestas de mejora a los procesos, puntualizando las mejoras y diferencias en el proceso de reinscripción.
+
+\begin{Citemize}
+	\item Configuración de criterios por parte de las Unidades Académicas a través del \refElem{Calmecac} para la generación de citas, para que los alumnos se puedan reinscribir considerando criterios como: numero de materias adeudadas, promedio, horarios.
+	\item Generación de citas para alumnos con dictamen cumplido; el \refElem{Calmecac} permitirá la generación de citas a alumnos que ya estén en posibilidad de reinscribirse debido a que ya han cumplido las condicionantes de su dictamen.
+	\item Los alumnos podrán reinscribirse en línea a través del \refElem{Calmecac} cuidando aspectos como la carga que pueden inscribir (baja, media, máxima), materias desfasadas, dictamen cumplido y las características del programa académico que este cursando el alumno.
+	\item Inscripción a \refElem{ETS}: el \refElem{Calmecac} permitirá la inscripción a ETS en línea validando adecuadamente: que haya estado inscrito en el periodo inmediato anterior y que la materia se encuentre reprobada.
+\end{Citemize}
+
+
+La descripción detallada de estas mejoras se encuentra en la sección~\ref{sec:PF-GR:validacion}.
+
+\pagebreak
+%----------------------------
+\Pfig[1.1]{procesosfortalecidos/pgr/imagenes/PGR_ArquitecturaFor}{afpgr:procGral}{AF-GR Arquitectura del proceso Fortalecido de Gestión de Reinscripciones. Para poder leer este diagrama ir a la sección \ref{section:CodigoColores}}

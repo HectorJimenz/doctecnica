@@ -1,0 +1,59 @@
+\section{Validación de cambios del procesos de ingreso}
+\label{sec:PF-IN:validacion}
+%Perfil actual: Se espera poder poner el área, donode no se tenga certeza de el área especifica se puede poner de forma general.
+%Tipo: básicamente son tres Cambio, Nuevo o Eliminar 
+
+%------------- Acuerdo 1 -------------
+\hrule
+\vspace{0.2cm}
+\begin{Cdescription}
+	\item[Subproceso:] Admisión e Ingreso
+	\item[Situación actual:] El Departamento de Informática comunica al Departamento de Supervisión los aspirantes aceptados y su asignación a las Escuelas mediante vistas de Oracle que deben ser consultadas manualmente y mediante ``scripts programados''. Esto provoca que el trabajo para mantener al SAES actualizado implique mucho esfuerzo y tiempo.
+	\item[Perfil actual:] \refElem{DAE}: Departamento de Informática y de Supervisión.
+	\item[Solución propuesta:] Mejorar dicha comunicación mediante la integración de ambos sistemas ({\em el de informática para el proceso de admisión y el Calmécac}) mediante un Servicio Web para la carga de Aspirantes aceptados.
+	\item[Perfil propuesto:] \refElem{DAE}: Departamento de Informática y de Supervisión.
+	\item[Tipo:] Cambio.
+\end{Cdescription}
+
+%------------- Acuerdo 2 -------------
+\hrule
+\vspace{0.2cm}
+\begin{Cdescription}
+	\item[Subproceso:] Admisión e Ingreso
+	\item[Situación actual:] El Departamento de Informática envía al Departamento de Supervisión las actualizaciones de boleta derivadas de la revisión de expedientes mediante vistas de Oracle que deben ser consultadas manualmente y mediante ``scripts programados'', lo cual provoca que se entreguen boletas asignadas a alumnos cuyo numero de boleta no ha sido cargado al SAES. Esto es importante debido a que el número de boleta es utilizado en el SAES para garantizar el acceso a todos los servicios que otorga el IPN.
+	\item[Perfil actual:] \refElem{DAE}: Departamento de Informática y de Supervisión.
+	\item[Solución propuesta:] Mejorar dicha comunicación mediante la integración de ambos sistemas ({\em el de informática para el proceso de admisión y el Calmécac}) mediante un Servicio Web para la actualización de Aspirantes aceptados.
+	\item[Perfil propuesto:] \refElem{DAE}: Departamento de Informática y de Supervisión.
+	\item[Tipo:] Cambio.
+\end{Cdescription}
+
+%------------- Acuerdo 3 -------------
+\hrule
+\vspace{0.2cm}
+\begin{Cdescription}
+	\item[Subproceso:] Asignación de turno.
+	\item[Situación actual:] El mecanismo con el que las Escuelas asignan turno a los alumnos de nuevo ingreso es manual, uno por uno, llenando en el SAES grupos bajo diversos criterios, como son: genero, localidad, examen de conocimientos, si el alumno trabaja o no, etc. El problema es que no hay un criterio homogeneizado y esta actividad implica mucho trabajo y consume mucho tiempo.
+	\item[Perfil actual:] \refElem{UnidadAcademica}.
+	\item[Solución propuesta:] Desarrollar en el Calmécac un módulo que facilite esta tarea implementando los criterios de mayor impacto y con opción a realización manual. Esto con el fin de homogeneizar criterios, reducir el error humano y reducir el esfuerzo invertido en esta tarea.
+	\item[Perfil propuesto:] \refElem{UnidadAcademica}.
+	\item[Tipo:] Cambio.
+\end{Cdescription}
+
+%------------- Acuerdo 4 -------------
+\hrule
+\vspace{0.2cm}
+\begin{Cdescription}
+	\item[Subproceso:] Admisión, Ingreso e Inscripción.
+	\item[Situación actual:] La estructura actual del SAES dificulta la operación cuando un alumno pertenece a más de un programa académico, plan de estudios o Unidad Académica.
+	\item[Perfil actual:] \refElem{DAE}: Departamento de Informática y de Supervisión.
+	\item[Solución propuesta:] Que el Calmécac contemple que un alumno puede estar participando:
+	\begin{Citemize}
+		\item en más de un \refElem{ProgramaAcademico}, 
+		\item en más de una \refElem{Modalidad}, 
+		\item en más de un \refElem{PlanDeEstudios} y 
+		\item en más de una \refElem{UnidadAcademica}.
+	\end{Citemize}
+	\item[Perfil propuesto:] \refElem{DAE}: Departamento de Informática y de Supervisión.
+	\item[Tipo:] Nuevo.
+\end{Cdescription}
+

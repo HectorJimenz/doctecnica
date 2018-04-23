@@ -1,0 +1,60 @@
+%========================================================
+%Arquitectura de Proceso
+%========================================================
+
+%========================================================
+%Revisión
+%-------------------------------------------
+
+% \UCccitem{Versión}{1}
+% \UCccsection{Análisis de Procesos }
+% \UCccitem{Autor}{nombreAutor}
+% \UCccitem{Evaluador}{nombreEvaluador}
+% \UCccitem{Prioridad}{Alta} %Alta, media, baja
+% \UCccitem{Estatus}{} %Edición, Terminado, Corrección, Aprobado 
+% \UCccitem{Complejidad}{Alta} %Alta, Media, Baja
+% \UCccitem{Volatilidad}{Alta} %Alta, Media, Baja
+% \UCccitem{Madurez}{Media}  %Alta, Media, Baja
+% \UCccsection{Control de cambios}
+% \UCccitem{Versión 0}{
+% \begin{UClist}
+% \RCitem{ Pxn T1}{Corregir la ortografía}{\DONE}
+% \TODO es para solicitar un cambio, \TOCHK Es para informar que se atendió el TODO, \DONE Es para indicar que el evaluador reviso los cambios.
+% \end{UClist}
+%}
+
+%========================================================
+% Descripción general del proceso
+%-----------------------------------------------
+\begin{Arquitectura}{AG-GP}{Arquitectura General del Proceso de Gestión de Profesores} {
+		
+		%-------------------------------------------
+		%Descripción
+		El proceso de gestión de profesores permite obtener la información de los docentes para la conformación de la \refElem{EstructuraAcademica}, a petición de las unidades académicas\footnote{ver \refElem{UnidadAcademica}} se envía el catálogo de profesores actualizado por parte de la \refElem{DCH}. Con esta infromación se inicia el proceso de Planeación de semestre y finalmente la generación de la \refElem{EstructuraAcademica} por Unidad.
+
+		%-------------------------------------------
+		%Diagrama de arquitectura
+		
+		\noindent La Figura \cdtRefImg{arq:AG-GP}{AG-GP Gestión de Profesores} muestra la interacción con los procesos que proporcionan la información necesaria para llevar a cabo sus funciones.
+
+		\Pfig[0.8]{pgp/imagenes/arquitecturadeprocesos.jpg}{arq:AG-GP}{AG-GP Arquitectura General de Gestión de Profesores}} {AG-GP}
+
+\end{Arquitectura}
+
+%========================================================
+%Interacción
+%-----------------------------------------------
+
+\begin{ADescripcion}
+	\item \textbf{PG-GP1 Unidad Académica}. La \refElem{UnidadAcademica} continuamente envía la información y actualización de la plantilla de los Profesores/Docentes (cambio de adscripción, actualización de estado, solicitud de sabatico, solicitud de basificación, etc) para mantener al día el catálogo de profesores de la Unidad.
+	
+	\item \textbf{PG-GP2 Capital Humano}. Los cambios o actualizaciones solicitadas por la \refElem{UnidadAcademica}, se procede a revisar su pertinencia y si es procedente se confirman los cambios y se envía para su procesamiento interno, en caso contrario se regresa una notificación de que no procede el cambio. 
+	
+	\item \textbf{PG-GP3 Gestión de Profesores}. Para iniciar todo el proceso de estructura académica se realiza primero una planeación del semestre, para esto la \refElem{UnidadAcademica} solicita la plantilla actualizada a \refElem{CapitalHumano} con la que realizará la estimación de horarios y grupos. 
+	
+	\item \textbf{PG-GP4 Consulta de Profesores}. La \refElem{DCH} recibe la solicitud de la \refElem{UnidadAcademica}, realiza una consulta y filtra a los docentes de la \refElem{UnidadAcademica} y los regresa en forma de un Catálogo de Profesores actualizado con la categoria de cada docente.  
+	
+	\end{ADescripcion}
+
+%\begin{PDescripcion}		
+%\end{PDescripcion}

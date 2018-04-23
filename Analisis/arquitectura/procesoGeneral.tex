@@ -1,0 +1,78 @@
+%========================================================
+%Proceso General
+%========================================================
+
+%========================================================
+%Revisión
+%-------------------------------------------
+
+% \UCccitem{Versión}{1}
+% \UCccsection{Análisis de Procesos }
+% \UCccitem{Autor}{nombreAutor}
+% \UCccitem{Evaluador}{nombreEvaluador}
+% \UCccitem{Prioridad}{Alta} %Alta, media, baja
+% \UCccitem{Estatus}{} %Edición, Terminado, Corrección, Aprobado 
+% \UCccitem{Complejidad}{Alta} %Alta, Media, Baja
+% \UCccitem{Volatilidad}{Alta} %Alta, Media, Baja
+% \UCccitem{Madurez}{Media}  %Alta, Media, Baja
+% \UCccsection{Control de cambios}
+% \UCccitem{Versión 0}{
+% \begin{UClist}
+% \RCitem{ Pxn T1}{Corregir la ortografía}{\DONE}
+% \TODO es para solicitar un cambio, \TOCHK Es para informar que se atendió el TODO, \DONE Es para indicar que el evaluador reviso los cambios.
+% \end{UClist}
+%}
+
+%========================================================
+% Descripción general del proceso
+%-----------------------------------------------
+\begin{procesoGeneral}{PG-P}{Postgrado} {
+
+		%-------------------------------------------
+		%Resumen
+		Resumen de la arquitectura del proceso.
+
+		%-------------------------------------------
+		%Diagrama del proceso
+		\noindent La Figura \cdtRefImg{pGeneral:PG-P}{PG-P Postgrado} muestra las actividades que se realizan para llevar a cabo el proceso descrito anteriormente.
+
+		\Pfig[1.15]{./arquitectura/imagenes/Macroproceso_de_postgrado.jpg}{pGeneral:PG-P}{PG-P Postgrado}
+	}{PG-P}
+
+\end{procesoGeneral}
+
+%========================================================
+%Descripción de tareas
+%-----------------------------------------------
+\begin{PDescripcion}
+	
+	%Actor: EscuelaLibredeDerecho
+	\Ppaso \textbf{Escuela Libre de Derecho Postgrado}
+	
+	\begin{enumerate}
+		%Subproceso 1
+		\Ppaso[\PSubProceso] \cdtLabelTask{PG-EA1:ELD}{ \textbf{PG-EA1 Estructuración Académica}.} Descripción general del subproceso. 
+				 
+		%Subproceso 2
+		\Ppaso[\PSubProceso] \cdtLabelTask{PG-A2:ELD}{ \textbf{PG-A2 Admisión}.} 
+		
+		%Subproceso 3
+		\Ppaso[\PSubProceso] \cdtLabelTask{PG-GA3:ELD}{ \textbf{PG-GA3 Gestión Académica}.} 
+		
+		%Subproceso 4
+		\Ppaso[\PSubProceso] \cdtLabelTask{PG-IR4:ELD}{ \textbf{PG-IR4 Inscripción/Reinscripción}.}  
+
+		%Subproceso 5
+		\Ppaso[\PSubProceso] \cdtLabelTask{PG-EP5:ELD}{ \textbf{PG-EP5 Ejecución de Periodo Escolar}.} 
+	
+		%Subproceso 6
+		\Ppaso[\PSubProceso] \cdtLabelTask{PG-PS6:ELD}{ \textbf{PG-PS6 Pago de Servicios}.} 
+
+		%Subproceso 7
+		\Ppaso[\PSubProceso] \cdtLabelTask{PG-SE7:ELD}{ \textbf{PG-SE7 Servicios a Estudiantes}.} 
+		
+		%Subproceso 8
+		\Ppaso[\PSubProceso] \cdtLabelTask{PG-T8:ELD}{ \textbf{PG-T8 Titulación}.} 
+
+	\end{enumerate}
+\end{PDescripcion}

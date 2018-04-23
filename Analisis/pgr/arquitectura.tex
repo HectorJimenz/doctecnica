@@ -1,0 +1,114 @@
+%========================================================
+%Arquitectura de Proceso
+%========================================================
+
+%========================================================
+%Revisión
+%-------------------------------------------
+
+% \UCccitem{Versión}{1}
+% \UCccsection{Análisis de Procesos }
+% \UCccitem{Autor}{nombreAutor}
+% \UCccitem{Evaluador}{nombreEvaluador}
+% \UCccitem{Prioridad}{Alta} %Alta, media, baja
+% \UCccitem{Estatus}{} %Edición, Terminado, Corrección, Aprobado 
+% \UCccitem{Complejidad}{Alta} %Alta, Media, Baja
+% \UCccitem{Volatilidad}{Alta} %Alta, Media, Baja
+% \UCccitem{Madurez}{Media}  %Alta, Media, Baja
+% \UCccsection{Control de cambios}
+% \UCccitem{Versión 0}{
+% \begin{UClist}
+% \RCitem{ Pxn T1}{Corregir la ortografía}{\DONE}
+% \TODO es para solicitar un cambio, \TOCHK Es para informar que se atendió el TODO, \DONE Es para indicar que el evaluador reviso los cambios.
+% \end{UClist}
+%}
+
+%========================================================
+% Descripción general del proceso
+%-----------------------------------------------
+\begin{Arquitectura}{AG-GR}{Arquitectura General del Proceso de Gestión de Reinscripción} {
+
+		
+		%-------------------------------------------
+		%Descripción
+		El Proceso de Gestión de Reinscripción se encarga de manejar la reinscripción de los alumnos al siguiente periodo escolar. Esto puede ser para la modalidad escolarizada, mixta o virtual. Para realizar la reinscripción de un \refElem{Alumno} se requiere la interacción con otros procesos de los cuales obtiene información relativa a la estructura académica, citas de reinscripción en linea o en ventanilla, unidades de aprendizaje a inscribir, dictámenes dependiendo la situación académica el \refElem{Alumno}, casos especiales como saberes previamente adquiridos y unidades de aprendizaje que requieren la autorización expresa de algunos departamentos académicos o que liberan créditos como los es el servicio social o las unidades de aprendizaje electivas. \\
+		
+		Otros aspectos importantes a considerar durante la reinscripción de un \refElem{Alumno} son los tiempos en los que se puede realizar la reinscripción, así como consideraciones de la estructura académica que puede afectar la oferta, como es el caso del cierre de un grupo o autorización de algún sobrecupo de alguna unidad de aprendizaje. Una vez que se ejecuta el proceso de gestión de reinscripción del \refElem{Alumno} lo que se proporciona como salida es la reinscripción del \refElem{Alumno}.	\\
+
+		%-------------------------------------------
+		%Diagrama de arquitectura
+		\noindent La Figura \cdtRefImg{arq:AG-GR}{AG-GR Diagrama de Arquitectura General del Proceso de Reinscripción} muestra la interacción con los procesos que proporcionan la información necesaria para llevar a cabo sus funciones.
+
+
+		\Pfig[1.0]{pgr/imagenes/PGR_Arquitectura_Reinscripciones}{arq:AG-GR}{AG-GR Diagrama de Arquitectura General del Proceso de Reinscripción}
+		
+	}{AG-IR3}
+
+\end{Arquitectura}
+
+%========================================================
+%Interacción
+%-----------------------------------------------
+
+\begin{ADescripcion}
+	\item \textbf{Unidades Académicas}.
+	
+	\begin{itemize}
+
+	%\item \textbf{UPIS:} Se encarga de enviar el listado de alumnos que se encuentran en el proceso de movilidad.
+	 
+	\item \textbf{Gestión de Bajas Temporales:} El \refElem{DepartamentoDeGestionEscolar} en conjunto con el Supervisor de la \refElem{DAE}, realizan las acciones necesarias para dar de baja a los alumnos que solicitaron baja temporal durante la ejecución del ciclo escolar, el supervisor de la \refElem{DAE} modifica el estado del \refElem{Alumno} a baja temporal la cual puede durar un semestre o dos de acuerdo al Reglamento General de Estudios, una vez realizado esto el \refElem{SAES} genera un oficio de baja temporal, mismo que será usado cuando se requiera habilitar al alumno. Antes de iniciar el periodo de reinscripciones el Supervisor de la \refElem{DAE} debe habilitar nuevamente a los alumnos en baja temporal para que estén activos y pueda proceder su reinscripción.\\
+	
+	\item \textbf{Gestión de Unidades de Aprendizaje:} La \refElem{SubdireccionAcademica} se encarga de definir y dejar la estructura académica de cada periodo escolar cargada en el \refElem{SAES}. Los diferentes departamentos académicos que dependen de esta subdirección son los encargados de evaluar la ocupabilidad de las unidades de aprendizaje\footnote{ver \refElem{UnidadDeAprendizaje}} durante el periodo de reinscripción, por lo que si es necesario cerrar alguna \refElem{UnidadDeAprendizaje} de algún grupo en particular, son los que se encargan de reasignar a los alumnos a otros grupos, así como autorizar sobrecupos a los alumnos a Unidades de Aprendizaje con alta demanda. De la misma forma la \refElem{SubdireccionAcademica} es la encargada de autorizar las Unidades de Aprendizaje para los alumnos que solicitan cursarla en otra  \refElem{UnidadAcademica}, así como realizar todo el procedimiento para autorizar la acreditación de la \refElem{UnidadDeAprendizaje} Electiva.
+	\\
+
+	\item \textbf{Gestión de Casos Especiales:} La \refElem{SubdireccionDeServiciosEducativosEIntegracionSocial} se encarga de autorizar las bajas de unidades de aprendizaje a los alumnos, ésta autorización se puede realizar únicamente durante las primeras tres semanas de iniciado el \refElem{PeriodoEscolar}. La \refElem{SubdireccionDeServiciosEducativosEIntegracionSocial} a través del \refElem{DepartamentoDeExtensionyApoyosEducativos} gestionan y generan la liberación del servicio social para aquellos alumnos que han cumplido con todo el proceso. La \refElem {SubdireccionDeServiciosEducativosEIntegracionSocial} a través de la \refElem{ComisionDeSituacionEscolar} que depende del \refElem{ConsejoTecnicoConsultivoEscolar}, se encargan de autorizar al \refElem{Alumno} los cambios de modalidad escolarizada, baja definitiva y cambios de carrera.\\
+	
+	 Otro caso especial es la inscripción de unidades de aprendizaje que requieren autorización por algún departamento, que tienen requisitos para poder ser inscritas, como es el caso de las unidades de aprendizaje llamadas Trabajo Terminal. Así como la gestión de las evaluaciones de saberes previamente adquiridos que son gestionados por las diferentes academias que dependen de la \refElem{SubdireccionAcademica}.\\
+	
+	
+	\item \textbf{Gestión de Movilidad:} La \refElem{UnidadPolitecnicaDeIntegracionSocial} es la encargada de gestionar el proceso de movilidad, además se encarga de generar un listado de los alumnos que tienen autorizada la movilidad durante el \refElem{PeriodoEscolar} que es enviado al \refElem{DepartamentoDeGestionEscolar} para ser considerado durante el periodo de reinscripción, ya que  se debe hacer un cambio en su reinscripción debido a que las unidades de aprendizaje inscritas en la \refElem{UnidadAcademica} durante el periodo de movilidad deben darse de baja.\\
+	
+
+	\end{itemize}
+
+	\item \textbf{Secretaría Académica}.
+
+	\begin{itemize}
+
+	
+	\item \textbf{Generación de Calendario Escolar}. La \refElem{SecretariaAcademica} es la encargada de dar a conocer el calendario escolar aplicable a las diferentes modalidades: presencial, mixta y virtual de las Unidades Académicas en el cual se reflejan los tiempos establecidos para los periodos de reinscripción, evaluación de \refElem{ETS}, Saberes Previamente Adquiridos, entre otros.\\
+	
+	\end{itemize}
+
+	\item \textbf{Dirección de Administración Escolar}.
+	
+	\begin{itemize}
+		
+	\item \textbf{Gestión de Citas de Reinscripción:} La \refElem{DAE} recibe por parte de las Unidades Académicas las solicitudes de generación de citas de reinscripción para que los alumnos puedan realizar su reinscripción  en línea a través del \refElem{SAES}. Las Unidades Académicas envían una serie de criterios a considerar para la generación de citas, los cuales incluyen entre otros: el horario de inicio y término de reinscripción, días de citas, numero de unidades de aprendizaje adeudadas (0, 1 o dos unidades de aprendizaje adeudadas) ordenados de mayor a menor promedio, sin adeudos desfasados, entre otros. Una vez que la \refElem{DAE} genera  y publica las citas en el sistema \refElem{SAES} para así ser visualizadas por el \refElem{Alumno}, envía a la \refElem{UnidadAcademica} el listado en formato excel con los datos de los alumnos y los detalles de su cita. Para los casos donde el \refElem{Alumno} no cubre alguno de estos criterios deben acudir directamente a ventanilla para realizar su reinscripción personalmente y  analizar su situación académica. \\
+	 	
+	
+	\item \textbf{Gestión de Equivalencias:} La \refElem{DAE} es la encargada de gestionar los cambios de carrera siguiendo el proceso que marca la convocatoria vigente. La \refElem{DAE} es la encargada de publicar a través de una plataforma la información relacionada con los cambios de carrera autorizados para los alumnos y que trabaja en conjunto con la \refElem{DES}. La \refElem{DAE} genera  un oficio que es la formalización de las equivalencias para los alumnos en donde se muestra las unidades de aprendizaje que se revalidaron. 
+	
+	\end{itemize}
+	
+	\item \textbf{Dirección de Educación Superior}.
+	
+	\begin{itemize}
+	\item \textbf{Gestión de Dictámenes:} El \refElem{DepartamentoDeTrayectoriasAcademicas} genera los dictámenes que ratifican baja del \refElem{Alumno} que se excedió del tiempo, reconocimiento de calificaciones, ampliación de plazo, autorización de presentar \refElem{ETS} o autorización de recursamientos. De aprobar con las condicionantes del dictamen se permite continuar con su \refElem{TrayectoriaEscolar}. 
+	
+	Para los cambios de carreras, genera las autorizaciones a través de un dictamen técnico académico, donde especifica las equivalencias de materias, este dictamen es enviado a la \refElem{DAE} para completar su proceso.
+	
+	\item \textbf{Aprobación de Estructura Académica:} Genera la \refElem{EstructuraAcademica} aprobada que se trabajó en conjunto con el  \refElem{CapitalHumano}. 
+	\end{itemize}
+	
+	\item \textbf{Alumno}.
+	
+	\begin{itemize}
+	\item \textbf{Solicitud reinscripción}. En este proceso el actor realiza la solicitud de reinscripción conforme a los criterios establecidos de acuerdo a su situación académica, de ser aprobada, realiza la selección de horarios para las Unidades de Aprendizaje que desee inscribir, y como resultado recibe su reinscripción registrada en el \refElem{SAES}.
+	\end{itemize}
+
+\end{ADescripcion}
+
+%\begin{PDescripcion}		
+%\end{PDescripcion}

@@ -1,0 +1,93 @@
+\subsection{Validación de Cambios del Proceso de Gestión de Profesores}
+\label{section:PF-GP:validacion}
+%Perfil actual: La consulta de la información de los profesores no es actualizada ni n tiempo real.
+%Tipo: generar una solicitud e intercambio de información  
+
+%------------- Acuerdo 1 -------------
+\hrule
+\vspace{0.2cm}
+\begin{Cdescription}
+	\item[Subproceso:] Planeación Académica 
+	\item[Situación actual:] La información de los docentes se solicita cada semestre, dicha información por su naturaleza no se tiene totalmente actualizada en las Unidades Académicas al momento de realizar la planeación de horarios. 
+	\item[Perfil actual:] \refElem{UnidadAcademica}:
+	\item[Solución propuesta:] 
+	%Que
+	Que la Dirección de Capital Humano provea un servicio Web, con el objeto de obtener la información de los profesores que se requiere para definir la planeación académica, la cual consiste en:
+	\begin{itemize}
+		\item Nombre 
+		\item RFC
+		\item Número de empleado
+		\item Grado Académico
+		\item Especialidad
+		\item Fecha de Ingreso
+		\item Carga máxima 
+		\item Turno / Horario Laboral
+		\item Horas Base
+		\item Horas Interinato
+		\item Horas de Actividades Complementarias
+		\item Categoría/Dictamen
+		\item Carga Máxima
+		\item Horas frente a grupo
+	    \item Descarga Académica
+		\item Clave de Unidad Académica
+		\item Nombre de la Unidad Académica
+		\item Materias Impartidas
+		\item Modalidad en la que imparte clase
+	\end{itemize}
+Se espera de este servicio web pueda consultar la información actualizada de los profesores en el momento que se requiera para la planeación académica.  
+
+	\item[Perfil propuesto:] \refElem{UnidadAcademica}: \refElem{CapitalHumano} de las Unidades Académicas.
+	\item[Tipo:] Cambio.
+\end{Cdescription}
+
+%------------- Acuerdo 2 -------------
+\hrule
+\vspace{0.2cm}
+\begin{Cdescription}
+	\item[Subproceso:] Contratación de Profesores
+	\item[Situación actual:] Actualmente si se requiere de profesores para cubrir las horas frente a grupo, se realiza una revisión de este número de horas propuesto, con DES, DEMS y con DCH. Con esto se define un número de horas autorizado y hasta ese momento se realizan las convocatorias pertinentes y se realiza la selección de profesores. Esto genera un atraso pues no se tiene completa la estructura académica hasta ese momento.  
+	\item[Perfil actual:] \refElem{UnidadAcademica}:
+	\item[Solución propuesta:] 
+	%Que
+	El sistema debería registrar a los profesores que cubrirían estas vacantes como ``Profesores Candidatos'' pero se tendría que validar si esto es factible o no por las reglamentaciones laborales y sindicales. 
+	
+	\item[Perfil propuesto:] \refElem{UnidadAcademica}: Departamento de Capital Humano de las Unidades Académicas.
+	\item[Tipo:] Cambio.
+\end{Cdescription}
+
+%------------- Acuerdo 3 -------------
+\hrule
+\vspace{0.2cm}
+\begin{Cdescription}
+	\item[Subproceso:] Profesores Invitados IPN
+	\item[Situación actual:] Actualmente los profesores invitados se registran en el SAES pero no se tiene este registro en la Dirección de Capital Humano.  
+	\item[Perfil actual:] \refElem{UnidadAcademica}:
+	\item[Solución propuesta:] 
+	%Que
+	El sistema requiere consultar a los profesores del IPN que no pertenecen a la Unidad Académica, esto se sugiere sea por medio de un servicio web. 
+
+    \item[Perfil propuesto:] \refElem{UnidadAcademica}: \refElem{CapitalHumano} de las Unidades Académicas.
+	\item[Tipo:] Cambio.
+\end{Cdescription}
+
+%------------- Acuerdo 4 -------------
+\hrule
+\vspace{0.2cm}
+\begin{Cdescription}
+	\item[Subproceso:] Profesores Invitados Externos
+	\item[Situación actual:] Actualmente los profesores invitados que no pertenecen al IPN se registran en el SAES pero no se tiene este registro en la Dirección de Capital Humano.  
+	\item[Perfil actual:] \refElem{UnidadAcademica}:
+	\item[Solución propuesta:] 
+	%Que
+	El sistema requiere un registro temporal de los profesores invitados externos, sin generar un compromiso laboral con el Instituto. 
+	
+	\item[Perfil propuesto:] \refElem{UnidadAcademica}: \refElem{CapitalHumano} de las Unidades Académicas.
+	\item[Tipo:] Cambio.
+\end{Cdescription}
+
+
+
+
+
+
+

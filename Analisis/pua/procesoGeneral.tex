@@ -1,0 +1,157 @@
+%========================================================
+%Proceso General
+%========================================================
+
+%-------------------------------------------
+% Ultima Revisión: Ulises
+% Fecha: 7 de Junio.
+% Revisar comentarios con REV:
+
+%========================================================
+% Descripción general del proceso
+%-----------------------------------------------
+\begin{procesoGeneral}{PG-EA}{Proceso General de Estructura Académica} {
+		
+	%-------------------------------------------
+	% REV: 
+	En esta sección se muestran los subprocesos que componen al proceso de estructura académica. Especifica las funciones que cada área del Instituto debe realizar desde que se genera la propuesta de \refElem{EstructuraAcademica} hasta que se aprueba incluyendo las horas de interinato, esto se lleva acabo mediante los subprocesos que se describen en la siguiente sección.\\
+					
+	%-------------------------------------------
+	%Diagrama del proceso
+	La figura \cdtRefImg{pGeneral:PG-EA}{Estructura Académica} muestra la secuencia de actividades que se realizan para llevar a cabo el proceso que se describe a continuación.
+		
+	\PfigFull[.9]{pua/imagenes/ProcesoGeneralEA}{pGeneral:PG-EA}{PG-EA Diagrama del Proceso General de Estructura Académica}
+	}{PG-EA}
+
+\end{procesoGeneral}
+
+%========================================================
+%Descripción de tareas
+%-----------------------------------------------
+\begin{PDescripcion}
+	
+	%Actor: Unidad Académica
+	\Ppaso \textbf{Unidad Académica}
+	
+	\begin{enumerate}
+		
+		%Subproceso 1
+		\Ppaso[\PSubProceso] \cdtLabelTask{P-EA1}{ \textbf{P-EA1 Generación de propuesta de \refElem{EstructuraAcademica}}.}
+		La \refElem{UnidadAcademica} genera una propuesta una vez que ha integrado información de los programas académicos (mapa curricular), horarios y profesores. Esa propuesta incluye:
+		\begin{itemize}
+			\item Cuántos grupos por \refElem{UnidadDeAprendizaje} se necesitan ofertar
+			\item La capacidad de alumnos por grupo
+			\item El horario en el que se impartirán
+			\item El \refElem{Profesor} asignado
+		\end{itemize}
+		
+		En caso de que la \refElem{UnidadAcademica} no cuente con profesores que puedan cubrir alguna \refElem{UnidadDeAprendizaje} por grupo, eso se verá reflejado como una posible solicitud de horas de interinato.
+
+		%Subproceso 2
+		\Ppaso[\PSubProceso] \cdtLabelTask{P-EA2}{ \textbf{P-EA2 Solicitud de horas de interinato}.}
+		Una vez que la \refElem{UnidadAcademica} ha agotado la asignación de los profesores de base, solicita a la \refElem{DES} las horas de interinato que necesita para cubrir la \refElem{EstructuraAcademica}. Posteriormente se ejecuta el proceso de Evaluación de la estructura académica por parte de la \refElem{DES} para que avale indique alguna reestructuración de la estructura si es necesario.
+	%\cdtRefTask{P-EA1}{P-EA1 Propuesta de estructura académica}
+		%Subproceso 3
+		\Ppaso[\PSubProceso] \cdtLabelTask{P-EA3}{ \textbf{P-EA3 Reestructuración académica}.}
+		Una vez que la \refElem{UnidadAcademica} recibió la lista con las propuestas de docentes que pueden cubrir las necesidades, puede:
+		\begin{itemize}
+			\item Hacer uso de esas propuestas
+			\item Justificar el por qué esas propuestas no son viables
+			\item Hacer caso omiso de las propuestas de la lista y mandar una nueva propuesta a la \refElem{DES}
+		\end{itemize}
+		Este ciclo se repite hasta que la estructura educativa queda aprobada por la \refElem{DES}.
+		
+		
+		%Subproceso 4
+		\Ppaso[\PSubProceso] \cdtLabelTask{P-EA4}{ \textbf{P-EA4 Registro en el SRN}.}
+		Una vez que la \refElem{DCH} aprobó las horas de interinato la \refElem{UnidadAcademica} se encarga de cargar en el \refElem{SRN} la estructura académica que será cubierta por los docentes interinos.\\
+		Se consideran diferentes tipos de profesores interinos:
+		\begin{itemize}
+			\item Interinos: son aquellos que están cubriendo horas de necesidad de la \refElem{UnidadAcademica}
+			\item De incidencia: son aquellos que están sustituyendo a algún profesor de base
+			\item De honorarios: son aquellos que están cubriendo horas de necesidad de la \refElem{UnidadAcademica} pero generalmente son personas externas al Instituto, por ejemplo los médicos que imparten clases en algún hospital fuera de las instalaciones del Instituto.
+		\end{itemize}
+		Adicionalmente existe un caso especial de profesores, que son los invitados, sin embargo ellos no son registrados en el \refElem{SRN}, pero sí son registrados en el \refElem{SAES} porque tienen al menos un grupo a su cargo.
+		
+		%Subproceso 5
+		\Ppaso[\PSubProceso] \cdtLabelTask{P-EA5}{ \textbf{P-EA5 Obtención de aulas}.}
+		Una vez que la \refElem{EstructuraAcademica} está autorizada, cada \refElem{UnidadAcademica} asigna las aulas donde se impartirán las Unidades de Aprendizaje\footnote{ver \refElem{UnidadDeAprendizaje}}. Este dato acompleta la estructura educativa del próximo periodo.
+
+		%Subproceso 6
+		\Ppaso[\PSubProceso] \cdtLabelTask{P-EA6}{ \textbf{P-EA6 Registro de horarios en el SAES}.}
+		La \refElem{UnidadAcademica} se encarga de registrar manualmente en el \refElem{SAES} los horarios de acuerdo a la \refElem{EstructuraAcademica}, definiendo así:
+		\begin{itemize}
+			\item Nombre del grupo
+			\item Unidades de aprendizaje por grupo
+			\item \refElem{Profesor} asignado a la \refElem{UnidadDeAprendizaje} por grupo
+			\item Capacidad máxima de alumnos por grupo
+			\item Espacio asignado para impartir una \refElem{UnidadDeAprendizaje}
+		\end{itemize}
+		
+		%Subproceso 7
+		\Ppaso[\PSubProceso] \cdtLabelTask{P-EA7}{ \textbf{P-EA7 Ajuste a la estructura}.}
+		Una vez iniciado el semestre de la \refElem{EstructuraAcademica} aprobada, podrían surgir necesidades y modificaciones en la \refElem{UnidadAcademica}, por ejemplo reinscripciones extraordinarias, cierre de grupos, entre otros.
+		
+	\end{enumerate}
+	%Actor: Dirección de Educación Superior
+	\Ppaso \textbf{Dirección de Educación Superior}
+		
+		\begin{enumerate}
+		%Subproceso 8
+		\Ppaso[\PSubProceso] \cdtLabelTask{P-EA8}{ \textbf{P-EA8 Evaluación de la estructura académica }.}
+			La \refElem{DGYCE} se encarga de:
+		\begin{itemize}
+			\item Revisar que todos los docentes cubran la carga máxima reglamentario establecida en el \refElem{RCITPAIPN}, de no ser así debe identificar las causas. Para esto, la \refElem{UnidadAcademica} debe haber presentado el soporte documental.
+			\item Agotar toda posibilidad de que las horas en interinato que solicita la \refElem{UnidadAcademica} hayan sido asignadas a docentes de base con algún adeudo a su carga reglamentaria.\\
+		\end{itemize}
+		Para realizar estas tareas se apoyan principalmente de cuatro reportes generados por el \refElem{SIIEE}:
+		\begin{itemize}
+			\item \textbf {Nómina:} Se utiliza para verificar datos de cada docente, por ejemplo la categoría con la que cuentan y si tienen algún dictamen que justifique el no tener carga máxima frente a grupo.
+			\item \textbf {Histórico:} Se genera por cada docente y se refiere a las unidades de aprendizaje que ha impartido en una \refElem{UnidadAcademica}. Este reporte es de utilidad para verificar qué docentes podrían cubrir las unidades de aprendizaje que faltan por asignarse.
+			\item \textbf {\refElem{RUAA}:} Lo ocupan para consultar los horarios y turnos de cada docente.
+			\item \textbf {Materias por grupo sin cubrir:} Este formato contiene las necesidades en horas de interinato que solicitan las Unidades Académicas.
+		\end{itemize}
+		
+		%Subproceso 9
+		\Ppaso[\PSubProceso] \cdtLabelTask{P-EA9}{ \textbf{P-EA9 Envío de propuesta de reestructuración académica}.}
+		Con base en un análisis, la \refElem{DGYCE} obtiene un listado de docentes que posiblemente pueden cubrir las necesidades que tiene la \refElem{UnidadAcademica}, después la depuran manualmente y ese listado lo mandan a cada \refElem{UnidadAcademica}.
+
+		%Subproceso 10
+		\Ppaso[\PSubProceso] \cdtLabelTask{P-EA10}{ \textbf{P-EA10 Solicitud de autorización de horas de interinato}.}
+		Cuando se tiene la versión final de la \refElem{EstructuraAcademica} después de su revisión y aprobación, la \refElem{DGYCE} envía el archivo de liberación de la estructura de cada \refElem{UnidadAcademica} aprobada por la \refElem{DES} a la \refElem{DCH}.
+		
+		%Subproceso 11
+		\Ppaso[\PSubProceso] \cdtLabelTask{P-EA11}{ \textbf{P-EA11 Valoración de horas autorizadas}.}
+		La \refElem{DES} hace una valoración de las horas autorizadas por la \refElem{DCH} para determinar si son suficientes o se requiere hacer nuevamente la petición con base en las horas de necesidad identificadas.
+		
+		%Subproceso 12
+		\Ppaso[\PSubProceso] \cdtLabelTask{P-EA12}{ \textbf{P-EA12 Notificación de las horas autorizadas a la Unidad Académica }.}
+		La \refElem{DES} se encarga de notificarle a las Unidades Academicas las horas autorizadas por la \refElem{DCH}. Una vez que han sido autorizadas las horas de interinato, la \refElem{DCH} habilita el \refElem{SRN} para que la \refElem{UnidadAcademica} pueda proceder con el proceso de registro en el SRN.
+		
+		\end{enumerate}
+	
+	%Actor: Dirección de Capital Humano
+	\Ppaso \textbf{Dirección de Capital Humano}
+	
+	\begin{enumerate}
+		%Subproceso 13
+		\Ppaso[\PSubProceso] \cdtLabelTask{P-EA13}{ \textbf{P-EA13 Registro de estructura académica}.}
+		Concluido el proceso Generación de propuesta de estructura académica, cada \refElem{UnidadAcademica} se encarga de registrar dicha propuesta en el \refElem{SIIEE}, la cual contiene únicamente a profesores de base registrados en la \refElem{DCH}.
+		
+		%Subproceso 14
+		\Ppaso[\PSubProceso] \cdtLabelTask{P-EA14}{ \textbf{P-EA14 Evaluación de solicitud}.}
+		La \refElem{DCH} se encarga de evaluar la liberación de estructura de cada \refElem{UnidadAcademica} que ya está aprobada por la \refElem{DES}, es decir, concluye si le darán las horas de interinato solicitadas a la \refElem{UnidadAcademica} o cuántas le serán autorizadas.
+		
+		%Subproceso 15
+		\Ppaso[\PSubProceso] \cdtLabelTask{P-EA15}{ \textbf{P-EA15 Autorización de horas de interinato}.}
+		La \refElem{DCH} decide si se autorizan o no las horas solicitadas o cuántas para cada \refElem{UnidadAcademica} y esto se lo notifica a la \refElem{DES}. Posteriormente habilita el acceso al \refElem{SRN} a las Unidades Academicas para que ingresen los datos de los profesores interinos de nuevo ingreso, así como la \refElem{EstructuraAcademica} asignada a los mismos y a los interinos recurrentes.
+
+		%Subproceso 16
+		\Ppaso[\PSubProceso] \cdtLabelTask{P-EA16}{ \textbf{P-EA16 Validación de información del SRN}.}
+		La \refElem{DCH} se encarga de verificar y validar que la información que registraron las Unidades Académicas en el \refElem{SRN} corresponda a las horas de interinato autorizadas.
+
+		
+	\end{enumerate}		
+
+
+\end{PDescripcion}

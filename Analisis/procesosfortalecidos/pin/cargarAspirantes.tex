@@ -1,0 +1,104 @@
+\begin{Proceso}{SPR-2}{Carga de Aspirantes}{
+		Subproceso en el cual el \refElem{Calmecac} realiza y supervisa la carga de aspirantes de acuerdo a los parámetros definidos en el \refElem{SPR-1} por el \refElem{DepartamentoDeRegistroYSupervisionEscolar}.
+	}
+	{SPR.2.X}
+	\PRccsection{Datos para control interno}
+	\PRccitem{Versión}{1}
+	\PRccitem{Autor}{Francisco Isidoro Mera Torres}
+	\PRccitem{Evaluador}{Ulises Veléz Saldaña}
+	\PRccitem{Prioridad}{Alta}
+	\PRccitem{Estatus}{Corrección}
+	\PRccitem{Complejidad}{Media}
+	\PRccitem{Volatilidad}{Baja}
+	\PRccitem{Madurez}{Media}
+	\PRccsection{Control de cambios}
+	\PRccitem{Versión 0}{
+		\begin{Titemize}
+			%\RCitem{ PC1}{Corregir la ortografía}{\DONE}
+			%\TODO es para solicitar un cambio \TOCHK Es para informar que se atendió el TODO(ya hizo las correcciones),\DONE Es para indicar que el e valuador reviso los cambios.
+		\end{Titemize}
+	}
+	\PRitem{Participantes}{
+		Supervisor del \refElem{DepartamentoDeRegistroYSupervisionEscolar},\refElem{Calmecac}
+	}
+	\PRitem{Objetivo}{
+		Supervisar la carga hecha por el calmecac o permitirle al \refElem{DepartamentoDeRegistroYSupervisionEscolar} hacerlo manualmente .
+	}
+	\PRitem{Interrelación con otros procesos}{	
+		\begin{Titemize}
+			\Titem \refPR{SPR-1}
+		\end{Titemize}
+	}
+	\PRitem{Proveedores}{
+		\refElem{DepartamentoDeInformaticaYEstadisticaEscolar}
+	}
+	\PRitem{Entradas}{
+		\begin{Titemize}
+			\Titem Parámetros de Carga
+			\Titem Excel de Aspirantes Asignados
+		\end{Titemize}		
+	}
+	\PRitem{Consumidores}{
+		\refElem{DepartamentoDeRegistroYSupervisionEscolar}
+	}
+	\PRitem{Salidas}{
+		\begin{Titemize}
+			\Titem Aspirantes registrados con \refElem{Preboleta}
+		\end{Titemize}		
+	}
+	\PRitem{Precondiciones}{
+		\begin{Titemize}
+			\Titem Los aspirantes debieron haber sido asignados a las unidades académicas.
+		\end{Titemize}
+	}
+	\PRitem{Postcondiciones}{
+		\begin{Titemize}
+			\Titem El \refElem{Aspirante} tiene una \refElem{Preboleta} con la que puede ingresar al sistema.
+		\end{Titemize}
+		
+	}
+	\PRitem{Frecuencia}{
+		Programado
+		% Periódico: Cada cierto tiempo: diario, semanal, anual, etc.
+		% Programado: Alguien en algún momento establece la fecha.
+		% Eventual: Cada que ocurre un evento que no se puede prever ni programar.
+	}
+	\PRitem{Tipo}{
+		Operación
+	}
+	% Operacion: Proceso asociado a las actividades propias de la operación del RENIECYT.
+	% Mejora continua: Porcesos asociados a actividades de mejora continua del proceso actual.
+	% Soporte: Procesos asociados a actividades indirectas necesarias para operar el RENIECYT.
+	\PRitem{Áreas de Mejora}{
+		\refElem{PI-AO1},\refElem{PI-AO2}
+	}
+\end{Proceso}
+
+La figura \cdtRefImg{spr:Cargar}{SPR2-Carga de Aspirantes} muestra las actividades que componen el presente subproceso.
+
+\Pfig[1]{procesosfortalecidos/pin/SPR2-CargadeAspirantes}{spr:Cargar}{SPR2-Carga de Aspirantes}
+
+
+\begin{PDescripcion}
+	%\subsubsection{Calmecac}
+	
+	% Actor: Calmecac
+
+	%Actor: Departamento de Registro Y Supervisión Escolar
+	\Ppaso \textbf{Departamento de Registro y Supervisión Escolar}
+	\begin{enumerate}
+		\Ppaso [\Einicio] El subproceso inicia por decisión propia del supervisor del \refElem{DepartamentoDeRegistroYSupervisionEscolar} o por que se recibe el mensaje \refMSG{MSG7}{MSG-Operación por Atender}.
+		
+		\Ppaso [\itarea] \cdtLabelTask{CUVerificarCargasPrevias}{CU-Verificar Cargas Recientes:} El supervisor del \refElem{DepartamentoDeRegistroYSupervisionEscolar} recibe por parte del \refElem{Calmecac} todas las cargas que necesitan su confirmación para realizar el registro a los aspirantes al sistema. Continúa con la tarea \cdtRefTask{CUCorregirRegistrosDeAspirantes}{CU-Corregir registros de aspirantes}, a menos que el supervisor haya decidido realizar la carga manualmente, en ese caso continúa con la tarea \cdtRefTask{CUCargarAspirantesManualmente}{CU-Cargar Aspirantes Manualmente}, o si todo esta bien continúa con la tarea \cdtRefTask{CUConfirmaODeshaceOperacion}{CU-Confirma O Deshace la Operación}
+		
+		\Ppaso [\itarea] \cdtLabelTask{CUCorregirRegistrosDeAspirantes}{CU-Corregir registros de aspirantes:} En esta tarea el supervisor del \refElem{DepartamentoDeRegistroYSupervisionEscolar} realiza las correciones necesarias o que se presentaron durante la carga que el \refElem{Calmecac} realizó.Continúa con la tarea \cdtRefTask{CUConfirmaODeshaceOperacion}{CU-Confirma O Deshace la Operación}.
+		
+		\Ppaso [\itarea] \cdtLabelTask{CUCargarAspirantesManualmente}{CU-Cargar Aspirantes Manualmente:} El supervisor del \refElem{DepartamentoDeRegistroYSupervisionEscolar} decide si quiere realizar la carga de aspirantes manualmente, pudiendo así identificar al momento errores y corregirlos.Se continúa con la tarea \cdtRefTask{CUConfirmaODeshaceOperacion}{CU-Confirma O Deshace la Operación}.
+		
+		
+		\Ppaso [\itarea] \cdtLabelTask{CUConfirmaODeshaceOperacion}{CU-Confirma O Deshace la Operación} El supervisor del \refElem{DepartamentoDeRegistroYSupervisionEscolar} puede deshacer una carga reciente\footnote{Para el ciclo escolar actual}hecha si se encuentra o detecta algún error en otro departamento, o si la operación ha concluido, confirmarla y verificar otra carga reciente.
+	\end{enumerate}
+	 
+	
+\end{PDescripcion}
+

@@ -1,0 +1,50 @@
+\begin{UseCase}{CU05}{Gestionar Propuesta de Centros de Recolección}
+    {
+    Permite generar propuestas de los Centros de Recolección en el sistemas SIESM. 
+    }
+     \UCitem{Versión}{0.1}
+  \UCccsection{Datos para el control Interno}  
+  \UCitem{Autor}{Héctor Iván Jimenez Romero}
+  \UCccitem{Evaluador}{Ulises Veléz Saldaña}
+  \UCitem{Operación}{Administra}
+  \UCccitem{Prioridad}{Media}
+  \UCccitem{Complejidad}{Media}
+  \UCccitem{Volatilidad}{Media}
+  \UCccitem{Madurez}{Media}
+  \UCitem{Estatus}{Edición}
+  \UCitem{Fecha del último estatus}{28 de marzo de 2018}
+  \UCccsection{Revisión Version 0.1}
+  \UCccitem{Fecha}{}
+  \UCccitem{Evaluador}{Ulises Veléz Saldaña}
+  \UCccitem{Resultado}{}
+  \UCccitem{Observaciones}{}
+  \UCsection{Atributos}
+   \UCitem{Actor(es)}{\refElem{ciudadano}}
+  \UCitem{Propósito}{Contar con un medio en el que el actor pueda gestionar la información de su Propuesta de los Centros de Recolección que seran enviadas por los Ciudadanos..}
+  \UCitem{Entradas}{Ninguna}
+  \UCitem{Origen}{Teclado movil}
+  \UCitem{Salidas}{Realizacion de su Propuesta de centro de recolección en el sistema SIESM.}
+  \UCitem{Precondiciones}{El cuidadano tiene que tener un lugar adecuado.}
+  \UCitem{Postcondiciones}{El lugar quedara registrado en el sistema SIESM.}
+  \UCitem{Reglas de Negocio}{Ninguna}
+  \UCitem{Errores}{Ninguno}
+  \UCitem{Disparador(es)}{}
+  \UCitem{Condiciones de Término}{Ninguna}
+  \UCitem{Efectos Colaterales}{Cuidadano Propone,modifica,elimina y ve su centro de recolección propuesto}
+  \end{UseCase}
+ 
+ 
+%Trayectoria Principal : Happy Path
+ 
+\begin{UCtrayectoria}
+	\item \UCactor Selecciona opcion gestionar propuesta de centros de recolección via la \IUref{IU11}{Pantalla de Gestión de Mis Propuestas de Centros de Recolección} (ver figura~\ref{IU11})
+	\UCpaso Verifica la conexión a internet.\refTray{A}
+	\UCpaso Despliega la \IUref{IU11}{Pantalla de Gestión de Mis Propuestas de Centros de Recolección} (ver figura~\ref{IU11})ya registrados y con la información general acerca de lo que es un Centros de Recolección.
+	\item \UCactor Vizualizara su propuesta de centro de recoloeccion en el sistema.
+	\item \UCactor Podra modificar , eliminar o crear una nueva propuesta de centro de recoleccion. 
+\end{UCtrayectoria}
+ 
+ \begin{UCtrayectoriaA}{A}{ Cuando no se tenga acceso a internet.}
+  \UCpaso Muestra un MNSG02-"Conectese a internet".
+  \item \UCactor Regresa al paso 1 del CU5.
+\end{UCtrayectoriaA}

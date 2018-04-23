@@ -1,0 +1,82 @@
+\begin{UseCase}{CU1}{Crear Usuario}{
+		Permite que el actor se registre  via IU04 para tener acceso al sistema SEIMS.\\
+		
+}
+	\UCitem{Versión}{0.1}
+	\UCccsection{Datos para el control Interno}	
+	\UCitem{Autor}{Héctor Iván Jimenez Romero}
+	\UCccitem{Evaluador}{Ulises Veléz Saldaña}
+	\UCitem{Operación}{Registrar}
+	\UCccitem{Prioridad}{Alta}
+	\UCccitem{Complejidad}{Media}
+	\UCccitem{Volatilidad}{Media}
+	\UCccitem{Madurez}{Media}
+	\UCitem{Estatus}{Edición}
+	\UCitem{Fecha del último estatus}{28 de marzo de 2018}
+	\UCccsection{Revisión Version 0.1}
+	\UCccitem{Fecha}{}
+	\UCccitem{Evaluador}{Ulises Veléz Saldaña}
+	\UCccitem{Resultado}{}
+	\UCccitem{Observaciones}{}
+	\UCsection{Atributos}
+	\UCitem{Actor(es)}{\refElem{ciudadano} \refElem{administrador}}
+	\UCitem{Propósito}{Contar con un medio que permita al actor registrarse en el sistema para tener  posteriormente acceso.}
+	\UCitem{Entradas}{Ingresa su nombre de usuario , nombre completo ,Repetir contraseña , contraseña , fecha de nacimiento , sexo.}
+	\UCitem{Origen}{Teclado}
+	\UCitem{Salidas}{Creacion de una nueva cuenta  en el sistema SEIMS.}
+	\UCitem{Precondiciones}{El cuidadano tiene que tener activa una cuenta en el sistema.}
+	\UCitem{Postcondiciones}{El ciudadano quedara registrado en el sistema.}
+	\UCitem{Reglas de Negocio}{Ninguna}
+	\UCitem{Errores}{Ninguno}
+	\UCitem{Disparador(es)}{}
+	\UCitem{Condiciones de Término}{Ninguna}
+	\UCitem{Efectos Colaterales}{No aplica.}
+	
+\end{UseCase}
+
+
+%Trayectoria Principal : Happy Path
+ \begin{UCtrayectoria}
+     \item \UCactor Despliega la \IUref{IU01}{Pantalla de Control de Acceso} (ver figura~\ref{IU01})
+     \item \UCactor Oprime el boton \IUbutton{Registrarse}
+  	\item \UCactor Ingresa Nombre de Usuario, Contraseña , Repetir Contraseña , Tipo de usuario, Fecha de nacimiento , Sexo via la \IUref{IU02}{Pantalla de Creación de Cuenta} (ver figura~\ref{IU02})
+  	\item \UCactor Oprime Boton- \IUbutton{Registrar}
+  	\UCpaso Valida que todos los campos no esten vacios.\refTray{A}
+   	\UCpaso Verifica que se tenga  acceso a internet.\refTray{B}
+  	\UCpaso Valida si el Nombre de Usuario existe.\refTray{C} 
+  	\UCpaso Valida que la contraseña sea escrita con al menos un mayucula y caracter alfanumerico.\refTray{D}
+  	\UCpaso Valida que la contraseña sea la misma que se ingreso en el paso 5.\refTray{E}
+ 	\UCpaso Registra al Usuario.
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{ Cuando existen campos vacios.}
+  \UCpaso Muestra un MSNG01-"Faltan campos por llenar"
+  \item \UCactor Ingresa los campos faltantes.
+  \item \UCactor Regresa al paso 2 del CU1.
+\end{UCtrayectoriaA}
+ 
+ \begin{UCtrayectoriaA}{B}{ Cuando no se tenga acceso a internet.}
+  \UCpaso Muestra un MNSG02-"Conectese a internet".
+  \item \UCactor Regresa al paso 1 del CU1.
+\end{UCtrayectoriaA}
+ 
+\begin{UCtrayectoriaA}{C}{ Cuando el Nombre de Usuario ya esta Registrado}
+  \UCpaso Muestra un MNSG02-"El usuario ya existe".
+  \item \UCactor Proporciona otro nombre de usuario.
+  \item \UCactor Regresa al paso 2 del CU1.
+\end{UCtrayectoriaA}
+ 
+ 
+\begin{UCtrayectoriaA}{D}{Cuando la contraseña no cumple con los parametros.}
+  \UCpaso Muestra un MNSG03-"No es posible Validar esta contraseña, no cuenta con los caracteres adecuados"
+  \item \UCactor Ingresa contraseña con los caracteres adecuados.
+  \item \UCactor Verifica su contraseña.
+  \item \UCactor Oprime boton \IUbutton{Registrar}.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{E}{Cuando la contraseña no coincide}
+  \UCpaso Muestra un MNSG04-" La contraseña no coincide".
+  \item \UCactor Verifica su contraseña. 
+  \item \UCactor Oprime boton \IUbutton{Registrar}.
+\end{UCtrayectoriaA}
+

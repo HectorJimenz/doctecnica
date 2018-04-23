@@ -1,0 +1,57 @@
+\begin{UseCase}{CU10}{Gestionar Propuesta de Albergue}
+    {
+    Permite administrar todos las Propuestas  Albergues que se encuentren registradas en la base de datos del sistema SIESM.
+    }
+  \UCitem{Versión}{0.1}
+  \UCccsection{Datos para el control Interno}  
+  \UCitem{Autor}{Héctor Iván Jimenez Romero}
+  \UCccitem{Evaluador}{Ulises Veléz Saldaña}
+  \UCitem{Operación}{Administra}
+  \UCccitem{Prioridad}{Media}
+  \UCccitem{Complejidad}{Media}
+  \UCccitem{Volatilidad}{Media}
+  \UCccitem{Madurez}{Media}
+  \UCitem{Estatus}{Edición}
+  \UCitem{Fecha del último estatus}{28 de marzo de 2018}
+  \UCccsection{Revisión Version 0.1}
+  \UCccitem{Fecha}{}
+  \UCccitem{Evaluador}{Ulises Veléz Saldaña}
+  \UCccitem{Resultado}{}
+  \UCccitem{Observaciones}{}
+  \UCsection{Atributos}
+   \UCitem{Actor(es)}{\refElem{ciudadano}}
+  \UCitem{Propósito}{Contar con un medio en el que el actor pueda gestionar la información de las propuestas de Albergues enviadas por los Ciudadanos.}
+  \UCitem{Entradas}{Ninguna}
+  \UCitem{Origen}{Teclado}
+  \UCitem{Salidas}{No Aplica}
+  \UCitem{Precondiciones}{ninguna}
+  \UCitem{Postcondiciones}{Ninguna}
+  \UCitem{Reglas de Negocio}{Ninguna}
+  \UCitem{Errores}{Ninguno}
+  \UCitem{Disparador(es)}{}
+  \UCitem{Condiciones de Término}{Ninguna}
+  \UCitem{Efectos Colaterales}{Se podra crear, modificar, eliminar, ver, propuestas de los Albergues.}
+  \end{UseCase}
+ 
+ 
+%Trayectoria Principal : Happy Path
+\begin{UCtrayectoria}
+	\item \UCactor Selecciona opcion gestionar propuesta de Albergue via \IUref{IU10}{Pantalla de Gestión de Mis Propuestas de Albergues.}(ver figura~\ref{IU10}) 
+	\UCpaso Verifica la conexión a internet.\refTray{A}
+	\UCpaso Despliega la\IUref{IU10}{Pantalla de Gestión de Mis Propuestas de Albergues.} (ver figura~\ref{IU10}) ya registrados y con la información general acerca de lo que es un Albergue.
+	\item \UCactor Vizualizara su propuesta de Albergue en el sistema.
+	\item \UCactor Podra modificar , eliminar o crear una nueva propuesta de albergue. 
+\end{UCtrayectoria}
+ 
+ \begin{UCtrayectoriaA}{A}{ Cuando no se tenga acceso a internet.}
+  \UCpaso Muestra un MNSG02-"Conectese a internet".
+  \item \UCactor Regresa al paso 1 del CU10.
+\end{UCtrayectoriaA}
+
+
+
+ 
+ 
+
+ 
+ 

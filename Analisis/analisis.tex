@@ -1,0 +1,240 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Tipo de documento y paquetes
+\documentclass[10pt]{book}
+\usepackage{cdt/cdtAnalisis}
+\usepackage{subfigure}
+\usepackage{appendix}
+\usepackage{pdfpages}
+\usepackage{graphicx}
+\usepackage{url}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Datos del proyecto
+\sistema[Etapa 1]{Investigación y Desarrollo de un Modelo Ubicuo de Interoperabilidad para la Gestión de un Sistema de Información Institucional}
+
+\documento{DA}{Documento de Análisis--Prototipo de una aplicación móvil de arquitectura offline para desastres naturales}{\DRAFT{\today}} %\RELEASE{1.0}
+
+
+\fecha{\today}
+\proyecto[Trabajo Terminal 2017-B017]{Trabajo Terminal 2017-B017}
+
+\organizacion{Instituto Politécnico Nacional}
+
+\author{Escuela Superior de Cómputo}
+
+	\elaboro[Alumno de la ESCOM]{Eduardo Pérez Gómez}   % Responsable del contenido (IPN)
+	\elaboroo[Alumno de la ESCOM]{Héctor Iván Jiménez Romero}
+\superviso[Director]{M. en C. Ulises Vélez Saldaña} % Quien recibe el documento (Contraparte)
+\sinI[Sinodal]{M. en C. Hermes Fransisco Montes Casiano}
+\sinII[Sinodal]{M. en C. Jaime Hugo Puebla Lomas}
+\sinIII[Sinodal]{M. en C. Alejandro Sigfrido Cifuentes}
+\aprobo[Comité]{ } % Responsable Técnico (Contraparte)
+
+\title{\varProyecto}
+\subtitle {\varCveDocumento--\varDocumento}
+
+%\setImgPortada{calmecacTheme/banner2}
+%\setImgPleca{calmecacTheme/footer3}
+%\setImgHeader{calmecacTheme/logoPar}{calmecacTheme/logoInp}
+%\setImgLogo{calmecacTheme/headerInp}{calmecacTheme/headerPar}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Elementos contenidos en el documento
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Documentos relacionados con el documento actual
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Inicio del Documento
+\begin{document}
+
+    %=========================================================
+    % Portada
+    \thispagestyle{empty}
+
+    \maketitle
+    
+    %=========================================================
+    % Hoja de revisión
+    \makeDocInfo
+    \bigskip\\
+    %\makeElemRefs
+    %\makeDocRefs
+    \makeObservaciones[3cm]
+    \vspace{2cm}
+    \makeFirmas
+
+    %=========================================================
+    % Indices del documento
+    \frontmatter
+    \tableofcontents
+    \listoffigures
+    \listoftables
+    \mainmatter
+
+    %=========================================================
+    % Para ocultar la información del documentador se descomenta: \hideControlVersion
+    %\hideControlVersion
+
+    %=========================================================
+    % CAPÍTULOS DEL DOCUMENTO
+    \chapter{Planteamiento del problema}
+    \label{ch:planteamiento}
+	\input{introduccion}
+	
+	\chapter{Marco Teórico} 
+	\label{ch:marco}
+	\input{marco}
+	
+	
+	
+	%========Modelo del Alcance ===== %
+	%Se comenta para el reporte tecnico	
+	%\part{Modelo del Alcance}
+	
+	% Requerimientos funcionales y no funcionales
+	%\section{Requerimientos Funcionales}
+	%\label{chapter:UC}	
+	%\input{mAlcance/requerimientos}
+	
+	%\section{Requerimientos No Funcionales}
+	%\label{chapter:UC}	
+	%\input{mAlcance/requerimientos}
+	
+	
+	
+	%========Modelo del Negocio ===== %
+     %Se comenta para el reporte tecnico	
+	%\part{Modelo del Negocio}
+	% Glosario
+	%\chapter{Glosario}
+	%\label{chapter:glosario}
+	%\input{negocio/glosario}				%Glosario de términos técnicos y del negocio
+	
+	%\chapter{Notación, símbolos y convenciones utilizadas}
+	%\label{chapter:notacion}
+	%\input{negocio/notacion}
+	
+	% Modelo de Información
+	
+	%\chapter{Modelo de Información} %Diagrama de Clases
+	%\label{chapter:modeloInformacion}
+	%\input{negocio/modelo-de-negocio}
+	
+	
+	%Reglas de Negocio
+	\chapter{Reglas de Negocio} % Reglas de Negocio
+	\label{chapter:rn}
+	\input{negocio/Reglas/reglas}
+
+	
+	%======Modelo Dinámico ===== %
+	\part{Modelo Dinámico}
+	
+	
+	%Modelo de Casos de Uso
+	\chapter{Modelo de Casos de Uso} % Casos de Uso
+	\label{chapter:UC}	
+	\input{mDinamico/UC}
+	\includepdf[pages=2]{mDinamico/CU.pdf}
+	%\includepdfmerge{CU.pdf}
+
+	
+	
+	%Actores
+	%Se comenta para el reporte tecnico	
+	%\chapter{Modelado de Actores}
+	%\label{chapter:actores}
+	%\input{negocio/actores}	
+	
+	%Estados
+	%Se comenta para el reporte tecnico	
+	%\chapter{Modelo de Estados} % Estados
+	%\label{chapter:edos}
+	
+	%Capitulo por cada CU
+	\chapter{Casos de Uso}
+	\label{chapter:casos}
+	\input{mDinamico/casos}
+	
+	
+	%====Modelo de Interacción====%
+	%Se comenta para el reporte tecnico
+	%\part{Modelo de la Interacción}
+	
+	%Entorno de Trabajo
+	%\chapter{Entorno de Trabajo}
+	%\label{chapter:entornoTrabajo}
+	
+	%Propuesta Programada 
+	\chapter{Propuesta Programada}
+	\label{chapter:propuesta}
+	%\input{propuesta}
+	
+	%Navegación
+	%Se comenta para el reporte tecnico
+	%\chapter{Navegación}
+	%\label{chapter:navegacion}
+	%\input{iu/navegacion}
+	
+	
+	%Diseño de Interfaces
+	%Se comenta para el reporte tecnico
+	%\chapter{Diseño de Interfaces}
+	%\label{chapter:interfaces}
+	%\input{iu/IU}
+	
+	%Falta definir entorno mensajes
+	%Se comenta para el reporte tecnico
+	%\chapter{Diseño de Mensajes}
+	%\label{chapter:msgs}
+	%\input{anexos/mensajes}
+	%\input{anexos/mensajes}Mensajes del sistema en pantalla
+	
+	
+	%Diseño de Documentos
+	%Se comenta para el reporte tecnico
+	%\chapter{Diseño de Documentos}
+	%\label{chapter:docs}
+	
+	%Trabajo Realizado	
+	\chapter{Trabajo Realizado}
+	\label{chapter:trabajo}
+	
+	
+	%Diseño de Reportes
+	%Se comenta para el reporte tecnico
+	%\chapter{Diseño de Reportes}
+	%\label{chater:reportes}
+	
+	%Referencias
+	\chapter{Conclusiones y Bibliografía}
+	\label{chapter:referencias}
+	\input{anexos/referencias}
+	
+	
+	
+
+
+				%Actores identificados y su descripción
+    %\input{negocio/reglas}							%Reglas de negocio
+    %\input{negocio/modelo-estructural}		%Modelo estructural de interacción (Diagrama de entidades)
+    %\input{negocio/modelo-dinamico}		%Modelo dinámico (Máquinas de estado)
+
+    %---------- Modelo de Interacción ----------
+%	\input{anexos/documentos}
+	%\input{interaccion/notificaciones}			%Notificaciones mediante documentos o correos electrónicos
+
+    %---------- Anexos ----------
+    %Documentos, formularios, catálogos, reportes, etc.
+    \appendix
+	%\cfinput{anexos/Formularios} % Formularios 
+    %\cfinput{anexos/Catalogos} % Catálogos
+    %\cfinput{anexos/Reportes} % Reportes
+
+    \clossing
+	\cdtSaveData    
+\end{document}
+
+
+

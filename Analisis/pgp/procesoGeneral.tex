@@ -1,0 +1,68 @@
+%========================================================
+%Proceso General
+%========================================================
+
+%========================================================
+%Revisión
+%-------------------------------------------
+
+% \UCccitem{Versión}{1}
+% \UCccsection{Análisis de Procesos }
+% \UCccitem{Autor}{nombreAutor}
+% \UCccitem{Evaluador}{nombreEvaluador}
+% \UCccitem{Prioridad}{Alta} %Alta, media, baja
+% \UCccitem{Estatus}{} %Edición, Terminado, Corrección, Aprobado 
+% \UCccitem{Complejidad}{Alta} %Alta, Media, Baja
+% \UCccitem{Volatilidad}{Alta} %Alta, Media, Baja
+% \UCccitem{Madurez}{Media}  %Alta, Media, Baja
+% \UCccsection{Control de cambios}
+% \UCccitem{Versión 0}{
+% \begin{UClist}
+% \RCitem{ Pxn T1}{Corregir la ortografía}{\DONE}
+% \TODO es para solicitar un cambio, \TOCHK Es para informar que se atendió el TODO, \DONE Es para indicar que el evaluador reviso los cambios.
+% \end{UClist}
+%}
+
+%========================================================
+% Descripción general del proceso
+%-----------------------------------------------
+\begin{procesoGeneral}{PG-GP1}{Proceso General de Gestión de Profesores} {
+		
+		%-------------------------------------------
+		%Resumen
+		El proceso general de gestión de profesores\footnote{ver \refElem{Profesor}} muestra los subprocesos que se llevan a cabo entre las Unidades Académicas\footnote{ver \refElem{UnidadAcademica}} y la \refElem{DCH}. En este proceso se realiza la notificación de cualquier cambio o actualización de la plantilla docente en las Unidades Académicas. Su finalidad es mantener actualizado el catálogo de los profesores, el cuál se utilizará posteriormente para la planeación de los semestres y para la generación de la \refElem{EstructuraAcademica}.\\
+					
+		%-------------------------------------------
+		%Diagrama del proceso
+		\noindent La Figura \cdtRefImg{pGeneral:PP-GP}{Gestión de Profesores} muestra las actividades que se realizan para llevar a cabo el proceso descrito anteriormente.
+		
+		\Pfig[1.0]{pgp/imagenes/macroproceso.jpg}{pGeneral:PP-GP}{PG-GP Gestión de Profesores}
+	}{PG-GP}
+
+\end{procesoGeneral}
+
+%========================================================
+%Descripción de tareas
+%-----------------------------------------------
+\begin{PDescripcion}
+	
+	%Actor: Unidad Académica / Dirección de Capital Humano
+	\Ppaso \textbf{Unidad Académica / Dirección de Capital Humano}
+	
+	\begin{enumerate}
+		%Subproceso 1
+		\Ppaso[\PSubProceso] \cdtLabelTask{PP-PG1}{ \textbf{Actualización de Profesores}.} La \refElem{UnidadAcademica} actualiza la información de un \refElem{Profesor} en cuanto a su categoría, estado laboral, adscripción.
+				
+		%Subproceso 2
+	\Ppaso[\PSubProceso] \cdtLabelTask{PP-PG2}{ \textbf{Registro de Profesores}.} La \refElem{DCH} recibe la información que le envían las Unidades Académicas y la revisa para validar su pertinencia y se envía internamente para su actualización.
+	
+		%Subproceso 3
+	\Ppaso[\PSubProceso] \cdtLabelTask{PG-PG3}{ \textbf{Actualización de Nomina y Trayectoria}.} La \refElem{DCH} en su área de sistemas actualiza la información de un \refElem{Profesor} tanto en la nomina como en el registro de trayectoria docente.  
+	
+	%Subproceso 4
+	\Ppaso[\PSubProceso] \cdtLabelTask{PG-PG1}{ \textbf{Generación de Catálogo de Profesores}.} Una vez actualizado el catálogo, se le notifica a la \refElem{UnidadAcademica} para poder iniciar el proceso de Planeación de Semestre.
+	
+	%Subproceso 5
+	\Ppaso[\PSubProceso] \cdtLabelTask{PG-PG1}{ \textbf{Recepción del Catalogo de Profesores}.} El catálogo, se le envía a la \refElem{UnidadAcademica} con esta información se inicia la planeación del semestre.
+	\end{enumerate}
+\end{PDescripcion}

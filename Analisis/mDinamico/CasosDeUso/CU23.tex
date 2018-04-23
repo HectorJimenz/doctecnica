@@ -1,0 +1,47 @@
+\begin{UseCase}{CU23}{Eliminar Mapas Offline}{
+		Permite a los Ciudadanos eliminar un Mapa Offline que se encuentre en la base de datos local del sistema SIESM.\\
+}
+	\UCitem{Versión}{0.1}
+	\UCccsection{Datos para el control Interno}	
+	\UCitem{Autor}{Eduardo Pérez Gómez}
+	\UCccitem{Evaluador}{Ulises Veléz Saldaña}
+	\UCitem{Operación}{Eliminar}
+	\UCccitem{Prioridad}{Alta}
+	\UCccitem{Complejidad}{Media}
+	\UCccitem{Volatilidad}{Media}
+	\UCccitem{Madurez}{Media}
+	\UCitem{Estatus}{Edición}
+	\UCitem{Fecha del último estatus}{28 de marzo de 2018}
+	\UCccsection{Revisión Version 0.1}
+	\UCccitem{Fecha}{}
+	\UCccitem{Evaluador}{Ulises Veléz Saldaña}
+	\UCccitem{Resultado}{}
+	\UCccitem{Observaciones}{}
+	\UCsection{Atributos}
+	\UCitem{Actor(es)}{\refElem{ciudadano}}
+	\UCitem{Propósito}{Que el actor pueda eliminar un Mapa Offline de la cuenta del actor.}
+	\UCitem{Entradas}{ID del Mapa Offline.}
+	\UCitem{Origen}{Teclado}
+	\UCitem{Salidas}{Mapa Offline eliminado.}
+	\UCitem{Precondiciones}{Ninguna}
+	\UCitem{Postcondiciones}{El Mapa Offline quedara eliminado de la cuenta del actor.}
+	\UCitem{Reglas de Negocio}{Ninguna}
+	\UCitem{Errores}{Ninguno}
+	\UCitem{Disparador(es)}{No aplica}
+	\UCitem{Condiciones de Término}{Se muestra la IUX.}
+	\UCitem{Efectos Colaterales}{No aplica.}
+	
+\end{UseCase}
+
+
+%Trayectoria Principal : Happy Path
+
+\begin{UCtrayectoria}
+	\item\UCactor Selecciona opcion eliminar Mapa Offline via la IU23 Pantalla Menu Mapas Offline.
+	\item\UCactor Selecciona el Mapas Offline que desea eliminar via la IU23 Pantalla Eliminar Mapas Offline.
+	\UCpaso Muestra el MSG8-"¿Esta seguro que desea eliminarlo?".
+	\item\UCactor Confirma la operación presionando el botón.
+	\UCpaso Elimina el Mapa Offline.
+	\UCpaso Muestra el MSG6-"Mapa Offline eliminado correctamente"
+	\item\UCactor Presiona el botón aceptar.
+\end{UCtrayectoria}

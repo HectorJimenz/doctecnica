@@ -1,0 +1,202 @@
+%========================================================
+%Proceso General Fortalecido
+%========================================================
+
+%-----------------------------------------------------------------------------
+%Proceso General
+\begin{Proceso}{PF-GPA}{Proceso Fortalecido}{
+		%Anote la descripción del proceso general, un párrafo que describe brevemente: cuando inicia el proceso, su secuencia principal de actividades y productos principales.
+	    El Proceso Fortalecido de Gestión de Programas Académicos tomará en cuenta la elaboración de propuestas de nuevos Programas Académicos\footnote{Ver \refElem{ProgramaAcademico}} o el rediseño de los mismos dentro de las Unidades Académicas\footnote{Ver \refElem{UnidadAcademica}}, los cuales al ser aprobados de manera local, deberán ser registrados en el \refElem{Calmecac} y entregados ante la \refElem{DES} o la \refElem{DEMS} según corresponda, para obtener su aprobación o la notificación de ajustes a la propuesta. Una vez que los Programas Académicos son aprobados por la Dirección de Educación Media Superior o la Dirección de Educación Superior, pasarán a una siguiente etapa de aprobación por parte del \refElem{ConsejoGeneralConsultivo}, y en caso de que sean aprobados, la Dirección de Educación Media Superior o la Dirección de Educación Superior deberá seleccionar como aprobados en el Calmécac a dichos programas; y de no proceder la aprobación, los ajustes serán recibidos por la Dirección de Educación Media Superior o la Dirección de Educación Superior y posteriormente enviados a la Unidad Académica correspondiente y repetir el proceso las veces que sea necesario.
+
+	}{PF-GPA}
+
+	%-----------------------------------------------------------------------------
+	%Proceso General
+	\PRccsection{Datos para control interno}
+	\PRccitem{Versión}{1}
+	\PRccitem{Autor}{David Ortega Pacheco}
+	\PRccitem{Evaluador}{Ulises Velez Saldaña}
+	\PRccitem{Prioridad}{Alta}
+	\PRccitem{Estatus}{Terminado}
+	\PRccitem{Complejidad}{Baja}
+	\PRccitem{Volatilidad}{Baja}
+	\PRccitem{Madurez}{Alta}
+	\PRccsection{Control de cambios}
+	\PRccitem{Versión 0}{
+			\begin{Titemize}
+				%\RCitem{ PC1}{Corregir la ortografía}{\DONE}
+				%\TODO es para solicitar un cambio \TOCHK Es para informar que se atendió el TODO(ya hizo las correcciones),\DONE Es para indicar que el e valuador reviso los cambios.
+			\end{Titemize}
+	}
+
+%-----------------------------------------------------------------------------
+%Atributos del Proceso
+
+	\PRitem{Participantes}{
+		%Liste los participantes en el proceso (solo aquellos que realizan las tareas en el proceso), especifique a nivel de personas indicando el puesto y área a la que pertenece. Utilice el comando \refElem{idDelActor}.
+		\refElem{UnidadAcademica}, \refElem{DES} o \refElem{DEMS}, \refElem{ConsejoGeneralConsultivo} y \refElem{Calmecac}
+	}
+
+	\PRitem{Objetivo}{
+		Permitir el registro del diseño o rediseño de un programa académico por parte de cada Unidad Académica de Nivel Superior o Medio Superior en el Calmécac, así como a la DES o DEMS la consulta de los programas académicos registrados y seleccionar los que han sido aprobados de forma oficial en el Instituto
+	}
+	
+	\PRitem{Interrelación con otros procesos}{	
+		%Liste los procesos con que se enlaza la operación del proceso actual.
+		\hyperlink{chapter:PFRH}{Proceso Fortalecido de Registro de Horarios}
+%		\begin{Titemize}
+%			\Titem 
+%		\end{Titemize}
+	}
+
+	\PRitem{Proveedores}{
+		%Liste los participantes que proveen información al proceso, indique área y puesto o cargo, utilice el comando \refElem{idDelActor}.
+			\refElem{UnidadAcademica} y \refElem{DES} o \refElem{DEMS} 
+	}
+
+	\PRitem{Entradas}{
+		%Liste los datos, formatos o insumos que se requieren como entradas a lo largo de este procesos.
+		\refElem{ProgramaAcademico}
+%		\begin{Titemize}
+%			\Titem 
+%		\end{Titemize}
+	}
+
+	\PRitem{Consumidores}{
+		%Liste los participantes que reciben información o los resultados del proceso, indique área y puesto o cargo, utilice el comando \refElem{idDelActor}.
+		\refElem{UnidadAcademica} y \refElem{DES} o \refElem{DEMS}
+	}
+	
+	\PRitem{Salidas}{
+		%Liste los datos, formatos o insumos que se requieren como salidas o productos a lo largo de este procesos.
+		\begin{Titemize}
+			\Titem Diseño o Rediseño de Programa Académico avalado por el Instituto
+			\Titem Acta de aprobación de Programa Académico por parte del Consejo Técnico Consultivo Escolar
+			\Titem Notificación de ajustes a Programa Académico
+			\Titem Oficio de aprobación de Programa Académico por parte de la Dirección de Educación Superior o Dirección de Educación Media Superior
+			\Titem Acta de sesión con observaciones por parte del Consejo General Consultivo
+			\Titem Aprobación de Diseño o Rediseño de Programa Académico por parte del Consejo General Consultivo
+		\end{Titemize}		
+	}
+	
+	\PRitem{Precondiciones}{
+		%Liste las actividades, productos o condiciones que deben ocurrir o cumplirse antes de iniciar el proceso.
+		Ninguna
+%		\begin{Titemize}
+%			\Titem 
+%		\end{Titemize}
+	}
+
+	\PRitem{Postcondiciones}{
+		Registro en el \refElem{Calmecac} del diseño o rediseño de un \refElem{ProgramaAcademico} avalado de forma oficial en el Instituto
+%		\begin{Titemize}
+%			\Titem 
+%		\end{Titemize}
+	}
+
+	\PRitem{Frecuencia}{
+		Eventual
+		% Periódico: Cada cierto tiempo: diario, semanal, anual, etc.
+		% Programado: Alguien en algún momento establece la fecha.
+		% Eventual: Cada que ocurre un evento que no se puede prever ni programar.
+	}
+	
+	\PRitem{Tipo}{
+	% Operacion: Proceso asociado a las actividades propias de la operación.
+	% Mejora continua: Porcesos asociados a actividades de mejora continua del proceso actual.
+	% Soporte: Procesos asociados a actividades indirectas necesarias para operar.
+		Soporte
+	}
+	
+	\PRitem{Áreas de oportunidad}{
+		\refElem{PGPA-AO1}
+	}
+
+\end{Proceso}
+
+	La figura \cdtRefImg{procGeneral:PGF-GPA}{PF-GPA Proceso Fortalecido de Gestión de Programas Académicos} muestra los procesos que componen el presente proceso general.\\
+
+	\Pfig[0.8]{procesosfortalecidos/pgpa/imagenes/PGF-GPA-GestionProramasAcademicos}{procGeneral:PGF-GPA}{PGF-GPA Proceso General Fortalecido de Gestión de Programas Académicos}
+
+%-----------------------------------------------------------------------------
+%Descripción del proceso
+\begin{PDescripcion}
+	
+	%Actor: Unidad de Nivel Medio Superior o de Nivel Superior
+	\Ppaso \textbf{Unidad Académica de Nivel Medio Superior o Nivel Superior}
+
+		\begin{enumerate}
+
+			%Subproceso 1
+			\Ppaso[\PSubProceso] \cdtLabelTask{PGPA:ua:DisenoRediseno}{Diseñar/Rediseñar Programa Académico.} Subproceso en el que cada \refElem{UnidadAcademica}  realizará la justificación de un diseño o rediseño de un \refElem{ProgramaAcademico}. Aquí se podrá realizar la evaluación local por medio del \refElem{ConsejoTecnicoConsultivoEscolar} de cada Unidad Académica, quien dictaminará si procede o no la propuesta. Una vez que se tiene una propuesta aprobada localmente, se deberá realizar el registro en el \refElem{Calmecac} y de forma paralela, pasará al subproceso \cdtRefTask{PGPA:ua:Envia}{Enviar a revisión} y quedará a la espera de los siguientes eventos:
+
+				\begin{itemize}
+					\item Recibe notificación de ajustes. Este evento se producirá cuando existen correcciones a la propuesta de Programa Académico realizadas por la Dirección de Educación Superior o la Dirección de Educación Media Superior, según corresponda, y pasa al subproceso \cdtRefTask{PGPA:ua:DisenoRediseno}{Diseñar/Rediseñar Programa Académico.}
+					\item Recibe notificación de aprobación. Este evento se producirá cuando la propuesta de Programa Académico es aprobada por la Dirección de Educación Media Superior o por la Dirección de Educación Superior, según corresponda y pasa al subproceso \cdtRefTask{PGPA:ua:Presenta}{Presentar propuesta de Diseño/Rediseño.}
+				\end{itemize}
+
+			%Subproceso 2
+			\Ppaso[\PSubProceso] \cdtLabelTask{PGPA:ua:Envia}{Enviar a revisión.} En este subproceso cada Unidad Académica llevará a cabo la entrega del Acta de aprobación de Programa Académico junto con la propuesta de Diseño o Rediseño asociada a la Dirección de Educación Media Superior o Dirección de Educación Superior según corresponda, para que comience la revisión oficial de la propuesta.
+	
+			%Subproceso 3
+			\Ppaso[\PSubProceso] \cdtLabelTask{PGPA:ua:Presenta}{Presentar propuesta de Diseño/Rediseño.} Este subproceso se llevará a cabo cuando se reciba la notificación de aprobación de la propuesta de Diseño o Rediseño de Programa Académico, y la Unidad Académica procederá a realizar la presentación de dicha propuesta ante el Consejo General Consultivo.
+	
+		\end{enumerate}
+
+	%Actor: Calmécac
+	\Ppaso \textbf{Calmécac}
+
+		\begin{enumerate}
+
+			%Subproceso 1
+			\Ppaso[\PSubProceso] \cdtLabelTask{PGPA:calmecac:RegistraModifica}{Registrar/Modificar programa académico.} Subproceso en el que cada Unidad Académica, ya sea de Nivel Medio Superior o de Nivel Superior, registrará en el sistema su Programa Académico avalado de forma interna y podrá pasar al subproceso \cdtRefTask{PGPA:calmecac:Muestra}{Mostrar programa académico registrado.}
+
+			%Subproceso 2
+			\Ppaso[\PSubProceso] \cdtLabelTask{PGPA:calmecac:Muestra}{Mostrar programa académico registrado.} En este subproceso se permitirá a la Dirección de Educación Media Superior o a la Dirección de Educación Superior, según corresponda, la visualización de los Programas Académicos registrados en el sistema y podrá pasar al subproceso \cdtRefTask{PGPA:calmecac:RegistraAprobacion}{Registrar selección de programa académico.}
+		
+			%Subproceso 3
+			\Ppaso[\PSubProceso] \cdtLabelTask{PGPA:calmecac:RegistraAprobacion}{Registrar selección de programa académico.} Este subproceso permitirá a la Dirección de Educación Media Superior o a la Dirección de Educación Superior, según corresponda, la posibilidad de seleccionar los Programas Académicos que han sido avalados oficialmente en el Instituto, lo cual será de forma oficial el aval de dichos Programas Académicos como aprobados en el Instituto.
+
+		\end{enumerate}
+
+	%Actor: Dirección de Educación Media Superior o Dirección de Educación Superior
+	\Ppaso \textbf{Dirección de Educación Media Superior o Dirección de Educación Superior}
+
+		\begin{enumerate}
+
+			%Subproceso 1
+			\Ppaso[\PSubProceso] \cdtLabelTask{PGPA:DES:Evalua}{Evaluar Diseño/Rediseño.} Subproceso en el cual se llevará a cabo la evaluación de los Programas Académicos. Si la evaluación produce ajustes a la propuesta, entonces se podrá pasar al subproceso \cdtRefTask{PGPA:DES:EnviaAjuste}{Enviar ajustes a unidad académica}; en caso de no existir ajustes a realizar, se pasará al subproceso \cdtRefTask{PGPA:DES:EnviaOficio}{Enviar oficio de aprobación a unidad académica.}
+
+			%Subproceso 2
+			\Ppaso[\PSubProceso] \cdtLabelTask{PGPA:DES:EnviaAjuste}{Enviar ajustes a unidad académica.} En este subproceso se llevará a cabo el envío de los ajustes necesarios para aplicar a la propuesta de Diseño o Rediseño de Programa Académico a la Unidad Académica corresondiente.
+	
+			%Subproceso 3
+			\Ppaso[\PSubProceso] \cdtLabelTask{PGPA:DES:EnviaOficio}{Enviar oficio de aprobación a unidad académica.} Subproceso donde se podrá realizar el envío del Oficio de aprobación a la Unidad Académica correspondiente, lo cual le indica a la misma que puede proceder a preparar la presentación de su propuesta de Diseño o Rediseño para el Consejo General Consultivo. Una vez que termina este subproceso, pasará a esperar a que suceda alguno de los sigueintes eventos:
+
+				\begin{itemize}
+					\item Recibe notificación de ajustes. Este evento se producirá cuando existen correcciones a la propuesta de Programa Académico sugeridos directamente por el Consejo General Consultivo y pasará al subproceso \cdtRefTask{PGPA:DES:EnviaAjuste}{Enviar ajustes a unidad académica.}
+					\item Recibe notificación de aprobación. Este evento se producirá cuando la propuesta de Programa Académico es aprobada por el Consejo General Consultivo, y podrá pasar al subproceso \cdtRefTask{PGPA:DES:Selecciona}{Seleccionar aprobación de Diseño/Rediseño.}
+				\end{itemize}
+
+			%Subproceso 4
+			\Ppaso[\PSubProceso] \cdtLabelTask{PGPA:DES:Selecciona}{Seleccionar aprobación de Diseño/Rediseño.} Este subproceso permitirá a la Dirección de Educación Media Superior o a la Dirección de Educación Superior, seleccionar en el Calmécac los Programas Académicos que se encuentran avalados de forma oficial por el Consejo General Consultivo para considerarse como oficiales dentro del Instituto. Con lo anterior se terminará de definir de forma oficial a los Programas Académicos en el Calmécac.
+	
+		\end{enumerate}
+
+	%Actor: Consejo General Consultivo
+	\Ppaso \textbf{Consejo General Consultivo}	
+
+		\begin{enumerate}
+	
+			%Subproceso 1
+			\Ppaso[\PSubProceso] \cdtLabelTask{PGPA:CGC:Evalua}{Evaluar propuesta de Diseño/Rediseño.} Este subproceso permitirá al Consejo General Consultivo realizar la evaluación final de las propuestas de Diseño/Rediseño de Programas Académicos del Instituto. Si se tienen ajustes a la propuesta,  dichas observaciones se describirán en al Acta de sesión correspondiente y pasará al subproceso \cdtRefTask{PGPA:CGC:EnviaAjustes}{Enviar ajustes a DES o DEMS.} Si no se tienen observaciones a la propuesta, se podrá pasar al subproceso \cdtRefTask{PGPA:CGC:EnviaAprobacion}{Enviar aprobación de Diseño/Rediseño.}
+	
+			%Subproceso 2
+			\Ppaso[\PSubProceso] \cdtLabelTask{PGPA:CGC:EnviaAjustes}{Enviar ajustes a DES o DEMS.} En este subproceso se realiza el envío del Acta de sesión a la Dirección de Educación Media Superior o a la Dirección de Educación Superior, según corresponda, la cual contiene las observaciones derivadas de la evaluación realizada de la propuesta.
+	
+			%Subproceso 3
+			\Ppaso[\PSubProceso] \cdtLabelTask{PGPA:CGC:EnviaAprobacion}{Enviar aprobación de Diseño/Rediseño.} Este subproceso permitirá enviar la Aprobación del Diseño o Rediseño propuesto a la Dirección de Educación Media Superior o a la Dirección de Educación Superior.
+	
+		\end{enumerate}
+
+\end{PDescripcion}

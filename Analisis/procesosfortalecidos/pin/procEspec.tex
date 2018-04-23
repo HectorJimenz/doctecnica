@@ -1,0 +1,134 @@
+\begin{Proceso}{PF-GI}{Proceso Fortalecido}{
+			Proceso mediante el cual un aspirante pasa a formar parte de la comunidad politécnica ingresando a algún programa académico o servicio educativo complementario que el Instituto ofrece, una vez que la aplicación del examen de admisión concluye y se han asignado a los aspirantes a las unidades académicas.
+	}
+	{PE.X.X}% no se usa
+	\PRccsection{Datos para control interno}
+	\PRccitem{Versión}{0.2}
+	\PRccitem{Elaboró}{Francisco Isidoro Mera Torres}
+	\PRccitem{Supervisó}{Ulises Vélez Saldaña}
+	\PRccitem{Prioridad}{Alta}
+	\PRccitem{Estatus}{En corrección}
+	\PRccitem{Complejidad}{Media}
+	\PRccitem{Volatilidad}{Media}
+	\PRccitem{Madurez}{Media}
+	\PRsection{Atributos del proceso}
+	\PRitem{Participantes}{\refElem{Aspirante}, \refElem{DepartamentoDeInformaticaYEstadisticaEscolar}, \refElem{Calmecac}, \refElem{DepartamentoDeRegistroYSupervisionEscolar}, \refElem{DepartamentoDeGestionEscolar}, \refElem{ComisionEspecial}, \refElem{AbogadoGeneral}.
+	}
+	\PRitem{Objetivo}{
+		Asignar aspirantes a programas y unidades académicas otorgándoles una boleta y una identificación institucional.
+	}
+	\PRitem{Interrelación con otros procesos}{	
+		\begin{Titemize}
+ 			\Titem Estructura Académica (Ver capítulo \hyperlink{chapter:PFEA}{Proceso Fortalecido de Estructura Académica})
+ 			\Titem Programas Académicos (Ver capítulo \hyperlink{chapter:PFGPA}{Proceso Fortalecido de Gestión de Programas Académicos})
+		\end{Titemize}
+	}
+	\PRitem{Proveedores}{ \refElem{DepartamentoDeInformaticaYEstadisticaEscolar}, \refElem{ComisionEspecial}, \refElem{AbogadoGeneral}.
+	}
+	\PRitem{Entradas}{
+		\begin{Titemize}
+ 			\Titem \refElem{ExpedienteDelAspirante}.
+ 			\Titem \refElem{HojaDeResultadoDelExamenDeAdmision}.
+ 			\Titem Asignación de Aspirantes.
+		\end{Titemize}		
+	}
+	\PRitem{Consumidores}{\refElem{Aspirante}, \refElem{DepartamentoDeGestionEscolar}, \refElem{DepartamentoDeRegistroYSupervisionEscolar}
+	}
+	\PRitem{Salidas}{
+		\begin{Titemize}
+ 			\Titem \refElem{Preboleta}.
+ 			\Titem \refElem{Boleta}.
+ 			\Titem \refElem{CredencialDeAlumno}.
+ 			\Titem \refElem{Horario}.
+		\end{Titemize}		
+	}
+	\PRitem{Precondiciones}{
+		\begin{Titemize}
+ 			\Titem La Convocatoria debe haberse aprobado por el consejo.
+ 			\Titem El Calendario escolar debe estar aprobado.
+ 			\Titem La Estructura académica debe estar creada y cargada al sistema.
+ 			\Titem Los programas académicos a los que los aspirantes desean ingresar deben estar vigentes en la unidad académica a la que se asignó.
+		\end{Titemize}
+	}
+	\PRitem{Postcondiciones}{
+		\begin{Titemize}
+ 			\Titem El \refElem{Aspirante} se convierte en un \refElem{Alumno}.
+			\Titem Se le regresa al Alumno su expediente.
+			\Titem El Alumno puede acceder a todos los servicios del IPN.
+			\Titem Se rechazan a los aspirantes que no completaron su proceso.
+		\end{Titemize}
+		
+	}
+	\PRitem{Frecuencia}{
+		Anualmente y semestralmente.
+		% Periódico: Cada cierto tiempo: diario, semanal, anual, etc.
+		% Programado: Alguien en algún momento establece la fecha.
+		% Eventual: Cada que ocurre un evento que no se puede prever ni programar.
+	}
+	\PRitem{Tipo}{
+		Proceso Clave.
+	}
+	% Operacion: Proceso asociado a las actividades propias de la operación del RENIECYT.
+	% Mejora continua: Porcesos asociados a actividades de mejora continua del proceso actual.
+	% Soporte: Procesos asociados a actividades indirectas necesarias para operar el RENIECYT.
+	\PRitem{Áreas de Mejora}{
+		\refElem{PI-AO1}, \refElem{PI-AO2}, \refElem{PI-AO3}, \refElem{PI-AO4},\refElem{PI-AO5}, \refElem{PI-AO6}.
+	}
+\end{Proceso}
+
+La figura \cdtRefImg{pfpi:procEspec}{PF-Inscripciones} muestra los procesos que componen el presente proceso específico.
+
+\Pfig[1]{procesosfortalecidos/pin/procEspec}{pfpi:procEspec}{Proceso específico PG-Inscripciones}
+
+
+%Descripción de procesos
+\begin{PDescripcion}
+	
+	%Actotr: Departamento de Informática y Estadística Escolar
+	\Ppaso \textbf{Departamento de Informática y Estadística Escolar}
+	
+	\begin{enumerate}
+		 \Ppaso[\Einicio] \cdtLabelTask{EvaluacionConvocatoria}{Evaluación de Convocatoria:} El proceso de inscripciones inicia cuando el \refElem{DepartamentoDeInformaticaYEstadisticaEscolar} recibe el mensaje \textbf{Cierre del proceso de evaluación}.
+		 
+		 \Ppaso [\PSubProceso] Asignación y Registro de Aspirantes a Unidad Académica: Este proceso es identico actual pero al concluir el  sistema del \refElem{DepartamentoDeInformaticaYEstadisticaEscolar} notificará al \refElem{Calmecac} que los aspirantes han sido asignados a las unidades académicas con el mensaje \textbf{Asignación de Aspirantes}.
+		 
+		 \Ppaso [\PSubProceso] Validación de Inscripción: Esta tarea es idéntica a la que el departamento realiza actualmente.
+		  
+	\end{enumerate}
+	
+	%Actor: Calmécac
+	
+	\Ppaso \textbf{Calmécac}
+	
+	\begin{enumerate}
+		\Ppaso[\itarea] \cdtLabelTask{NotificiarRevisionDeLaConfiguracionDeCargaDeAspirantes}{Notificar revisión de la configruación de carga de aspirantes:} Esta tarea es nueva y consiste en que el \refElem{Calmecac} notificará al supervisor del \refElem{DepartamentoDeRegistroYSupervisionEscolar} que debe revisar, verificar o modificar la configuración de parámetros de la carga del sistema con el mensaje \textbf{Aplicación de la Convocatoria}. %refelem
+		
+		\Ppaso [\PSubProceso] \cdtLabelTask{CargarAspirantes}{SPR2-Cargar Aspirantes:}Esta tarea tiene el mismo objetivo que la que se realiza actualmente, el cambio consiste en que se realizará mediante Servicios WEB en lugar de usar scripts. Estos Servicios podrán configurarse mediante parámetros de carga que el supervisor del \refElem{DepartamentoDeRegistroYSupervisionEscolar} defina.
+		
+		\Ppaso [\PSubProceso] \cdtLabelTask{RegistroDeAlumnos}{SPR5-Registro de Alumnos:} Esta tarea tiene el mismo objetivo que la que el Departamento de Registro y Supervisión Escolar  realiza actualmente, pero se modificará al incluir al \refElem{Calmecac} para automatizar la actualización de las boletas mediante servicios WEB o manualmente.
+	\end{enumerate}
+
+	%Actor: Departamento de Registro y SUpervision Escolar
+	\Ppaso \textbf{Departamento de Registro y Supervisión Escolar}
+	
+	\begin{enumerate}
+	
+		\Ppaso[\PSubProceso] \cdtLabelTask{ConfigurarParametrosDeCarga}{SPR1-Configurar parámetros de Carga:} Está tarea es nueva y consiste en que el supervisor del \refElem{DepartamentoDeRegistroYSupervisionEscolar} configurará los parámetros del \refElem{Calmecac} para que se realice la carga de aspirantes.
+		
+		\Ppaso [\PSubProceso] \cdtLabelTask{SupervisarCargaAspirantes}{SPR3-Supervisión de Carga de Aspirantes} El \refElem{Calmecac} le permitirá al supervisor del \refElem{DepartamentoDeRegistroYSupervisionEscolar} revisar cargas realizadas recientemente\footnote{para el mismo ciclo escolar}, realizar la carga de aspirantes manualmente y corregir o deshacer la operación cuando el sistema o el Departamento de Informática y Estadística Escolar encuentren o reporten un fallo en la carga.
+		
+		\Ppaso [\PSubProceso] \cdtLabelTask{SupervisarRegistroAspirantes}{SPR4-Supervisión del registro de alumnos} El \refElem{Calmecac} le permitirá al supervisor del \refElem{DepartamentoDeRegistroYSupervisionEscolar} revisar las actualizaciones de boleta a los aspirantes de forma automática o utilizando el \refElem{Calmecac}.
+	\end{enumerate}
+
+	\Ppaso \textbf{Departamento de Gestión Escolar}
+	\begin{enumerate}
+		\Ppaso [\PSubProceso]\cdtLabelTask{InscribirAspirantes}{SPR6-Inscribir Aspirantes:} Este proceso existe actualmente, pero se modificará para que el \refElem{DepartamentoDeGestionEscolar} pueda inscribir a los aspirantes a grupos eligiendo un criterio.
+	\end{enumerate}
+	
+\end{PDescripcion}
+
+
+
+
+
+

@@ -1,0 +1,51 @@
+%========================================================
+%Arquitectura de Proceso Fortalecido
+%========================================================
+
+%========================================================
+%Revisión
+%-------------------------------------------
+
+% \UCccitem{Versión}{1}
+% \UCccsection{Análisis de Procesos }
+% \UCccitem{Autor}{nombreAutor}
+% \UCccitem{Evaluador}{nombreEvaluador}
+% \UCccitem{Prioridad}{Alta} %Alta, media, baja
+% \UCccitem{Estatus}{} %Edición, Terminado, Corrección, Aprobado 
+% \UCccitem{Complejidad}{Alta} %Alta, Media, Baja
+% \UCccitem{Volatilidad}{Alta} %Alta, Media, Baja
+% \UCccitem{Madurez}{Media}  %Alta, Media, Baja
+% \UCccsection{Control de cambios}
+% \UCccitem{Versión 0}{
+% \begin{UClist}
+% \RCitem{ Pxn T1}{Corregir la ortografía}{\DONE}
+% \TODO es para solicitar un cambio, \TOCHK Es para informar que se atendió el TODO, \DONE Es para indicar que el evaluador reviso los cambios.
+% \end{UClist}
+%}
+
+\chapter{Proceso Fortalecido de Gestión de Programas Académicos}
+\hypertarget{chapter:PFGPA}{}
+	%========================================================
+	% Descripción general del proceso
+	%-----------------------------------------------
+	\section{AF-GPA Arquitectura}
+
+	%-------------------------------------------
+	%Descripción
+	\noindent La figura \cdtRefImg{arq:AF-GPA}{AF-GPA Arquitectura Fortalecida del Proceso de Gestión de Programas Académicos} muestra el proceso general modificado. Los cambios están centrados en la incorporación del \refElem{Calmecac} y su interacción con las Unidades Académicas \footnote{Ver \refElem{UnidadAcademica}} para el registro de los Programas Académicos \footnote{Ver \refElem{ProgramaAcademico}} y con la \refElem{DES} (DES) o la \refElem{DEMS} (DEMS) para seleccionar los programas que son avalados de forma oficial en el Instituto. Se proponen los siguientes cambios: 
+
+	\begin{itemize}
+
+		\item Una vez que una \refElem{UnidadAcademica} ha culminado el Diseño/Rediseño de un \refElem{ProgramaAcademico}, deberá registrarlo en el Calmécac.
+		\item La DES o DEMS podrá consultar los Programas Académicos registrados en el Calmécac.
+		\item Una vez que se tiene la validación oficial de un Programa Académico, la DES o DEMS según corresponda, seleccionará como oficial dicho programa en el Calmécac.
+
+	\end{itemize}
+
+	La descripción detallada de estas mejoras se encuentra en la sección~\ref{section:PF-GPA:validacion}.
+
+	\pagebreak
+	%-------------------------------------------
+	%Diagrama de arquitectura fortalecida
+		\Pfig[1]{procesosfortalecidos/pgpa/imagenes/AGF-GPA-GestionProgramasAcademicos}{arq:AF-GPA}{AF-GPA Arquitectura Fortalecida del Proceso de Gestión de Progamas Académicos. Para poder leer este diagrama ir a la sección \ref{section:CodigoColores} }.
+

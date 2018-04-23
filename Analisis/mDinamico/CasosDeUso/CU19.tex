@@ -1,0 +1,57 @@
+\begin{UseCase}{CU19}{Ver Propuesta de Refugio}{
+		Permite visualizar los datos de todos los Refugios Porpuestos que se encuentren registrados en la base de datos del sistema SIESM.\\
+		
+}
+	\UCitem{Versión}{0.1}
+	\UCccsection{Datos para el control Interno}	
+	\UCitem{Autor}{Héctor Iván Jiménez Romero}
+	\UCccitem{Evaluador}{Ulises Veléz Saldaña}
+	\UCitem{Operación}{Visualizar}
+	\UCccitem{Prioridad}{Alta}
+	\UCccitem{Complejidad}{Media}
+	\UCccitem{Volatilidad}{Media}
+	\UCccitem{Madurez}{Media}
+	\UCitem{Estatus}{Edición}
+	\UCitem{Fecha del último estatus}{28 de marzo de 2018}
+	\UCccsection{Revisión Version 0.1}
+	\UCccitem{Fecha}{}
+	\UCccitem{Evaluador}{Ulises Veléz Saldaña}
+	\UCccitem{Resultado}{}
+	\UCccitem{Observaciones}{}
+	\UCsection{Atributos}
+	\UCitem{Actor(es)}{\refElem{ciudadano} \refElem{administrador}}
+	\UCitem{Propósito}{Contar con un medio en el que el actor pueda visualizar la información de los Refugios propuestos disponibles.}
+	\UCitem{Entradas}{Ninguna}
+	\UCitem{Origen}{No aplica}
+	\UCitem{Salidas}{Listado de Refugios Propuestos con su respectivos datos.}
+	\UCitem{Precondiciones}{Ninguna}
+	\UCitem{Postcondiciones}{Ninguna}
+	\UCitem{Reglas de Negocio}{Ninguna}
+	\UCitem{Errores}{Ninguno}
+	\UCitem{Disparador(es)}{}
+	\UCitem{Condiciones de Término}{Se muestra la IUX.}
+	\UCitem{Efectos Colaterales}{No aplica.}
+	
+\end{UseCase}
+
+
+%Trayectoria Principal : Happy Path
+\begin{UCtrayectoria}
+	\item \UCactor Selecciona opcion ver Refugios Propuestos via la \IUref{IU12}{Pantalla de Gestión de Mis Propuestas de Refugios.}(ver figura~\ref{IU12})
+	\UCpaso Verifica que se tenga acceso a internet.\refTray{A}
+	\UCpaso Despliega la \IUref{IU12}{Pantalla de Gestión de Mis Propuestas de Refugios.}(ver figura~\ref{IU12})
+\end{UCtrayectoria}
+
+
+\begin{UCtrayectoriaA}{A}{Cuando no existe acceso a internet}
+	\UCpaso Muestra el MSG21-"No se tiene una conexion a internet".
+	\item \UCactor Oprime boton \IUbutton{Aceptar}..
+	\UCpaso Verifica si se tienen alojados en memoria registros de Refugios Propuestos.\refTray{B}
+	\UCpaso Continua en el paso 3 del CU19.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Cuando no existen registros de Refugios propuestos}
+	\UCpaso Muestra el MSG22-"No se tiene en memoria registros de Refugios Propuestos".	
+	\item \UCactor Oprime boton  \IUbutton{Aceptar}.
+	\UCpaso[] Termina el caso de uso.
+\end{UCtrayectoriaA}

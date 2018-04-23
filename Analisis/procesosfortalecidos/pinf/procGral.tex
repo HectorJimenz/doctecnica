@@ -1,0 +1,117 @@
+\begin{Proceso}{PF-GINF}{Proceso Fortalecido}{
+		
+		El Proceso Fortalecido de Gestión de Infraestructura se encargará de gestionar los espacios en los cuales se impartirán clases de las distintas Unidades de Aprendizaje\footnote{ver \refElem{UnidadDeAprendizaje}} de los Programas Académicos\footnote{ver \refElem{ProgramaAcademico}}. Esta información conformará un catálogo general, que estará a disposición de todo el Instituto.
+		
+		%-------------------------------------------
+		%Diagrama del proceso
+		\noindent \\ La figura \cdtRefImg{pGeneralFortalecido:PG-GINF}{Diagrama  General del Proceso de Gestión de Infraestructura} muestra las actividades que se realizan para llevar a cabo el proceso descrito anteriormente.
+		
+		\Pfig[0.8]{procesosfortalecidos/pinf/images/PP-RINF-procGral.png}{pGeneralFortalecido:PG-GINF}{Diagrama General del Proceso de Gestion de Infraestructura}
+	}
+	{PF-GINF}
+	\PRccsection{Datos para control interno}
+	\PRccitem{Versión}{1}
+	\PRccitem{Autor}{Nayeli Vega García}
+	\PRccitem{Evaluador}{David Ortega Pacheco}
+	\PRccitem{Prioridad}{Alta}
+	\PRccitem{Estatus}{Terminado}
+	\PRccitem{Complejidad}{Baja}
+	\PRccitem{Volatilidad}{Baja}
+	\PRccitem{Madurez}{Alta/Media/Baja}
+	\PRccsection{Control de cambios}
+	\PRccitem{Versión 0}{
+		\begin{Titemize}
+			%\RCitem{ PC1}{Corregir la ortografía}{\DONE}
+			%\TODO es para solicitar un cambio \TOCHK Es para informar que se atendió el TODO(ya hizo las correcciones),\DONE Es para indicar que el e valuador reviso los cambios.
+		\end{Titemize}
+	}
+	\PRitem{Participantes}{
+		\refElem{UnidadAcademica}
+	}
+	\PRitem{Objetivo}{
+		Permite construir un catálogo de los espacios habilitados para impartir clases de cada programa académico ofertado por las unidades académicas.
+	}
+	\PRitem{Interrelación con otros procesos}{	
+		\hyperlink{chapter:PFRH}{Proceso Fortalecido de Registro de Horarios}
+			}
+	\PRitem{Proveedores}{
+		\refElem{UnidadAcademica}
+	}
+	\PRitem{Entradas}{
+		\begin{Titemize}
+			\Titem Nombre del edificio
+			\Titem Niveles del edificio
+			\Titem Comentarios para el registro del edificio
+			\Titem Nombre del salón 
+			\Titem Ubicación del salón por edificio y nivel
+			\Titem Capacidad del salón
+			\Titem Disponibilidad de acceso a discapacitados, por cada salón
+			\Titem Tipo de actividad a desarrollarse por cada salón
+			\Titem Tipo de salón
+
+		\end{Titemize}		
+	}
+	\PRitem{Consumidores}{
+		\refElem{UnidadAcademica}
+	}
+	\PRitem{Salidas}{
+			 	Catálogo de los salones, por unidad académica	
+	}
+	\PRitem{Precondiciones}{
+			 Ninguna
+	}
+	\PRitem{Postcondiciones}{
+			Se podrán asignar salones en el registro de horarios 	
+	}
+	\PRitem{Frecuencia}{
+		Eventual.
+	}
+	\PRitem{Tipo}{
+		Soporte
+	}
+	% Operacion: Proceso asociado a las actividades propias de la operación del RENIECYT.
+	% Mejora continua: Porcesos asociados a actividades de mejora continua del proceso actual.
+	% Soporte: Procesos asociados a actividades indirectas necesarias para operar el RENIECYT.
+\PRitem{Áreas de oportunidad}{
+	\refElem{PGINF-AO1} 
+}
+	
+\end{Proceso}
+
+	%La figura \cdtRefImg{arq:AG-RE}{AG-RE Registro de Evaluaciones} muestra los procesos que componen el presente proceso general.
+
+	%	\Pfig[0.8]{procesosfortalecidos/pinf/images/PP-RINF-procGral.png}{pg:procGral}{Proceso general PGXX- XXXXXX}
+
+
+%Descripción de procesos
+\begin{PDescripcion}
+	
+\Ppaso \textbf{Unidad Académica} 
+	\begin{enumerate}
+		
+		\Ppaso[\PSubProceso] \cdtLabelTask{PP-GINF3.1:SAEV2.0} {Actualizar catálogo de infraestructura.} Esta tarea permitirá identificar y documentar los cambios en la infraestructura de la \refElem{UnidadAcademica}.
+
+		\Ppaso[\PSubProceso] \cdtLabelTask{PP-GINF3.2:SAEV2.0} {Actualizar catálogo de edificios.} Esta tarea permitirá identificar los cambios en la división de la unidad académica en cuanto a sus edificios, para posteriormente registrar los cambios en el sistema.
+		
+		\Ppaso[\PSubProceso] \cdtLabelTask{PP-GINF3.3:SAEV2.0} {Actualizar catálogo de salones.} Esta tarea permitirá identificar los cambios en la división de la unidad académica en cuanto a los salones y/o espacios externos, para posteriormente registrar los cambios en el sistema.	
+	\end{enumerate}
+
+\Ppaso \textbf{Calmécac}
+
+	\begin{enumerate}
+		
+		\Ppaso[\PSubProceso] \cdtLabelTask{PP-GINF3.4:SAEV2.0}{Registrar/modificar catálogo de edificios.} Este subproceso permitirá registrar y/o modificar el catálogo de los edificios para cada unidad académica.
+		
+		\Ppaso[\PSubProceso] \cdtLabelTask{PP-GINF3.5:SAEV2.0}{Registrar/modificar catálogo de salones.} Este subproceso permitirá registrar y/o modificar el catálogo de los salones para cada unidad académica. En este proceso también se podrán registrar los salones que son externos al Instituto y en los que se pueden impartir clases por medio de algún convenio.
+		
+	\end{enumerate}
+	
+	
+	
+\end{PDescripcion}
+
+
+
+
+
+

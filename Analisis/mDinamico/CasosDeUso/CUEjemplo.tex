@@ -1,0 +1,65 @@
+
+
+\begin{UseCase}{CU10}{Inscribir Aspirante}{
+		Este caso de uso ayudará al \refElem{DepartamentoDeGestionEscolar} a ingresar el registro de los aspirantes admitidos a los horarios creados por el proceso de estructura académica \refElem{Calmecac}.
+}
+	\UCitem{Versión}{0.1}
+	\UCccsection{Datos para el control Interno}	
+	\UCitem{Autor}{Francisco Isidoro Mera Torres}
+	\UCccitem{Evaluador}{Ulises Veléz Saldaña}
+	\UCitem{Operación}{Gestionar}
+	\UCccitem{Prioridad}{Alta}
+	\UCccitem{Complejidad}{Media}
+	\UCccitem{Volatilidad}{Media}
+	\UCccitem{Madurez}{Media}
+	\UCitem{Estatus}{Edición}
+	\UCitem{Fecha del último estatus}{28 de Junio del 2017}
+	\UCccsection{Revisión Version 0.1}
+	\UCccitem{Fecha}{}
+	\UCccitem{Evaluador}{Ulises Veléz Saldaña}
+	\UCccitem{Resultado}{}
+	\UCccitem{Observaciones}{}
+	\UCsection{Atributos}
+	\UCitem{Actor(es)}{\refElem{DepartamentoDeGestionEscolar},\refElem{Aspirante}}
+	\UCitem{Propósito}{Proporcionar al \refElem{DepartamentoDeGestionEscolar} un mecanismo para a inscribir a los aspirantes de acuerdo a un criterio si existe o realizar esta tarea manualmente}
+	\UCitem{Entradas}{Estructura Académica, Aspirantes con preboleta}
+	\UCitem{Salidas}{Aspirante con Horario}
+	\UCitem{Precondiciones}{
+		\begin{Titemize}
+			\Titem La estructura académica debe estar cargada en el \refElem{Calmecac}
+			\Titem Los aspirantes deben tener un número de \refElem{Preboleta}\footnote{Esto implica que debieron haber sido aceptados}
+		\end{Titemize}}
+	\UCitem{Postcondiciones}{El aspirante queda inscrito con un \refElem{Horario}}
+	\UCitem{Reglas de Negocio}{}
+	\UCitem{Errores}{
+		\begin{Titemize}
+			\Titem \UCerr{Uno}{Cuando no existe o no ha sido carga la estructura académica en el sistema}{el Calmécac enviará el mensaje \textbf{Elementos no Disponibles}}
+			\Titem \UCerr{Dos}{Cuando no existen aspirantes cargados en el sistema}{el Calmécac enviará el mensaje \textbf{Elemetos no Disponibles}}
+		\end{Titemize}
+		}
+	\UCitem{Tipo}{}
+	\UCitem{Disparador(es)}{}
+	\UCitem{Issues}{}
+	\UCitem{Requerimientos no Funcionales}{}
+	\UCitem{Requerimientos de Usuario}{}
+	\UCitem{Condiciones de Término}{}
+	\UCitem{Efectos Colaterales}{}
+	
+\end{UseCase}
+
+
+%Trayectoria Principal : Happy Path
+
+\begin{UCtrayectoria}
+	\item \UCactor Selecciona opción ver albergues.
+	\UCpaso Revisa la lista de usuarios que desean recibir notificaciones.\refTray{A}
+	\UCpaso Notifica al \UCactor que debe realizar la inscripción de aspirantes con el mensaje Cargar Aspirantes.
+	\item \UCactor Ingresa al Calmécac.\refTray{B}
+	\UCpaso Le
+\end{UCtrayectoria}
+
+
+\begin{UCtrayectoriaA}{A}{Cuando no existen mensajes}
+	\UCpaso lalala
+	\item \UCactor lololol
+\end{UCtrayectoriaA}

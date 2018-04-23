@@ -1,0 +1,126 @@
+
+\begin{Proceso}{PF-RH}{Proceso Fortalecido}{
+		El proceso de Registro de Horarios se encargará de gestionar la generación y facilitará asignación de horarios para las unidades de aprendizaje\footnote{ver \refElem{UnidadDeAprendizaje}} a ofertar en el \refElem{ProgramaAcademico}. Para llevar a cabo cada una de sus funciones, se apoyará de la interacción con otros procesos que involucran la obtención de información referente a los docentes adscritos a la \refElem{UnidadAcademica}, que incluyen horarios laborales y dictámenes de categorías, además del envío de información para validar la \refElem{EstructuraAcademica}.
+	}
+	{PE.X.X}% no se usa
+	\PRccsection{Datos para control interno}
+	\PRccitem{Versión}{0.2}
+	\PRccitem{Elaboró}{José Asunción Enríquez Zárate}
+	\PRccitem{Supervisó}{Ulises Vélez Saldaña}
+	\PRccitem{Prioridad}{Alta}
+	\PRccitem{Estatus}{En Revisión}
+	\PRccitem{Complejidad}{Media}
+	\PRccitem{Volatilidad}{Media}
+	\PRccitem{Madurez}{Media}
+	\PRsection{Atributos del proceso}
+	\PRitem{Participantes}{
+		 \refElem{ProgramaAcademico}, \refElem{UnidadAcademica}, \refElem{EstructuraAcademica}, \refElem{CapitalHumano},
+		 \refElem{Calmecac}.
+	}
+	\PRitem{Objetivo}{
+		Permitir la generación y registro de horarios por parte del responsable y facilitará el proceso de  generar la estructura académica en la unidad académica haciendo uso del Calmécac, realizando consultas de información histórica que permitirán determinar el número de grupos a ofertar, del mismo modo Calmécac permitirá detectar traslapes en las asignaciones de horario al profesor, unidades de aprendizaje al grupo, espacios académicos en donde se impartirán las unidades de aprendizaje, así mismo, determinará número de horas excedentes de carga académica asignadas al profesor o el número de horas de adeudo con base en el dictamen de categoría correspondiente.  
+	}
+	\PRitem{Interrelación con otros procesos}{	
+	
+		 \hyperlink{chapter:PFEA}{PF-EA Estructuración Académica}
+	}
+	\PRitem{Proveedores}{ 
+		Programa Académico, Unidad Académica, Departamento de Capital Humano.
+	}
+	\PRitem{Entradas}{
+		\begin{Titemize}
+ 			\Titem \refElem{ProgramaAcademico}.
+ 			\Titem Catálogo de Espacios Académicos.
+ 			\Titem Lista de Profesores.
+ 			\Titem Número de grupos a ofertar.
+		\end{Titemize}		
+	}
+	\PRitem{Consumidores}{Calmécac, Estructura Académica.
+	}
+	\PRitem{Salidas}{
+		\begin{Titemize}
+			\Titem \refElem{Horario}.
+			
+\Titem Detección de los traslapes generados al asignar los horarios al profesor.
+			\Titem Detección de los traslapes generados al asignar los espacios académicos para la impartición de la unidad de aprendizaje.
+			\Titem Detección de los traslapes en la asignación de aprendizaje ofertadas en el grupo creado.
+			\Titem Identificación de profesores con carga superior a la máxima de acuerdo con lo indicado en su dictamen.
+			\Titem Identificación de profesores con carga inferior a la máxima de acuerdo con lo indicado en su dictamen.
+			\Titem Identificación de las unidades de aprendizaje impartidas por los profesores con base en la información histórica del mismo.
+ 			\Titem Propuesta de Estructura Académica.
+		\end{Titemize}		
+	}
+	\PRitem{Precondiciones}{
+		\begin{Titemize}
+ 			\Titem Se requiere la definición de grupos a ofertar.
+ 			\Titem El catálogo de espacios académicos.
+ 			\Titem Las Unidades de Aprendizaje pertenecientes al Programa Académico vigente.
+ 			\Titem Lista de Profesores pertenecientes a la Unidad Académica.
+ 			\Titem Lista de Profesores interinos con continuidad pertenecientes a la Unidad Académica. 			
+ 			\Titem Lista de Profesores interinos por sustitución pertenecientes a la Unidad Académica. 		 			
+		\end{Titemize}
+	}
+	\PRitem{Postcondiciones}{
+		\begin{Titemize}
+ 			\Titem Generación de la propuesta de Estructura Académica.
+		\end{Titemize}
+	
+}
+	\PRitem{Frecuencia}{
+		Semestralmente.
+	}
+	\PRitem{Tipo}{
+		Proceso Clave.
+	}
+	\PRitem{Áreas de Mejora}{
+		\refElem{PRH-AO1}.
+	}
+\end{Proceso}
+
+
+
+	La figura \cdtRefImg{pfhr:procEspec}{Proceso específico PF-Registro de Horarios} muestra los procesos que componen el presente proceso específico.
+
+	\Pfig[1]{procesosfortalecidos/phr/PF-RegistroDeHorarioVF2}{pfhr:procEspec}{Proceso Específico PF-Registro de Horarios}
+
+\pagebreak
+%Descripción de procesos
+\begin{PDescripcion}
+	
+	%Actor: Calmécac
+	\Ppaso \textbf{Calmécac}
+	\begin{enumerate}
+	
+		\Ppaso[\Einicio] \cdtLabelTask{DefinirGrupos}{Definir grupos a ofertar:} El proceso iniciará cuando se reciba el mensaje de solicitud de generar estadística que indicará la ocupabilidad de las unidades de aprendizaje, pasará a la tarea  \cdtRefTask{PFRH:calmecac:GenerarEstadistica}{Generar Estadística}.
+
+		\Ppaso [\itarea] \cdtLabelTask{PFRH:calmecac:GenerarEstadistica}{Generar Estadística}: Esta tarea es nueva y consistirá en que \refElem{Calmecac} permita consultar  estadísticas que servirán de apoyo al encargado de la  \refElem{EstructuraAcademica} a determinar el número de grupos a ofertar.
+		
+		\Ppaso [\itarea] \cdtLabelTask{PFRH:calmecac:DefinirEstrategiaGenerarHorario}{Generar Horarios para la EA}: Calmécac ofrecerá dos opciones para crear la Estructura Académica las cuales son: \\
+		\begin{Titemize}
+			\Titem Replicar Estructura Periodo Similar, en caso de seleccionar la estrategia consistente en clonar un periodo similar, pasará a al subproceso \cdtRefTask{PFRH:calmecac:ReplicarEstructuraPeriodoSimilar}{Replicar Estructura Periodo Similar}.
+			\Titem Crear Estructura nueva, en caso de seleccionar la estrategia consistente en crear una estructura nueva, pasará a al subproceso \cdtRefTask{PFRH:calmecac:CrearEstructuraNueva}{Crear Estructura nueva}.
+		\end{Titemize}	
+
+		\Ppaso [\PSubProceso] \cdtLabelTask{PFRH:calmecac:ReplicarEstructuraPeriodoSimilar}{Replicar Estructura Periodo Similar}:  Este subproceso es nuevo y consiste en que Calmecac permitirá copiar la estructura académica utilizada en un periodo escolar similar para agilizar el proceso de generación de estructura académica, permitiendo realizar las modificaciones pertinentes sobre la misma, pasará al subproceso \cdtRefTask{PFRH:calmecac:CrearEstructuraNueva}{Crear Estructura nueva}. 
+		
+		\Ppaso [\PSubProceso]\cdtLabelTask{PFRH:calmecac:CrearEstructuraNueva}{Crear Estructura nueva}: Se propone que Calmecac realice la detección de traslapes al momento de asignar los espacios académicos, unidades de aprendizaje y profesores cuando se está creando la nueva Estructura Académica con respecto a la asignación de horarios. Los espacios académicos y las unidades de aprendizaje pertenecientes al \refElem{ProgramaAcademico} se reciben a través de un Servicio Web, una vez finalizado, será posible pasar al subproceso \cdtRefTask{PFRH:calmecac:IdentificarInconsistencias}{Identificar inconsistencias en los horarios}.
+		
+		
+		\Ppaso [\PSubProceso]\cdtLabelTask{PFRH:calmecac:IdentificarInconsistencias}{Identificar inconsistencias en los horarios}: El Calmécac propone como mejora permitir al responsable de estructura académica identificar durante la verificación:
+		
+		\begin{itemize}
+			\item Profesores que no cubren su carga máxima con base en el dictamen correspondiente.
+			\item Profesores que excedan del número de horas de carga máxima con base en el dictamen correspondiente.
+			\item Los traslapes existentes en cuanto a:
+				\begin{enumerate}
+					\item Asignación de horarios al profesor.
+					\item Asignación de espacios académicos para la impartición de la unidad de aprendizaje.
+					\item Unidades de aprendizaje ofertadas en el grupo creado.
+				\end{enumerate}
+		\end{itemize}
+		
+		Si durante la verificación se detectan algunas de las particularidades antes mencionadas pasará al subproceso  \cdtRefTask{PFRH:calmecac:ModificarLaDefinicionDeHorarios}{Modificar la definición de Horarios}.
+		
+		\Ppaso [\PSubProceso]\cdtLabelTask{PFRH:calmecac:ModificarLaDefinicionDeHorarios}{Modificar la definición de Horarios}: Se propone que Calmecac, en caso de existir particularidades permita realizar las adecuaciones pertinentes, permitiendo la detección de traslapes al asignar los espacios académicos, unidades de aprendizaje y profesores durante la modificación de Estructura Académica.
+	\end{enumerate}
+\end{PDescripcion}	

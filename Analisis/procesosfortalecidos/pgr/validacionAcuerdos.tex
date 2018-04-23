@@ -1,0 +1,88 @@
+\subsection{Validación de Cambios del Proceso de Reinscripciones}
+\label{sec:PF-GR:validacion}
+%Perfil actual: Se espera poder poner el área, donode no se tenga certeza de el área especifica se puede poner de forma general.
+%Tipo: básicamente son tres Cambio, Nuevo o Eliminar 
+
+
+%------------- Acuerdo 1 -------------
+\hrule
+\vspace{0.2cm}
+\begin{Cdescription}
+	\item[Subproceso:] Configuración para reinscripciones y generación de citas.
+	\item[Situación actual:] La Unidad Académica de nivel medio superior o superior configura parte de los parámetros de reinscripción directamente en el SAES, tales como que el alumno pueda inscribirse en línea de acuerdo a los criterios de selección de horarios ya sea flexible, semiflexible, rigido y semirigido. Adicionalmente la Unidad Académica debe comunicarse a la \refElem{DAE} vía telefónica o por correo electrónico para que pueda definir los criterios de inscripción de acuerdo a sus necesidades para generar las citas de los alumnos, que puede ser considerando la cantidad de materias reprobadas (generalmente van de 0, 1 o hasta 2 adeudos) y el promedio del alumno. Generalmente las citas generadas suelen tener errores y omisiones que requieren supervisión y corrección  
+	\item[Perfil actual:] \refElem{DepartamentoDeGestionEscolar} de la \refElem{UnidadAcademica} y \refElem{DAE}.
+	\item[Solución propuesta:] El titular del departamento de Gestión Escolar de las Unidades Académicas  de nivel medio superior o superior, será el encargado de configurar los criterios aplicables para la reinscripción a través del \refElem{Calmecac} para que el sistema pueda generar las citas de los alumnos, los criterios a considerar son los siguientes:\\
+	\begin{itemize}
+		\item Tipo de selección de horario: flexible, semiflexible, rigido y semirigido: el criterio del tipo de selección de horario ayuda a definir la forma en que el alumno podrá realizar su reinscripción en línea en relación a la flexibilidad de los horarios como flexible (selección de unidad de aprendizaje y horario), semiflexible(selección de grupo y turno), semirigido (selección de grupo en un mismo turno) y rigido (solo permite seleccionar un grupo en el horario establecido) 
+		\item Número de unidades de aprendizaje adeudadas (0, 1, 2 o más): este criterio permite asignar una prioridad al momento de generar las citas a los alumnos de acuerdo al número de unidades de aprendizaje adeudadas al momento de generar las citas.
+		\item Promedio: este criterio permite asignar una prioridad de acuerdo al promedio que tengo al alumno al momento de generar las citas para su proxima reinscripción.
+		\item Alumno inscrito en el periodo anterior: este criterio considera que se generen citas a alumnos que estuvieron inscritos en el semestre inmediato anterior.
+		\item Fechas: este criterio permite configurar la forma de generar las citas en línea de acuerdo al calendario de reinscripción ya sea para la modalidad escolarizada, a distancia o mixta.
+		\item Alumnos de convenio: este criterio permite definir las fechas y distinguir la generación de citas para alumnos que son de convenio y los que ingresaron por examen de admisión.
+	\end{itemize}
+ Los criterios descritos anteriormente permiten configurar a través del \refElem{Calmecac} las prioridades y características que servirán de base para generar las citas de los alumnos.  Por ejemplo: Para el periodo de reinscipciones se define el tipo de horario semiflexible considerando Dia 1 de reinscripción se generan citas a alumnos con 0 adeudos de mayor a menor promedio, dia 2 de inscripción  se generan citas de alumnos con 1 y 2 adeudos de mayor a menor promedio y así sucesivamente para el resto de los días considerados para la reinscripción. Una vez configurados todos los criterios se generan las citas para que los alumnos en las fechas establecidas puedan realizar su reinscripciñon a través de \refElem{Calmecac}.
+ 
+	\item[Perfil propuesto:] \refElem{DepartamentoDeGestionEscolar} de la \refElem{UnidadAcademica} y \refElem{DAE}.
+	\item[Tipo:] Cambio.\\
+	
+\end{Cdescription}
+
+\hrule
+\vspace{0.2cm}
+\begin{Cdescription}
+	\item[Subproceso:] Generación de citas para alumnos con dictamen cumplido.
+	\item[Situación actual:] Los alumnos que tienen algún dictámen de la COSIE del Consejo Técnico Consultivo Escolar de La Unidad Académica o del Consejo General del IPN se deben inscribir a través de la ventanilla del \refElem{DepartamentoDeGestionEscolar} de la \refElem{UnidadAcademica}, incluso aunque su dictamen ya esté cumplido. Adicionalmente el alumno debe presentar toda la documentación en original del o los dictámenes que tenga vigentes para poder revisar su situación académica actual y ver la procedencia de su reinscipción.
+	\item[Perfil actual:] \refElem{DepartamentoDeGestionEscolar} de la \refElem{UnidadAcademica}
+	\item[Solución propuesta:] El \refElem{Calmecac} considera un módulo de dictámenes que permitirá gestionar la información relacionada con el o los dictámenes del alumno ya sea del CGC o el CTCE y verificar cuando un dictamen ha sido cumplido o no, lo que permitirá que el alumno pueda reinscribirse a través del \refElem{Calmecac} si es que ya ha cumplido con las condicionantes que establece el dictamen. Se propone que se generen citas para que los alumnos que ya hayan cumplido las condicionantes de su dictamen puedan inscribirse en línea a través del \refElem{Calmecac}. Esto facilitará el proceso de reinscripción debido a que el \refElem{Calmecac} verificará si el alumno ha cumplido el dictamen y está en la posibilidad de realizar una reinscripción.
+	
+	\item[Perfil propuesto:] \refElem{DepartamentoDeGestionEscolar} de la \refElem{UnidadAcademica} y \refElem{Alumno}.
+	\item[Tipo:] Cambio.\\
+	
+\end{Cdescription}
+%Se propone dividir la parte de generación de citas  y dictámenes.
+%Homogenizar los  terminos que se etan usando en la redacción (flexible, semiflexible, rigido, semirigido)
+%En la propuesta solo si es necesario volver a contextualizar
+%Revisar areas de trabajo / normatividad/criteriosDictamen, vienen los criterios.
+%Disitingir entre los alumnos de convenio y los que entran por examen de admisión.
+%Cuidar entre este punto y el siguiente para no mezclar el concepto de dictámenes
+\hrule
+
+\begin{Cdescription}
+	\item[Subproceso:] Reinscripción de alumnos en línea
+	\item[Situación actual:] El \refElem{Alumno} accede al SAES de acuerdo a su cita generada por el sistema considerando (tener 0, 1 o 2 adeudos, prioridad por promedio). El \refElem{Alumno} se reinscribe al nuevo semestre de acuerdo a la oferta y disponibilidad que presenta su \refElem{UnidadAcademica}. Para los casos de los alumnos que no se les generó cita porque tienen 3 o mas adeudos y tienen dictamen, se deben inscribir en ventanilla de manera presencial para verificar la procedencia de su reinscripción de manera particular. 
+
+	\item[Perfil actual:] \refElem{DepartamentoDeGestionEscolar} de la \refElem{UnidadAcademica} y \refElem{Alumno}.
+	\item[Solución propuesta:] El alumno accede al \refElem{Calmecac} de acuerdo a su cita generada por el sistema. En la reinscripción se deben considerar diferentes criterios como:
+	
+	\begin{itemize}
+		\item Carga minima, media y máxima: este aspecto considera validar la reincsripción del alumno considerando que inscriba los créditos que estén entre la carga mínima y máxima.
+		\item Unidades de aprendizaje con posible desfasamiento: considera la verificación de las unidades de aprendizaje adeudadas y verifique que no estén desfasadas. 
+		\item Unidades de aprendizaje adeudadas: considera la cantidad de créditos que están relacionados con las unidades de aprendizaje adeudadas y que repercuten en los créditos que puede inscribir.
+		\item Dictamen cumplido: en este aspecto el \refElem{Calmecac} considera un módulo de dictámenes que permite validar los dictámenes que tenga un alumno por parte del CGC o CTCE, de tal forma que cuando un alumno tenga un dictamen cumplido y su reinscripción sea procedente, el \refElem{Calmecac} permitirá su reinscripción en línea.
+		\item Programa académico: en este aspecto el \refElem{Calmecac} considera un módulo de programas académicos que permite validar que las unidades de aprendizaje a inscribir se encuentren dentro de la especialidad o seriación correspondiente.
+		\item Tiempo máximo de conclusion del programa académico: considera que el \refElem{Alumno} esté en el tiempo establecido para terminar el programa de estudios que está cursando.
+	\end{itemize}	
+		
+		
+	El \refElem{Alumno} podrá reinscribirse al nuevo semestre si ya está en condiciones de inscribirse de acuerdo a los criterios definidos por número de unidades de aprendizaje adeudadas, dictamen cumplido, carga mínima, materias desfasadas, tiempo máximo de conclusión del programa. El \refElem{Calmecac} considera un módulo de dictámenes lo cual apoyará en la evaluación de las condicionantes de los dictámenes y que el \refElem{Alumno} en cuestión esté en condiciones de inscribir unidades de aprendizaje. La reinscripción también considerará condicionantes como la especialidad del programa académico que esté cursando el alumno y que únicamente pueda inscribir unidades de aprendizaje de la misma especialidad.
+	 
+	\item[Perfil propuesto:] \refElem{DepartamentoDeGestionEscolar} de la \refElem{UnidadAcademica} y \refElem{DAE}.
+	\item[Tipo:] Cambio.\\
+	
+\end{Cdescription}
+%Utilizar como base los programas académicos, para especificar que las reinscripciones podrían soportar las especialidades
+%Explicar por separdo las ventajas que le pueden dar a las reinscripciones los módulos de Dictámenes
+\hrule
+
+\begin{Cdescription}
+	\item[Subproceso:] Inscripción a \refElem{ETS}
+	\item[Situación actual:] 
+	El alumno se presenta en el \refElem{DepartamentoDeGestionEscolar} de la \refElem{UnidadAcademica} con su comprobante de pago del \refElem{ETS} a presentar y otros requisitos establecidos por la \refElem{UnidadAcademica}, en algunos casos lo puede realizar en línea pero tiene errores considerables ya que no valida adecuadamente los traslapes de horarios. El alumno inscribe en ventanilla el o los ETS a presentar.
+	\item[Perfil actual:] \refElem{DepartamentoDeGestionEscolar} de la \refElem{UnidadAcademica} y \refElem{Alumno}.
+	\item[Solución propuesta:] El alumno a través del \refElem{Calmecac} se podrá inscribir a los ETS en el periodo establecido para ello y el sistema podrá evaluar si la unidad de aprendizaje está adeudada sin necesidad de que el \refElem{DepartamentoDeGestionEscolar} haya realizado un cierre del periodo escolar completo, ya que se considerará que a partir del momento en que el profesor asigne y confirme la calificación reprobatoria, el alumno estará en posibilidad de inscribir el \refElem{ETS}. De esta forma el único proceso en ventanilla será unicamente la formalización de la entrega del comprobante de pago y demás documentos solicitados y definidos por cada unidad académica.
+	
+	\item[Tipo:] Cambio.\\
+	
+\end{Cdescription}
+%El sistema validará traslapes en los horarios de ETS y validará si un alumno reprobo la materia sin la necesidad del proceso de cierre.
+\hrule

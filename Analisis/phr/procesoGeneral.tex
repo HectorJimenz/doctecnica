@@ -1,0 +1,103 @@
+%========================================================
+%Proceso General
+%========================================================
+
+%========================================================
+%Revisión
+%-------------------------------------------
+
+% \UCccitem{Versión}{1}
+% \UCccsection{Análisis de Procesos }
+% \UCccitem{Autor}{nombreAutor}
+% \UCccitem{Evaluador}{nombreEvaluador}
+% \UCccitem{Prioridad}{Alta} %Alta, media, baja
+% \UCccitem{Estatus}{} %Edición, Terminado, Corrección, Aprobado 
+% \UCccitem{Complejidad}{Alta} %Alta, Media, Baja
+% \UCccitem{Volatilidad}{Alta} %Alta, Media, Baja
+% \UCccitem{Madurez}{Media}  %Alta, Media, Baja
+% \UCccsection{Control de cambios}
+% \UCccitem{Versión 0}{
+% \begin{UClist}
+% \RCitem{ Pxn T1}{Corregir la ortografía}{\DONE}
+% \TODO es para solicitar un cambio, \TOCHK Es para informar que se atendió el TODO, \DONE Es para indicar que el evaluador reviso los cambios.
+% \end{UClist}
+%}
+
+%========================================================
+% Descripción general del proceso
+%-----------------------------------------------
+\begin{procesoGeneral}{PG-RH}{Proceso General  de Registro de Horarios} {
+		
+	%-------------------------------------------
+	%Resumen
+	El proceso de registro de horarios se encarga de gestionar los horarios para la imparticion de las unidades de aprendizaje en cada \refElem{UnidadAcademica}. Este se lleva a cabo mediante la ejecución de los subprocesos descritos mas adelante.\\
+	
+	
+	%acroproceso se muestran los subprocesos que se llevan a cabo a lo largo del proceso de generación y asignación de horarios, que es parte del proceso de generación de estructura académica.\\
+	
+%%%%	En este proceso, se contempla la generación y asignación de horarios para el periodo escolar siguiente, el cual involucra la elaboración del análisis de la demanda de las unidades de aprendizaje que serán ofertadas a la comunidad estudiantil, por parte del instituto en el semestre escolar siguiente.\\
+	
+%%%%	Posteriormente se asignan las unidades de aprendizaje a cada uno de los grupos aperturados en la unidad académica. Como paso siguiente en el proceso se envía la estructura en blanco (grupos, unidades de aprendizaje y horarios definidos) a los jefes de departamento para su revisión y posible ajuste en la definición y asignación de horarios, en caso de no existir ajuste alguno se procede a la asignación de profesores.\\
+	
+	
+	
+	%actual, en el semestre inmediato anterior y del semestre inmediato similar para determinar el número de unidades de aprendizaje a ofertar. Posteriormente se asignan las unidades de aprendizaje a cada uno de los grupos aperturados en la unidad académica. Como paso siguiente en el proceso se envía la estructura en blanco (grupos, unidades de aprendizaje y horarios definidos) a los jefes de departamento para su verificación y posible ajuste en la definición y asignación de horarios, en caso de no existir ajuste alguno se procede a la asignación de profesores.\\
+	
+	%En él, se contempla la generación y asignación de horarios para el periodo escolar siguiente, este proceso involucra la elaboración del análisis de la demanda (requerida para planear las unidades de aprendizje que serán ofertadas a la comunidad )por parte de la comunidad estudiantil para las unidades de aprendizajes ofertadas en el instituto en el semestre escolar actual, en el semestre inmediato anterior y del semestre inmediato similar para determinar el número de unidades de aprendizaje a ofertar. Posteriormente se asignan las unidades de aprendizaje a cada uno de los grupos aperturados en la unidad académica. Como paso siguiente en el proceso se envía la estructura en blanco (grupos, unidades de aprendizaje y horarios definidos) a los jefes de departamento para su verificación y posible ajuste en la definición y asignación de horarios, en caso de no existir ajuste alguno se procede a la asignación de profesores.\\
+	
+	
+	
+	
+		%-------------------------------------------
+		%Diagrama del proceso
+		\noindent La figura \cdtRefImg{pGeneral:PP-RH}{Diagrama General del Proceso de Registro de Horarios} muestra las actividades que se realizan para llevar a cabo este proceso.
+		 %el proceso descrito anteriormente.
+		
+		\Pfig[1.0]{phr/imagenes/PP_RH_Arquitectura_Generacion_y_Asignacion_De_Horarios}{pGeneral:PP-RH}{PG-RH Diagrama General del Proceso de Registro de Horarios}
+	}{PG-RH}
+
+\end{procesoGeneral}
+
+%========================================================
+%Descripción de tareas
+%-----------------------------------------------
+\begin{PDescripcion}
+	
+	%Actor: SAEV2.0
+	\Ppaso \textbf{Registro de Horarios}
+	
+	\begin{enumerate}
+		% que,  como y para que 
+		%Subproceso 1
+		\Ppaso[\PSubProceso] \cdtLabelTask{PP-RH:Registro de Horarios}{ \textbf{Análisis de la demanda del ciclo escolar en curso}.} Se realiza una reunión  en donde interviene la \refElem{SubdireccionAcademica} y los Jefes de Departamento\footnote{ver \refElem{JefeDeDepartamento}}de cada \refElem{UnidadAcademica}, con la finalidad de determinar cuantas unidades de aprendizaje se ofertarán durante el semestre escolar siguiente con la finalidad de satisfacer la demanda por parte de la comunidad estudiantil. El análisis  se realiza revisando el número de unidades de aprendizaje ofertadas en el semestre escolar actual, en el semestre inmediato anterior y del semestre inmediato similar. Lo anterior para comparar la cantidad de alumnos\footnote{ver \refElem{Alumno}} inscritos en los historicos.
+		
+		%\Ppaso[\PSubProceso] \cdtLabelTask{PP-RH:Registro de Horarios}{ \textbf{Análisis de la demanda del ciclo escolar en curso}.} Se realiza en conjunto con los jefes de departamento de cada unidad académica, con la finalidad de determinar cuantas unidades de aprendizaje se ofertarán durante el semestre escolar siguiente. 
+		
+		%El proceso inicia cuando se solicita la reunión inicial para el análisis de la demanda de unidades de aprendizaje a ofertar a la comunidad estudiantil por parte de subdirección académica, los involucrados en esta reunión son subdirección académica y jefes de departamento \cdtRef{Actor:SubdireccionAcademica}{Subdirección Académica} y  \cdtRef{Actor:JefesDeDepartamento}{Jefes de Departamento} del programa académico
+		
+		
+		%% El anaisis de la demanda se realiza en conjunto con los jefes de depto de cada unidad acaémica, con la finalidad de determinar cuantas unidades de aprendizaje se ofertarán semestre escolar siguiente. 
+		
+		
+		\Ppaso[\PSubProceso] \cdtLabelTask{PP-RH:Registro de Horarios}{ \textbf{Asignar unidades de aprendizaje a grupo}.}  Se realiza con base en el nivel (semestre) en el que se encuentra la \refElem{UnidadDeAprendizaje}, definiendo el horario y los días en los cuales se impartirá respetando los números de hora teórico - práctica.        
+		
+		%Una vez realizado el análisis de la demanda, se continua con la asignación de las unidades de aprendizaje a los grupos, así como los horarios para cada uno de las mismas.
+		
+		
+		%estos serán asignados a los grupos, los cuales se definin con base en el nivel (semestre) en el que se encuentre, a continuación, se asigna el horario en el cual se va a impartir, respetando los números de horas destinadas a la parte teórica y práctica.
+		
+		% y determinado las unidades de aprendizaje a ofertar, se procede a la asignación de las unidades de aprendizaje, estos serán asignados a los grupos, los cuales se definin con base en el nivel (semestre) en el que se encuentre, a continuación, se asigna el horario en el cual se va a impartir, respetando los números de horas destinadas a la parte teórica y práctica.
+		
+		\Ppaso[\PSubProceso] \cdtLabelTask{PP-RH:Registro de Horarios}{ \textbf{Verificación por jefes de departamento}.} Teniendo concluida una versión de la estructura en blanco (grupos, unidades de aprendizaje y horarios definidos) se le solícita a los Jefes de Departamento revisar y verificar,  en caso de existir alguna modificación se canaliza al proceso de Ajustes de horarios, si no existe ajuste alguno se continua con el proceso de asignación de profesores\footnote{ver \refElem{Profesor}} a cada \refElem{UnidadDeAprendizaje} ofertada.
+		
+		
+		% la asignación de unidades de aprendizaje y horarios a los grupos.
+		
+		%Teniendo concluido una versión de la estructura en blanco (grupos, unidades de aprendizaje y horarios definidos) se le solícita a los jefes de departamento revisar y verificar, una vez verificado y en caso de existir alguna modificacion se canaliza el proceso de Ajustes de horarios, si no existe ajuste alguno se continua con el proceso de asignación de profesores.
+		
+
+		\Ppaso[\PSubProceso] \cdtLabelTask{PP-RH:Registro de Horarios}{ \textbf{Ajuste de Horarios}.} En caso de existir alguna modificación se realiza el proceso de ajuste de horarios y se repite el proceso anterior.
+		
+		
+	\end{enumerate}
+\end{PDescripcion}

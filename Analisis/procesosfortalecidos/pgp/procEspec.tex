@@ -1,0 +1,190 @@
+\begin{Proceso}{PF-GP}{Proceso Fortalecido}{
+			Capital Humano es el responsable de la información relativa a los Profesores\footnote{Ver \refElem{Profesor}} dentro del Instituto, la cual será consumida por el Calmécac por medio de un Servicio Web, para la generación de Horarios y de la Estructura Académica.
+			
+			
+	}
+	{PE.X.X}% no se usa
+	\PRccsection{Datos para control interno}
+	\PRccitem{Versión}{0.2}
+	\PRccitem{Elaboró}{Chadwick Carreto Arellano}
+	\PRccitem{Supervisó}{Jaime López Rabadán}
+	\PRccitem{Prioridad}{Alta}
+	\PRccitem{Estatus}{Revisado}
+	\PRccitem{Complejidad}{Media}
+	\PRccitem{Volatilidad}{Media}
+	\PRccitem{Madurez}{Media}
+	\PRsection{Atributos del proceso}
+	\PRitem{Participantes}{\refElem{UnidadAcademica}, \refElem{Calmecac},\refElem{CapitalHumano}.
+}
+	\PRitem{Objetivo}{
+		Obtener la información actualizada de los Profesores de cada Unidad Académica proveniente de Dirección de Capital Humano, así como gestionar la información de los Profesores invitados, interinos y externos.
+	}
+	\PRitem{Interrelación con otros procesos}{
+		\hyperlink{chapter:PFRH}{Proceso Fortalecido de Registro de Horarios}	
+%		\begin{Titemize}
+% 			\Titem 
+% 		\end{Titemize}
+	}
+	\PRitem{Proveedores}{ \refElem{CapitalHumano}.
+	}
+	\PRitem{Entradas}{
+		\begin{Titemize}
+ 			\Titem Información de Profesores.
+ 			\Titem Nombre 
+ 			\Titem RFC
+ 			\Titem Número de empleado
+ 			\Titem Grado Académico
+ 			\Titem Especialidad
+ 			\Titem Fecha de Ingreso
+ 			\Titem Carga máxima 
+ 			\Titem Turno / Horario Laboral
+ 			\Titem Horas Base
+ 			\Titem Horas Interinato
+ 			\Titem Horas de Actividades Complementarias
+ 			\Titem Categoría/Dictamen
+ 			\Titem Carga Máxima
+ 			\Titem Horas Frente a Grupo
+ 			\Titem Descarga Académica
+ 			\Titem Clave de Unidad Académica
+ 			\Titem Nombre de la Unidad Académica
+ 			\Titem Materias Impartidas
+ 			\Titem Modalidad en la que Imparte Clase
+		\end{Titemize}		
+	}
+	\PRitem{Consumidores}{\refElem{UnidadAcademica}}
+	
+	\PRitem{Salidas}{
+		\begin{Titemize}
+ 			\Titem Información del Profesor.
+ 			\Titem Registro del Profesor Interino.
+ 			\Titem Registro del Profesor Invitado Interno.
+ 			\Titem Registro del Profesor Invitado Externo.
+		\end{Titemize}		
+	}
+	\PRitem{Precondiciones}{
+		Se requiere de la autorización de la Dirección de Capital Humano para la consulta de la Información Institucional del Profesor.
+%		\begin{Titemize}
+% 			\Titem 
+% 		\end{Titemize}
+	}
+	\PRitem{Postcondiciones}{
+		\begin{Titemize}
+ 			\Titem Los Horarios se generarán de forma más rápida y con información actualizada.
+			\Titem Se registrará a los profesores interinos.
+			\Titem Se registrará a los profesores invitados internos.
+			\Titem Se registrará a los profesores invitados externos.
+		\end{Titemize}
+		
+	}
+	\PRitem{Frecuencia}{
+		Periódica y Semestral.
+		% Periódico: Cada cierto tiempo: diario, semanal, anual, etc.
+		% Programado: Alguien en algún momento establece la fecha.
+		% Eventual: Cada que ocurre un evento que no se puede prever ni programar.
+	}
+	\PRitem{Tipo}{
+		Proceso Clave.
+	}
+	\PRitem{Áreas de Mejora}{
+		\refElem{PGP-AO1}
+	}
+\end{Proceso}
+
+La figura \cdtRefImg{pfpgp:procFort}{Proceso Gestión de PG-Profesores} muestra los procesos que componen el presente proceso.
+
+\Pfig[1]{procesosfortalecidos/pgp/imagenes/procFort}{pfpgp:procFort}{Proceso Gestión de PG-Profesores}
+
+
+%Descripción de procesos
+
+%\begin{PDescripcion}
+%\Ppaso[\Einicio] \cdtLabelTask{PlaneacionAcademica}{Planeación Académica - Generación de Horarios:} El proceso de Planeación Académica y generación de horarios inicia con la solicitud de información de profesores por parte de la \refElem{UnidadAcademica}.
+%	
+%\Ppaso[\PSubProceso] Información de Profesores. El \refElem{Calmecac}, generará la solicitud de la información de los profesores a la Dirección de \refElem{CapitalHumano}, esto se realizará por medio de un Servicio Web.
+%	
+%\Ppaso [\PSubProceso] Generación de Catálogo de Docentes. Se integrará la información de los Profesores de la \refElem{UnidadAcademica} que lo solicita y regresará por medio del Servicio Web al \refElem{Calmecac} la información de los Profesores.  
+%	
+%\Ppaso[\PSubProceso] \cdtLabelTask{InformaciondelosProfesores}{Información Actualizada de los Profesores}: El \refElem{Calmecac} obtendrá la información de los Profesores y la regresará a la \refElem{UnidadAcademica} para iniciar la integración de los Horarios.
+%	
+%\Ppaso[\PSubProceso] \cdtLabelTask{VerificaProfesores}{Verificá si se requieren Profesores adicionales:} Con la información obtenida de \refElem{CapitalHumano} se iniciará la planeación de horarios del siguiente semestre, se registrará a los profesores candidatos y se revisará si el personal con el que se cuenta es suficiente para cubrir las necesidades de grupos.
+%	
+%\Ppaso [\PSubProceso] \cdtLabelTask{ContrataciondeProfesores}{Profesores Interinos:} En caso de no cubrirse las necesidades de Profesores, se tendrán que ver la opción de contratar Profesores Interinos para cubrir los espacios vacantes, por esta causa se generará un registro de Candidatos Profesores. Cuando se concluye esta planeación de horarios con este registro, se podrá definir de forma casi exacta el número de Horas de Interinato que requerirá la Unidad Académica.
+%	
+%\Ppaso [\PSubProceso]Registro de Profesores Candidatos. El \refElem{Calmecac} tendrá un registro de los Profesores Candidatos, No se registran a todos los Candidatos, únicamente a los que se cree que puedan cubrir la vacante.  
+%
+%\Ppaso [\PSubProceso] \cdtLabelTask{BuscarunProfesorInvitadoInterno}{Buscar Profesor Invitado Interno (IPN):} En caso de no cubrirse las necesidades de grupos, se ven las opciones de profesores invitados, estos podrán ser internos o externos. En caso de internos se solicitará la información de los posibles Profesores al Sistema \refElem{Calmecac}.
+%	
+%\Ppaso [\PSubProceso]\cdtLabelTask{BuscarProfesorInterno}{Profesor Interno del IPN:} El \refElem{Calmecac} realizará una consulta vía Servicio Web a la Dirección de Capital Humano para obtener la información del Docente filtrandolo por su unidad académica de origen y se registrará su posible participación.
+%
+%\Ppaso [\PSubProceso]\cdtLabelTask{BuscarProfesorInvitadoExterno}{Buscar Profesor Invitado Externo:} En caso de requerir un Profesor Externo al Instituto este se registrará de forma temporal en el sistema \refElem{Calmecac} esto con el fin de no generar una relación laboral potencial.
+%	
+%\end{PDescripcion}
+
+\begin{PDescripcion}
+	
+	%Actor: Unidad Academica
+	
+	\Ppaso \textbf{Unidad Académica}
+	
+	\begin{enumerate}
+		
+		%Subproceso 1
+		\Ppaso[\PSubProceso] \cdtLabelTask{GP:ua:PlaneacionAcademica}{Planeación Academica} Proceso en el que cada \refElem{UnidadAcademica} realizará la planeación de sus horarios y definirá si cubre los requerimientos de profesores para los cursos que ofertará en el siguiente periodo escolar, los profesores pueden ser:
+		
+		\begin{itemize}
+			\item De Base
+			\item De Interinato
+			\item Invitado Interno 
+			\item Invitado Externo al IPN
+		\end{itemize}
+		
+	    Se realizará la evaluación de requerimientos de Profesores para cubrir los grupos planeados, en caso de contar con los profesores necesarios el proceso termina. En caso contrario se revisará que tipo de Profesor se requiere para cubrir la necesidad de horas en la planeación.
+		
+		%Subproceso 2
+		\Ppaso[\PSubProceso] \cdtLabelTask{GP:ua:BuscaContratar}{Busca Contratar Profesores.}Se realizará la verificación de profesores para establecer si se requieren contratar profesores de manera interina.
+		
+		%Subproceso 3
+		\Ppaso[\PSubProceso] \cdtLabelTask{GP:ua:BuscaProfesorInvitadoInterno}{Busca Profesor Invitado del IPN.}Si se requieren profesores invitados se realizará la búsqueda y propuesta de profesores invitados que pertenecen al Instituto.
+		
+		%Subproceso 4
+		\Ppaso[\PSubProceso] \cdtLabelTask{GP:ua:BuscaProfesorInvitadoExterno}{Busca Profesores Invitados Externo.}En caso de requerir invitados se realizará la búsqueda y propuesta de profesores invitados que pertenecen al Instituto.
+		
+	\end{enumerate}
+	
+	%Actor: Calmécac
+	
+	\Ppaso \textbf{Calmécac}
+	
+	\begin{enumerate}
+		
+		%Subproceso 1
+		\Ppaso[\PSubProceso] \cdtLabelTask{GP:calmecac:InformacionDocente}{Información de los Profesores.}La \refElem{UnidadAcademica} realizará por medio de un servicio Web la consulta de información actualizada de los Profesores a través del \refElem{Calmecac}.		
+		
+		%Subproceso 2
+		\Ppaso[\PSubProceso] \cdtLabelTask{GP:calmecac:RegistraCandidato}{Registro Candidatos Docentes.}Se realizará el registro de los posibles candidatos para cubrir las horas libres de interinato, se registrara únicamente a los que se cree que van a cubrir la vacante.
+		
+		%Subproceso 3
+		\Ppaso[\PSubProceso] \cdtLabelTask{GP:calmecac:BuscaDocenteInterno}{Busca Profesores.}En caso de requerir profesores invitados se realizará la búsqueda por medio del sistema \refElem{Calmecac}, el cual se conectará a un Servicio Web que proporcionará la información actualizada de los Profesores que no pertenecen a la \refElem{UnidadAcademica} con el fin de registrarlos como Profesores Invitados Internos.   
+		
+		%Subproceso 4
+		\Ppaso[\PSubProceso] \cdtLabelTask{GP:calmecac:BuscaDocenteExterno}{Registra el Docente sin Relación Laboral Potencial.}En caso de requerir profesores invitados externos al Instituto, se realizará el registro de Profesores externos al Instituto de manera temporal, de tal forma que el Profesor no genere una relación laboral.   
+		
+	\end{enumerate}
+	
+	%Actor: Dirección de Capital Humano
+	
+	\Ppaso \textbf{Dirección de Capital Humano}
+	
+	\begin{enumerate}
+		
+		%Subproceso 1
+		\Ppaso[\PSubProceso] \cdtLabelTask{GP:DCH:GeneraCatalogo}{Generación de Catálogo de Profesores.}Proceso en el que se realizará una integración de la información actualizada de los Profesores de cada \refElem{UnidadAcademica}.Esta información se consulta de forma automática y se regresa al sistema \refElem{Calmecac}  para su explotación.  		
+		
+		%Subproceso 2
+		\Ppaso[\PSubProceso] \cdtLabelTask{GP:DCH:ConsultadeProfesores}{Proporciona Información del Docente.}Se realizará la búsqueda de información del Profesor en todo el Instituto tomando la información directamente de la Dirección de Capital Humano.
+		
+		
+	\end{enumerate}
+	
+\end{PDescripcion}
+

@@ -1,0 +1,63 @@
+%========================================================
+%Proceso General
+%========================================================
+\begin{procesoGeneral}{PG-IR}{Proceso General de Ingreso} {
+		
+	%-------------------------------------------
+	% Resumen
+	En esta sección se muestran los subprocesos que componen al Proceso de Ingreso. Especifica las funciones que cada área del Instituto debe realizar desde la generación de la convocatoria hasta el registro de un \refElem{Aspirante} en su calidad de \refElem{Alumno}. El detalle solo se aplica a los procesos que tienen interacción con el \refElem{SAES} mientras que los demás solo se dejan señalados.\\
+					
+	%-------------------------------------------
+	% Diagrama del proceso
+	La figura \cdtRefImg{pGeneral:PG-IN}{Proceso General de Ingreso} muestra la secuencia de actividades que se deben realizar para llevar a cabo este proceso, el cual describiremos en la siguiente sección.
+		
+		\Pfig[1.0]{pin/imagenes/PG-IN-Ingreso}{pGeneral:PG-IN}{PG-IN Proceso General de Ingreso.}
+	}{PG-IN}
+
+\end{procesoGeneral}
+
+%========================================================
+%Descripción de tareas
+%-----------------------------------------------
+\begin{PDescripcion}
+	
+	%Actor: SAEV2.0
+	\Ppaso \textbf{Departamento de Informática y Estadística Escolar}
+	
+	\begin{enumerate}
+		%Subproceso 1
+		\Ppaso[\PSubProceso]{\cdtLabelTask{P-INS-Aplicacion}{ \textbf{Aplicación de la Convocatoria}.}} Inicia cuando se aprueba la convocatoria y el calendario de admisión por parte de la Comisión Especial. En él se lleva a cabo toda la gestión requerida para operar las convocatorias\footnote{ver \refElem{Convocatoria}} de admisión al IPN en todas sus modalidades. Una vez terminado el proceso, se publica la lista de Aspirantes Aceptados\footnote{ver \refElem{AspiranteAceptado}.} ({\em MSG1-Aspirantes aceptados}) y se inicia la revisión de Expedientes de Aspirantes\footnote{ver \refElem{ExpedienteDelAspirante}.}
+		
+		\Ppaso[\PSubProceso]{\cdtLabelTask{P-INS2}{\textbf{P-INS2-Validación de Inscripción}.}}Proceso a través del cual se dictamina la autenticidad y legitimidad de los documentos aportados por el aspirante para su inscripción, si la documentación es correcta se le comunica por escrito,y se continua con el \cdtRefTask{P-INS3}{P-INS3-Registro de Alumnos},en caso de que se encuentre algún documento alterado se ejecuta el subproceso \cdtRefTask{P-INS4}{P-INS4-Notificación de Documentación falsa o alterada.}. Al concluir esta tarea se le entrega a la \refElem{UnidadAcademica} los expedientes de los aspirantes ,esto se realiza generalmente en bloques por facilidad.
+		
+		\Ppaso[\PSubProceso]{\cdtLabelTask{P-INS4}{\textbf{P-INS4-Notificación de Documentación Falsa o Alterada}}} Se notifica al \refElem{AbogadoGeneral} los expedientes de los aspirantes que presentaron documentación falsa o alterada, así como la explicación de los hallazgos, anulando así la inscripción del aspirante y para la atención del caso.
+	\end{enumerate}
+	
+	\Ppaso \textbf{Departamento de Registro y Supervisión Escolar}
+	
+	\begin{enumerate}
+		%Subproceso 1
+		\Ppaso[\PSubProceso]{\cdtLabelTask{P-INS9}{\textbf{P-INS9-Actualización de Programas Académicos}.}} La actualización de los Programas Académicos se inicia días antes del proceso de admisión con la finalidad de tener la información lista para el ingreso y la inscripción. Se cargan en el SAES los Programas Académicos autorizados\footnote{ver \refElem{ProgramaAcademico}.} para que estén disponibles en la Base de datos de cada escuela.
+		
+		%Subproceso 2
+		\Ppaso[\PSubProceso]{\cdtLabelTask{P-NS1}{\textbf{P-INS1-Carga de Aspirantes}.}} Una vez que ha concluido el subproceso de \cdtRefTask{P-ING9}{P-ING9-Actualización de Programas Académicos} y se haya recibido la lista de Aspirantes Aceptados ({\em MSG1-Aspirantes aceptados}) enviada por parte del \refElem{DepartamentoDeInformaticaYEstadisticaEscolar}, se lleva a cabo el registro de los Aspirantes Aceptados en el SAES con su número de preboleta o boleta asignado. Una vez concluido este subproceso se ejecuta el subproceso de \cdtRefTask{P-INS3}{P-INS3-Registro de Alumnos} junto con el proceso de \cdtRefTask{P-INS2}{P-INS2-Validación de Inscripción}.
+
+		
+		%Subproceso 3
+		\Ppaso[\PSubProceso]{\cdtLabelTask{P-INS3}{\textbf{P-INS3-Registro de Alumnos}}} De manera periódica y con una frecuencia variable, se corre un proceso de revisión y actualiza de los registros de los aspirantes en el SAES con base en el avance del proceso \cdtRefTask{P-INS2}{P-INS2-Validación de Inscripción}. La finalidad es mantener actualizado en el SAES los números de \refElem{Boleta} de los alumnos y el bloqueo de los aspirantes que no pudieron ser aceptados.
+	\end{enumerate}
+	
+	\Ppaso \textbf{Departamento de Gestión Escolar}
+	
+	%, los grupos, salones, horarios y profesores para el semestre en curso. Esta información es enviada a \refElem{GestionEscolar} para su registro en el SAES. Este proceso lleva varias actualizaciones incluso durante el proceso de admisión, los cuales deben actualizarse lo antes posible en el SAES.
+	\begin{enumerate}
+		\Ppaso[\PSubProceso]{\cdtLabelTask{P-INS8}{\textbf{P-INS8-Registro de Estructura Académica}}} Se recibe la \refElem{EstructuraAcademica} del periodo a iniciar, la cual describe los grupos, profesores asignados, salones y  horarios en que se impartirán las Unidades de Aprendizaje. Se cargan en el SAES y se actualizan durante todo el semestre.
+
+		\Ppaso[\PSubProceso]{\cdtLabelTask{P-INS5}{\textbf{P-INS5-Inscribir Aspirantes}}} Inicia cuando termina el subproceso \cdtRefTask{P-INS8}{P-INS8-Registro de Estructura Académica} y se recibe  la lista de Aspirantes Aceptados ({\em MSG1-Aspirantes aceptados}) por parte de la \refElem{DepartamentoDeRegistroYSupervisionEscolar}. El \refElem{DepartamentoDeGestionEscolar} inscribe a los Aspirantes Aceptados en los grupos disponibles y prepara su recepción.
+
+		\Ppaso[\PSubProceso]{\cdtLabelTask{P-INS6}{\textbf{P-INS6-Entrega de Horario}}}  Recibe a los aspirantes para recogerles su \refElem{HojaDeResultadoDelExamenDeAdmision} o el y entregarles su contraseña y horario de clases e inicie su trayectoria académica.
+		
+		\Ppaso[\PSubProceso]{\cdtLabelTask{P-INS7}{\textbf{P-INS7-Entrega de Expedientes}}} Cuando se ha concluido de revisar los Expedientes de los Aspirantes por parte del\refElem{DepartamentoDeInformaticaYEstadisticaEscolar}, la \refElem{UnidadAcademica} recibe los Expedientes, notifica a los alumnos aceptados y les hace entrega de su \refElem{Boleta} y \refElem{CredencialDeAlumno} o el \refElem{OficioDeAlumnoAceptado}.
+		
+	\end{enumerate}
+\end{PDescripcion}

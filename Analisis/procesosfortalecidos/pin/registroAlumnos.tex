@@ -1,0 +1,101 @@
+\begin{Proceso}{SPR-5}{Registro de Alumnos}{
+		En este subproceso el \refElem{Calmecac} realizará la actualización de boleta de los aspirantes aceptados, o cancelará la inscripción para aquellos aspirantes que hayan incumplido en la convocatoria correspondiente o en el reglamento general de estudios.
+	}
+	{SPR.5.X}
+	\PRccsection{Datos para control interno}
+	\PRccitem{Versión}{1}
+	\PRccitem{Autor}{Francisco Isidoro Mera Torres}
+	\PRccitem{Evaluador}{Ulises Veléz Saldaña}
+	\PRccitem{Prioridad}{Alta}
+	\PRccitem{Estatus}{Corrección}
+	\PRccitem{Complejidad}{Media}
+	\PRccitem{Volatilidad}{Baja}
+	\PRccitem{Madurez}{Media}
+	\PRccsection{Control de cambios}
+	\PRccitem{Versión 0}{
+		\begin{Titemize}
+			%\RCitem{ PC1}{Corregir la ortografía}{\DONE}
+			%\TODO es para solicitar un cambio \TOCHK Es para informar que se atendió el TODO(ya hizo las correcciones),\DONE Es para indicar que el e valuador reviso los cambios.
+		\end{Titemize}
+	}
+	\PRitem{Participantes}{
+			Supervisor del \refElem{DepartamentoDeRegistroYSupervisionEscolar},\refElem{Calmecac},\refElem{DepartamentoDeInformaticaYEstadisticaEscolar}
+	}
+	\PRitem{Objetivo}{
+	Supervisar la actualización de aspirantes.
+	}
+	\PRitem{Interrelación con otros procesos}{	
+		\begin{Titemize}
+			\Titem \refPR{SPR2}
+		\end{Titemize}
+	}
+	\PRitem{Proveedores}{
+		\refElem{DepartamentoDeInformaticaYEstadisticaEscolar}
+	}
+	\PRitem{Entradas}{
+		\begin{Titemize}
+			\Titem Parámetros de Carga
+			\Titem \refElem{Boleta}
+		\end{Titemize}		
+	}
+	\PRitem{Consumidores}{
+		\refElem{DepartamentoDeRegistroYSupervisionEscolar}
+	}
+	\PRitem{Salidas}{
+		\begin{Titemize}
+			\Titem \refElem{Boleta} actualizada
+			\Titem Cancelación de la inscripción
+		\end{Titemize}		
+	}
+	\PRitem{Precondiciones}{
+		\begin{Titemize}
+			\Titem Aspirantes asignados a unidades académicas
+			\Titem Que los aspirantes estén en el registro. %DUDA: Existe la posibilidad de que al revisar papeles aspirantes que no hayan ingresado por el proceso de admisión se encuentren ahí?
+		\end{Titemize}
+	}
+	\PRitem{Postcondiciones}{
+		\begin{Titemize}
+			\Titem El \refElem{Aspirante} queda inscritó a un programa académico.
+			\Titem El \refElem{Aspirante} queda fuera del proceso de inscripción. %DUDA: Queda betado del Instituto?
+		\end{Titemize}
+		
+	}
+	\PRitem{Frecuencia}{
+		Eventual
+		% Periódico: Cada cierto tiempo: diario, semanal, anual, etc.
+		% Programado: Alguien en algún momento establece la fecha.
+		% Eventual: Cada que ocurre un evento que no se puede prever ni programar.
+	}
+	\PRitem{Tipo}{
+		Proceso Clave
+	}
+	% Operacion: Proceso asociado a las actividades propias de la operación del RENIECYT.
+	% Mejora continua: Porcesos asociados a actividades de mejora continua del proceso actual.
+	% Soporte: Procesos asociados a actividades indirectas necesarias para operar el RENIECYT.
+	\PRitem{Áreas de Mejora}{
+		\refElem{PI-AO4},\refElem{PI-AO5}
+	}
+\end{Proceso}
+
+La figura \cdtRefImg{spr:Registro}{SPR5-Registro de Alumnos} muestra las actividades que componen el presente subproceso.
+
+\Pfig[1]{procesosfortalecidos/pin/SPR5-RegistrodeAlumnos}{spr:Registro}{SPR5-Registro de Alumnos}
+
+\begin{PDescripcion}
+	
+	\Ppaso  \textbf{Departamento de Registro Y Supervisión Escolar}
+	
+	\begin{enumerate}
+	\Ppaso [\Einicio] El proceso inicia cuando se recibe el mensaje \refMSG{MSG10}{MSG-Documentos Validados}  o por desición propia del supervisor del \refElem{DepartamentoDeRegistroYSupervisionEscolar}.
+	
+	\Ppaso [\itarea] \cdtLabelTask{CUVerificarActualizacionesRecientes}{CU-Verificar Actualizaciones Recientes}  Esta tarea es nueva y consiste en que el supervisor del \refElem{DepartamentoDeRegistroYSupervisionEscolar} pueda revisar y/o modificar cargas realizadas por el \refElem{Calmecac} para el ciclo escolar actual. Continúa con la tarea \cdtRefTask{CUConfirmarDeshacerOperacion}{CU-Confirmar o Deshacer Operación}. Si el supervisor lo desease puede realizar la tarea \cdtRefTask{CUActualizarBoletaManualmente}.
+	
+	\Ppaso [\itarea]  \cdtLabelTask{CUActualizarBoletaManualmente}{CU-Actualizar Boleta de Alumnos Manualmente} Esta tarea es realizada actualmente, pero se modifica para que el supervisor del \refElem{DepartamentoDeRegistroYSupervisionEscolar} eliga sus criterios de actualización y corregir posibles errores de forma manual.Continúa con la tarea \cdtRefTask{CUConfirmarDeshacerOperacion}{CU-Confirmar o Deshacer Operación}.
+	
+	\Ppaso [\itarea]\cdtLabelTask{CUConfirmarDeshacerOperacion}{CU-Confirmar o Deshacer Operación} Está tarea es nueva y consiste en permitirle al supervisor del \refElem{DepartamentoDeRegistroYSupervisionEscolar} confirmar o deshacer operaciones hechas recientemente por el \refElem{Calmecac} para el ciclo escolar actual.	
+		
+	\end{enumerate}
+	
+\end{PDescripcion}
+
+

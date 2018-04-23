@@ -1,0 +1,183 @@
+\begin{Proceso}{PF-EA}{Proceso Fortalecido}{
+		Proceso mediante el cuál se gestiona la aprobación de la \refElem {EstructuraAcademica} entre la \refElem {UnidadAcademica} y la \refElem {DES}, para posteriormente gestionar la autorización de horas de necesidad entre la \refElem {UnidadAcademica} y la \refElem {DCH}, que se verán reflejadas como horas de sustitución. Toda esta información correspondiente a la gestión de Estructura Académica se manejará en el \refElem {Calmecac}, eliminando la duplicidad de registrar la Estructura en al menos tres diferentes sistemas, pues se contempla que el Calmécac alimente de información a otros sistemas que operan en el Instituto a través de Servicios Web.
+		%alimente de información al SIIEE y al SRN que operan en la DCH a través...
+%		Anote la descripción del proceso específico, un párrafo que describe brevemente: cuando inicia el proceso, su secuencia principal de actividades y productos principales.
+	}
+	{PE.X.X}
+	\PRccsection{Datos para control interno}
+	\PRccitem{Versión}{1}
+	\PRccitem{Autor}{Sandra Ivette Bautista Rosales}
+	\PRccitem{Evaluador}{José Jaime López Rabadán}
+	\PRccitem{Prioridad}{Alta}
+	\PRccitem{Estatus}{Corrección}
+	\PRccitem{Complejidad}{Media}
+	\PRccitem{Volatilidad}{Baja}
+	\PRccitem{Madurez}{Media}
+	\PRccsection{Control de cambios}
+	\PRccitem{Versión 0}{
+			\begin{Titemize}
+				%\RCitem{ PC1}{Corregir la ortografía}{\DONE}
+				%\TODO es para solicitar un cambio \TOCHK Es para informar que se atendió el TODO(ya hizo las correcciones),\DONE Es para indicar que el evaluador reviso los cambios.
+			\end{Titemize}
+	}
+	\PRitem{Participantes}{
+		 Responsable de estructura de cada Unidad Académica, analistas de Estructura Académica de la \refElem{DGYCE}(DGyCE), analista de la Dirección de Capital Humano asignado a la Unidad Académica, \refElem {CapitalHumano} de la Unidad Académica, Calmécac.
+	}
+	\PRitem{Objetivo}{
+		Gestionar la aprobación de la Estructura Académica por parte de la Dirección de Educación Superior, así como su autorización por parte de la Dirección de Capital Humano. Además de habilitar la compartición de información con sistemas administrados por la Dirección de Capital Humano a través de Servicios Web.
+%		Generar la propuesta de estructura académica del siguiente periodo escolar para asignar la carga que tendrán los profesores de base y se autoricen las horas de interinato demostradas como necesidad de la Unidad Académica.
+%		Escriba un resumen a manera de objetivo (Que-Caracterisitica-para que) que englobe las responsabilidades relacionadas con el proceso y los problemas que resuelve.
+	}
+	\PRitem{Interrelación con otros procesos}{	
+			\hyperlink{chapter:PFRH}{Proceso Fortalecido de Registro de Horarios}
+	}
+	\PRitem{Proveedores}{
+		 \refElem{UnidadAcademica}, División de Gestión y Calidad Educativa, Dirección de Capital Humano.
+	%	 Liste los participantes que proveen información al proceso, indique área y puesto o cargo, utilice el comando \refElem{idDelActor}.
+	}
+	\PRitem{Entradas}{
+		\begin{Titemize}
+			\Titem Propuesta de horarios.
+			\Titem Soporte documental del cargo o incidencia.
+		\end{Titemize}		
+	}
+	\PRitem{Consumidores}{
+		Unidad Académica, Analistas de la \refElem {DGYCE}, Dirección de Capital Humano, \refElem{DepartamentoDeGestionEscolar},  \refElem {CapitalHumano} de la Unidad Académica.
+	}
+	\PRitem{Salidas}{
+		\begin{Titemize}
+			\Titem Propuestas de modificación de la Estructura Académica.
+			\Titem Horas de interinato autorizadas.
+			\Titem Estructura académica del próximo \refElem {PeriodoEscolar}.
+			\Titem Registro de profesores\footnote{Ver \refElem{Profesor}} interinos.
+			\Titem Registro de profesores de incidencia.
+			\Titem Registro de profesores invitados.
+		\end{Titemize}		
+	}
+	\PRitem{Precondiciones}{
+		\begin{Titemize}
+			\Titem La propuesta de horario debe haber sido generada y aprobada en cada Unidad Académica y dicha propuesta debe estar registrada en el Calmécac.
+			\Titem La DGyCE debe tener acceso en el Calmécac a datos correspondientes a la ocupabilidad de periodos escolares\footnote{Ver \refElem{PeriodoEscolar}} anteriores de cada Unidad Académica para tener un estimado de la oferta educativa de cada Unidad.
+		\end{Titemize}
+	}
+	\PRitem{Postcondiciones}{
+		\begin{Titemize}
+			\Titem Se obtiene la \refElem {EstructuraAcademica} del siguiente \refElem {PeriodoEscolar}.
+			\Titem Se obtiene un registro oficial de los profesores\footnote{Ver \refElem{Profesor}} invitados.
+			\Titem Se obtiene la información necesaria para los procesos de inscripción y reinscripción.
+		\end{Titemize}
+		
+	}
+	\PRitem{Frecuencia}{
+		Semestralmente.
+		% Periódico: Cada cierto tiempo: diario, semanal, anual, etc.
+		% Programado: Alguien en algún momento establece la fecha.
+		% Eventual: Cada que ocurre un evento que no se puede prever ni programar.
+	}
+	\PRitem{Tipo}{
+		Proceso Clave.
+	}
+	% Operacion: Proceso asociado a las actividades propias de la operación del RENIECYT.
+	% Mejora continua: Porcesos asociados a actividades de mejora continua del proceso actual.
+	% Soporte: Procesos asociados a actividades indirectas necesarias para operar el RENIECYT.
+	\PRitem{Áreas de mejora}{
+		\refElem{PEA-AO1}, \refElem{PEA-AO2}, \refElem{PEA-AO3}, \refElem{PEA-AO4}.
+	}
+\end{Proceso}
+
+	La figura \cdtRefImg{arq:AG-EA}{AG-EA Estructura Académica} muestra los procesos que componen el presente proceso general.
+
+		\Pfig[0.8]{procesosfortalecidos/pua/PGF.png}{pg:procGral}{Proceso específico de la gestión de Estructura Académica}
+
+
+%Descripción de procesos
+\begin{PDescripcion}
+	
+	%Actor: Calmecac
+		\Ppaso \textbf{Calmécac}
+	\begin{enumerate}
+		%Subproceso 1
+		\Ppaso[\PSubProceso] Registrar soporte documental: La \refElem {UnidadAcademica} se dará a la tarea de escanear y adjuntar el soporte documental recabado para que la \refElem {EstructuraAcademica} pueda pasar a la etapa de evaluación por parte de la \refElem {DES}.
+		
+		%Subproceso 2
+		\Ppaso[\itarea] Justificar la Estructura Académica: Una vez que se tiene la propuesta de horario y el soporte documental se considerará completa la Estructura Académica y se tendrán los elementos necesarios para justificar las inconsistencias de profesores\footnote{Ver \refElem{Profesor}} que no cubran la carga máxima, así como  la continuidad de los profesores interinos recurrentes.
+		
+		%Subproceso 3
+		\Ppaso[\itarea] Alimentar al \refElem {SIIEE}(SIIEE): Con la información de estructura académica de los profesores de base  y profesores de interinato recurrente se alimentará al SIIEE por medio de un Servicio Web para proveer a la DCH de información vital necesaria para sus operaciones.
+		
+		%Subproceso 4
+		\Ppaso[\itarea] Registrar horas autorizadas: La \refElem{DCH}(DCH) registrará en el \refElem {Calmecac} el número de horas de interinato autorizadas para la Unidad Académica. 
+		
+		%Subproceso 5		
+		\Ppaso[\itarea] Registrar profesores interinos: La Unidad Académica tendrá la responsabilidad de registrar los datos de los profesores interinos en el Calmécac, que al principio del registro de la Estructura Académica solamente deberían estar marcadas como horas sin cubrir, ya que en ese momento aún no tendría por qué haberse seleccionado al profesor si no han sido autorizadas las horas por la DCH. Los profesores interinos podrán registrarse con los siguientes estatus:  interinos, de incidencia, de honorarios o invitados.
+		
+		%Subproceso 6
+		\Ppaso[\itarea] Alimentar al \refElem {SRN} (SRN): Con la información de la estructura académica de los profesores interinos, se alimentará al SRN a través de un Servicio Web.
+	\end{enumerate}	
+
+	%Actor: Unidad Académica
+		\Ppaso \textbf{Unidad Académica}
+	\begin{enumerate}
+		%Subproceso 1
+		\Ppaso[\Einicio] Propuesta de horarios: El proceso de Estructura Académica iniciará cuando se haya generado la propuesta de horarios en la Unidad Académica, esta propuesta estará compuesta de la carga y descarga académica de los profesores de base y los profesores interinos recurrentes, además deberá tener indicado las horas de necesidad que corresponderían a un profesor interino que aún no ha sido seleccionado.
+		
+		%Subproceso 2
+		\Ppaso[\PSubProceso] Recabar soporte documental: La Unidad Académica será la responsable de recabar la documentación necesaria para justificar el por qué algunos profesores de base no cumplen con la carga máxima indicada para su categoría, así como la documentación necesaria para la continuación de los profesores interinos recurrentes.
+		
+		%Subproceso 3
+		\Ppaso[\PSubProceso] Atender/Aclarar observaciones: La Unidad Académica determinará si proceden las observaciones generadas por la DES, por lo que podrá hacer modificaciones al soporte documental registrado las veces que sea necesario hasta la probación de la Estructura Académica.
+		
+		%Subproceso 4
+		\Ppaso[\itarea] Verificar autorización: La Unidad Académica verificará las horas autorizadas por la DCH. Dichas horas pueden ser de interinato o incidencia.
+		
+		%Subproceso 5	
+		\Ppaso[\PSubProceso] Seleccionar profesores interinos: La Unidad Académica se encargará de seleccionar al profesor interino que cubrirá las horas de necesidad.
+		
+		%Subproceso 6
+		\Ppaso[\itarea] Iniciar negociación: Si la Unidad Académica determina que las horas autorizadas de interinato no son suficientes, solicitará una negociación con la DCH.
+	\end{enumerate}		
+	
+		%Actor: Dircción de Educación Superior
+	\Ppaso \textbf{Dircción de Educación Superior}
+	\begin{enumerate}
+		%Subproceso 1
+		\Ppaso[\PSubProceso] Evaluar Estructura Académica: La DGyCE podrá comenzar la evaluación de la Estructura Académica apoyándose del soporte documental registrado en el Calmécac, además podrá consultar datos que le serán útiles para realizar la evaluación, por ejemplo la ocupabilidad semestres anteriores, así como la siguiente información de un profesor: categoría y en dado caso el dictámen, un histórico de las Unidades de Aprendizaje que ha impartido, turno y horario, entre otros.
+		
+		%Subproceso 2
+		\Ppaso[\itarea] Solicitar aclaración: Si la estrucutra académica presenta inconsistencias o la DGyCE considera necesario realizar algunas observaciones deberá hacerselas llegar a la Unidad Académica para su atención o aclaración.
+		
+		%Subproceso 3
+		\Ppaso[\PSubProceso] Solicitar aprobación a DCH: Cuando la DES ya no tiene observaciones a la estructura académica, procede a enviar la estructura aprobada a la DCH para su autorización.
+		
+%	\Ppaso[\PSubProceso] \textbf{Registrar propuesta de Estructura Académica:} La Unidad Académica es la responsable de registrar en el Calmécac la propuesta de estructura académica, indicando qué horas corresponderían a un profesor interno se tengan o no sus datos, ya que deben ser autorizadas por la DCH.
+	
+		%Subproceso 4
+		\Ppaso[\itarea] Registrar profesores interinos: La Unidad Académica tiene la responsabilidad de registrar los datos de los profesores interinos en el Calmecac que en un principio en el registro de la EA estaban marcadas unicamente como horas de interinato si no se tenía seleccionado al profesor, o se le asigna a los profesores de interinatos recurrentes con el estatus de interino. Los estatus pueden ser interino, incidencia, honorarios o invitado.
+		
+		%Subproceso 5
+		\Ppaso[\itarea] Alimentar al SRN: Con la información de la estructura académica de los profesores interinos, se alimenta al SRN.
+	\end{enumerate}
+	
+		%Actor: Dircción de Capital Humano
+	\Ppaso \textbf{Dircción de Capital Humano}
+	\begin{enumerate}
+		%Subproceso 1
+		\Ppaso[\itarea] Autorizar horas de interinato: El proceso que hace la DCH para autorizar las horas con base en la estructura revisada por la DES no cambia.
+		
+	\end{enumerate}
+
+\end{PDescripcion}
+
+
+%%Factores criticos
+%\begin{FCDescripcion}
+%	\FCpaso Listar los factores críticos en este proceso
+%\end{FCDescripcion}
+
+
+
+
+
+
+
+

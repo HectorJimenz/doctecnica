@@ -1,0 +1,64 @@
+\begin{UseCase}{CU2}{Inicio de Sesion}{
+		Permite el ingreso al sistema  mediante una cuenta registrada en el sistema SEIMS.\\
+		
+}
+	\UCitem{Versión}{0.1}
+	\UCccsection{Datos para el control Interno}	
+	\UCitem{Autor}{Héctor Iván Jimenez Romero}
+	\UCccitem{Evaluador}{Ulises Veléz Saldaña}
+	\UCitem{Operación}{Ingresar}
+	\UCccitem{Prioridad}{Alta}
+	\UCccitem{Complejidad}{Media}
+	\UCccitem{Volatilidad}{Media}
+	\UCccitem{Madurez}{Media}
+	\UCitem{Estatus}{Edición}
+	\UCitem{Fecha del último estatus}{28 de marzo de 2018}
+	\UCccsection{Revisión Version 0.1}
+	\UCccitem{Fecha}{}
+	\UCccitem{Evaluador}{Ulises Veléz Saldaña}
+	\UCccitem{Resultado}{}
+	\UCccitem{Observaciones}{}
+	\UCsection{Atributos}
+	\UCitem{Actor(es)}{\refElem{ciudadano} \refElem{administrador}}
+	\UCitem{Propósito}{ 	Brindar un medio por el cual el actor pueda ingresar al sistema SEIMS.}
+	\UCitem{Entradas}{Nombre de usuario  y contraseña}
+	\UCitem{Origen}{Teclado}
+	\UCitem{Salidas}{Acceso al sistema.}
+	\UCitem{Precondiciones}{Tener una cuenta activa en el sistema SEIMS.}
+	\UCitem{Postcondiciones}{Ninguna.}
+	\UCitem{Reglas de Negocio}{Ninguna}
+	\UCitem{Errores}{Ninguno}
+	\UCitem{Disparador(es)}{}
+	\UCitem{Condiciones de Término}{Ninguna}
+	\UCitem{Efectos Colaterales}{No aplica.}
+	
+\end{UseCase}
+
+
+%Trayectoria Principal : Happy Path 
+\begin{UCtrayectoria}
+  \UCpaso Muestra la \IUref{IU01}{Pantalla de Control de Acceso} (ver figura~\ref{IU01}) al inicio de la app.
+  \item \UCactor Ingresa su nombre de usuario y contraseña via I\IUref{IU01}{Pantalla de Control de Acceso} (ver figura~\ref{IU01}.
+  \UCpaso Valida que los campos no esten vacios.\refTray{A}
+  \UCpaso Valida el Nombre de Usuario.\refTray{B}
+  \UCpaso Valida la Contraseña Alfanumérica.\refTray{C}
+  \item \UCactor Oprime boton- \IUbutton{Iniciar Sesion}.
+  \UCpaso Despliega \IUref{IU01}{Pantalla de Control de Acceso} (ver figura~\ref{IU01})
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{ Cuando existen campos vacios.}
+   	\UCpaso Muestra un MSNG01-"Faltan campos por llenar"
+   	\item \UCactor Ingresa los campos faltantes.
+   	\item \UCactor Regresa al paso 1 del CU2.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Cuando el nombre de usuario no existe o esta mal}
+ 	\UCpaso Muestra un MNSG06-"El Nombre de usuario no es correcto".
+     \item \UCactor Regresa al paso 1 del CU2.
+\end{UCtrayectoriaA}
+ 
+ 
+\begin{UCtrayectoriaA}{C}{Cuando la contraseña es incorrecta}
+  	\UCpaso Muestra MNSG09-"Contraseña Incorrecta".
+  	\item \UCactor Regresa al paso 1 del CU2.
+\end{UCtrayectoriaA}

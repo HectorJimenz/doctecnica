@@ -1,0 +1,194 @@
+  \chapter{Proceso Fortalecido de Gestión de Profesores}
+\hypertarget{chapter:PFGP}{}
+\section{AF-GP Arquitectura}
+%\begin{Proceso}{AF-GP}{Arquitectura del proceso fortalecido Gestión de Profesores}{
+%		%El Proceso de gestión de profesores corresponde al mecanismo por medio del cual la \refElem{UnidadAcademica}, solicita la información actualizada de los Profesores con el objeto de iniciar la \textbf{Planeación de Horarios}, dicha infromación se solicita a al Dirección de \refElem{CapitalHumano} del Instituto. %		}
+%	{PG.X}
+%%	\PRccsection{Datos para control interno}
+%%	\PRccitem{Versión}{1}
+%%	\PRccitem{Elaboró}{Chadwick Carreto Arellano}
+%%	\PRccitem{Supervisó}{Jaime López Rabadán}
+%%	\PRccitem{Prioridad}{Alta}
+%%	\PRccitem{Estatus}{Corrección}
+%%	\PRccitem{Complejidad}{Media}
+%%	\PRccitem{Volatilidad}{Media}
+%%	\PRccitem{Madurez}{Media}
+%	\PRsection{Atributos del proceso}
+%	\PRitem{Participantes}{
+%		\refElem{UnidadAcademica}, \refElem{CapitalHumano}, \refElem{Calmecac}
+%	}
+%	\PRitem{Objetivo}{
+%		Obtener la información actualizada de los profesores para la generación de los horarios con los que se realizara la propuesta de estructura académica.
+%	}
+%	\PRitem{Interrelación con otros procesos}{	
+%		\begin{Titemize}
+% 			\Titem Estructura Académica
+%		\end{Titemize}
+%	}
+%	\PRitem{Entradas}{
+%		\begin{Titemize}
+% 			\Titem Planeación Académica.
+% 			\Titem \refElem{Horarios}.
+% 			\Titem Horarios Anteriores.
+% 			\Titem Profesores de periodos anteriores.
+% %		\end{Titemize}
+%	}
+%	\PRitem{Salidas}{
+%		\begin{Titemize}
+%           \Titem Propuesta de Horarios con Profesores
+% 			\Titem \refElem{Horario}.% 			
+%		\end{Titemize}		
+%	}
+%	
+%\end{Proceso}
+	La figura \cdtRefImg{pgp:procGral}{AF-GP Arquitectura Fortalecida del Proceso de Gestión de Profesores} muestra el proceso general modificado. Los cambios están centrados en la incorporación del \refElem{Calmecac}, la obtención de la información actualizada por medio de un Servicio Web y en la definición del tipo de profesor que cubrirá las horas que se requieren frente a grupo (interinos, invitados, internos y externos).
+	
+	Las propuestas que se integrarán en el sistema \refElem{Calmecac} en búsqueda de mejorar el proceso se describen a continuación:  
+	
+\begin{Citemize}
+	\item Se propone que el Calmécac permita cargar la información actualizada de los profesores por medio de un Servicio Web proporcionado por la Dirección de Capital Humano.
+	\item Al fortalecer la obtención de información actualizada de los profesores, se podrán generar \hyperlink{PF:PF-PHR}{Horarios} y la  \hyperlink{PF:PF-EA}{Estructura Académica} de una manera más rápida y con esto se conseguirá un mayor nivel de integridad en la información del Calmécac.
+	
+		La descripción detallada de estas mejoras se encuentra en la sección~\ref{section:PF-GP:validacion}.
+	
+	\pagebreak
+	%-------------------------------------------
+	%Diagrama de arquitectura fortalecida
+	\Pfig[1]{procesosfortalecidos/pgp/imagenes/procGral}{pgp:procGral}{AF-GP Arquitectura Fortalecida del Proceso de Gestión de Profesores. Para poder leer éste diagrama ir a la sección \ref{section:CodigoColores} }.	
+\end{Citemize}
+%||||||| .r404
+%\begin{Proceso}{PF}{Gestión de Profesores}{
+%		%Narrrar el PF-Arquitectura de Procesos
+%		
+%	}
+%	{PG.X}
+%	\PRccsection{Datos para control interno}
+%	\PRccitem{Versión}{1}
+%	\PRccitem{Autor}{Chadwick Carreto Arellano}
+%	\PRccitem{Evaluador}{Jose Jaime Lopez Rabadan}
+%	\PRccitem{Prioridad}{Alta}
+%	\PRccitem{Estatus}{Corrección/Aprobado}
+%	\PRccitem{Complejidad}{Alta/Media/Baja}
+%	\PRccitem{Volatilidad}{Alta/Media/Baja}
+%	\PRccitem{Madurez}{Alta/Media/Baja}
+%	\PRccsection{Control de cambios}
+%	\PRccitem{Versión 1}{
+%			\begin{Titemize}
+%				%\RCitem{ PC1}{Corregir la ortografía}{\DONE}
+%				%\TODO es para solicitar un cambio \TOCHK Es para informar que se atendió el TODO(ya hizo las correcciones),\DONE Es para indicar que el e valuador reviso los cambios.
+%			\end{Titemize}
+%	}
+%	\PRitem{Participantes}{
+%		 Unidad Academica \refElem{UnidadAcademica}, CALMÉCAC\refElem{CALMECAC}, Dirección de Capital Humano\refElem{CapitalHumano}.
+%	}
+%	\PRitem{Objetivo}{
+%		DEfinir el proceso de obtencion de profesores para poder generar en primera instancia la planeación de los Horarios y en segunda instancia para definir la estructura académica.
+%	}
+%	\PRitem{Interrelación con otros procesos}{	
+%		\begin{Titemize}
+% 			\Titem Horarios.
+% 			\Titem Estructura Académica.
+%		\end{Titemize}
+%	}
+%	\PRitem{Entradas}{
+%		\begin{Titemize}
+% 			\Titem Nombre 
+% 			\Titem RFC
+% 			\Titem Número de empleado
+% 			\Titem Grado Académico
+% 			\Titem Especialidad
+% 		    \Titem Fecha de Ingreso
+% 			\Titem Carga máxima 
+% 			\Titem Turno / Horario Laboral
+% 			\Titem Horas Base
+% 			\Titem Horas Interinato
+% 			\Titem Horas de Actividades Complementarias
+% 			\Titem Categoría/Dictamen
+% 			\Titem Carga Máxima
+% 			\Titem Horas frente a grupo
+% 			\Titem Descarga Académica
+% 			\Titem Clave de Unidad Académica
+% 			\Titem Nombre de la Unidad Académica
+% 			\Titem Materias Impartidas
+%		\end{Titemize}		
+%	}
+%	\PRitem{Salidas}{
+%		\begin{Titemize}
+% 			\Titem 	Información de profesores para Planeación de Horarios.
+%		\end{Titemize}		
+%	}
+%	
+%\end{Proceso}
+%=======
+%
+%\chapter{Proceso fortalecido Gestión de Profesores}
+%\label{ch:PF-GP}
+%
+%\begin{Proceso}{PF}{Obtención de profesores}{
+%		%Narrrar el PF-Arquitectura de Procesos
+%		
+%	}
+%	{PG.X}
+%	\PRccsection{Datos para control interno}
+%	\PRccitem{Versión}{1}
+%	\PRccitem{Autor}{Chadwick Carreto Arellano}
+%	\PRccitem{Evaluador}{Jose Jaime Lopez Rabadan}
+%	\PRccitem{Prioridad}{Alta}
+%	\PRccitem{Estatus}{Corrección/Aprobado}
+%	\PRccitem{Complejidad}{Alta/Media/Baja}
+%	\PRccitem{Volatilidad}{Alta/Media/Baja}
+%	\PRccitem{Madurez}{Alta/Media/Baja}
+%	\PRccsection{Control de cambios}
+%	\PRccitem{Versión 1}{
+%			\begin{Titemize}
+%				%\RCitem{ PC1}{Corregir la ortografía}{\DONE}
+%				%\TODO es para solicitar un cambio \TOCHK Es para informar que se atendió el TODO(ya hizo las correcciones),\DONE Es para indicar que el e valuador reviso los cambios.
+%			\end{Titemize}
+%	}
+%	\PRitem{Participantes}{
+%		 Unidad Academica \refElem{UnidadAcademica}, CALMÉCAC\refElem{CALMECAC}, Dirección de Capital Humano\refElem{CapitalHumano}.
+%	}
+%	\PRitem{Objetivo}{
+%		DEfinir el proceso de obtencion de profesores para poder generar en primera instancia la planeación de los Horarios y en segunda instancia para definir la estructura académica.
+%	}
+%	\PRitem{Interrelación con otros procesos}{	
+%		\begin{Titemize}
+% 			\Titem Horarios.
+% 			\Titem Estructura Académica.
+%		\end{Titemize}
+%	}
+%	\PRitem{Entradas}{
+%		\begin{Titemize}
+% 			\Titem Nombre 
+% 			\Titem RFC
+% 			\Titem Número de empleado
+% 			\Titem Grado Académico
+% 			\Titem Especialidad
+% 		    \Titem Fecha de Ingreso
+% 			\Titem Carga máxima 
+% 			\Titem Turno / Horario Laboral
+% 			\Titem Horas Base
+% 			\Titem Horas Interinato
+% 			\Titem Horas de Actividades Complementarias
+% 			\Titem Categoría/Dictamen
+% 			\Titem Carga Máxima
+% 			\Titem Horas frente a grupo
+% 			\Titem Descarga Académica
+% 			\Titem Clave de Unidad Académica
+% 			\Titem Nombre de la Unidad Académica
+% 			\Titem Materias Impartidas
+%		\end{Titemize}		
+%	}
+%	\PRitem{Salidas}{
+%		\begin{Titemize}
+% 			\Titem 	Información de profesores para Planeación de Horarios.
+%		\end{Titemize}		
+%	}
+%	
+%\end{Proceso}
+%>>>>>>> .r426
+%
+%	La descripción detallada de esta mejora se encuentra en la sección~\ref{sec:PF-GP:obtenciondeprofesores}.
+%
+%	\Pfig[1]{procesosfortalecidos/pgp/procGral}{afpgp:procGral}{AF-GP Arquitectura del proceso fortalecido de Gestión de Profesores.Para poder leer este diagrama ir a la seccion \ref{section:CodigoColores}}
+%

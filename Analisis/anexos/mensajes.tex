@@ -1,0 +1,157 @@
+\chapter{Mensajes del sistema}
+%\label{chapter:mensajes}
+\cdtLabel{apendice:Mensajes}{}
+
+
+%===========================  MSG1 ==================================
+\begin{mensaje}{MSG1}{Campos sin llenar}{Error \msgError}
+	\item[Canal:] Sistema
+    \item[Propósito:] Alertar al actor que ingreso sus datos en el sistema.
+    \item[Redacción:] ¡No hay $<DATOS>$ para ingresar!
+    \item[Parámetros:] DATOS: Información de la cual se requiere para Iniciar Sesion y concluir un proceso
+    \item[Ejemplo:] ¡hay campos sin llenar!
+\end{mensaje}
+%============================== MSG2 =================================
+\begin{mensaje}{MSG2}{Usuario ya existente }{Error \msgError}
+	\item[Canal:] Sistema
+    \item[Propósito:] Alertar al actor que el Nombre de Usuario que se desea ya está disponible en el sistema.
+    \item[Redacción:] ¡Este/a $<USUARIO>$ ya esta disponible !
+    \item[Parámetros:] Usuario:Información de un registro en específico de la cual se requiere para concluir un proceso.
+    \item[Ejemplo:] ¡el usuario ya esta en uso!
+\end{mensaje}
+%============================== MSG3 =================================
+\begin{mensaje}{MSG3}{Contraseña Incorrecta}{Error \msgError}
+	\item[Canal:] Sistema
+    \item[Propósito:] Alertar al actor que la Contraseña  que se Ingreso es incorrecta.
+    \item[Redacción:] ¡Este/a $<CONTRASENA>$ es inocrrecta!
+    \item[Parámetros:] Contraseña:Información de un registro en específico de la cual se requiere para concluir un proceso.
+    \item[Ejemplo:] ¡contraseña incorrecta!
+\end{mensaje}
+%============================== MSG4 =================================
+\begin{mensaje}{MSG4}{Sin conexión a Internet }{Notificación \msgNotif}
+	\item[Canal:] Sistema
+    \item[Propósito:] Alertar al actor que no tiene acceso a internet.
+    \item[Redacción:] ¡El sistema esta $<SIN CONEXION>$ a Internet !
+    \item[Parámetros:] Sin Conexión:Notificación que es necesaria para llevar a cabo un Ingreso.
+    \item[Ejemplo:] ¡sin conexión a internet!
+\end{mensaje}
+%============================== MSG5 =================================
+\begin{mensaje}{MSG5}{Nombre de Usuario o Contraeña incorrecto }{Error \msgError}
+	\item[Canal:] Sistema
+    \item[Propósito:] Alertar al actor que el Nombre de Usuario o Contraseña que se ingreso es incorrecto en el sistema.
+    \item[Redacción:] ¡Este/a $<USUARIO>$ o $<CONTRASENA>$ es incorrecto !
+    \item[Parámetros:] Usuario y Contraseña :Información de un registro en específico de la cual se requiere para concluir un proceso.
+    \item[Ejemplo:] ¡usuario o contraseña son incorrectos!
+\end{mensaje}
+%============================== MSG6 =================================
+\begin{mensaje}{MSG6}{La Contraseña no coinciden }{Error \msgError}
+	\item[Canal:] Sistema
+    \item[Propósito:] Alertar al actor que sus contraseñas que ingreso no coinciden para el sistema.
+    \item[Redacción:] ¡Este/a $<CONTRASENA>$ no son las mismas !
+    \item[Parámetros:] Usuario:Información de un registro en específico de la cual se requiere para concluir un proceso.
+    \item[Ejemplo:] ¡las contraseñas no coinciden!
+\end{mensaje}
+%============================== MSG7 =================================
+\begin{mensaje}{MSG6}{Recupero Contraseña }{Notificación \msgNotif}
+	\item[Canal:] Sistema
+    \item[Propósito:] Informar al actor que la operacion se llevo a cabo exitosamente.
+    \item[Redacción:] ¡Este/a $<OPERACION>$ no son las mismas !
+    \item[Parámetros:] OPERACION:Actividad que el actor debe realizar
+    \item[Ejemplo:] ¡se recupero la contraseña correctamente!
+\end{mensaje}
+%===========================  MSG8 ==================================
+\begin{mensaje}{MSG8}{Modificación Exitosa}{Confirmación \msgConfirm}
+	\item[Canal:] Sistema
+    \item[Propósito:] Informar al actor que la operación que se le ha solicitado al sistema se llevo a cabo exitosamente.
+    \item[Redacción:] El $<MODIFICAR>$ se llevo a cabo correctamente.
+    \item[Parámetros:] Modificar: Actividad que el actor debe realizar.
+    \item[Ejemplo:] ¡la modificación se llevo a cabo correctamente!
+\end{mensaje}
+%===========================  MSG9 ==================================
+\begin{mensaje}{MSG9}{Eliminación Exitosa}{Confirmación \msgConfirm}
+	\item[Canal:] Sistema
+    \item[Propósito:] Informar al actor que la operación que se le ha solicitado al sistema se llevo a cabo exitosamente.
+    \item[Redacción:] El $<ELIMINAR>$ se llevo a cabo correctamente.
+    \item[Parámetros:] ELIMINAR: Actividad que el actor debe realizar.
+    \item[Ejemplo:]¡elimiación correcta!
+\end{mensaje}
+%===========================  MSG10 ==================================
+\begin{mensaje}{MSG10}{Registro Existoso}{Confirmación \msgConfirm}
+	\item[Canal:] Sistema
+    \item[Propósito:] Informar al actor que la operación que se le ha solicitado al sistema se llevo a cabo exitosamente.
+    \item[Redacción:] El $<REGISTRO>$ se llevo a cabo correctamente.
+    \item[Parámetros:] REGISTRO: Actividad que el actor debe realizar.
+    \item[Ejemplo:] ¡registro correcto!
+\end{mensaje}
+%===========================  MSG11 ==================================
+\begin{mensaje}{MSG11}{Autorizacion Exitosa}{Confirmación \msgConfirm}
+	\item[Canal:] Sistema
+    \item[Propósito:] Informar al actor que la operación que se le ha solicitado al sistema se llevo a cabo exitosamente.
+    \item[Redacción:] La $<AUTORIZACION>$ se llevo a cabo correctamente.
+    \item[Parámetros:] OPERACION: Actividad que el actor debe realizar.
+    \item[Ejemplo:] ¡Autorización validada!
+\end{mensaje}
+%===========================  MSG12 ==================================
+\begin{mensaje}{MSG12}{Autorizacion Rechazada}{Error \msgError}
+	\item[Canal:] Sistema
+    \item[Propósito:] Informar al actor que la operación que se le ha solicitado no se llevo a cabo exitosamente.
+    \item[Redacción:] La $<AUTORIZACION>$ No se llevo a cabo correctamente.
+    \item[Parámetros:] OPERACION: Actividad que el actor debe realizar.
+    \item[Ejemplo:] ¡autorización invalida
+\end{mensaje}
+%===========================  MSG13 ==================================
+\begin{mensaje}{MSG13}{Propuesta Registrada}{Confirmación \msgConfirm}
+	\item[Canal:] Sistema
+    \item[Propósito:] Informar al actor que la propuesta que se ingreso se llevo a cabo exitosamente.
+    \item[Redacción:] La $<PROPUESTA>$ Se llevo a cabo correctamente.
+    \item[Parámetros:] PROPUESTA: Actividad que el actor debe realizar.
+    \item[Ejemplo:]¡propuesta correcta!
+\end{mensaje}
+%===========================  MSG14 ==================================
+\begin{mensaje}{MSG14}{Descargando Mapa offline}{Notificación \msgNotif}
+	\item[Canal:] Sistema
+    \item[Propósito:] Informar al actor que la Descarga del mapa que se le ha solicitado se llevo a cabo exitosamente.
+    \item[Redacción:] La $<DESCARGA>$ Se llevo a cabo correctamente.
+    \item[Parámetros:] DESCARGAR: Actividad que el actor debe realizar.
+    \item[Ejemplo:] ¡descarga correcta!
+\end{mensaje}
+%===========================  MSG15 ==================================
+\begin{mensaje}{MSG15}{Se Guardo Sonido de Alerta}{Notificación \msgNotif}
+	\item[Canal:] Sistema
+    \item[Propósito:] Informar al actor que  se Guardo su sonido de alerta  que seleciono en el sistema.
+    \item[Redacción:] El $<CAMBIO DE SONIDO DE ALERTA>$ Se llevo a cabo correctamente.
+    \item[Parámetros:] CAMBIO DE SONIDO DE ALERTA: Actividad que el actor puede realizar.
+    \item[Ejemplo:] ¡se cambio sonido de alerta  correctamente!
+\end{mensaje}
+%===========================  MSG16 ==================================
+\begin{mensaje}{MSG16}{Se Elimino Mapa exitosamente}{Confirmación \msgConfirm}
+	\item[Canal:] Sistema
+    \item[Propósito:] Informar al actor que  se borro el mapa del el sistema.
+    \item[Redacción:] Se $<ELIMINO MAPA>$  correctamente.
+    \item[Parámetros:] ELIMINAR MAPA : Actividad que el actor puede realizar.
+    \item[Ejemplo:] ¡se elimino el mapa correctamente!
+\end{mensaje}
+%===========================  MSG17 ==================================
+\begin{mensaje}{MSG17}{Se Actualizó Mapa exitosamente}{Confirmación \msgConfirm}
+	\item[Canal:] Sistema
+    \item[Propósito:] Informar al actor que se actualizo el mapa del el sistema.
+    \item[Redacción:] Se $<ACTUALIZO MAPA>$  correctamente.
+    \item[Parámetros:] ACTUALIZAR MAPA : Actividad que el actor debe realizar.
+    \item[Ejemplo:] ¡se actualizo el mapa correctamente!
+\end{mensaje}
+%===========================  MSG18 ==================================
+\begin{mensaje}{MSG18}{Se Cambio el nombre del Mapa exitosamente}{Notificación \msgNotif}
+	\item[Canal:] Sistema
+    \item[Propósito:] Informar al actor que se guardo el Nombre del Mapa del el sistema.
+    \item[Redacción:] Se $<CAMBIO NOMBRE DEL MAPA>$  correctamente.
+    \item[Parámetros:] CAMBIO NOMBRE DEL MAPA : Actividad que el actor puede realizar.
+    \item[Ejemplo:] ¡se cambio el nombre del mapa correctamente!
+\end{mensaje}
+%===========================  MSG19 ==================================
+\begin{mensaje}{MSG19}{Se Guardo el Mapa seleccionado}{Notificación \msgNotif}
+	\item[Canal:] Sistema
+    \item[Propósito:] Informar al actor que se guardo el Mapa Selecionado en el sistema.
+    \item[Redacción:] Se $<GUARDO EL MAPA>$  correctamente.
+    \item[Parámetros:] GUARDAR EL MAPA : Actividad que el actor puede realizar.
+    \item[Ejemplo:] ¡se guardo el mapa correctamente!
+\end{mensaje}

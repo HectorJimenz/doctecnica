@@ -1,0 +1,71 @@
+%========================================================
+%Arquitectura de Proceso
+%========================================================
+
+%========================================================
+%Revisión
+%-------------------------------------------
+
+% \UCccitem{Versión}{1}
+% \UCccsection{Análisis de Procesos }
+% \UCccitem{Autor}{nombreAutor}
+% \UCccitem{Evaluador}{nombreEvaluador}
+% \UCccitem{Prioridad}{Alta} %Alta, media, baja
+% \UCccitem{Estatus}{} %Edición, Terminado, Corrección, Aprobado 
+% \UCccitem{Complejidad}{Alta} %Alta, Media, Baja
+% \UCccitem{Volatilidad}{Alta} %Alta, Media, Baja
+% \UCccitem{Madurez}{Media}  %Alta, Media, Baja
+% \UCccsection{Control de cambios}
+% \UCccitem{Versión 0}{
+% \begin{UClist}
+% \RCitem{ Pxn T1}{Corregir la ortografía}{\DONE}
+% \TODO es para solicitar un cambio, \TOCHK Es para informar que se atendió el TODO, \DONE Es para indicar que el evaluador reviso los cambios.
+% \end{UClist}
+%}
+
+%========================================================
+% Descripción general del proceso
+%-----------------------------------------------
+\begin{Arquitectura}{AG-RH}{Arquitectura General del Proceso de Registro de Horarios} {
+		
+			%-------------------------------------------
+		%Descripción
+		El proceso de Registro de Horarios se encarga de gestionar la generación y asignación de horarios para las unidades de aprendizaje\footnote{ver \refElem{UnidadDeAprendizaje}} a ofertar en el \refElem{ProgramaAcademico}. Para llevar a cabo cada una de sus funciones, se apoya de la interacción con otros procesos que involucran la obtención de información referente a los docentes adscritos a la \refElem{UnidadAcademica}, que incluyen horarios laborales y dictámenes de categorías, además del envío de información para validar la \refElem{EstructuraAcademica}. \\
+		
+		
+		
+		 
+		%-------------------------------------------
+		%Diagrama de arquitectura
+		\noindent La Figura \cdtRefImg{arq:AG-RH}{AG-RH Diagrama de Arquitectura General del Proceso de Registro de Horarios} muestra la interacción con los procesos que proporcionan la información necesaria para llevar a cabo sus funciones.
+		
+		%\Pfig[0.8]{phr/imagenes/ArquitecturaPP-IR3Inscripcion_Reinscripcion}{arq:AG-IR3}{AG-IR3 Inscripción/Reinscripción}
+		\Pfig[1]{phr/imagenes/ArquitecturaPP_RH_Arquitectura_Generacion_y_Asignacion_De_Horarios}{arq:AG-RH}{AG-RH Registro de Horarios}
+		
+	}{AG-RH}
+
+
+\end{Arquitectura}
+
+%========================================================
+%Interacción
+%-----------------------------------------------
+
+\begin{ADescripcion}
+	
+	\item \textbf{PP-CH Capital Humano}. Este proceso envía la información referente a los docentes adscritos a la \refElem{UnidadAcademica}.
+
+	\item \textbf{PG-EA Proceso de Estructura Académica}. Este proceso recibe la propuesta de horarios para las unidades de aprendizaje y envía a cada \refElem{UnidadAcademica} su aprobación y en su defecto su propuesta de cambio.
+	
+	
+%%%%	este proceso erecibe la propuesta de horarios para las ua y envía a cada unidad academica su aprobaion y en su defecto su propuesta de cambio
+	
+%	\item \textbf{PG-EA Proceso de Estructura Académica}. Este proceso se encarga de evaluar la estructura académica, en caso de tener una observación solicitar la propuesta de reestructuración, enviar a cada unidad de académica las unidades de aprendizaje autorizadas a ofertar con horarios asignados, los cuáles serán enviados a Capital humano.
+	
+%	\item \textbf{PP-UA Unidad Académica}. El proceso se encarga de envíar a la Dirección de Educación Superior la propuesta de estructura académica para su evaluación o en su caso aprobación. 
+	
+	
+\end{ADescripcion}
+
+%\begin{PDescripcion}		
+%\end{PDescripcion}

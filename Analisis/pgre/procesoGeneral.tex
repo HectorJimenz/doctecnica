@@ -1,0 +1,121 @@
+%========================================================
+%Proceso General
+%========================================================
+
+%========================================================
+%Revisión
+%-------------------------------------------
+
+% \UCccitem{Versión}{1}
+% \UCccsection{Análisis de Procesos }
+% \UCccitem{Autor}{nombreAutor}
+% \UCccitem{Evaluador}{nombreEvaluador}
+% \UCccitem{Prioridad}{Alta} %Alta, media, baja
+% \UCccitem{Estatus}{} %Edición, Terminado, Corrección, Aprobado 
+% \UCccitem{Complejidad}{Alta} %Alta, Media, Baja
+% \UCccitem{Volatilidad}{Alta} %Alta, Media, Baja
+% \UCccitem{Madurez}{Media}  %Alta, Media, Baja
+% \UCccsection{Control de cambios}
+% \UCccitem{Versión 0}{
+% \begin{UClist}
+% \RCitem{ Pxn T1}{Corregir la ortografía}{\DONE}
+% \TODO es para solicitar un cambio, \TOCHK Es para informar que se atendió el TODO, \DONE Es para indicar que el evaluador reviso los cambios.
+% \end{UClist}
+%}
+
+%========================================================
+% Descripción general del proceso
+%-----------------------------------------------
+\begin{procesoGeneral}{PG-RE}{Proceso General del Registro de Evaluaciones} {
+		
+		%-------------------------------------------
+		%Resumen
+		El proceso de registro de evaluaciones de las unidades de aprendizaje para los alumnos, permite a los profesores registrar sus calificaciones y modificarlas. De ser necesario, ésto se lleva a cabo mediante los subprocesos que se muestran en \noindent la Figura \cdtRefImg{pGeneral:PG-RE}{Registro de evaluaciones}.\\
+					
+		
+		\Pfig[1.1]{pgre/imagenes/PG-RE_Registro_Evaluaciones}{pGeneral:PG-RE}{PG-RE Diagrama del PrRegistro de evaluaciones}
+	}{PG-RE}
+
+\end{procesoGeneral}
+
+%========================================================
+%Descripción de tareas
+%-----------------------------------------------
+\begin{PDescripcion}
+	
+	%Actor: REV1.0
+	\Ppaso \textbf{REV1.0}
+	
+	\begin{enumerate}
+		
+		%Subproceso 1
+		\Ppaso[\PSubProceso] \cdtLabelTask{PG-RE.2:REV1.0}{ \textbf{Registro de evaluación ordinaria/extraordinaria}.} Cada \refElem{UnidadAcademica} tiene sus tiempos y formas necesarias para que un \refElem{Alumno} acredite una \refElem{UnidadDeAprendizaje} de forma ordinaria, ya sea bimestral, trimestral, semestral o de periodos particulares. El registro de las calificaciones se permite cuando el \refElem{DepartamentoDeGestionEscolar} habilita en el sistema \refElem{SAES} una fecha para subir calificaciones, en ese momento, el \refElem{Profesor} puede proceder a subir su lista de calificaciones al \refElem{SAES}.
+		Si ha terminado el registro de las calificaciones, entonces se puede pasar al proceso de cierre de acta, ya sea parcial o total, pero si hay un error se procede con el proceso de solventar incidencia.
+		
+		%Subproceso 2
+		\Ppaso[\PSubProceso] \cdtLabelTask{PG-RE.2:REV1.0}{ \textbf{Corrección de calificaciones}.} Cuando un \refElem{Profesor} cierra su lista de calificaciones en el sistema \refElem{SAES} y se da cuenta en un lapso de 72 horas que hay un error en alguna o algunas calificaciones, puede pedir al \refElem{DepartamentoDeGestionEscolar} que vuelva a abrir en el sistema \refElem{SAES} el registro de calificaciones del grupo donde existe la incidencia, de esta forma el \refElem{Profesor} puede llevar a cabo la modificación.
+		Una vez terminadas las correcciones, se puede regresar al proceso de registro de evaluación ordinaria.
+		
+		%Subproceso 3
+		\Ppaso[\PSubProceso] \cdtLabelTask{PG-RE.2:REV1.0}{ \textbf{Cierre de acta}.} Consiste en el respaldo de las calificaciones registradas y la elaboración de las actas históricas de las unidades de aprendizaje del periodo en curso. Éstas actas históricas contienen los registros de evaluaciones ordinarios y extraordinarios.
+		
+		%Subproceso 4
+		\Ppaso[\PSubProceso] \cdtLabelTask{PG-RE.2:REV1.0}{ \textbf{Supervisión de la DAE en el registro de calificaciones ordinarias}.} El supervisor de la \refElem{DAE} revisa que las calificaciones registradas en el \refElem{Kardex} sean correctas, de ser así firmará el \refElem{Kardex}. 
+		
+		%Subproceso 5
+		\Ppaso[\PSubProceso] \cdtLabelTask{PG-RE.2:REV1.0}{ \textbf{Registro de evaluaciones de \refElem{ETS}}.}
+		Para poder llevar a cabo el registro de evaluaciones de \refElem{ETS}, el \refElem{DepartamentoDeGestionEscolar} debió haber habilitado un periodo de evaluaciones. Una vez concluido, los profesores\footnote{ver \refElem{Profesor}} deben registrar calificaciones en el sistema \refElem{SAES} para evaluar la acreditación del \refElem{Alumno}.
+		Si el registro de calificaciones terminó, entonces se pasa al proceso de supervisión de la \refElem{DAE}.
+		
+		%Subproceso 6
+		\Ppaso[\PSubProceso] \cdtLabelTask{PG-RE.2:REV1.0}{ \textbf{Registro de evaluación de \refElem{ETS} fuera del calendario}.} Para poder llevar a cabo el registro de evaluaciones de \refElem{ETS} especial,el \refElem{DepartamentoDeGestionEscolar} debió haber habilitado un periodo de evaluaciones. Una vez concluido, los profesores\footnote{ver \refElem{Profesor}} deben registrar las calificaciones en el sistema \refElem{SAES}.
+		Si el registro de calificaciones terminó, entonces se pasa al proceso de supervisión de la \refElem{DAE}.
+				
+		%Subproceso 7
+		\Ppaso[\PSubProceso] \cdtLabelTask{PG-RE.2:REV1.0}{ \textbf{Supervisión de la \refElem{DAE} en el registro de calificaciones \refElem{ETS}.}}  En este proceso un supervisor de la DAE se encarga de dar el visto bueno del registro de evaluaciones de \refElem{ETS}. 
+		Si el proceso termina correctamente, se da por finalizado el proceso de registro de evaluaciones, en caso contrario se procede a hacer la corrección pertinente.
+		
+		%Subproceso 8
+		\Ppaso[\PSubProceso] \cdtLabelTask{PG-RE.2:REV1.0}{ \textbf{Registro de evaluaciones especiales}.} Para poder registrar estas evaluaciones se necesita un proceso particular para cada una de ellas, estos procesos son:
+		\begin{enumerate}
+			\item Saberes previamente adquiridos.- El \refElem{Alumno} tendrá diez días hábiles, contados a partir del inicio del periodo escolar, para solicitar la aplicación de la evaluación de saberes previamente adquiridos.\\
+			En caso de acreditarla, el resultado se registrará como	evaluación ordinaria; de lo contrario, el resultado de esta evaluación no afectará su situación escolar, pero deberá cursar la \refElem{UnidadDeAprendizaje}.\\
+			Sólo se tendrá una oportunidad para someterse a la evaluación de saberes previamente adquiridos por cada \refElem{UnidadDeAprendizaje} del plan de estudio correspondiente.
+			\item Electivas.- El \refElem{Alumno} podrá seleccionar de entre las opciones que brinde la \refElem{UnidadAcademica} u otras unidades institucionales o externas, previa autorización de las áreas de coordinación competentes para tal fin.
+			\item Servicio social.- El \refElem{Alumno} debe registrar su servicio social en la entidad institucional de gestión de servicio social, debe cumplir la normatividad establecida para solicitar su liberación que es cubrir un lapso de 480 horas.
+		\end{enumerate}
+		Saberes previamente adquiridos. - En cuanto un \refElem{Alumno} solicita un examen de saberes previamente adquiridos, el \refElem{Profesor} es el encargado de subir esta calificación al sistema \refElem{SAES}.
+		Si el registro de calificaciones termino, entonces se pasa al proceso de supervisión de la \refElem{DAE}.
+		
+		%Subproceso 9
+		\Ppaso[\PSubProceso] \cdtLabelTask{PG-RE.2:REV1.0}{ \textbf{Registro de calificaciones por equivalencia o revalidación de estudios}.} La equivalencia o la revalidación podrán otorgarse respecto de unidades de aprendizaje o de un	plan de estudio cuya acreditación no exceda los cinco años inmediatos anteriores a la solicitud. El dictamen tendrá una vigencia de doce meses.\\
+		La equivalencia o la revalidación podrán realizarse en una de las siguientes formas:
+		\begin{enumerate}
+			\item Una \refElem{UnidadDeAprendizaje} a una \refElem{UnidadDeAprendizaje}.
+			\item Varias unidades de aprendizaje a una \refElem{UnidadDeAprendizaje}
+			\item Una \refElem{UnidadDeAprendizaje} a varias unidades de aprendizaje.
+			\item Reconocer parcial o globalmente estudios realizados en acciones de movilidad académica.
+			\item Global.
+		\end{enumerate}
+		
+		%Subproceso 10
+		\Ppaso[\PSubProceso] \cdtLabelTask{PG-RE.2:REV1.0}{ \textbf{Supervisión de la DAE en el registro de calificaciones especiales}.} En este proceso un supervisor de la \refElem{DAE} se encarga de dar el visto bueno a las evaluaciones registradas por medio de un biométrico. 
+		Si el proceso termina correctamente, se da por finalizado el proceso de registro de evaluaciones, en caso contrario se procede con la corrección pertinente.
+		
+		%Subproceso 11
+		\Ppaso[\PSubProceso] \cdtLabelTask{PG-RE.2:REV1.0}{ \textbf{Corrección especial}.} En este proceso se puede corregir una calificación mediante un oficio que se expide en la \refElem{UnidadAcademica} por lo que se necesita:
+		la firma del \refElem{Profesor}, el motivo del cambio y el visto bueno del supervisor de la \refElem{DAE}. Se solicita por distintas razones:
+		
+		\begin{itemize}
+			\item Cuando pasa un tiempo mayor a 72 horas del registro de la calificación.
+		\end{itemize}
+		\begin{itemize}
+			\item Cuando hay un error en un registro de una evaluación especial.
+		\end{itemize}
+		\begin{itemize}
+			\item Cuando hay un error en un registro de una evaluación de \refElem{ETS}.
+		\end{itemize}	
+		Una vez terminadas las correcciones se puede dar por terminado el proceso de registro de evaluaciones.
+		
+	\end{enumerate}
+\end{PDescripcion}

@@ -1,0 +1,91 @@
+\subsection{Validación de cambios del procesos de Registro de Horarios}
+\label{sec:PF-RH:validacion}
+
+%Perfil actual: Se espera poder poner el área, donode no se tenga certeza de el área especifica se puede poner de forma general.
+%Tipo: básicamente son tres Cambio, Nuevo o Eliminar 
+
+%------------- Acuerdo 1 -------------
+\hrule
+\vspace{0.2cm}
+\begin{Cdescription}
+	\item[Subproceso:] Generar estadísticas.
+	\item[Situación actual:] Los jefes de departamento analizan en conjunto con el Subdirector académico la oferta y demanda de la ocupabilidad de las unidades de aprendizaje del periodo escolar actual y similar anterior, haciendo uso de la información obtenida del SAES y que requiere ser procesada a través de hojas de cálculo, a discreción del área que la analiza. El resultado de este análisis es la oferta que se generará para el periodo en planeación.
+	\item[Perfil actual:] \refElem{SubdireccionAcademica}.
+	\item[Solución propuesta:] Se propone que el Calmécac generé la información estadística preprocesada para facilitar el análisis de la oferta de número de grupos a aperturar.
+	\item[Perfil propuesto:] \refElem{UnidadAcademica}.
+	\item[Tipo:] Cambio.
+\end{Cdescription}
+
+%%------------- Acuerdo 2 -------------
+%\hrule
+%\vspace{0.2cm}
+%\begin{Cdescription}
+%	\item[Subproceso:] Definir la estrategia para generar EA.
+%	\item[Situación actual:] El encargado de definir la estructura a partir de la información del análisis previo determina cuál es la estrategia correcta (hacer una nueva, copiar la anterior y adaptarla, etc.) para generar la estructura académica.
+%	\item[Perfil actual:] El encargado de definir la estructura (El responsable de generar la estructura académica cambia en cada escuela del Instituto).
+%	\item[Solución propuesta:] Que el Calmécac permita definir la nueva estructura académica desde cero o clonar una anterior y editarla.
+%	\item[Perfil propuesto:]  El encargado de definir la estructura (El responsable de generar la estructura académica cambia en cada escuela del Instituto).
+%	\item[Tipo:] No Aplica.
+%\end{Cdescription}
+
+%------------- Acuerdo 3 -------------
+\hrule
+\vspace{0.2cm}
+\begin{Cdescription}
+	\item[Subproceso:] Replicar estructura periodo similar.
+	\item[Situación actual:] No Existe.
+	\item[Perfil actual:] No Existe.
+	\item[Solución propuesta:] Se propone que el Calmécac permita copiar la estructura académica utilizada en un periodo escolar similar para agilizar el proceso de generación de estructura académica, permitiendo realizar las modificaciones pertinentes sobre la misma.
+	\item[Perfil propuesto:] \refElem{UnidadAcademica}.
+	\item[Tipo:] Cambio.
+\end{Cdescription}
+
+%------------- Acuerdo 4 -------------
+\hrule
+\vspace{0.2cm}
+\begin{Cdescription}
+	\item[Subproceso:] Crear estructura nueva.
+	\item[Situación actual:] El encargado de definir la estructura tiene la responsabilidad de aperturar grupos, asignar unidades de aprendizaje a los grupos, asignar espacios académicos y profesores, verificar los traslapes de manera manual para cada rubro antes mencionado	.
+	\item[Perfil actual:]\refElem{SubdireccionAcademica}.
+	\item[Solución propuesta:] Se propone que el Calmécac realice la detección de los traslapes siguientes al momento de:
+	\begin{Citemize}
+		\item asignar espacios académicos, 
+		\item unidades de aprendizaje, 
+		\item profesores.
+	\end{Citemize}
+	\item[Perfil propuesto:] Encargado de Estructura Académica, \refElem{JefeDeDepartamento}.
+	\item[Tipo:] Cambio.
+\end{Cdescription}
+
+%------------- Acuerdo 5 -------------
+\hrule
+\vspace{0.2cm}
+\begin{Cdescription}
+	\item[Subproceso:] Verificar por jefes de departamento.
+	\item[Situación actual:] Los jefes de departamento revisan la plantilla de estructura la cual tiene asignado la unidad de aprendizaje, el horario definido y el espacio académico destinado a la impartición de la unidad de aprendizaje.
+	\item[Perfil actual:] Encargado de Estructura Académica, \refElem{JefeDeDepartamento}.
+	\item[Solución propuesta:] Sin Cambios.
+	\item[Perfil propuesto:] Encargado de Estructura Académica, \refElem{JefeDeDepartamento}.
+	\item[Tipo:] Sin Cambios.
+.
+\end{Cdescription}
+
+
+%------------- Acuerdo 6 -------------
+\hrule
+\vspace{0.2cm}
+\begin{Cdescription}
+	\item[Subproceso:] Modificar la estructura académica.
+	\item[Situación actual:] Como resultado de la verificación, el encargado de definir la estructura tiene la responsabilidad de realizar las modificaciones pertinentes, reasignar unidades de aprendizaje a los grupos, reasignar espacios académicos y reasignar profesores, verificar los traslapes de manera manual para cada rubro antes mencionado.
+	\item[Perfil actual:] Encargado de Estructura Académica, \refElem{JefeDeDepartamento}.
+		\item[Solución propuesta:] Se propone que el Calmécac realice la detección de los traslapes siguientes al momento de:
+	\begin{Citemize}
+		\item asignar espacios académicos, 
+		\item unidades de aprendizaje, 
+		\item profesores.
+	\end{Citemize}
+	\item[Perfil propuesto:] Encargado de Estructura Académica, \refElem{JefeDeDepartamento}.
+	\item[Tipo:] Cambio.
+	.
+\end{Cdescription}
+

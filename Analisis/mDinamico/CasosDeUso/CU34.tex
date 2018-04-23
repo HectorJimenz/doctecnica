@@ -1,0 +1,43 @@
+\begin{UseCase}{CU34}{Gestionar Albergues}{
+		Permite administrar todos los Albergues autorizados y todas las propuestas que se encuentren registradas en la base de datos del sistema SIESM.\\
+		
+}
+	\UCitem{Versión}{0.1}
+	\UCccsection{Datos para el control Interno}	
+	\UCitem{Autor}{Eduardo Pérez Gómez}
+	\UCccitem{Evaluador}{Ulises Veléz Saldaña}
+	\UCitem{Operación}{Visualizar}
+	\UCccitem{Prioridad}{Alta}
+	\UCccitem{Complejidad}{Media}
+	\UCccitem{Volatilidad}{Media}
+	\UCccitem{Madurez}{Media}
+	\UCitem{Estatus}{Edición}
+	\UCitem{Fecha del último estatus}{28 de marzo de 2018}
+	\UCccsection{Revisión Version 0.1}
+	\UCccitem{Fecha}{}
+	\UCccitem{Evaluador}{Ulises Veléz Saldaña}
+	\UCccitem{Resultado}{}
+	\UCccitem{Observaciones}{}
+	\UCsection{Atributos}
+	\UCitem{Actor(es)}{\refElem{administrador}}
+	\UCitem{Propósito}{Contar con un medio en el que el actor pueda gestionar la información de los Albergues disponibles y la de las propuestas enviadas por los Ciudadanos.}
+	\UCitem{Entradas}{Ninguna}
+	\UCitem{Origen}{No aplica}
+	\UCitem{Salidas}{No aplica}
+	\UCitem{Precondiciones}{Ninguna}
+	\UCitem{Postcondiciones}{Ninguna}
+	\UCitem{Reglas de Negocio}{Ninguna}
+	\UCitem{Errores}{Ninguno}
+	\UCitem{Disparador(es)}{}
+	\UCitem{Condiciones de Término}{Se muestra la IUX.}
+	\UCitem{Efectos Colaterales}{Se podra crear, modificar, eliminar, ver, aurtorizar propuestas y rechazar propuestas de los Albergues.}
+	
+\end{UseCase}
+
+
+%Trayectoria Principal : Happy Path
+
+\begin{UCtrayectoria}
+	\item \UCactor Selecciona opcion gestionar albergues via la IU23 Pantalla Menu Principal.
+	\UCpaso Despliega la IU23 Pantalla gestionar albergues registrados con información general acerca de lo que es un Albergue.
+\end{UCtrayectoria}

@@ -1,0 +1,64 @@
+\begin{UseCase}{CU21}{Guardar nuevo Mapa Offline}{
+		Permite al Ciudadano guardar un nuevo Mapa Offline en la base de datos local del sistema SIESM.\\
+		
+}
+	\UCitem{Versión}{0.1}
+	\UCccsection{Datos para el control Interno}	
+	\UCitem{Autor}{Eduardo Pérez Gómez}
+	\UCccitem{Evaluador}{Ulises Veléz Saldaña}
+	\UCitem{Operación}{Registrar}
+	\UCccitem{Prioridad}{Alta}
+	\UCccitem{Complejidad}{Media}
+	\UCccitem{Volatilidad}{Media}
+	\UCccitem{Madurez}{Media}
+	\UCitem{Estatus}{Edición}
+	\UCitem{Fecha del último estatus}{28 de marzo de 2018}
+	\UCccsection{Revisión Version 0.1}
+	\UCccitem{Fecha}{}
+	\UCccitem{Evaluador}{Ulises Veléz Saldaña}
+	\UCccitem{Resultado}{}
+	\UCccitem{Observaciones}{}
+	\UCsection{Atributos}
+	\UCitem{Actor(es)}{\refElem{administrador}}
+	\UCitem{Propósito}{Que el Ciudadano pueda descargar una region del Mapa para su uso offline en el sistema SIESM.}
+	\UCitem{Entradas}{Nombre del Mapa Offline, Rango de la region y Descripción.}
+	\UCitem{Origen}{Teclado}
+	\UCitem{Salidas}{Mapa Offline descargado.}
+	\UCitem{Precondiciones}{Que se tenga suficiente espacio en memoria.}
+	\UCitem{Postcondiciones}{El Mapa Offline quedara descargado en la memoria del dispositivo.}
+	\UCitem{Reglas de Negocio}{Ninguna}
+	\UCitem{Errores}{Ninguno}
+	\UCitem{Disparador(es)}{No aplica}
+	\UCitem{Condiciones de Término}{Se muestra la IUX.}
+	\UCitem{Efectos Colaterales}{No aplica.}
+	
+\end{UseCase}
+
+
+%Trayectoria Principal : Happy Path
+
+\begin{UCtrayectoria}
+	\item\UCactor Selecciona opcion descargar Mapa Offline via la IU23 Pantalla Menu Mapa Offline.
+	\item\UCactor Introduce Nombre del Mapa Offline, Rango de la region y Descripción via la IU23 Pantalla Descargar Mapa Offline.
+	\item\UCactor Confirma la operación presionando el botón \IUbutton{Aceptar}.
+	\UCpaso Verifica que los datos esten completos\refTray{A}\label{CU21DatosCompletos}.
+	\UCpaso Verifica si existe suficiente memoria en el dispositivo \refTray{B}.
+	\UCpaso Descarga el Mapa Offline.
+	\UCpaso Muestra el MSG10-"Mapa Offline descargado correctamente"
+	\item\UCactor Presiona el botón aceptar.
+\end{UCtrayectoria}
+
+
+\begin{UCtrayectoriaA}{A}{Cuando todos los campos no estan completos}
+	\UCpaso Muestra el MSG1-"Faltan campos por llenar".
+	\UCpaso Muestra la IU23 Pantalla Descargar Mapa Offline con los campos anteriormente llenados y marcando en rojo los faltantes.
+	\item\UCactor Introduce los campos faltantes via la IU23 Pantalla Descargar Mapa Offline.
+	\UCpaso Continua en el paso \ref{CU21DatosCompletos} del CU21.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Cuando no hay suficiente memoria en el dispositivo}
+	\UCpaso Muestra el MSG12-"No se tiene suficiente memoria en el dispositivo, liberar espacio en memoria.".
+	\item\UCactor Presiona el botón aceptar.
+	\UCpaso Cancela operación.	
+	\UCpaso[] Termina el caso de uso.
+\end{UCtrayectoriaA}

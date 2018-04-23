@@ -1,0 +1,140 @@
+\chapter{Proceso Fortalecido Registro Horarios}
+%\label{ch:PF-RH}
+\hypertarget{chapter:PFRH}{}
+\section{AF-RH Arquitectura}
+%\begin{Proceso}{AF-GI}{Arquitectura del proceso fortalecido Gestión de Inscripciones}{
+%		%El Proceso de Ingreso corresponde al mecanismo por medio del cual un \refElem{Aspirante}, que realizó todos los trámites correspondientes al \textbf{Proceso de Admisión} y fue seleccionado para pertenecer a una unidad académica se convierte en \refElem{Alumno} del Instituto. El alumno es el centro de la vida académica y el principal usuario de todos los servicios que ofrece el Instituto. 
+%		}
+%	{PG.X}
+%%	\PRccsection{Datos para control interno}
+%%	\PRccitem{Versión}{1}
+%%	\PRccitem{Elaboró}{Francisco Isidoro Mera Torres}
+%%	\PRccitem{Supervisó}{Ulises Vélez Saldaña}
+%%	\PRccitem{Prioridad}{Alta}
+%%	\PRccitem{Estatus}{Corrección}
+%%	\PRccitem{Complejidad}{Media}
+%%	\PRccitem{Volatilidad}{Media}
+%%	\PRccitem{Madurez}{Media}
+%	\PRsection{Atributos del proceso}
+%	\PRitem{Participantes}{
+%		\refElem{AbogadoGeneral}, \refElem{Alumno}, \refElem{Aspirante},\refElem{Calmecac}, \refElem{ComisionEspecial}, \refElem{DepartamentoDeRegistroYSupervisionEscolar}, \refElem{SubdireccionAcademica}
+%	}
+%	\PRitem{Objetivo}{
+%		Asignar aspirantes a programas y unidades académicas otorgándoles una boleta y una identificación institucional.
+%	}
+%	\PRitem{Interrelación con otros procesos}{	
+%		\begin{Titemize}
+% 			\Titem Estructura Académica
+%		\end{Titemize}
+%	}
+%	\PRitem{Entradas}{
+%		\begin{Titemize}
+% 			\Titem Estructura Académica.
+% 			\Titem \refElem{HojaDeResultadoDelExamenDeAdmision}.
+% 			\Titem Aspirantes Aceptados.
+% 			\Titem Aspirantes Admitidos.
+% 			\Titem \refElem{CalendarioAcademico}.
+% 			\Titem \refElem{Convocatoria} y Calendario de Admisión.
+% 			\Titem Programas Académicos Vigentes.
+% 			\Titem Expedientes de Aspirantes.
+%		\end{Titemize}
+%	}
+%	\PRitem{Salidas}{
+%		\begin{Titemize}
+% 			\Titem \refElem{Horario}.
+% 			\Titem \refElem{Boleta} y/o \refElem{Preboleta}.
+% 			\Titem \refElem{CredencialDeAlumno}.
+% 			\Titem Notificación de documentación falsa o alterada.
+%		\end{Titemize}		
+%	}
+%	
+%\end{Proceso}
+
+La figura \cdtRefImg{afrh:PF-RHArquitectura}{AF-RH Arquitectura del Proceso Fortalecido de Registro de Horarios} muestra el proceso general modificado. La generación y Registro de Horarios que se muestra en el proceso general está enfocada en mejorar la comunicación entre el \refElem{Calmecac} y su interacción con las Unidades Académicas, y las áreas responsables de proveer la información correspondiente de profesores (\refElem{CapitalHumano}), unidades de aprendizaje\footnote{ver \refElem{UnidadDeAprendizaje}}, e infraestructura académica, que serán utilizados para generar la propuesta de horarios, motivo por el cual se proponen las siguientes mejoras para el Calmécac:
+
+\begin{Citemize}
+	\item Generará la información estadística preprocesada para facilitar el análisis de la oferta de número de grupos a aperturar.
+	\item Permitirá copiar la estructura académica utilizada en un periodo escolar similar para agilizar el proceso de generación de estructura académica, permitiendo realizar las modificaciones pertinentes sobre la misma.
+	\item Realizará la detección de traslapes al momento de asignar los espacios académicos, unidades de aprendizaje, profesores.
+	\item Identificará que profesores cubren con la totalidad de la carga académica con base en su categoría.
+	\item Detectará que profesores sobrepasan su carga académica con base en su categoría.
+	\item Determinará que unidades de aprendizaje puede impartir un profesor con base en la información histórica.
+	
+	
+%	\item Genere la información estadística preprocesada para facilitar el análisis de la oferta de número de grupos a aperturar.
+%	\item Permita copiar la estructura académica utilizada en un periodo escolar similar para agilizar el proceso de generación de estructura académica, permitiendo realizar las modificaciones pertinentes sobre la misma.
+%	\item Realice la detección de traslapes al momento de asignar los espacios académicos, unidades de aprendizaje, profesores.
+%	\item Identifique que profesores cubren con la totalidad de la carga académica con base en su categoría.
+%	\item Detecte que profesores sobrepasan su carga académica con base en su categoría.
+%	\item Determine que unidades de aprendizaje puede impartir un profesor con base en la información histórica.
+
+
+	
+\end{Citemize}
+
+La descripción detallada de estas mejoras se encuentra en la sección~\ref{sec:PF-RH:validacion}.
+
+\pagebreak
+
+\Pfig[1]{procesosfortalecidos/phr/PF-RHArquitecturaVF}{afrh:PF-RHArquitectura}{AF-GI Arquitectura del Proceso Fortalecido de Registro de Horarios. Para poder leer este diagrama ir a la sección \ref{section:CodigoColores}}
+
+
+%\begin{Proceso}{PF.}{Registro de Horarios}{
+%		Anote la descripción del proceso general, un párrafo que describe brevemente: cuando inicia el proceso, su secuencia principal de actividades y productos principales.
+%	}
+%	{PG.X}
+%	\PRccsection{Datos para control interno}
+%	\PRccitem{Versión}{1}
+%	\PRccitem{Autor}{Nombre completo del responsable del proceso}
+%	\PRccitem{Evaluador}{Nombre completo del evaluador}
+%	\PRccitem{Prioridad}{Alta/Media/Baja}
+%	\PRccitem{Estatus}{Terminado/Corrección/Aprobado}
+%	\PRccitem{Complejidad}{Alta/Media/Baja}
+%	\PRccitem{Volatilidad}{Alta/Media/Baja}
+%	\PRccitem{Madurez}{Alta/Media/Baja}
+%	\PRccsection{Control de cambios}
+%	\PRccitem{Versión 0}{
+%			\begin{Titemize}
+%				%\RCitem{ PC1}{Corregir la ortografía}{\DONE}
+%				%\TODO es para solicitar un cambio \TOCHK Es para informar que se atendió el TODO(ya hizo las correcciones),\DONE Es para indicar que el e valuador reviso los cambios.
+%			\end{Titemize}
+%	}
+%	\PRitem{Participantes}{
+%		 Liste los participantes en el proceso, ya sean: áreas, organos colegiados o individuos, utilice el comando \refElem{idDelActor}.
+%	}
+%	\PRitem{Objetivo}{
+%		Escriba un resumen a manera de objetivo (Que-Caracterisitica-para que) que englobe las responsabilidades relacionadas con el proceso y los problemas que resuelve.
+%	}
+%	\PRitem{Interrelación con otros procesos}{	
+%		\begin{Titemize}
+% 			\Titem Liste los procesos con que se enlaza la operación del proceso actual.
+%		\end{Titemize}
+%	}
+%	\PRitem{Entradas}{
+%		\begin{Titemize}
+% 			\Titem Liste los datos, formatos o insumos que se requieren como entradas a lo largo de este procesos.
+%		\end{Titemize}		
+%	}
+%	\PRitem{Salidas}{
+%		\begin{Titemize}
+% 			\Titem 	Liste los datos, formatos o insumos que se requieren como salidas o productos a lo largo de este procesos.
+%		\end{Titemize}		
+%	}
+%	
+%\end{Proceso}
+%
+%	La figura \cdtRefImg{arq:AG-RE}{AG-RE Registro de Evaluaciones} muestra los procesos que componen el presente proceso general.
+%
+%%		\Pfig[0.8]{proceso/imagenes/procesoGeneral}{pg:procGral}{Proceso general PGXX- XXXXXX}
+%
+%
+%%Descripción de procesos
+%\begin{PDescripcion}
+%	\Ppaso \textbf{Nombre del Proceso:} Descripción del proceso...
+%\end{PDescripcion}
+%
+%
+%%Factores criticos
+%\begin{FCDescripcion}
+%	\FCpaso Listar los factores críticos en este proceso
+%\end{FCDescripcion}

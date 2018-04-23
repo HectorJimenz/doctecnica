@@ -1,0 +1,62 @@
+%========================================================
+%Arquitectura de Proceso
+%========================================================
+%-------------------------------------------
+% Ultima Revisión: Ulises
+% Fecha: 7 de Junio.
+% Revisar comentarios con REV:
+
+%========================================================
+% Descripción general del proceso
+%-----------------------------------------------
+% REV: Ok.
+\begin{Arquitectura}{AG-EA}{Arquitectura del Proceso de Estructura Académica} {
+	% REV: Ok.
+	Este proceso se encarga de gestionar la interacción que se lleva a cabo entre diversas áreas del Instituto con la finalidad de analizar y aprobar la \refElem{EstructuraAcademica} del siguiente \refElem{CicloEscolar}.\\
+	% REV: Ok.
+	El proceso para crear la estructura académica necesita de información vital que proviene del proceso de Asignación de profesores\footnote{ver \refElem{Profesor}.} a Unidades de Aprendizaje\footnote{ver \refElem{UnidadDeAprendizaje}.} para poder elaborar una propuesta de estructura.\\
+	% REV: TODO: Al final no deberá decir: para su carga en el SAES?, para operar durante el próximo semestre o algo así?.
+	Al final del proceso se obtiene la estructura de una \refElem{UnidadAcademica} avalada por la \refElem{DES} y aprobada por la \refElem{DCH}.\\
+		
+
+	%-------------------------------------------
+	% REV: Ok.
+	La figura \cdtRefImg{arq:AG-EA}{AG-EA Arquitectura del Proceso de Estructura Académica} muestra la interacción con los procesos que proporcionan la información necesaria para llevar a cabo sus funciones.
+	% REV: Actualice la imágen con base en la última versión del Teamwork y la puse a pantalla completa para que se alcance a ver.
+	% TODO: Revisar si el diagrama está bien, en caso de que no sea así reemplazar con la versión correcta y subir cambios al teamwork. Por favor aprobecha el tamaño lo mas que se pueda para que sea legible.
+	
+	\Pfig[1]{pua/imagenes/ArquitecturaPGEA_EstructuraAcademica}{arq:AG-EA}{AG-EA Arquitectura del Proceso de Estructura Académica}
+	}{AG-EA}
+
+\end{Arquitectura}
+
+%========================================================
+%Interacción
+%-----------------------------------------------
+
+\begin{ADescripcion}
+	% REV: Ok.
+	\item \textbf{Gestión de Estructura Académica - Unidad Académica}. Cada \refElem{UnidadAcademica} es responsable de proporcionar la propuesta de estructura académica a la \refElem{DES} por medio del \refElem{SIIEE}. Adicionalmente cada \refElem{UnidadAcademica} tiene la responsabilidad de enviar a la \refElem{DES} el soporte documental necesario para justificar aquellos profesores que no cubren la carga máxima. Una vez que la \refElem{UnidadAcademica} ha agotado sus posibilidades de asignarle carga a los profesores de base, genera la \refElem{EstructuraAcademica} contemplando las horas que necesitan ser cubiertas por un \refElem{Profesor} que no es de base y las registra en el 	\refElem{SRN}. Por otra parte, cada \refElem{UnidadAcademica} es responsable de registrar la estructura académica en el \refElem{SAES}.
+	
+	% REV: Ok.
+	\item \textbf{Gestión de Estructura Académica - División de Gestión y Calidad Educativa}. Se encarga de recibir la estructura de cada \refElem{UnidadAcademica} por medio de reportes que genera el \refElem{SIIEE}. Después analiza y genera una lista de profesores de base que podrían cubrir los grupos que aún faltan, esta propuesta se la envía a la \refElem{UnidadAcademica}. Este intercambio de información se puede realizar varias veces hasta agotar todas las posibilidades de que un \refElem{Profesor} de base cubra la necesidad y obtener la \refElem{EstructuraAcademica} aprobada.\\
+	% REV: Ok.
+	En este análisis se revisa que el soporte documental de cada \refElem{Profesor} de base que no puede cubrir su carga máxima corresponda con algún \refElem{Nombramiento} o \refElem{Incidencia}. Todo este análisis contribuye a justificar las horas de interinato, incidencia u honorarios que solicita la \refElem{UnidadAcademica}.\\
+	% REV: Ok.
+    Posteriormente la \refElem{DES} envía las horas de interinato aprobadas tanto a la \refElem{UnidadAcademica} como a la \refElem{DCH} para su autorización.\\
+    % REV: Ok.
+    La \refElem{DGYCE} toma información del \refElem{SAES} para verificar la ocupabilidad total en un \refElem{PeriodoEscolar}, ya que esto le ayuda a realizar el análisis de la \refElem{EstructuraAcademica}  antes de que de cada \refElem{UnidadAcademica} le envíe su propuesta.
+    % REV: Corregir lo siguiente:
+    % TODO: no se entiende la redaccion, la parte de ``que entre sus funcionalidades relevantes para la DGyCE''. Sugerencia, podría decir: ``La DGYCE utiliza el SIIEE (el cual administra DCH) para generar el reporte de grupos sin cubrir...''.
+    \item \textbf{Generación de Informes de Estructura Académica}. La \refElem{DCH} se encarga de administrar el \refElem{SIIEE}, que entre sus funcionalidades relevantes para la \refElem{DGYCE} está la generación de un reporte de grupos sin cubrir, el cual les permite centrarse en analizar qué profesores de base podrían cubrir dichos grupos, antes de justificar la necesidad de horas de interinato.
+	% REV: Ok.
+    \item \textbf{Análisis de horas de Interinato}: La \refElem{DCH} es quien autoriza las horas de interinato que requiere la \refElem{UnidadAcademica}, apoyándose en el análisis que previamente hizo la \refElem{DES}, esto no implica que deba autorizar todas las horas solicitadas.
+	% REV: Ok.
+    \item \textbf{Gestión de horas de interinato}: La \refElem{DCH} también se encarga de administrar el \refElem{SRN} que es dónde las  Unidades Academicas registran la información personal de los profesores interinos, así como la \refElem{EstructuraAcademica} conformada por los mismos.
+    % REV: Ok.
+	\item \textbf{Registro de Estructura Académica}: Cada \refElem{UnidadAcademica} tiene la tarea de registrar la \refElem{EstructuraAcademica} en el \refElem{SAES}	y deberá hacer los cambios pertinentes conforme se vayan dando las modificaciones antes de la aprobación y autorización de la estructura.\\ 
+	% REV: Ok.
+	Por otra parte, el \refElem{SAES} proporciona los datos oficiales de ocupabilidad en un \refElem{PeriodoEscolar}, datos que utiliza la \refElem{DGYCE} para el análisis de la \refElem{EstructuraAcademica}.
+
+	
+\end{ADescripcion}

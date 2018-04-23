@@ -1,0 +1,186 @@
+\begin{Proceso}{PF-GR}{Proceso Fortalecido}{
+			Proceso mediante el cual un \refElem{Alumno} podrá realizar el proceso de reinscripción a su siguiente ciclo escolar para continuar con su trayectoria académica, se considerará  la configuración de los criterios para la generación de citas para la reinscripción en linea de las diferentes unidades académicas\footnote{ver \refElem{UnidadAcademica}}, la reinscripción en línea a través del \refElem{Calmecac} permitirá la reinscipción de alumnos que ya tengan cumplido un dictamen del \refElem{ConsejoGeneralConsultivo} o \refElem{ConsejoTecnicoConsultivoEscolar}, así como  la reinscripción de unidades de aprendizaje\footnote{ver \refElem{UnidadDeAprendizaje}} que estén alineados al programa académico (seriación, especialidad), de la misma forma el alumno podrá inscribirse a los ETS.
+	}
+	{PF-GR}
+	\PRccsection{Datos para control interno}
+	\PRccitem{Versión}{1}
+	\PRccitem{Autor}{Oscar Eduardo García García}
+	\PRccitem{Evaluador}{Idalia Maldonado Castillo}
+	\PRccitem{Prioridad}{Alta}
+	\PRccitem{Estatus}{Corrección}
+	\PRccitem{Complejidad}{Alta}
+	\PRccitem{Volatilidad}{Alta}
+	\PRccitem{Madurez}{Media}
+	\PRccsection{Control de cambios}
+	\PRccitem{Versión 0}{
+		\begin{Titemize}
+			%\RCitem{ PC1}{Corregir la ortografía}{\DONE}
+			%\TODO es para solicitar un cambio \TOCHK Es para informar que se atendió el TODO(ya hizo las correcciones),\DONE Es para indicar que el e valuador reviso los cambios.
+		\end{Titemize}
+	}
+	\PRitem{Participantes}{
+		\refElem{Alumno}, \refElem{Calmecac}, \refElem{DepartamentoDeGestionEscolar}, \refElem{DES},  \refElem{DAE}, \refElem{UnidadAcademica}.
+	}
+	\PRitem{Objetivo}{
+			A través de este proceso general de reinscripción, el alumno podrá reinscribirse en línea a través del \refElem{Calmecac}, los alumnos podrán reinscribirse en línea de acuerdo a su cantidad de unidades de aprendizaje adeudadas, promedio y también se considera la reinscripción de alumnos que tengan un dictamen cumplido y se encuentren en posibilidad de continuar con su trayectoria académica. De la misma forma el \refElem{Calmecac} permitirá la inscripción a los ETS en línea siguiendo con las validaciones y restricciones que marque su dictamen.
+	}
+	\PRitem{Interrelación con otros procesos}{	
+		\begin{Titemize}
+			%\Titem Gestión de Movilidad.
+			\Titem Gestión de Bajas.
+			\Titem Gestión de Unidades de Aprendizaje.
+			\Titem Gestión de Casos Especiales.
+			%\Titem Generación de Calendario Escolar.
+			\Titem Estructura Académica.
+			\Titem Gestión de Dictámenes.
+		\end{Titemize}
+	}
+	\PRitem{Proveedores}{
+			\refElem{Alumno}, \refElem{DES}, \refElem{DAE}, \refElem{UnidadAcademica}.
+	}
+	\PRitem{Entradas}{
+		\begin{Titemize}
+			\Titem Criterios para generación de Citas de Reinscripción.
+			\Titem Cita de Reinscripción.
+			\Titem \refElem{Horario} a inscribir.
+			\Titem UA adeudadas.
+			\Titem \refElem{ProgramaAcademico}.
+			\Titem \refElem{EstructuraAcademica}.
+			\Titem Estructura de ETS.
+			\Titem Autorización de Baja de UA.
+			\Titem Autorización de Baja Temporal.
+			\Titem Autorización de Baja Temporal por Cambio de Carrera.
+			\Titem Autorización de Cambio de Carrera.
+			\Titem Dictamen del \refElem{ConsejoGeneralConsultivo}.
+			\Titem Dictamen de \refElem{ConsejoTecnicoConsultivoEscolar}.
+		\end{Titemize}		
+	}
+	\PRitem{Consumidores}{
+		\refElem{Alumno}, \refElem{DepartamentoDeGestionEscolar}.
+	}
+	\PRitem{Salidas}{
+		\begin{Titemize}
+			\Titem Horario.
+			\Titem Reinscripción de alumno en el Calmécac.
+		\end{Titemize}		
+	}
+	\PRitem{Precondiciones}{
+		\begin{Titemize}
+			\Titem La estructura académica deberá estar creada y cargada en el sistema.
+			\Titem Los dictámenes del Consejo General Consultivo y Consejo Técnico Consultivo Escolar del alumno deberán estar registrados en el sistema.
+			\Titem El programa académico deberá estar cargado en el sistema.
+			\Titem La estructura de ETS deberá estar creada y cargada en el sistema.
+		\end{Titemize}
+	}
+	\PRitem{Postcondiciones}{
+		\begin{Titemize}
+			\Titem El alumno quedará inscrito al ciclo escolar.
+		\end{Titemize}
+		
+	}
+	\PRitem{Frecuencia}{
+		Semestral
+	}
+	\PRitem{Tipo}{
+		Operación
+	}
+	\PRitem{Áreas de oportunidad}{
+		\refElem{PR-AO1}, \refElem{PR-AO2}, \refElem{PR-AO3}, \refElem{PR-AO4}, \refElem{PR-AO5}, \refElem{PR-AO6}, \refElem{PR-AO7}.
+	}
+\end{Proceso}
+
+La figura \cdtRefImg{pg:procGral}{PF-GR Gestión de Reinscripciones} muestra los procesos que componen el presente proceso general.
+
+\Pfig[0.8]{procesosfortalecidos/pgr/imagenes/PGR_MacroprocesoFor.jpg}{pg:procGral}{PF-GR Proceso General de Gestión de Reinscripciones}
+
+\pagebreak
+%----------------------------
+
+%Descripción de procesos
+\begin{PDescripcion}	
+	%Actor: Alumno
+	\Ppaso \textbf{Alumno}
+	\begin{enumerate}
+		%Subproceso 1
+		\Ppaso[\PSubProceso] \cdtLabelTask{PGR:Alumno}{Reinscribir alumnos por sistema}. El \refElem{Alumno} podrá realizar la reinscipción a través del  \refElem{Calmecac} de acuerdo a la cita que se le haya generado a través del sistema. El alumno podrá reinscribirse de acuerdo a su situación académica y las diferentes condicionantes que el Calmécac validará como es: carga a inscribir, dictamen del \refElem{ConsejoGeneralConsultivo} o \refElem{ConsejoTecnicoConsultivoEscolar} cumplido, materias desfasadas, programas académicos (seriación, especialidad del programa académico), tiempo máximo para concluir el programa de estudios, alumnos que sean de convenio, tal es el caso de CEDU para la modalidad a distancia.
+		%Subproceso 2
+		\Ppaso[\PSubProceso] \cdtLabelTask{PGR:Alumno}{Registrar ETS en línea.}
+		El actor solicita al sistema \refElem{Calmecac} la inscripción de las Unidades de Aprendizaje\footnote{ver \refElem{UnidadDeAprendizaje}} que requiere presentar en \refElem{ETS}, la procedencia de la inscripción al ETS será validada por el Calmécac de acuerdo a las condicionantes como es: haber estado inscrito en el periodo escolar del ETS que pretende inscribir, tener dictamen  del CTCE o CGC que le permita presentar el ETS en el periodo que quiere inscribirlo. %Pasará al subproceso \cdtRefTask{PGR:ge:EjecutarETS}{Ejecutar ETS.}
+		
+		%Subproceso 3
+		\Ppaso[\PSubProceso] \cdtLabelTask{PGR:ge:EjecutarETS}{Ejecutar ETS} El actor presenta el ETS anteriormente inscrito y queda en espera del resultado del mismo, en caso de ser procedente la reinscripción, el alumno estará en posibilidad de reinscribirse al siguiente ciclo escolar.
+		
+		%Subproceso 4
+		\Ppaso[\PSubProceso] \cdtLabelTask{PGR:Alumno}{Reinscribir alumnos recuperados de ETS.} El alumno podrá realizar la reinscripción de acuerdo a su situación académica, este subproceso considerará la reinscripción del alumno que aprobó alguna o todas las materias que presentó en ETS, esta reinscripción podrá realizarse en línea o en ventanilla en caso de ser procedente.  
+		
+		
+	\end{enumerate}
+	%Actor: Calmécac
+	\Ppaso \textbf{Calmécac}
+	\begin{enumerate}
+		%Subproceso 1
+		\Ppaso[\PSubProceso] \cdtLabelTask{PGR:ge:ConfiguraCriteriosR}{Configurar criterios de reinscripción.} A través del \refElem{Calmecac} se podrá realizar la configuración de los criterios para la generación de citas para el periodo de inscripciones. Los criterios especificados pueden ser: prioridad por promedio y número de unidades de aprendizaje adeudadas, dictamen del CGC y CTCE aprobado que permita la reinscripción, tipo de selección de horario (flexible, semiflexible, rígido y semirígido), alumno inscrito en el periodo anterior, alumnos de convenio para la modalidad a distancia. Este subproceso también considerará la configuración de las fechas que corresponderán a cada grupo de alumnos dentro del periodo de reinscripciones que marca el calendario escolar, este criterio configurará las citas considerando las diferentes modalidades (escolarizada, a distancia o mixta) y los alumnos de convenio para la modalidad a distancia. %Pasará al subproceso \cdtRefTask{PGR:ge:GenerarCitasR}{Generar citas de reinscripción.}
+		
+		%Subproceso 2
+		\Ppaso[\PSubProceso] \cdtLabelTask{PGR:ge:GenerarCitasR}{Generar citas de reinscripción.} Una vez establecidos los criterios de citas de reinscripción por parte de la \refElem{UnidadAcademica}, el Calmécac generará las citas para que el alumno y Gestión Escolar pueda visualizarlas, y posteriormente proceder a la reinscipción por parte de los alumnos.
+		
+		%Subproceso 3
+		\Ppaso[\PSubProceso] \cdtLabelTask{PGR:Calmecac}{Registrar reinscripción en línea.} El \refElem{Calmecac} permitirá la reinscripción del alumno en donde su situación académica sea procedente para su reinscripción. La reinscripción en línea a través del Calmécac considerará  criterios y validaciones como: inscripción entre la carga mínima y máxima, unidades de aprendizaje con posible desfasamiento, unidades de aprendizaje adeudadas (uso de créditos), dictámenes del CGC y CTCE cumplidos, características del programa académico que esté cursando (especialidades, seriación), tiempo máximo para la conclusión del programa.		
+		%Subproceso 4
+		\Ppaso[\PSubProceso] \cdtLabelTask{PGR:Calmecac}{Registrar reinscripción por ventanilla.} Este proceso considera la reinscripción a través de la ventanilla de Gestion Escolar, donde el alumno podrá realizar su reinscripción con las mismas consideraciones que en línea pero con la diferencia que será presencial por medio de ventanilla del \refElem{DepartamentoDeGestionEscolar} de cada \refElem{UnidadAcademica}.
+		
+		%Subproceso 5
+		\Ppaso[\PSubProceso] \cdtLabelTask{PGR:Calmecac}{Registrar reinscripción de alumnos con situación especial.} Se realiza la reinscripción de los alumnos con casos especiales, tomando en cuenta los diferentes casos que se pueden presentar, como son: alumnos de cambio de carrera, alumnos en movilidad, alumnos con dictamen incumplido y finalmente considerará también el registro de las bajas temporales o definitivas que soliciten los alumnos durante el periodo escolar o las bajas de una unidad de aprendizaje durante las primeras 3 semanas de haber iniciado el periodo escolar.  
+		
+		%Subproceso 6
+		\Ppaso[\PSubProceso] \cdtLabelTask{PGR:Calmecac}{Registrar ETS en linea.}
+		El \refElem{Calmecac} permitirá realizar la inscripción de las Unidades de Aprendizaje del alumno al ETS, considerando la estructura generada para los ETS, el Calmécac validará la procedencia de la inscripción considerando que el alumno debió haber estado inscrito en el periodo escolar del ETS que pretende inscribir y tener dictamen  del CTCE o CGC que le permita presentar el ETS en el periodo que desea inscribirlo.
+		
+		%Subproceso 7
+		\Ppaso[\PSubProceso] \cdtLabelTask{PGR:Calmecac}{Registrar reinscripción en línea.} El \refElem{Calmecac} permitirá la reinscripción del alumno que se recuperó después de haber aprobado el ETS, el Calmécac validará la procedencia de su reinscripción de acuerdo a su situación académica considerando: reinscripción entre la carga mínima y máxima, unidades de aprendizaje\footnote{ver \refElem{UnidadDeAprendizaje}} con posible desfasamiento, unidades de aprendizaje adeudadas (uso de créditos), dictámenes del CGC y CTCE cumplidos, características del programa académico que esté cursando (especialidades, seriación), tiempo máximo para la conclusión del programa.		
+		%Subproceso 8
+		\Ppaso[\PSubProceso] \cdtLabelTask{PGR:Calmecac}{Registrar reinscripción en ventanilla.} El \refElem{Calmecac} permitirá la reinscripción del alumno que se recuperó después de haber aprobado el ETS en Ventanilla del \refElem{DepartamentoDeGestionEscolar} de cada \refElem{UnidadAcademica}. Se podrá realizar la reinscripción considerando los criterios  que se consideran en la reinscripción en línea solo que será a través del personal del Departamento de Gestión Escolar de manera presencial.
+		
+		
+		
+	\end{enumerate}
+	%Actor: Gestion Escolar
+	\Ppaso \textbf{Unidades Académicas - Gestión Escolar}
+	\begin{enumerate}
+		
+		%Subproceso 1
+		\Ppaso[\PSubProceso] \cdtLabelTask{PGR:Gestion Escolar}{Configurar reinscripciones.} El \refElem{DepartamentoDeGestionEscolar} de cada \refElem{UnidadAcademica}, realizará la configuración para generar las citas de reinscripción de los alumnos a través del \refElem{Calmecac}, los criterios que podrá configurar Gestión Escolar son: prioridad por promedio y número de unidades de aprendizaje adeudadas, dictamen del CGC y CTCE que permita la reinscripción, tipo de selección de horario (flexible, semiflexible, rígido y semirígido), alumno inscrito en el periodo anterior, alumnos de convenio para la modalidad a distancia. También considerará la configuración de las fechas o días asignados para la reinscripcion de los alumnos de acuerdo a las prioridades o criterios previamente mencionados. Esta configuración considera la definición de fechas para las diferentes modalidades (escolarizada, a distancia o mixta).
+		
+		%Subproceso 2
+		\Ppaso[\PSubProceso] \cdtLabelTask{PGR:Gestion Escolar}{Consultar citas de reinscripción.} Una vez generadas las citas por el  \refElem{Calmecac}, el actor podrá consultar las citas de los alumnos por medio del Calmécac que se generaron de acuerdo a los criterios previamente establecidos.
+		
+		%Subproceso 3
+		\Ppaso[\PSubProceso] \cdtLabelTask{PGR:Gestion Escolar}{Reinscribir alumnos en ventanilla.} El actor puede realizar la reinscripción a través de ventanilla en el \refElem{DepartamentoDeGestionEscolar} de la \refElem{UnidadAcademica}, dependiendo la situación académica de cada alumno, los alumnos podrán reinscribirse a través de la ventanilla considerando las mismas condicionantes que estarán consideradas en la reinscripción en línea, pero con la diferencia que lo harán de manera presencial en el Departamento de Gestión Escolar de la Unidad Académica.
+		
+		%Subproceso 4
+		\Ppaso[\PSubProceso] \cdtLabelTask{PGR:Gestion Escolar}{Reinscribir alumnos con casos especiales.} El actor podrá realizar la reinscripción de acuerdo a la situación académica de cada alumno, tomando en cuenta los diferentes casos que se pueden presentar, como son: alumnos de cambio de carrera, alumnos en movilidad, alumnos con dictamen incumplido, los alumnos que vienen de baja temporal. El supervisor de la \refElem{DAE} es quien debe avalar la procedencia de la activación de un alumno en baja para que pueda reinscribirse al siguiente periodo escolar. Finalmente aquí se considera también la reinscripción de casos especiales como es el registro de unidades de aprendizaje que no tienen calificación como lo es: servicio social y electiva, unidades de aprendizaje que se inscriben fuera del periodo de inscripciones porque requieren autorización de algún departamento, como es el caso de la unidad de aprendizaje de Trabajo Terminal, reinscripción de alumnos que se encuentran cursando movilidad y no están en el país, sobrecupos para unidades de aprendizaje, así como la reinscripción de alumnos debido a que cerraron alguna unidad de aprendizaje de algun grupo por tener pocos alumnos inscritos y requieren cambiar de grupo. Este subproceso considerará también el registro de las bajas temporales o definitivas que soliciten los alumnos durante el periodo escolar o las bajas de una unidad de aprendizaje durante las primeras 3 semanas de haber iniciado el periodo escolar.
+		
+		
+		%Subproceso 5
+		%\Ppaso[\PSubProceso] \cdtLabelTask{PGR:Gestion Escolar}{ %\textbf{Reinscribir UA con autorización}.} El actor puede realizar la %reinscripción de acuerdo a la situación académica de cada %\refElem{Alumno}. Se incluye a los alumnos que solicitaron y fue aprobado %el sobrecupo para una \refElem{UnidadDeAprendizaje}, alumnos que fueron %dados de baja por cierre de grupo, alumnos que cursan una %\refElem{UnidadDeAprendizaje} en otra \refElem{UnidadAcademica}; también %por medio del \refElem{DepartamentoDeGestionEscolar} se hace la %inscripción de las Unidades de Aprendizaje TT1 y TT2, finalmente las %Unidades De Aprendizaje de alumnos que la acreditan por medio del proceso %de saberes previos. Este subproceso se puede realizar en cualquier %momento dentro de las 3 primeras semanas iniciando el semestre. 
+		
+		%Subproceso 6
+		\Ppaso[\PSubProceso] \cdtLabelTask{PGR:Gestion Escolar}{Reinscribir alumnos recuperados de ETS.} El actor podrá realizar la reinscripción de acuerdo a la situación académica de cada alumno, se podrá reinscribir el alumno que se recuperó después de haber aprobado el ETS. Este subproceso se realiza aproximadamente 5 días hábiles después de haber terminado la ejecución de ETS. Para reinscipción de los recuperados de ETS se validará la procedencia de su reinscripción de acuerdo a su situación académica considerando: reinscripción entre la carga mínima y máxima, unidades de aprendizaje con posible desfasamiento, unidades de aprendizaje adeudadas (uso de créditos), dictámenes del CGC y CTCE cumplidos, características del programa académico que esté cursando (especialidades, seriación), tiempo máximo para la conclusión del programa.		
+		
+		%Subproceso 8
+		\Ppaso[\PSubProceso] \cdtLabelTask{PGR:Gestion Escolar}{Reinscribir alumnos recuperados de ETS especiales.} El actor podrá realizar la reinscripción de acuerdo a la situación académica de cada alumno, esta reinscripción considera las mismas validaciones que se consideran en la reinscripción de los alumnos recuperados del ETS.
+		
+		%Subproceso 10
+		%\Ppaso[\PSubProceso] \cdtLabelTask{PGR:Gestion Escolar}{ \textbf{Registro de créditos para UA sin calificación}.} Se hace el registro en el \refElem{SAES} de las Unidades de Aprendizaje que no causan calificación, como lo son, servicio social y materia electiva; además se realiza el proceso de baja temporal de los alumnos que así lo soliciten. Este subproceso se realiza en cualquier momento una vez terminada la evaluación del primer departamental y antes del cierre de semestre.   
+		
+		%Subproceso 11
+		%\Ppaso[\PSubProceso] \cdtLabelTask{PGR:Gestion Escolar}{ \textbf{Cierre de semestre}. Se genera un respaldo de la bases de datos del \refElem{SAES} asociada a la \refElem{UnidadAcademica}, una vez realizado el cierre ya no se puede hacer modificaciones de calificaciones sin oficio de la \refElem{UnidadAcademica}.}
+		
+	\end{enumerate}
+\end{PDescripcion}
+
+
+%Factores criticos
+\begin{FCDescripcion}
+	\FCpaso Listar los factores críticos en este proceso
+\end{FCDescripcion}

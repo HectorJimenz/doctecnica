@@ -1,0 +1,66 @@
+%========================================================
+%Arquitectura de Proceso
+%========================================================
+
+%========================================================
+%Revisión
+%-------------------------------------------
+
+% \UCccitem{Versión}{1}
+% \UCccsection{Análisis de Procesos }
+% \UCccitem{Autor}{nombreAutor}
+% \UCccitem{Evaluador}{nombreEvaluador}
+% \UCccitem{Prioridad}{Alta} %Alta, media, baja
+% \UCccitem{Estatus}{} %Edición, Terminado, Corrección, Aprobado 
+% \UCccitem{Complejidad}{Alta} %Alta, Media, Baja
+% \UCccitem{Volatilidad}{Alta} %Alta, Media, Baja
+% \UCccitem{Madurez}{Media}  %Alta, Media, Baja
+% \UCccsection{Control de cambios}
+% \UCccitem{Versión 0}{
+% \begin{UClist}
+% \RCitem{ Pxn T1}{Corregir la ortografía}{\DONE}
+% \TODO es para solicitar un cambio, \TOCHK Es para informar que se atendió el TODO, \DONE Es para indicar que el evaluador reviso los cambios.
+% \end{UClist}
+%}
+
+%========================================================
+% Descripción general del proceso
+%-----------------------------------------------
+\begin{Arquitectura}{AG-GPA}{Arquitectura General del Proceso de Gestión de Programas Académicos} {
+		
+		%-------------------------------------------
+		%Descripción
+		El proceso de Gestión de Programas Académicos incluye aspectos de diseño y rediseño, los cuales requiren la aprobación por parte de la \refElem{DES} y por parte del \refElem{ConsejoGeneralConsultivo} del IPN. La \refElem{DAE} es la respondable de su registro. 
+		
+		Éste proceso proporciona como salida, la definición de las unidades de aprendizaje\footnote{ver \refElem{UnidadDeAprendizaje}} que se deben cursar para cumplir con un plan de estudios.
+		
+		%-------------------------------------------
+		%Diagrama de arquitectura
+		\noindent La Figura \cdtRefImg{arq:AG-GPA}{AG-GPA Arquitectura General del Proceso de Gestión de Programas Académicos} muestra la interacción con los procesos que proporcionan la información necesaria para que se pueda registrar un programa de estudios.
+
+		\Pfig[1.0]{pgpa/imagenes/ArquitecturaPP-GPAGestionProgramasAcademicos}{arq:AG-GPA}{AG-GPA Arquitectura General del Proceso de Gestión de Programas Académicos}
+		
+	}{AG-GPA}
+
+\end{Arquitectura}
+
+%========================================================
+%Interacción
+%-----------------------------------------------
+
+\begin{ADescripcion}
+
+	\item \textbf{Diseño/Rediseño de Programas Académicos}.  obedece a necesidades sociales detectadas por las Unidades Académicas\footnote{ver \refElem{UnidadAcademica}}, con el objeto de satisfacer la demanda de la industria e investigación. Los Diseñor o rediseños son generados por las Unidades Académicas con base en metodologías definidas en el IPN y enviadas a la \refElem{DES} para  su evaluación.
+
+	\item \textbf{Aprobación de Programas Académicos por \refElem{DES}}. Éste proceso es el encargado de evaluar las propuestas de diseño y rediseño, genera las correcciones pertinentes o dictamina su aprobación. Cada uno de los programas académicos aprobados deben ser  enviados al \refElem{ConsejoGeneralConsultivo} , para realizar la evaluación final de las propuestas para que el \refElem{ProgramaAcademico} pueda ser impartido en la \refElem{UnidadAcademica} correspondiente y registrado en el \refElem{SAES}.
+
+	\item \textbf{Aprobación de Programas Académicos por \refElem{ConsejoGeneralConsultivo}}. Es la evaluación generada por el \refElem{ConsejoGeneralConsultivo}, la cual determina su publicación en la Gaceta.
+
+	\item \textbf{Registro de Programas Académicos\footnote{ver \refElem{ProgramaAcademico}} en \refElem{SAES}}.  El proceso de estructura académica permite definir que unidades de aprendizaje\footnote{ver \refElem{UnidadDeAprendizaje}} serán impartidas, para que este pueda operar requiere tener publicados los progamas académicos\footnote{ver \refElem{ProgramaAcademico}} en el sistema de gestión escolar, actualmente el \refElem{SAES}.
+
+	\item \textbf{Gestión de Estructura Académica}. Éste proceso consume la información de cada uno de los programas académicos aprobados, para que con la información complementaria respecto a profesores, horarios e infraestructura, cada unidad obtenga su \refElem{EstructuraAcademica}.  
+	
+\end{ADescripcion}
+
+%\begin{PDescripcion}		
+%\end{PDescripcion}

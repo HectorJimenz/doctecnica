@@ -1,0 +1,27 @@
+\begin{BusinessRule}{BR100}{Recibo del Estudiante por inscripción a Seminario.}{
+		Regla de operación, (calcular o determinar un valor.).
+		% Otras opciones para tipo: 
+		% - Regla de integridad referencial o estructural. 
+		% - Regla de operación, (calcular o determinar un valor.).
+		% - Regla de inferencia de un hecho.
+	}{
+		Habilitadora. 
+		% Otras opciones para clase: Habilitadora, Cronometrada, Ejecutive.
+	}{
+		Controla la operación. % Otras opciones para nivel: Controla la operación, Influencia (dirige) la operación.
+	}
+	\BRItem[Descripción:] El  Recibo del Estudiante debe mostrar el total del costo con el siguiente desglose:
+	\begin{displaymath}\begin{array}{lr}
+	Costo: & \$ XXX.XX\\
+	Descuento~aplicado~(YY\%): & \$ XXX.XX\\
+	Subtotal: & \$ XXX.XX\\
+	IVA~(16\%): & \$ XXX.XX\\\hline
+	Total: & \$ XXX.XX
+	\end{array}\end{displaymath}
+	\BRItem[Sentencia:] $CostoTotal = Costo(e, s) + Impuesto(e, s)$.
+	\BRItem[Ejemplo positivo:] 
+	
+	\BRItem[Ejemplo negativo:] 
+	
+	\BRItem[Referenciado por:] 
+\end{BusinessRule}

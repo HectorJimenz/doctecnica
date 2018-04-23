@@ -1,0 +1,159 @@
+\begin{Proceso}{PF-RE}{Proceso de Gestión de Evaluaciones}{
+        El proceso iniciará en cuanto el Profesor pueda hacer el registro de calificaciones, una vez capturada el acta de calificaciones el Profesor procederá a firmar digitalmente, si existiera un error en la evaluación dentro de las primeras 72 horas en que se registró la evaluación, el Profesor podrá solicitar una corrección firmando digitalmente la solicitud, de esta manera se generará un folio digital del acta que respalda esta acción. En cuanto se cargue una calificación, ésta se actualizará en el \refElem{HistorialAcademico} del estudiante por lo que el \refElem{Calmecac} podrá llevar el control del registro de \refElem{ETS} con base en este historial. Una vez que pasaron 72 horas de una evaluación y existiera un error, el Profesor podrá solicitar una corrección de calificación especial que consiste en firmar en digital la solicitud por el \refElem{Profesor}, Jefe de \refElem{DepartamentoDeGestionEscolar}, Titular de la \refElem{SubdireccionAcademica}, Director de la \refElem{UnidadAcademica} y finalmente por el Supervisor de la \refElem{DAE} que validará la corrección.
+
+    }
+    {PF-RE}
+    \PRccsection{Datos para control interno}
+    \PRccitem{Versión}{1}
+    \PRccitem{Elaboró}{M. en C. Luis Enrique Hernández Olvera}
+    \PRccitem{Supervisó}{Ulises Vélez Saldaña}
+    \PRccitem{Prioridad}{Alta}
+    \PRccitem{Estatus}{En corrección}
+    \PRccitem{Complejidad}{Media}
+    \PRccitem{Volatilidad}{Media}
+    \PRccitem{Madurez}{Media}
+    \PRccsection{Control de cambios}
+    \PRccitem{Versión 1}{
+            \begin{Titemize}
+                %\RCitem{ PC1}{Corregir la ortografía}{\DONE}
+                %\TODO es para solicitar un cambio \TOCHK Es para informar que se atendió el TODO(ya hizo las correcciones),\DONE Es para indicar que el evaluador revisó los cambios.
+            \end{Titemize}
+    }
+    \PRitem{Participantes}{
+         \refElem{Calmecac},\refElem{Profesor} y \refElem{DAE}.
+    }
+    \PRitem{Objetivo}{
+        Permitir el registro de calificaciones implementando la firma digital como mecanismo de seguridad para verificar la autenticidad y garantizar el no repudio de cualquier calificación, así como un folio digital como un identificador único en el Instituto Politécnico Nacional para las actas generadas al modificar calificaciones.
+    }
+    \PRitem{Interrelación con otros procesos}{    
+        \begin{Titemize}
+             \Titem Registro y validación de la trayectoria escolar del alumno.
+             \Titem Proceso de evaluación semestral.
+        \end{Titemize}
+    }
+    \PRitem{Proveedores}{
+        \refElem{Profesor} y \refElem{DAE}.
+    }
+    \PRitem{Entradas}{
+        \begin{Titemize}
+            \Titem Calificaciones.
+            \Titem Credencial del \refElem{Profesor}, Jefe de \refElem{DepartamentoDeGestionEscolar}, Titular de la \refElem{SubdireccionAcademica}, Director de la \refElem{UnidadAcademica} y del Supervisor de la \refElem{DAE}.
+            \Titem Solicitud de cambio de calificación.
+             %\Titem Liste los datos, formatos o insumos que se requieren como entradas a lo largo de este procesos.
+        \end{Titemize}        
+    }
+    \PRitem{Consumidores}{
+        \refElem{Profesor}
+         %Liste los participantes que reciben información o los resultados del proceso, indique área y puesto o cargo, utilice el comando \refElem{idDelActor}.
+    }
+    \PRitem{Salidas}{
+        \begin{Titemize}
+             Historial / Trayectoria escolar del alumno.
+             %\Titem     Liste los datos, formatos o insumos que se requieren como salidas o productos a lo largo de este procesos.
+        \end{Titemize}        
+    }
+    \PRitem{Precondiciones}{
+        \begin{Titemize}
+             Registro de un periodo de evaluaciones.
+             %\Titem Liste las actividades, productos o condiciones que deben ocurrir o cumplirse antes de iniciar el proceso.
+        \end{Titemize}
+    }
+    \PRitem{Postcondiciones}{
+        \begin{Titemize}
+             Historial / Trayectoria escolar del alumno.
+             %\Titem Liste los productos o condiciones que se logran o cambian al terminar el proceso de forma correcta.
+        \end{Titemize}
+        
+    }
+    \PRitem{Frecuencia}{
+        Periódico y programado, depende del tipo de evaluación y el plan de estudios.
+        % Periódico: Cada cierto tiempo: diario, semanal, anual, etc.
+        % Programado: Alguien en algún momento establece la fecha.
+        % Eventual: Cada que ocurre un evento que no se puede prever ni programar.
+    }
+    \PRitem{Tipo}{
+        Proceso Clave.
+    }
+    % Operación: Proceso asociado a las actividades propias de la operación del RENIECYT.
+    % Mejora continua: Procesos asociados a actividades de mejora continua del proceso actual.
+    % Soporte: Procesos asociados a actividades indirectas necesarias para operar el RENIECYT.
+    \PRitem{Áreas de oportunidad}{
+        \refElem{PRE-AO1}, \refElem{PRE-AO2}, \refElem{PRE-AO3} y \refElem{PRE-AO4}.
+    }
+\end{Proceso}
+
+    La figura \cdtRefImg{arq:AF-RE}{AG-RE Registro de Evaluaciones} muestra los procesos que componen el presente proceso general.
+
+        \Pfig[1.0]{procesosfortalecidos/pgre/imagenes/PGFRE.png}{pg:procGral}{Proceso especifico de registro de evaluaciones}
+
+
+%Descripción de procesos
+\begin{PDescripcion}
+    
+    %Actor: Profesor
+    \Ppaso \textbf{Profesor}
+    \begin{enumerate}
+        %Subproceso 1
+        \Ppaso[\PSubProceso] \cdtLabelTask{PGR:Profesor}{ Realizar Evaluaciones.}El registro de las calificaciones se habilitará cuando el \refElem{DepartamentoDeGestionEscolar} registre en el \refElem{Calmecac} una fecha para subir calificaciones, en ese momento, el \refElem{Profesor} puede proceder a subir su acta de calificaciones.
+        
+        %Subproceso 2
+        \Ppaso[\PSubProceso] \cdtLabelTask{PGR:Profesor}{ Firmar en Digital Calificaciones.}En este proceso el Profesor proporcionará en el Calmécac su credencial para poder firmar en digital y así verificar la autenticidad y garantizar el no repudio del acta de calificaciones.
+        
+        %Subproceso 3
+        \Ppaso[\PSubProceso] \cdtLabelTask{PGR:Profesor}{ Solicitar Corrección Ordinaria.}El Profesor podrá solicitar una corrección de calificación en el Calmécac usando su credencial para autenticar la solicitud, dentro de las 72 horas después de haberla registrado.
+        
+        %Subproceso 4
+        \Ppaso[\PSubProceso] \cdtLabelTask{PGR:Profesor}{ Realizar Evaluaciones ETS.}Este proceso es idéntico a Realizar evaluaciones. Adicionalmente se podrá realizar las inscripciones en línea a los \refElem{ETS}, ya que el Calmécac actualizará el \refElem{HistorialAcademico} del estudiante, después de 72 horas de asentada una calificación por un Profesor, ésta se considerará definitiva (ya no se requerirá el proceso de cierre de periodo que es lo que permitía la actualización del historial académico del estudiante).
+        
+        %Subproceso 5
+        \Ppaso[\PSubProceso] \cdtLabelTask{PGR:Profesor}{ Solicitar Corrección Especial.}Las correcciones de calificaciones que se requieran después de 72 horas de ser establecidas, podrán ser solicitadas a través del Calmecac.
+        
+    \end{enumerate}    
+    %Actor: Calmécac
+    \Ppaso \textbf{Calmécac}
+    \begin{enumerate}
+        %Subproceso 1
+        \Ppaso[\PSubProceso] \cdtLabelTask{PGR:Calmecac}{ Registrar Evaluaciones.}El \refElem{Calmecac} recibirá las calificaciones que registre el Profesor y firmará en digital el acta usando la credencial del Profesor, para verificar su autenticidad y garantizar el no repudio.
+        
+        %Subproceso 2
+        \Ppaso[\PSubProceso] \cdtLabelTask{PGR:Calmecac}{ Implementar Firma Digital.}Este proceso consistirá en firmar de forma digital las actas de calificaciones registradas por el Profesor haciendo uso de su credencial para verificar la autenticidad y garantizar el no repudio.
+        
+        %Subproceso 3
+        \Ppaso[\PSubProceso] \cdtLabelTask{PGR:Calmecac}{ Implementar Folio Digital y Firma del Profesor.}Este proceso consistirá en recibir la credencial del Profesor para poder firmar la solicitud de cambio de calificación y una vez firmada se creará su folio digital único e irrepetible.
+        
+        %Subproceso 4
+        \Ppaso[\PSubProceso] \cdtLabelTask{PGR:Calmecac}{ Actualizar Historial Académico.}En este proceso el Calmecac recibirá las calificaciones que registró el Profesor y actualiza el historial académico del alumno.
+        
+        %Subproceso 5
+        \Ppaso[\PSubProceso] \cdtLabelTask{PGR:Calmecac}{ Implementar Folio y Firma Digital de: Profesor, DAE, Director, Subdirector académico y Gestión escolar.}En este proceso el Calmecac. firmarán digitalmente la solicitud de cambio de calificación por todos los actores correspondientes y sólo si están todas las firmas digitales procede a hacer la modificación de la calificación.
+        
+    \end{enumerate}
+    
+    %Actor: DAE
+    \Ppaso \textbf{DAE}
+    \begin{enumerate}
+        
+        %Subproceso 1
+        \Ppaso[\PSubProceso] \cdtLabelTask{PGR:DAE}{ Realizar Corrección.}El \refElem{Calmecac} tendrá la trazabilidad necesaria para controlar los debidos cambios de calificaciones.
+    
+        %Subproceso 4
+%    \Ppaso[\PSubProceso] \cdtLabelTask{PGR:Calmecac}{ \textbf{Registro de reinscripción por ventanilla}.} Se hace el registro de reinscripción de los alumnos que lo solicitaron por medio de ventanilla del \refElem{DepartamentoDeGestionEscolar} de cada \refElem{UnidadAcademica}.
+    
+    \end{enumerate}
+\end{PDescripcion}
+
+
+%Factores criticos
+\begin{FCDescripcion}
+    \FCpaso Listar los factores críticos en este proceso
+\end{FCDescripcion}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,89 @@
+%========================================================
+%Proceso General
+%========================================================
+
+%========================================================
+%Revisión
+%-------------------------------------------
+
+% \UCccitem{Versión}{1}
+% \UCccsection{Análisis de Procesos }
+% \UCccitem{Autor}{nombreAutor}
+% \UCccitem{Evaluador}{nombreEvaluador}
+% \UCccitem{Prioridad}{Alta} %Alta, media, baja
+% \UCccitem{Estatus}{} %Edición, Terminado, Corrección, Aprobado 
+% \UCccitem{Complejidad}{Alta} %Alta, Media, Baja
+% \UCccitem{Volatilidad}{Alta} %Alta, Media, Baja
+% \UCccitem{Madurez}{Media}  %Alta, Media, Baja
+% \UCccsection{Control de cambios}
+% \UCccitem{Versión 0}{
+% \begin{UClist}
+% \RCitem{ Pxn T1}{Corregir la ortografía}{\DONE}
+% \TODO es para solicitar un cambio, \TOCHK Es para informar que se atendió el TODO, \DONE Es para indicar que el evaluador reviso los cambios.
+% \end{UClist}
+%}
+
+%========================================================
+% Descripción general del proceso
+%-----------------------------------------------
+\begin{procesoGeneral}{PG-GR}{Proceso General de Gestión de Reinscripción} {
+		
+		%-------------------------------------------
+		%Resumen
+		En el diagrama se muestran los subprocesos que se llevan a cabo a lo largo de del periodo de Gestión de Reinscripción. En él se contemplan los diferentes casos donde se puede llevar a cabo la reinscripción de un \refElem{Alumno}, así como las tareas que se requieran realizar durante el ciclo escolar.\\
+					
+		%-------------------------------------------
+		%Diagrama del proceso
+		\noindent La Figura \cdtRefImg{pGeneral:PG-GR}{PG-GR Proceso General de Gestión de Reinscripción} muestra las actividades que se realizan para llevar a cabo el proceso descrito anteriormente.
+		
+		\Pfig[1.0]{pgr/imagenes/PGR_Macroproceso}{pGeneral:PG-GR}{PG-GR Diagrama de Proceso General de Gestión de Reincripción}
+	}{PGR}
+
+\end{procesoGeneral}
+
+%========================================================
+%Descripción de tareas
+%-----------------------------------------------
+\begin{PDescripcion}
+	
+	%Actor: SAEV2.0
+	\Ppaso \textbf{Gestión Escolar}
+	
+	\begin{enumerate}
+		%Subproceso 1
+		\Ppaso[\PSubProceso] \cdtLabelTask{PGR:Gestion Escolar}{ \textbf{Generación de citas de reinscripción}.} Se solicita la generación de citas a través de criterios específicos que son enviados a la \refElem{DAE}, la cual genera las citas, donde posteriormente son cargadas al sistema \refElem{SAES}, para que el \refElem{Alumno} pueda visualizarla, si existen citas faltantes, se solicitan estas mismas a la \refElem{DAE}.
+		
+		%Subproceso 2
+		\Ppaso[\PSubProceso] \cdtLabelTask{PGR:Gestion Escolar}{ \textbf{Reinscripción de alumnos por sistema}.} El actor puede realiza la solicitud de reinscripción a través del \refElem{SAES}, para así, hacer la selección de horarios de las Unidades de Aprendizaje\footnote{ver \refElem{UnidadDeAprendizaje}} que desee inscribir al siguiente ciclo escolar, incluyendo las Unidades de Aprendizaje adeudadas dependiendo de la situación académica de cada \refElem{Alumno}; si este tiene problemas con el proceso de reinscripción, deberá acudir directamente a ventanillas del \refElem{DepartamentoDeGestionEscolar}. Este subproceso incluye únicamente a los alumnos\footnote{ver \refElem{Alumno}} con 0, 1 y 2 adeudos, y se realiza los primero días del periodo de reinscripción conforme al calendario escolar. 
+	
+		%Subproceso 3
+		\Ppaso[\PSubProceso] \cdtLabelTask{PGR:Gestion Escolar}{ \textbf{Reinscripción de alumnos en ventanilla}.} El actor puede realizar la reinscripción a través de ventanilla en el \refElem{DepartamentoDeGestionEscolar}, dependiendo la situación académica de cada \refElem{Alumno}, este debe mostrar posibles horarios de unidades de aprendizaje a inscribir y también deberá mostrar el oficio de dictamen cumplido si es el caso, ya que este subproceso incluye a los alumnos con 3 a más adeudos, y a alumnos con dictamen cumplido.
+		
+		%Subproceso 4
+		\Ppaso[\PSubProceso] \cdtLabelTask{PGR:Gestion Escolar}{ \textbf{Reinscripción de casos especiales}.} El actor puede realizar la reinscripción de acuerdo a la situación académica de cada \refElem{Alumno}. Este subproceso incluye a los alumnos con dictamen cumplido, quienes deberán mostrar el oficio que lo avala, alumnos de cambio de carrera donde el \refElem{JefeDeCarrera} es quién autoriza qué Unidades de Aprendizaje se inscriben, y finalmente alumnos con baja temporal donde previamente el supervisor de la \refElem{DAE} deberá autorizar y activar al \refElem{Alumno} para así, poder reinscribirse. 
+		
+		%Subproceso 5
+		\Ppaso[\PSubProceso] \cdtLabelTask{PGR:Gestion Escolar}{ \textbf{Reinscripción con autorización}.} El actor puede realizar la reinscripción de acuerdo a la situación académica de cada \refElem{Alumno}. Se incluye a los alumnos que solicitaron y fue aprobado el sobrecupo para una \refElem{UnidadDeAprendizaje}, alumnos que fueron dados de baja por cierre de grupo, alumnos que cursan una \refElem{UnidadDeAprendizaje} en otra \refElem{UnidadAcademica}; también por medio del \refElem{DepartamentoDeGestionEscolar} se hace la inscripción de las Unidades de Aprendizaje TT1 y TT2, finalmente las Unidades De Aprendizaje de alumnos que la acreditan por medio del proceso de saberes previos. Este subproceso se puede realizar en cualquier momento dentro de las 3 primeras semanas iniciando el semestre. 
+		
+		%Subproceso 6
+		\Ppaso[\PSubProceso] \cdtLabelTask{PGR:Gestion Escolar}{ \textbf{Ejecución de ETS}.} Se realiza la ejecución del \refElem{ETS}, en donde el \refElem{Alumno} se inscribe, aplica y recibe la evaluación del \refElem{ETS}. 
+		
+		%Subproceso 7
+		\Ppaso[\PSubProceso] \cdtLabelTask{PGR:Gestion Escolar}{ \textbf{Reinscripción de alumnos recuperados de ETS}.} El actor puede realizar la reinsripción de acuerdo a la situación académica de cada \refElem{Alumno}, se podrá reinscribir el \refElem{Alumno} si y solo si acreditó la(s) materias(s) adeudada(s) a través del \refElem{ETS}. Este subproceso se realiza aproximadamente 5 días hábiles después de haber terminado la ejecución de \refElem{ETS}. También se incluye la inscripción de Unidades de Aprendizaje fuera de calendario.  
+		
+		%Subproceso 8
+		\Ppaso[\PSubProceso] \cdtLabelTask{PGR:Gestion Escolar}{ \textbf{Ejecución de ETS especiales}.} Se realiza la ejecución del \refElem{ETS} especial, en donde el \refElem{Alumno} se inscribe, aplica y recibe la evaluación del \refElem{ETS} especial. 
+		
+		%Subproceso 9
+		\Ppaso[\PSubProceso] \cdtLabelTask{PGR:Gestion Escolar}{ \textbf{Reinscripción de alumnos recuperados de \refElem{ETS} especiales}.} El actor puede realizar la reinsripción de acuerdo a la situación académica de cada \refElem{Alumno}, se podrá reinscribir el \refElem{Alumno} si y solo si acreditó la(s) materias(s) adeudada(s) a través del \refElem{ETS} especial. Este subproceso se realiza aproximadamente 5 días hábiles después de haber terminado la ejecución de \refElem{ETS} especial. También se incluye la inscripción de Unidades de Aprendizaje fuera de calendario.
+		
+		%Subproceso 10
+		\Ppaso[\PSubProceso] \cdtLabelTask{PGR:Gestion Escolar}{ \textbf{Registro de créditos para UA sin calificación}.} Se hace el registro en el \refElem{SAES} de las Unidades de Aprendizaje que no causan calificación, como lo son, servicio social y materia electiva; además se realiza el proceso de baja temporal de los alumnos que así lo soliciten. Este subproceso se realiza en cualquier momento una vez terminada la evaluación del primer departamental y antes del cierre de semestre.   
+		
+		%Subproceso 11
+		\Ppaso[\PSubProceso] \cdtLabelTask{PGR:Gestion Escolar}{ \textbf{Cierre de semestre}. Se genera un respaldo de la bases de datos del \refElem{SAES} asociada a la \refElem{UnidadAcademica}, una vez realizado el cierre ya no se puede hacer modificaciones de calificaciones sin oficio de la \refElem{UnidadAcademica}.}
+		
+		
+		
+	\end{enumerate}
+\end{PDescripcion}

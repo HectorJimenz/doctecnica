@@ -1,0 +1,36 @@
+%--------------------------------------
+\section{IU02 Pantalla de creación de cuenta}
+
+\subsection{Objetivo}
+	Contar con un medio por el cual se pueda crear una nueva cuenta para el acceso al sistema.
+
+\subsection{Diseño}
+	Esta pantalla \IUref{IU02}{Pantalla de creacion de cuenta} (ver figura~\ref{fig:IU02}) aparece al oprimir \IUbutton{Crear Cuenta} desde la \IUref{IU01}{Pantalla de Control de Acceso} (ver figura~\ref{fig:IU01}). 
+	
+\IUfig[.5]{IUs/IU02}{IU02}{Pantalla de creación de cuenta.}
+
+\subsection{Salidas}
+
+	Ninguna.
+
+\subsection{Entradas}
+Usuario, correo electronico, nombre, apellidos, sexo, contraseña, repetir contraseña y fecha de nacimiento del Ciudadano.
+
+\subsection{Comandos}
+\begin{itemize}
+	\item \IUbutton{Crear Cuenta}: Verifica que el usuario este disponible, que no falte ningun campo por llenar y que la contraseña sea igual en ambos casos. Si la verificación es correcta, se muestra la.. 
+	\item \IUbutton{Cancelar}: Termina la operación y se muestra la \IUref{IU01}{Pantalla de Control de Acceso} (ver figura~\ref{fig:IU01}). 
+\end{itemize}
+
+\subsection{Mensajes}
+
+\begin{Citemize}
+	\item Usuario no disponible, intente con otro.
+	\item La contraseña no coincide.
+	\item Faltan campos por llenar.
+\end{Citemize}
+
+
+
+
+\clearpage

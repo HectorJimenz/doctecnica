@@ -1,0 +1,61 @@
+id,type,name,status,version,author
+CU21,Caso de uso,Guardar nuevo Mapa Offline,NA,NA,NA
+CU22,Caso de uso,Modificar Mapa Offline,NA,NA,NA
+CU23,Caso de uso,Eliminar Mapas Offline,NA,NA,NA
+CU24,Caso de uso,Ver Mapas Offline,NA,NA,NA
+CU27,Caso de uso,Gestionar Centros de Recolecci\IeC {\'o}n,NA,NA,NA
+CU28,Caso de uso,Crear Centros de Recoleci\IeC {\'o}n,NA,NA,NA
+CU29,Caso de uso,Modificar Centros de Recoleci\IeC {\'o}n,NA,NA,NA
+CU30,Caso de uso,Eliminar Centros de Recoleci\IeC {\'o}n,NA,NA,NA
+CU31,Caso de uso,Autorizar Propuesta de Centro de Recolecci\IeC {\'o}n,NA,NA,NA
+CU32,Caso de uso,Rechazar Propuesta de Centro de Recolecci\IeC {\'o}n,NA,NA,NA
+CU33,Caso de uso,Ver Centros de Recolecci\IeC {\'o}n,NA,NA,NA
+CU34,Caso de uso,Gestionar Albergues,NA,NA,NA
+CU35,Caso de uso,Crear Albergue,NA,NA,NA
+CU36,Caso de uso,Modificar Albergue,NA,NA,NA
+CU37,Caso de uso,Eliminar Albergue,NA,NA,NA
+CU38,Caso de uso,Autorizar Propuesta de Albergue,NA,NA,NA
+CU39,Caso de uso,Rechazar Propuesta de Albergue,NA,NA,NA
+CU40,Caso de uso,Ver Albergues,NA,NA,NA
+CU41,Caso de uso,Gestionar Refugios,NA,NA,NA
+CU42,Caso de uso,Crear Refugios,NA,NA,NA
+CU43,Caso de uso,Modificar Refugio,NA,NA,NA
+CU44,Caso de uso,Eliminar Refugio,NA,NA,NA
+CU45,Caso de uso,Autorizar Propuesta de Refugio,NA,NA,NA
+CU46,Caso de uso,Rechazar Propuesta de Refugio,NA,NA,NA
+CU47,Caso de uso,Ver Refugios,NA,NA,NA
+CU25,Caso de uso,Configurar alertas s\IeC {\'\i }smicas,NA,NA,NA
+CU1,Caso de uso,Crear Usuario,NA,NA,NA
+CU20,Caso de uso,Gestionar Mapas Offline,NA,NA,NA
+CU2,Caso de uso,Inicio de Sesion,NA,NA,NA
+CU26,Caso de uso,Cambiar Sonido de Alerta Sismica,NA,NA,NA
+CU10,Caso de uso,Gestionar Propuesta de Albergue,NA,NA,NA
+CU11,Caso de uso,Crear Propuesta de Albergue,NA,NA,NA
+CU12,Caso de uso,Modificar Propuesta de Albergue,NA,NA,NA
+CU13,Caso de uso,Eliminar Propuesta Albergue,NA,NA,NA
+CU14,Caso de uso,Ver Propuesta de Albergues,NA,NA,NA
+CU15,Caso de uso,Gestionar Propuesta de Refugios,NA,NA,NA
+CU16,Caso de uso,Crear Propuesta de Refugio,NA,NA,NA
+CU17,Caso de uso,Modificar Propuesta de Refugio,NA,NA,NA
+CU18,Caso de uso,Eliminar Propuesta de Refugio,NA,NA,NA
+CU19,Caso de uso,Ver Propuesta de Refugio,NA,NA,NA
+CU05,Caso de uso,Gestionar Propuesta de Centros de Recolecci\IeC {\'o}n,NA,NA,NA
+CU06,Caso de uso,Crea propuesta de centro de recolecci\IeC {\'o}n,NA,NA,NA
+CU07,Caso de uso,Modificar propuesta de centro de recolecci\IeC {\'o}n,NA,NA,NA
+CU08,Caso de uso,Elimina propuesta de centro de recolecci\IeC {\'o}n,NA,NA,NA
+CU09,Caso de uso,Ver propuesta de centro de recolecci\IeC {\'o}n,NA,NA,NA
+RPC101,Regla de Negocio,CONDICIONES DE UN REFUGIO.,NA,NA,NA
+RPC102,Regla de Negocio,CONDICIONES DE UN ALBERGUE.,NA,NA,NA
+RPC103,Regla de Negocio,CONDICIONES DE UN CENTRO DE ACOPIO.,NA,NA,NA
+RPC104,Regla de Negocio,CONOCIMIENTO DE RIEGO SISMICO.,NA,NA,NA
+RPC105,Regla de Negocio,ALERTA SISMICA,NA,NA,NA
+RPC106,Regla de Negocio,AUTOCUIDADO,NA,NA,NA
+RPC107,Regla de Negocio,AUTORIDADES LOCALES,NA,NA,NA
+RPC108,Regla de Negocio,CENTRO DE COMANDO,NA,NA,NA
+RPC111,Regla de Negocio,CONSEJO NACIONAL DE PROTECCION CIVIL,NA,NA,NA
+RPC110,Regla de Negocio,GRUPOS VOLUNTARIOS,NA,NA,NA
+RPC109,Regla de Negocio,GESTION INTEGRAL DE RIESGOS,NA,NA,NA
+RPC112,Regla de Negocio,PROGRAMAS DE PROTECCION CIVIL,NA,NA,NA
+RPC113,Regla de Negocio,SISTEMA NACIONAL EN LOS SISTEMAS DE ALARMAS TEMPRANAS,NA,NA,NA
+RPC114,Regla de Negocio,ELABORACION DE PROGRAMAS INTERNOS DE PROTECCI\IeC {\'O}N CIVIL,NA,NA,NA
+RPC115,Regla de Negocio,CULTURA DE PROTECCI\IeC {\'O}N CIVIL,NA,NA,NA

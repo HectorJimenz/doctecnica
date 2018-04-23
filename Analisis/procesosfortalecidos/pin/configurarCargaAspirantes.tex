@@ -1,0 +1,112 @@
+% !TeX spellcheck = es_ES
+\begin{Proceso}{SPR-1}{Configurar parámetros de Carga}{
+			Subproceso en el que el supervisor del \refElem{DepartamentoDeRegistroYSupervisionEscolar} define los parámetros que el \refElem{Calmecac} utiliza para cargar los aspirantes que se recibieron por parte del \refElem{DepartamentoDeInformaticaYEstadisticaEscolar}.
+	}
+	{SPR.1.X}
+	\PRccsection{Datos para control interno}
+	\PRccitem{Versión}{1}
+	\PRccitem{Autor}{Francisco Isidoro Mera Torres}
+	\PRccitem{Evaluador}{Ulises Veléz Saldaña}
+	\PRccitem{Prioridad}{Alta}
+	\PRccitem{Estatus}{Corrección}
+	\PRccitem{Complejidad}{Media}
+	\PRccitem{Volatilidad}{Baja}
+	\PRccitem{Madurez}{Media}
+	\PRccsection{Control de cambios}
+	\PRccitem{Versión 0}{
+			\begin{Titemize}
+				%\RCitem{ PC1}{Corregir la ortografía}{\DONE}
+				%\TODO es para solicitar un cambio \TOCHK Es para informar que se atendió el TODO(ya hizo las correcciones),\DONE Es para indicar que el e valuador reviso los cambios.
+			\end{Titemize}
+	}
+	\PRitem{Participantes}{
+		 Supervisor del \refElem{DepartamentoDeRegistroYSupervisionEscolar},\refElem{Calmecac}
+	}
+	\PRitem{Objetivo}{
+		Definir los parámetros que el \refElem{Calmecac} utilizará para cargar los aspirantes.
+	}
+	\PRitem{Interrelación con otros procesos}{	
+		\begin{Titemize}
+ 			\Titem Asignación y Registro de Aspirantes a Unidad Académica
+		\end{Titemize}
+	}
+	\PRitem{Proveedores}{
+		 \refElem{DepartamentoDeInformaticaYEstadisticaEscolar}
+	}
+	\PRitem{Entradas}{
+		\begin{Titemize}
+ 			\Titem Asignación de Aspirantes
+		\end{Titemize}		
+	}
+	\PRitem{Consumidores}{
+		\refElem{DepartamentoDeRegistroYSupervisionEscolar}
+	}
+	\PRitem{Salidas}{
+		\begin{Titemize}
+ 			\Titem Parámetros para realizar la carga de aspirantes.
+		\end{Titemize}		
+	}
+	\PRitem{Precondiciones}{
+		\begin{Titemize}
+ 			\Titem La convocatoria debió haber concluido.
+ 			\Titem Los aspirantes debieron haber sido asignados a las unidades académicas.
+		\end{Titemize}
+	}
+	\PRitem{Postcondiciones}{
+		\begin{Titemize}
+ 			\Titem El \refElem{Calmecac} tendrá los parámetros que necesita para realizar la carga.
+		\end{Titemize}
+		
+	}
+	\PRitem{Frecuencia}{
+		Eventual
+		% Periódico: Cada cierto tiempo: diario, semanal, anual, etc.
+		% Programado: Alguien en algún momento establece la fecha.
+		% Eventual: Cada que ocurre un evento que no se puede prever ni programar.
+	}
+	\PRitem{Tipo}{
+		Operación
+	}
+	% Operacion: Proceso asociado a las actividades propias de la operación del RENIECYT.
+	% Mejora continua: Porcesos asociados a actividades de mejora continua del proceso actual.
+	% Soporte: Procesos asociados a actividades indirectas necesarias para operar el RENIECYT.
+	\PRitem{Áreas de Mejora}{
+		\refElem{PI-AO1},\refElem{PI-AO2}
+	}
+
+	\PRitem{Factores Críticos}{
+			
+	}
+\end{Proceso}
+
+La figura \cdtRefImg{spr:Configurar}{SPR1-Configurar parámetros de Carga} muestra las actividades que componen el presente subproceso.
+
+\Pfig[1]{procesosfortalecidos/pin/SPR1-Configurar}{spr:Configurar}{SPR1-Configurar parámetros de Carga}
+
+
+\begin{PDescripcion}
+%	\subsubsection{Calmecac}
+	%Actor: Calmecac
+	\Ppaso \textbf{Calmécac}
+	\begin{enumerate}
+		\Ppaso Dado que la implementeación del \refElem{Calmecac} aun no esta definida, no podemos realizar aún la descripción de tareas del mismo, pero es importante mencionar que para este proceso, envía al supervisor del \refElem{DepartamentoDeRegistroYSupervisionEscolar} la confuiguración definida previamente y recibe la configuración modificada.
+	\end{enumerate}
+	
+	
+	
+	%Actor: Departamento de Registro y Supervision Escolar
+	\Ppaso \textbf{Departamento de Registro y Supervisión Escolar}
+	\begin{enumerate}
+		\Ppaso [\Einicio] El subproceso comienza cuando el supervisor del \refElem{DepartamentoDeRegistroYSupervisionEscolar} decide entrar al \refElem{Calmecac} a configurar los parámetros de carga de aspirantes o recibe el mensaje de que la evaluación de la convocatoria ha concluido.
+		
+		\Ppaso [\itarea]\cdtLabelTask{CUVerificaCargaActual}{CU-Verificar la carga actual:} El supervisor del \refElem{DepartamentoDeRegistroYSupervisionEscolar} desea conocer cuáles son los parámetros que el \refElem{Calmecac} está usando para realizar la carga de aspirantes, si está de acuerdo con estos continúa con la tarea \cdtRefTask{CUAceptarConfiguracionPorDefecto}{CU-Aceptar Configuración por Defecto},si no lo esta continúa con la tarea \cdtRefTask{CUModificarConfiguracionActual}{CU-Modificar Configuración Actual}.
+		
+		
+		\Ppaso [\itarea]\cdtLabelTask{CUAceptarConfiguracionPorDefecto}{CU-Aceptar Configuración por Defecto:} El supervisor del \refElem{DepartamentoDeRegistroYSupervisionEscolar} acepta la configuración que el \refElem{Calmecac} le muestra y termina la operación.
+		
+		\Ppaso [\itarea]\cdtLabelTask{CUModificarConfiguracionActual}{CU-Modificar Configuración Actual:} El supervisor del \refElem{DepartamentoDeRegistroYSupervisionEscolar} modifica la configuración que el \refElem{Calmecac} le muestra y se lo envía concluyendo está operación.
+		
+	\end{enumerate}
+	
+	
+\end{PDescripcion}

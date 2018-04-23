@@ -1,0 +1,127 @@
+\section{Modelo del proceso}
+
+%=========================================================
+\subsection{Identificación de procesos del CVH}
+
+Para que el público pueda hacer uso del sistema CVH, es necesario primero generar un Registro para posteriormente poder realizar el llenado de cada una de las secciones en la figura ~\ref{fig:ProcesoGeneralCVH} se puede observar ambas actividades
+\begin{itemize}
+	\item Genera Registro  del CVH
+	\item Registra y Actualiza Información CVH
+\end{itemize}
+%Que más adelante se describirán con más detalle.
+
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=.8\textwidth]{images/procesos/ProcesoGeneralCVH.png}
+    \caption{Proceso General del Manejo de CV.}
+    \label{fig:ProcesoGeneralCVH}
+  \end{center}
+\end{figure}
+
+
+
+%\begin{figure}[htbp!]
+%	\begin{center}
+%		\includegraphics[width=.8\textwidth]{images/procesos/}
+%		\caption{Mapa de los procesos del CVH.}
+%		\label{fig:mapaGeneral}
+%	\end{center}
+%\end{figure}
+\subsection{Genera Registro  del CVH}	
+En la generación del registro será necesario validar que el usuario este dado de alta en RENAPO, esto por disposición oficial, para lo cual a través de un Servicio Web el Sistema CVH se conectará con RENAPO, de esta forma se obtendrán los datos personales del solicitante registrados.\\
+
+El solicitante al cual se le denomina dentro del sistema público, deberá proporcionar una contraseña a fin de poder ingresar al sistema cuando lo desee, para lo cual será necesario que éste proporcione un correo electrónico válido al cual se le hará llegar su usuario con el cual podrá accesar. \\ 
+
+
+El contar con un correo electrónico correctamente capturado y real es fundamental para CONACYT ya que éste es uno de sus principales medios de comunicación con las personas que registran su Currículum Vítae, por lo que para poder iniciar la captura de información del CV será necesario que el sistema envíe un correo al solicitante y que este ingrese a su correo y confirme dicho correo. En la figura ~\ref{fig:GeneraRegistro} se bosqueja este subproceso. \\
+
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=1.3\textwidth, angle=90]{images/procesos/GeneraRegistro.png}
+    \caption{Proceso General del Manejo de CV.}
+    \label{fig:GeneraRegistro}
+  \end{center}
+\end{figure}
+%---------------------------------------------------------
+\subsection{Registra y Actualiza Información CVH}
+
+Una vez activada la cuenta del usuario este podrá ingresar al sistema y capturar todas y cada una de las secciones que el sistema contempla además este podrá generar una versión imprimible configurando que secciones desea utilizar tal como se observa en la figura ~\ref{fig:GeneraRegistro}
+
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=.8\textwidth]{images/procesos/registroCV.png}
+    \caption{Proceso General del Manejo de CV.}
+    \label{fig:registroCV}
+  \end{center}
+\end{figure}
+
+%=========================================================
+
+
+%---------------------------------------------------------
+\subsubsection{Objetivos}
+
+	Acceder a la Curricula de los investigadores, docentes, estudiantes, etc del país a fin de poder tomar decisiones para la asignación de recursos para proyectos, Becas, Fondos, etc.
+
+%---------------------------------------------------------
+%\subsubsection{Mapa del proceso}
+
+%TODO: figura.
+
+%\begin{figure}[htbp!]
+%	\begin{center}
+%		\includegraphics[width=.8\textwidth]{images/procesos/}
+%		\caption{Mapa del proceso de Registro del CVH.}
+%		\label{fig:mapaProcesoRegistroCVH}
+%	\end{center}
+%\end{figure}
+
+
+%---------------------------------------------------------
+\subsubsection{Roles del proceso}
+
+A continuación se muestra una breve descripción de los distintos roles que harán uso del sistema.
+
+
+
+\begin{description}
+
+	\item[Rol:] Publico
+	\item[Descripción:] Cualquier persona solicitante, interesada en participar en algún programa de apoyo del CONACYT.
+\end{description}
+
+\begin{description}
+	\item[Rol:] Administrador
+	\item[Descripción:] Es un empleado de CONACYT, capaz de dar mantenimiento a los diferentes catálogos del Sistema y auxiliar al usuario público.
+\end{description}
+
+%---------------------------------------------------------
+%\subsubsection{Descripción de actividades}
+
+%TODO: repetir para cada actividad del proceso
+
+%\begin{description}
+%	\item[Nombre:] TODO: Nombre de la actividad
+%	\item[Descripción:] TODO: Descripción de la actividad
+%	\item[Factores críticos:] TODO: Factores que deben considerarse para el éxito de la actividad.
+%	\item[Productos relacionados:] TODO: Reportes, formatos, documentos o registros que se utilicen a lo largo del proceso y resulten del mismo. 
+%\end{description}
+%
+%\begin{description}
+%	\item[Nombre:] Registrar cuenta de usuario.
+%	\item[Descripción:] Proporcionar datos de identificación y acceso mediante la CURP  y una contraseña.
+%	\item[Factores críticos:]
+%	\begin{itemize}
+%		\item Que la CURP sea válida y corresponda con la persona que se está registrando.
+%		\item Que la contraseña tenga un nivel aceptable de seguridad.
+%	\end{itemize}
+%	\item[Productos relacionados:] Registro de la cuenta del usuario.
+%\end{description}
+
+%---------------------------------------------------------
+%\subsection{Reglas aplicables}
+
+%TODO: Relación de las RN que puedan aplicar en este proceso.
+
+%---------------------------------------------------------
+

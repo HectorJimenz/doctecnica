@@ -1,0 +1,397 @@
+%-------------------MODELO ESTRUCTURAL--------------------------------------
+\section{Modelo Estructural del Negocio} 
+
+%TODO: redactar sección, realizar el diagrama de clases de la estructura de la información, y restriñir atributos y relaciones de cada Entidad (Clase).
+
+	En esta sección se explica con detalle la estructura de cada elemento del negocio enfatizando la forma en que se encuentran relacionados.
+	Aquí se definen las Entidades especificando los atributos que las componen y  las relaciones entre ellas. La figura \ref{fig:clases} esquematiza la organización de las clases mediante paquetes de clases. Dado que esta versión es parte del entregable 1 del prototipo I, se muestra en color verde el paquete que pertenece al entregable 1 .\\
+
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=.5\textwidth]{images/diagramas/ClasesCVH.png}
+    \caption{Diagrama de Paquetes de Clases.}
+    \label{fig:clases}
+  \end{center}
+\end{figure}
+
+\newpage
+\section{Registro de Usuario} 
+
+	Como se mencionó anteriormente, el CVH está organizado en paquetes que agrupan clases asociadas a la funcionalidad del mismo paquete. En la figura \ref{clases-registroUsuarios} se muestra la interacción de las clases con las que se construirá el paquete de Registro de Usuarios y el Domicilio Geográfico.
+
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=0.85\textwidth]{images/diagramas/ClassDiagramCVH.png}
+    \caption{Diagrama de clases del Registro de Usuarios y domicilio Geográfico}
+    \label{clases-registroUsuarios}
+  \end{center}
+\end{figure}
+
+
+
+
+
+%=======================   PERSONA  ===========================
+\begin{BusinessEntity}{persona}{Persona}
+  \Battr{curp}{CURP}{Palabra}{Es la Clave Única de Registro de Población}{\obligatorio}
+  \Battr{nombre}{Nombre}{Palabra}{Es el nombre de pila de la persona}{\obligatorio}
+   \Battr{primerApellido}{Primer Apellido}{Palabra}{Es el primer apellido de la persona}{\obligatorio}
+   \Battr{segundoApellido}{Segundo Apellido}{Palabra}{Es el segundo apellido de la persona}{\obligatorio}
+   \Battr{fechaNacimiento}{Fecha de Nacimiento}{Palabra}{Es la fecha de nacimiento de la persona}{\obligatorio}
+    \Battr{genero}{Género}{Palabra}{Es el género de la persona}{\obligatorio}
+ \end{BusinessEntity}   
+
+\subsubsection{Relaciones}
+
+\begin{BussinesFact}{Información Adicional de una Persona}
+  \BRitem{Descripción}{Una \refEnt{persona}{Persona} tiene \refEnt{personaInfoAdicional}{Información Adicional}.}
+  \BRitem{Tipo}{Composición}
+  \BRitem{Cardinalidad}{uno a uno}
+\end{BussinesFact}
+
+\begin{BussinesFact}{Cuenta de una Persona}
+  \BRitem{Descripción}{Una \refEnt{persona}{Persona} tiene asociada una \refEnt{cuenta}{Cuenta} para permitir el acceso al sistema.}
+  \BRitem{Tipo}{Composición}
+  \BRitem{Cardinalidad}{uno a uno}
+\end{BussinesFact}
+
+\begin{BussinesFact}{País de Origen de una Persona}
+  \BRitem{Descripción}{Las \refEnt{persona}{Personas} tienen un \refEnt{paisOrigen}{País de Origen}.}
+  \BRitem{Tipo}{Composición}
+  \BRitem{Cardinalidad}{muchos a uno}
+\end{BussinesFact}
+
+\begin{BussinesFact}{Medios de Contacto de una Persona}
+  \BRitem{Descripción}{Las \refEnt{persona}{Personas} tienen \refEnt{mediosContacto}{Medios de Contacto}.}
+  \BRitem{Tipo}{Composición}
+  \BRitem{Cardinalidad}{uno a muchos}
+\end{BussinesFact}
+
+%=======================   PERSONA  INFORMACION ADICIONAL ===========================
+\begin{BusinessEntity}{personaInfoAdicional}{Persona Información Adicional}    
+	\Battr{rfc}{RFC}{Palabra}{Es el Registro Federal de Contribuyentes de la persona}{\obligatorio}
+	\Battr{edoCivil}{Estado Civil}{Palabra}{Es el estado civil de la persona}{\obligatorio}
+ \end{BusinessEntity} 
+ 
+% \begin{BussinesFact}{Información Adicional de una Persona}
+%  \BRitem{Descripción}{La \refEnt{personaInfoAdicional}{Información Adicional de una Persona} esta asociada una \refEnt{persona}{Persona}.}
+%  \BRitem{Tipo}{Composición}
+%  \BRitem{Cardinalidad}{uno a uno}
+%\end{BussinesFact}
+ 
+ 
+%=======================   CUENTA  ===========================
+\begin{BusinessEntity}{cuenta}{Cuenta}
+     \Battr{idUsuario}{IdUsuario}{Palabra}{Es el identificador de usuario para poder ingresar al sistema, puede ser el mismo que peoplesoft}{\obligatorio}
+     \Battr{contrasena}{Contraseña}{Palabra}{Es la contraseña  para poder ingresar al sistema}{\obligatorio}
+          \Battr{idPeople}{Id Peoplesoft}{Palabra}{Es el identificador bajo el estándar de peoplesoft}{\obligatorio}
+     \Battr{activa}{Activa}{boolean}{Es para identificar si la cuenta se encuentra activa o inactiva}{\obligatorio}
+     \Battr{validacionRENAPO}{validación RENAPO}{boolean}{Es el identificador que define si la información personal del usuario se encuentra validada con RENAPO o no}{\obligatorio}
+\end{BusinessEntity}
+
+\subsubsection{Relaciones}
+\begin{BussinesFact}{Token de una Cuenta}
+  \BRitem{Descripción}{Una \refEnt{cuenta}{Cuenta} tiene asociado \refEnt{token}{Tokens} para manejar saber si ya se ha intentado activar o cancelar la cuenta.}
+  \BRitem{Tipo}{Composición}
+  \BRitem{Cardinalidad}{uno a muchos}
+\end{BussinesFact}
+
+%=======================   TOKEN ===========================
+\begin{BusinessEntity}{token}{Token}    
+	\Battr{hash}{Hash}{Palabra}{Es una cadena que tiene el valor del token}{\obligatorio}
+	\Battr{creacion}{Creación}{Fecha}{Es la fecha en que se creó el token}{\obligatorio}
+	\Battr{duracion}{Duración}{Numérico}{Es el número en días que estará activo el token}
+	\Battr{estatus}{Estatus}{Boolean}{Define si el token esta activo o cancelado. Será verdadero cuando no ha sido utilizado el token}{\obligatorio}
+	\Battr{observaciones}{Observaciones}{Párrafo}{Es la descripción textual sobre el motivo de su cancelación o reestablecimiento}{\obligatorio}
+ \end{BusinessEntity} 
+
+\subsubsection{Relaciones}
+
+
+\begin{BussinesFact}{Tipo de Token de un Token}
+  \BRitem{Descripción}{Un \refEnt{token}{Token}  tiene un  \refEnt{tipoToken}{Tipo de Token} asociado.}
+  \BRitem{Tipo}{Composición}
+  \BRitem{Cardinalidad}{uno a uno}
+\end{BussinesFact}
+
+%=======================   TIPO DE TOKEN  ===========================
+\begin{BusinessEntity}{tipoToken}{Tipo de Token}    
+	\Battr{tipo}{Tipo}{Numérico}{Es el tipo de token asociado al Token, que puede ser activación de cuenta, cancelar activación, reestablecer contraseña de acceso}{\obligatorio}
+ \end{BusinessEntity} 
+
+
+%=======================   PAIS DE ORIGEN ===========================
+\begin{BusinessEntity}{paisOrigen}{País de Origen}    
+	\Battr{nombre}{Nombre}{Palabra}{Es el nombre del país de origen}{\obligatorio}
+ \end{BusinessEntity} 
+ 
+%  \begin{BussinesFact}{País de Origen de una Persona}
+%  \BRitem{Descripción}{Los \refEnt{paisOrigen}{Paises de Orígen} están asociados a una \refEnt{persona}{Persona}.}
+%  \BRitem{Tipo}{Composición}
+%  \BRitem{Cardinalidad}{muchos a uno}
+%\end{BussinesFact}
+
+%=======================   MEDIOS DE CONTACTO ===========================
+\begin{BusinessEntity}{mediosContacto}{Medios de Contacto}    
+	\Battr{valor}{Valor del Contacto}{Palabra}{Es el valor de define al contacto, por ejemplo 5523124567 para un número telefónico o jperez@mail.com para un correo electrónico}{\obligatorio}
+	\Battr{primario}{primario}{boolean}{Es para identificar si el contacto es primario o no}{\obligatorio}
+ \end{BusinessEntity} 
+
+\subsubsection{Relaciones}
+
+%\begin{BussinesFact}{Teléfono de un Medio de Contacto}
+%  \BRitem{Descripción}{Los \refEnt{mediosContacto}{Medios de Contacto}  le pertenecen a una  \refEnt{persona}{Persona}.}
+%  \BRitem{Tipo}{Composición}
+%  \BRitem{Cardinalidad}{muchos a uno}
+%\end{BussinesFact}
+
+
+\begin{BussinesFact}{Teléfono de un Medio de Contacto}
+  \BRitem{Descripción}{Un \refEnt{mediosContacto}{Medio de Contacto}  puede ser un  \refEnt{telefono}{Teléfono}, el teléfono tiene la característica que puede registrar el número de extensión.}
+  \BRitem{Tipo}{Generalización}
+  \BRitem{Cardinalidad}{uno a uno}
+\end{BussinesFact}
+
+
+\begin{BussinesFact}{Tipo de Medio de Contacto}
+  \BRitem{Descripción}{Un \refEnt{mediosContacto}{Medio de Contacto}  tiene un  \refEnt{tipoComunicacion}{Tipo de Contacto}.}
+  \BRitem{Tipo}{Composición}
+  \BRitem{Cardinalidad}{uno a muchos}
+\end{BussinesFact}
+
+%=======================   TELEFONO ===========================
+\begin{BusinessEntity}{telefono}{Teléfono}    
+	\Battr{extension}{Extensión}{Número}{Es la extensión del teléfono}{\opcional}
+ \end{BusinessEntity} 
+ 
+% \subsubsection{Relaciones}
+% 
+% \begin{BussinesFact}{Medio de Contacto tipo Teléfono}
+%  \BRitem{Descripción}{Un \refEnt{telefono}{Teléfono} es un  \refEnt{mediosContacto}{Medio de Contacto}.}
+%  \BRitem{Tipo}{Especialización}
+%  \BRitem{Cardinalidad}{uno a uno}
+%\end{BussinesFact}
+ 
+
+%=======================   TIPOS DE CONTACTO  ===========================
+\begin{BusinessEntity}{tipoContacto}{Tipos de Contacto}    
+	\Battr{nombre}{Nombre}{Palabra}{Es el tipo de Contacto}{\obligatorio}
+	\Battr{icono}{Icono}{Palabra}{Es la referencia relativa a la ubicación del icono que representa el tipo de contacto}{\obligatorio}
+ \end{BusinessEntity} 
+
+% \subsubsection{Relaciones}
+% 
+% \begin{BussinesFact}{Tipos de Medios de Contacto}
+%  \BRitem{Descripción}{Un \refEnt{tipoContacto}{Tipo de Contacto} está asociado a un  \refEnt{mediosContacto}{Medio de Contacto}.}
+%  \BRitem{Tipo}{Composición}
+%  \BRitem{Cardinalidad}{muchos a uno}
+%\end{BussinesFact}
+
+\newpage
+\section{Domicilio Geográfico} 
+
+	En esta sección se esquematiza el contenido del paquete de clases \textit{Domicilio Geográfico} mostrado en la figura \ref{fig:clases} las clases que operarán en el sistema y que interactuarán con las del \textit{Registro de Usuario}.
+
+
+%=======================   DOMICILIO GEOGRÁFICO   ===========================
+%
+\begin{BusinessEntity}{domicilioGeografico}{Domicilio Geográfico}  
+	\Battr{tipoDomicilio}{Tipo}{Tipo de Domicilio}{Es el tipo de domicilio Geográfico que posee la Persona. Los tipos son: Urbano, Rural o en Vías de comunicación}{\obligatorio}
+	\Battr{localidad}{Localidad}{Localidad}{Especifica la Localidad, Municipio y Entidad federativa en dónde se encuentra ubicado el domicilio de la Persona}{\obligatorio}
+	\Battr{coordenada}{Coordenadas Geográficas}{PuntoWGS84}{Coordenada Geográfica del domicilio de la Persona}
+	\Battr{vialidad}{Vialidad Principal}{Vialidad}{Es la Vialidad sobre la que esta establecido el domicilio de la Persona}{\obligatorio}
+	\Battr{numeroExterior}{Número Exterior}{Número y Letra}{Numeración al exterior de el inmueble o el valor S/N en caso de que no se conozca la numeración}{\obligatorio}
+	\Battr{numeroInterior}{Número Interior}{Número y Letra}{Numeración al interior del inmueble}{\obligatorio}
+	\Battr{numeroExteriorAnterior}{Número Exterior Anterior}{Número y Letra}{Numeración que existía en la dirección antes de la actual}{\obligatorio}
+	\Battr{asentamiento}{Asentamiento}{Asentamiento}{Es la información del asentamiento del domicilio de la Persona}{\obligatorio}
+	\Battr{cp}{Código Postal}{Cinco dígitos}{Código Postal asignado por Correos de México}{\obligatorio}
+	\Battr{referenciaVialidadA}{Referencia Vialidad A}{Vialidad}{Es la vialidad anterior a la dirección}{\obligatorio}
+	\Battr{referenciaVialidadB}{Referencia Vialidad B}{Vialidad}{Es la vialidad posterior a la dirección}{\obligatorio}
+	\Battr{vialidadPosterior}{Vialidad Posterior}{Vialidad}{Es la Vialidad siguiente a la Vialidad Principal}{\obligatorio}
+\end{BusinessEntity}
+
+%\subsubsection{Relaciones}
+%\begin{BussinesFact}{Entidad Federativa del Centro De Trabajo}
+%	\BRitem{Descripción}{El \hyperlink{centroDeTrabajo}{Centro De Trabajo} puede tener o no tener el registro de su \hyperlink{domicilioGeografico}{Domicilio Geográfico}.}
+%	\BRitem{Tipo}{Composición}
+%	\BRitem{Cardinalidad}{uno a uno}
+%\end{BussinesFact}
+%
+%\begin{BussinesFact}{Municipio del Centro De Trabajo}
+%	\BRitem{Descripción}{Todos los \refEnt{centroDeTrabajo}{Centros De Trabajo} deben tener por lo menos un \refEnt{servicio}{Servicio} registrado.}
+%	\BRitem{Tipo}{Composición}
+%	\BRitem{Cardinalidad}{muchos a muchos}
+%\end{BussinesFact}
+%\begin{BussinesFact}{Localidad del Centro de Trabajo}
+%	\BRitem{Descripción}{Un \refEnt{centroDeTrabajo}{Centro De Trabajo} podrá registrarse sin estar asociado a un \refEnt{aula}{Aula}, sin embargo deberá tener al menos un \refEnt{aula}{Aula} registrada para poder registrar un grupo.}
+%	\BRitem{Tipo}{Composición}
+%	\BRitem{Cardinalidad}{uno a muchos}
+%\end{BussinesFact}
+
+%\begin{BussinesFact}{Domicilio del Centro de Trabajo}
+%	\BRitem{Descripción}{Un \refEnt{centroDeTrabajo}{Centro De Trabajo} podrá registrase sin tener \refEnt{grupo}{Grupos}, sin embargo deberá tener al menos uno para poder inscribir alumnos.}
+%	\BRitem{Tipo}{Composición}
+%	\BRitem{Cardinalidad}{uno a muchos}
+%\end{BussinesFact}
+
+%\begin{BussinesFact}{Asentamiento del Centro de Trabajo}
+%	\BRitem{Descripción}{Un \refEnt{centroDeTrabajo}{Centro De Trabajo} podrá registrarse sin tener \refEnt{docente}{Docentes}, sin embargo deberá tener al menos uno para poder registrar un curso.}
+%	\BRitem{Tipo}{Composición}
+%	\BRitem{Cardinalidad}{muchos a muchos}
+%\end{BussinesFact}
+%%=======================   ASENTAMIENTO    ===========================
+
+\begin{BusinessEntity}{asentamiento}{Asentamiento}
+	\Battr{tipoAsentamiento}{Tipo}{Tipo de Asentamiento}{Es el Tipo De Asentamiento sobre el cual esta ubicado el domicilio de la Persona}{\obligatorio}
+	\Battr{nombre}{Nombre}{Palabra}{Es el nombre que identifica el Asentamiento}{\obligatorio}
+\end{BusinessEntity}
+
+%==============================CAMINO=======================================
+\begin{BusinessEntity}{camino}{Camino}
+	\Battr{nombre}{Nombre}{Frase}{Nombre con el que se conoce el camino}{\obligatorio}
+	\Battr{origen}{Origen}{Frase}{Origen del camino}{\obligatorio}
+	\Battr{destino}{Destino}{Frase}{Destino del camino}{\obligatorio}
+	\Battr{cadenamiento}{Cadenamiento}{Numérico}{Numero de kilómetros recorridos desde el origen del camino para llegar al Domicilio Geográfico}{\obligatorio}
+	\Battr{margen}{Margen}{Derecha/Izquierda}{Lado del camino en el que se encuentra el domicilio de la Persona}{\obligatorio}
+	\Battr{terminoGenerico}{Término Genérico}{Termino Genérico}{Nombre genérico del camino}{\obligatorio}
+	\end{BusinessEntity}
+
+%============================CARRETERA==============================
+\begin{BusinessEntity}{carretera}{Carretera}
+	\Battr{nombre}{Nombre}{Frase}{Nombre oficial de la carretera}{\obligatorio}
+	\Battr{origen}{Origen}{Frase}{Origen de la carretera}{\obligatorio}
+	\Battr{destino}{Destino}{Frase}{Destino de la carretera}{\obligatorio}
+	\Battr{cadenamiento}{Cadenamiento}{Numérico}{Numero de kilómetros recorridos desde el origen de la carretera para llegar al Domicilio Geográfico}{\obligatorio}
+	\Battr{margen}{Marge}{Derecha/Izquierda}{Lado de la carretera en el que se encuentra el Usuario}{\obligatorio}
+	\Battr{terminoGenerico}{Término Genérico}{Termino Genérico}{Es el Término genérico ``Carretera''}{\obligatorio}
+	\Battr{administración}{Administración}{Administración de Carretera}{Especificación de quien administra la carretera}{\obligatorio}
+	\Battr{derechoTransito}{Derecho de Tránsito}{Derecho de Tránsito}{Tipo de derecho para transitar que se tiene sobre la carretera}{\obligatorio}
+\end{BusinessEntity}
+
+%=======================    ENTIDAD FEDERATIVA    =================================
+
+\begin{BusinessEntity}{entidadFederativa}{Entidad Federativa}
+	\Battr{nombre}{Nombre}{Frase}{Es el nombre que identifica la Entidad Federativa}{\obligatorio}
+
+\end{BusinessEntity}
+
+\subsubsection{Relaciones}
+\begin{BussinesFact}{Entidad Federativa de un Localidad}
+	\BRitem{Descripción}{La \refEnt{entidadFederativa}{Entidad Federativa} donde se encuentra ubicado el domicilio o el lugar de nacimiento de la \refEnt{persona}{Persona}  será utilizado al momento de registrar una \refEnt{localidad}{Localidad} y la información de la \refEnt{persona}{Persona}.}
+	\BRitem{Tipo}{Composición}
+	\BRitem{Cardinalidad}{uno a muchos}
+\end{BussinesFact}
+
+%=======================    LOCALIDAD    ==============================
+
+
+\begin{BusinessEntity}{localidad}{Localidad}
+	\Battr{entidadFederativa}{Entidad Federativa}{Es la \refEnt{entidadFederativa}{Entidad Federativa} donde se encuentra ubicado el domicilio de la \refEnt{persona}{Persona}}{\obligatorio}
+	\Battr{Municipio}{Municipio}{Es el \refEnt{municipio}{Municipio} donde se encuentra ubicado el domicilio de la \refEnt{persona}{Persona}}{\obligatorio}
+	\Battr{nombre}{Nombre}{Frase}{Es el nombre que identifica la Localidad}{\obligatorio}
+
+\end{BusinessEntity}
+
+\subsubsection{Relaciones}
+\begin{BussinesFact}{Entidad Federativa de una Localidad}
+	\BRitem{Descripción}{Toda \refEnt{localidad}{Localidad} debe pertenecer a una \refEnt{entidadFederativa}{Entidad Federativa} de la Republica Mexicana.}
+	\BRitem{Tipo}{Composición}
+	\BRitem{Cardinalidad}{muchos a uno}
+\end{BussinesFact}
+
+\begin{BussinesFact}{Localidad asociada a un Municipio}
+	\BRitem{Descripción}{Toda \refEnt{localidad}{Localidad} debe pertenecer a un \refEnt{municipio}{Municipio} de un Estado.}
+	\BRitem{Tipo}{Composición}
+	\BRitem{Cardinalidad}{muchos a uno}
+\end{BussinesFact}
+
+\begin{BussinesFact}{Localidad de un Domicilio Geográfico}
+	\BRitem{Descripción}{La \refEnt{localidad}{Localidad} donde se encuentra ubicado el domicilio de la \refEnt{persona}{Persona} será utilizada al momento de registrar la ubicación geográfica por el \refEnt{domicilioGeografico}{Domicilio Geográfico}.}
+	\BRitem{Tipo}{Composición}
+	\BRitem{Cardinalidad}{uno a uno}
+\end{BussinesFact}
+
+%===============================LUGAR DE NACIMIENTO======================
+\begin{BusinessEntity}{LugarNacimiento}{Lugar de Nacimiento}
+	\Battr{pais}{País}{Frase}{Nombre del Pais del lugar de nacimiento}{\obligatorio}
+	\Battr{EntidadFederativa}{Entidad Federativa}{Frase}{Nombre de la Entidad Federativa del lugar de nacimiento}{\obligatorio}
+	\Battr{Municipio}{Municipio}{Frase}{Nombre del Municipio del lugar de nacimiento}{\obligatorio}
+	\Battr{Localidad}{Localidad}{Frase}{Nombre de la Localidad del lugar de nacimiento}{\obligatorio}
+\end{BusinessEntity}
+
+\subsubsection{Relaciones}
+\begin{BussinesFact}{Localidad de un Lugar de Nacimiento}
+	\BRitem{Descripción}{Un \refEnt{LugarNacimiento}{Lugar de Nacimiento} se encuentra ubicado en una \refEnt{LugarNacimiento:Localidad}{Localidad}}
+	\BRitem{Tipo}{Asociación}
+	\BRitem{Cardinalidad}{muchos a uno}
+\end{BussinesFact}
+
+
+%=======================    MUNICIPIO    =================================
+
+
+
+\begin{BusinessEntity}{municipio}{Municipio} 
+	\Battr{nombre}{Nombre}{Frase}{Es el nombre que identifica el Municipio de un Estado}{\obligatorio}
+\end{BusinessEntity}
+
+\subsubsection{Relaciones}
+\begin{BussinesFact}{Municipio de una Localidad}
+	\BRitem{Descripción}{El \refEnt{municipio}{Municipio} donde se encuentra ubicado el domicilio de la \refEnt{persona}{Persona}, será utilizado por la \refEnt{localidad}{Localidad}.}
+	\BRitem{Tipo}{Composición}
+	\BRitem{Cardinalidad}{uno a muchos}
+\end{BussinesFact}
+
+%=======================   TIPO DE ASENTAMIENTO    ===========================
+
+\begin{BusinessEntity}{tipoAsentamiento}{Tipo De Asentamiento}
+	\Battr{tipo}{Tipo de Asentamiento}{Tipo de asentamiento}{Es el Tipo De Asentamiento sobre el cual está ubicado el domicilio de la \refEnt{persona}{Persona}}{\obligatorio}
+	\Battr{nombre}{Nombre}{Palabra}{Es el nombre que identifica el Asentamiento}{\obligatorio}
+\end{BusinessEntity}
+
+\subsubsection{Relaciones}
+\begin{BussinesFact}{Tipo De Asentamiento del domicilio de la Persona}
+	\BRitem{Descripción}{Un \refEnt{tipoAsentamiento}{Tipo De Asentamiento} es utilizado al momento de ser registrado uno o más \refEnt{asentamiento}{Asentamientos}.}
+	\BRitem{Tipo}{Composición}
+	\BRitem{Cardinalidad}{Uno a muchos} 
+\end{BussinesFact}
+
+%=======================   TIPO DE DOMICILIO    ===========================
+
+\begin{BusinessEntity}{tipoDomicilio}{Tipo De Domicilio}
+	\Battr{descripcion}{Descripción}{Palabra}{Es el nombre que identifica el Tipo De Domicilio}{\obligatorio}
+
+\end{BusinessEntity}
+
+\subsubsection{Relaciones}
+\begin{BussinesFact}{Tipo De Domicilio de la Persona}
+	\BRitem{Descripción}{Un \refEnt{tipoAsentamiento}{Tipo De Domicilio} es utilizado al momento de ser registrado el  \refEnt{domicilioGeografico}{Domicilio Geográfico}.}
+	\BRitem{Tipo}{Composición}
+	\BRitem{Cardinalidad}{Uno a muchos} 
+\end{BussinesFact}
+
+%=======================   VIALIDAD    ===========================
+
+\begin{BusinessEntity}{vialidad}{Vialidad}
+	\Battr{tipoVialidad}{Tipo De Vialidad}{Tipo de Vialidad}{Es el Tipo De Vialidad correspondiente a la Vialidad donde se encuentra el Usuario}{\obligatorio}
+	\Battr{nombre}{Nombre}{Frase}{Es el nombre que identifica la Vialidad}{\obligatorio}
+%	\Battr{}{}{}{}{}
+\end{BusinessEntity}
+\subsubsection{Relaciones}
+\begin{BussinesFact}{Tipo De Domicilio de la Persona}
+	\BRitem{Descripción}{Un \refEnt{tipoAsentamiento}{Tipo De Domicilio} es utilizado al momento de ser registrado el  \refEnt{domicilioGeografico}{Domicilio Geográfico}.}
+	\BRitem{Tipo}{Composición}
+	\BRitem{Cardinalidad}{uno a muchos}
+\end{BussinesFact}
+
+
+
+
+%=======================    PAÍS    =================================
+\begin{BusinessEntity}{país}{País}
+	\Battr{idpais}{idPais}{Entero}{Clave asignada al país}{\obligatorio}
+	\Battr{nombre}{Nombre}{Frase}{Nombre del país}{\obligatorio}
+%	\Battr{}{}{}{}{}
+\end{BusinessEntity}
+
+

@@ -1,0 +1,71 @@
+%========================================================
+%Arquitectura de Proceso
+%========================================================
+
+%========================================================
+%Revisión
+%-------------------------------------------
+
+% \UCccitem{Versión}{1}
+% \UCccsection{Análisis de Procesos }
+% \UCccitem{Autor}{nombreAutor}
+% \UCccitem{Evaluador}{nombreEvaluador}
+% \UCccitem{Prioridad}{Alta} %Alta, media, baja
+% \UCccitem{Estatus}{} %Edición, Terminado, Corrección, Aprobado 
+% \UCccitem{Complejidad}{Alta} %Alta, Media, Baja
+% \UCccitem{Volatilidad}{Alta} %Alta, Media, Baja
+% \UCccitem{Madurez}{Media}  %Alta, Media, Baja
+% \UCccsection{Control de cambios}
+% \UCccitem{Versión 0}{
+% \begin{UClist}
+% \RCitem{ Pxn T1}{Corregir la ortografía}{\DONE}
+% \TODO es para solicitar un cambio, \TOCHK Es para informar que se atendió el TODO, \DONE Es para indicar que el evaluador reviso los cambios.
+% \end{UClist}
+%}
+
+%========================================================
+% Descripción general del proceso
+%-----------------------------------------------
+\begin{Arquitectura}{AG-RE}{Arquitectura General del Proceso de Gestión de Evaluaciones} {
+		%-------------------------------------------
+		%Descripción
+		Los procesos de evaluación semestral y de \refElem{ETS} se encargan del registro y modificación de calificaciones obtenidas por los alumnos\footnote{ver \refElem{Alumno}} en las unidades de aprendizaje\footnote{ver \refElem{UnidadDeAprendizaje}} inscritas. Las evaluaciones consideradas son:
+		\begin{enumerate}
+			\item Ordinarias.- Son las que se presenta con fines de acreditación durante el \refElem{PeriodoEscolar} y considera las evidencias de aprendizaje señaladas en el programa de estudios.
+			\item Extraordinaria.- Son las que comprende el total de los contenidos del programa de estudios y que el \refElem{Alumno} podrá presentar voluntariamente, dentro del mismo \refElem{PeriodoEscolar}, una vez que cursó la \refElem{UnidadDeAprendizaje} y no haya obtenido un resultado aprobatorio, o bien, si habiéndola acreditado, desea mejorar su calificación.
+			\item Especiales.- Son las que se presenta con fines de acreditación durante el \refElem{PeriodoEscolar} pero necesitan de un oficio o documento extra que las avale, estás son:
+			\begin{enumerate}
+				\item Saberes previamente adquiridos.- Son los que permite acreditar unidades de aprendizaje sin haberlas cursado. Su aplicación se sujetará a lo descrito en el plan y programa de estudios, y a los lineamientos aplicables.
+				\item Equivalencia de Estudios.- Valida y acredita estudios realizados tanto en el Instituto como	en otras instituciones del Sistema Educativo Nacional sobre el nivel educativo correspondiente.
+				\item Revalidación de Estudios.- Permiten al interesado acreditar estudios realizados fuera del Sistema Educativo Nacional, para continuar y concluir sus estudios en el Instituto.
+				\item Electivas.- Son las que permiten al \refElem{Alumno} satisfacer	inquietudes vocacionales propias, enfatizar algún aspecto de su formación o complementar la misma y que podrán elegirse de entre la oferta institucional o de otras instituciones, si así lo autoriza la Dirección de Coordinación competente.
+				\item Servicio social.- Es una actividad formativa y de servicio, que afirma y amplía la información académica del estudiante y además permite fomentar en él una conciencia de solidaridad con la sociedad, siendo una actividad de carácter temporal y obligatorio que institucionalmente ejecutan y prestan los estudiantes en beneficio de la sociedad. 
+			\end{enumerate}
+			\item \refElem{ETS}.
+			\item \refElem{ETS} fuera de calendario.- Son una evaluación similar a \refElem{ETS} pero fuera del calendario.
+		\end{enumerate}
+		
+		
+
+		%-------------------------------------------
+		%Diagrama de arquitectura
+		\noindent La Figura \cdtRefImg{arq:AG-RE}{AG-RE Registro de Evaluaciones} muestra la interacción con los procesos que proporcionan la información necesaria para llevar a cabo sus funciones.
+
+		\Pfig[0.8]{pgre/imagenes/Arquitectura-RE_Registro_Evaluaciones}{arq:AG-RE}{AG-RE Diagrama de Arquitectura del General del Proceso de Registro de Evaluaciones}
+		
+	}{AG-RE}
+
+\end{Arquitectura}
+
+%========================================================
+%Interacción
+%-----------------------------------------------
+
+\begin{ADescripcion}
+	
+	\item \textbf{Proceso de registro y validación de la trayectoria escolar del alumno}. En este proceso la \refElem{DAE} recibe las calificaciones de los alumnos y genera el historial/\refElem{TrayectoriaEscolar} de los alumnos.
+	
+\end{ADescripcion}
+
+%\begin{PDescripcion}		
+%\end{PDescripcion}

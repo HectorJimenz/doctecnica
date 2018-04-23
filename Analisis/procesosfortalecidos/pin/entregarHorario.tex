@@ -1,0 +1,96 @@
+\begin{Proceso}{SPR-7}{Entrega de Horario}{
+		Este proceso tiene el mismo objetivo que el que se realiza actualmente, pero se modificará para incluir al \refElem{Calmecac}.
+	}
+	{SPR.7.X}
+	\PRccsection{Datos para control interno}
+	\PRccitem{Versión}{1}
+	\PRccitem{Autor}{Francisco Isidoro Mera Torres}
+	\PRccitem{Evaluador}{Ulises Veléz Saldaña}
+	\PRccitem{Prioridad}{Alta}
+	\PRccitem{Estatus}{Corrección}
+	\PRccitem{Complejidad}{Baja}
+	\PRccitem{Volatilidad}{Baja}
+	\PRccitem{Madurez}{Media}
+	\PRccsection{Control de cambios}
+	\PRccitem{Versión 0}{
+		\begin{Titemize}
+			%\RCitem{ PC1}{Corregir la ortografía}{\DONE}
+			%\TODO es para solicitar un cambio \TOCHK Es para informar que se atendió el TODO(ya hizo las correcciones),\DONE Es para indicar que el e valuador reviso los cambios.
+		\end{Titemize}
+	}
+	\PRitem{Participantes}{
+		\refElem{Calmecac},\refElem{Aspirante},\refElem{DepartamentoDeGestionEscolar}.
+	}
+	\PRitem{Objetivo}{
+		Entregar al \refElem{Aspirante} su horario asignado.
+	}
+	\PRitem{Interrelación con otros procesos}{	
+		\begin{Titemize}
+			\Titem \refPR{SPR-6}
+		\end{Titemize}
+	}
+	\PRitem{Proveedores}{
+		\refElem{Calmecac},\refElem{Aspirante},\refElem{DepartamentoDeGestionEscolar}.
+	}
+	\PRitem{Entradas}{
+		\begin{Titemize}
+			\Titem Aspirantes con grupo.
+		\end{Titemize}		
+	}
+	\PRitem{Consumidores}{
+		\refElem{Aspirante},\refElem{DepartamentoDeGestionEscolar}.
+	}
+	\PRitem{Salidas}{
+		\begin{Titemize}
+			\Titem \refElem{Horario}
+		\end{Titemize}		
+	}
+	\PRitem{Precondiciones}{
+		\begin{Titemize}
+			\Titem Los aspirantes están asignados a las unidades académicas
+			\Titem Los horarios han sido generados
+		\end{Titemize}
+	}
+	\PRitem{Postcondiciones}{
+		\begin{Titemize}
+			\Titem El \refElem{Aspirante} recibirá su horario.
+		\end{Titemize}
+		
+	}
+	\PRitem{Frecuencia}{
+		Eventual
+		% Periódico: Cada cierto tiempo: diario, semanal, anual, etc.
+		% Programado: Alguien en algún momento establece la fecha.
+		% Eventual: Cada que ocurre un evento que no se puede prever ni programar.
+	}
+	\PRitem{Tipo}{
+		Proceso Estructural
+	}
+	% Operacion: Proceso asociado a las actividades propias de la operación del RENIECYT.
+	% Mejora continua: Porcesos asociados a actividades de mejora continua del proceso actual.
+	% Soporte: Procesos asociados a actividades indirectas necesarias para operar el RENIECYT.
+	\PRitem{Áreas de Mejora}{
+		\refElem{PI-AO1}
+	}
+\end{Proceso}
+
+La figura \cdtRefImg{spr:EntregarHorario}{SPR7-Entrega de Horario} muestra las actividades que componen el presente subproceso.
+
+\Pfig[1]{procesosfortalecidos/pin/SPR7-EntregadeHorario}{spr:EntregarHorario}{SPR7-Entrega de Horario}
+
+\begin{PDescripcion}
+	\Ppaso [\Einicio] El subproceso inica cuando el \refElem{DepartamentoDeGestionEscolar} concluyó el proceso  \refPR{SPR-6}.
+	
+	\Ppaso [\iCompuerta] Si el \refElem{DepartamentoDeGestionEscolar} decide imprimir los horarios se continúa con la tarea \cdtRefTask{ImprimirHorario}{Imprimir Horario}, si desea realizar las notificaciones por correo continúa con la tarea \cdtRefTask{CUSolicitarVerificacionPorCorreo}{CU-Solicitar verificación de correo y código QR de hoja de  resultado del examen de admisión}.
+	
+	\Ppaso [\itarea] \cdtLabelTask{ImprimeHorario}{Imprime Horario} El \refElem{DepartamentoDeGestionEscolar} imprimirá los horarios generados por el \refElem{Calmecac} en el proceso \refPR{SPR-6} y continúa con la tarea \cdtRefTask{CUGenerarCitaParaEntregarHorario}{CU-Generar Citas para entregar Horarios}.
+	
+	\Ppaso [\itarea] \cdtLabelTask{CUGenerarCitaParaEntregarHorario}{CU-Generar Citas para entregar Horarios} Esta tarea se realiza, pero se modificará para incluir al \refElem{Calmecac}, se le enviarán los Aspirantes con Grupo y el criterio que debe usar para generar las citas y regreserá las citas programadas. El \refElem{DepartamentoDeGestionEscolar} tendrá entonces su responsabilidad de publicar las fechas, continúa con la tarea \cdtRefTask{EntregaHorario}{Entrega Horario}.
+	
+	\Ppaso [\itarea]  \cdtLabelTask{EntregaHorario}{Entrega Horario} Con esta tarea concluye el proceso y es la misma que se lleva a cabo actualmente.
+	
+	\Ppaso [\itarea] \cdtLabelTask{CUSolicitarVerificacionPorCorreo}{CU-Solicitar verificación por correo y código QR de hoja de resultado del examen de admisión} Esta tarea es nueva y consiste en que el \refElem{DepartamentoDeGestionEscolar} le solicite al \refElem{Aspirante}, por medio del \refElem{Calmecac}, una verificación del correo que otorgó durante el proceso de admisión y recibe el correo verificado junto con la \refElem{HojaDeResultadoDelExamenDeAdmision} para utilizar el QR  de la misma y asegurarse que el aspirante fue admitido al Instituto. Continúa con la tarea \cdtRefTask{CUEnviarHorario}{CU-Enviar Horario por Correo}. Si el correo no fue verificado se deberá proseguir con la tarea \cdtRefTask{CUGenerarCitaParaEntregarHorario}{CU-Generar Citas para entregar Horario}.
+	
+	
+	\Ppaso [\itarea] Esta tarea es nueva y consiste en que el \refElem{DepartamentoDeGestionEscolar} le envíe al \refElem{Aspirante} un correo con los datos de ingreso al \refElem{Calmecac} si la cuenta de correo fue verificada y concluye el proceso. 
+\end{PDescripcion}

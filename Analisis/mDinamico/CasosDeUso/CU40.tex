@@ -1,0 +1,58 @@
+\begin{UseCase}{CU40}{Ver Albergues}{
+		Permite visualizar los datos de todos los Albergues autorizados que se encuentren registrados en la base de datos del sistema SIESM.\\
+		
+}
+	\UCitem{Versión}{0.1}
+	\UCccsection{Datos para el control Interno}	
+	\UCitem{Autor}{Eduardo Pérez Gómez}
+	\UCccitem{Evaluador}{Ulises Veléz Saldaña}
+	\UCitem{Operación}{Visualizar}
+	\UCccitem{Prioridad}{Alta}
+	\UCccitem{Complejidad}{Media}
+	\UCccitem{Volatilidad}{Media}
+	\UCccitem{Madurez}{Media}
+	\UCitem{Estatus}{Edición}
+	\UCitem{Fecha del último estatus}{28 de marzo de 2018}
+	\UCccsection{Revisión Version 0.1}
+	\UCccitem{Fecha}{}
+	\UCccitem{Evaluador}{Ulises Veléz Saldaña}
+	\UCccitem{Resultado}{}
+	\UCccitem{Observaciones}{}
+	\UCsection{Atributos}
+	\UCitem{Actor(es)}{\refElem{ciudadano} \refElem{administrador}}
+	\UCitem{Propósito}{Contar con un medio en el que el actor pueda visualizar la información de los Albergues disponibles.}
+	\UCitem{Entradas}{Ninguna}
+	\UCitem{Origen}{No aplica}
+	\UCitem{Salidas}{Listado de Albergues con su respectivos datos.}
+	\UCitem{Precondiciones}{Ninguna}
+	\UCitem{Postcondiciones}{Ninguna}
+	\UCitem{Reglas de Negocio}{Ninguna}
+	\UCitem{Errores}{Ninguno}
+	\UCitem{Disparador(es)}{}
+	\UCitem{Condiciones de Término}{Se muestra la IUX.}
+	\UCitem{Efectos Colaterales}{No aplica.}
+	
+\end{UseCase}
+
+
+%Trayectoria Principal : Happy Path
+
+\begin{UCtrayectoria}
+	\item \UCactor Selecciona opcion ver albergues via la IU23 Pantalla Menu Principal.
+	\UCpaso Verifica que se tenga acceso a internet.\refTray{A}
+	\UCpaso Despliega la IU23 Pantalla con albergues registrados con la lista de Albergues disponibles.
+\end{UCtrayectoria}
+
+
+\begin{UCtrayectoriaA}{A}{Cuando no existe acceso a internet}
+	\UCpaso Muestra el MSG1-"No se tiene una conexion a internet".
+	\item \UCactor Oprime boton.
+	\UCpaso Verifica si se tienen alojados en memoria registros de Albergues.\refTray{B}
+	\UCpaso Continua en el paso 3 del CU40.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Cuando no existen registros de albergues en memoria}
+	\UCpaso Muestra el MSG2-"No se tiene en memoria registros de Albergues, conectarse a internet para recibir registros".	
+	\item \UCactor Oprime boton.
+	\UCpaso[] Termina el caso de uso.
+\end{UCtrayectoriaA}

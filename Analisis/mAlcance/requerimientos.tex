@@ -1,0 +1,31 @@
+%\cdtInstrucciones{
+	%Identifique y describa los requerimientos funcionales del sistema señalando: id, nombre, descripción y prioridad.
+%}
+\begin{requerimientos}[color]
+		\RFitem{RF01}{Registrar Usuario}{El Ciudadano necesita un medio por el cual pueda llevar a cabo su registro dentro del sistema SIEMS.}
+		\RFitem{RF02}{Inicio De Sesión}{El Ciudadano necesita un medio por el cual pueda ingresar al sistema.}
+		\RFitem{RF03}{Recuperar Contraseña}{El ciudadano requiere de un medio por el cual tenga la opcion de recuprerar su contraseña ya sea por olvido.}
+		\RFitem{RF04}{Cerrar Sesión}{El Ciudadano requiere de un medio por el cual tenga la opción de cerrar la sesión en el sistema.}
+		\RFitem{RF05}{Gestionar Propuestas}{El El Subsecretario de Educación Pública (administrador) necesita un medio para administrar las propuestas del ciudadano.}
+		\RFitem{RF06}{Gerstionar propuesta de albergue }{El Subsecretario de Educación Pública (administrador) requiere de un medio para autorizar un albergue que propuso el ciudadano.}
+		\RFitem{RF07}{Gestionar Propuesta de Refugio}{El Subsecretario de Educación Pública (administrador) requiere un medio por el cual pueda agregar un Refugio.}
+		\RFitem{RF08}{Gestionar Mapas Offline}{El Cudadano requiere un medio por el cual pueda descargar y ver los mapas de modo offline.}
+		\RFitem{RF09}{Gestionar Alarmas Sísmicas}{El ciudadano requiere de un medio por el cual pueda configurar las alarmas sísmicas de acuerdo a su preferencia.}
+		\RFitem{RF10}{Agrega Albergue}{El Subsecretario de Educación Pública (administrador) requiere de un medio por el cual pueda agregar un albergue de tal modo ya este autorizado.}
+		\RFitem{RF11}{Agrega Refugio}{El Subsecretario de Educación Pública (Administrador) requiere de un medio por el cual pueda agregar un refugio que l mismo registre o que ya este propuesto por el ciudadano .}
+		\RFitem{RF12}{Mostrar Refugios,Albergues y centros de acopio}{El Ciudadano requiere de un medio para poder visualizar los refugios,albergues y centros de acopio.}
+		\RFitem{RF13}{Configuración de cuenta}{El cuidadano requiere un medio por el cual el pueda configurar su cuenta en el sistema.}
+		\caption{Requerimientos funcionales del sistema.}
+    
+    {\footnotesize\em Para leer correctamente esta tabla vea la leyenda en la Tabla~\ref{tbl:leyendaRF} en la página~\pageref{tbl:leyendaRF}.}
+    \label{tbl:reqFunc}
+\end{requerimientos}
+
+\begin{requerimientos}[color]
+		\RFitem{RNF01}{Compatibilidad en Androdi}{La aplicación para que funciones correctamente en los dispositivos con sistema operativo android con la versión de 5.0 llamada Lallipop y sus posteriores versiones ya que apartir de esa versión soporta la bibliotecas recientes de MapBox.}
+		\RFitem{RNF02}{IDE de Desarrollo}{Para la implementación de la aplicación movil se va a utilizar un IDE gratuito en Android Studio y el Framework Laravel de php para la implementación de la página web.}
+		\RFitem{RNF03}{Gestor de Base de Datos}{El gestor de base de datos utilizado sera Firebase ya que proporciona datos en tiempo real y utiliza REST API el cual es una API que para crear conexiones de HTTP para recibir notificaciones push de un servisor.}
+		\RFitem{RNF04}{Compatibilidad de Navegadores}{La Aplicación web va a funcionar con navegadores que soporten mapas de la API MapBox.}
+		\caption{Requerimientos no funcionales del sistema.}            {\footnotesize\em Para leer correctamente esta tabla vea la leyenda en la Tabla~\ref{tbl:leyendaRF} en la página~\pageref{tbl:leyendaRF}.}
+    \label{tbl:reqNoFunc}
+\end{requerimientos}

@@ -1,0 +1,63 @@
+\begin{UseCase}{CU09}{Ver propuesta de centro de recolección}
+    {
+    Permite visualizar los datos de todos los Centros de Recolección Propuestos en el sistema SIESM. 
+    }
+  \UCitem{Versión}{0.1}
+  \UCccsection{Datos para el control Interno}  
+  \UCitem{Autor}{Héctor Iván Jimenez Romero}
+  \UCccitem{Evaluador}{Ulises Veléz Saldaña}
+  \UCitem{Operación}{Visualizar}
+  \UCccitem{Prioridad}{Media}
+  \UCccitem{Complejidad}{Media}
+  \UCccitem{Volatilidad}{Media}
+  \UCccitem{Madurez}{Media}
+  \UCitem{Estatus}{Edición}
+  \UCitem{Fecha del último estatus}{28 de marzo de 2018}
+  \UCccsection{Revisión Version 0.1}
+  \UCccitem{Fecha}{}
+  \UCccitem{Evaluador}{Ulises Veléz Saldaña}
+  \UCccitem{Resultado}{}
+  \UCccitem{Observaciones}{}
+  \UCsection{Atributos}
+   \UCitem{Actor(es)}{\refElem{ciudadano}}
+  \UCitem{Propósito}{El actor pueda visualizar la información de los Centros de Recolección Propuestos.}
+  \UCitem{Entradas}{Ninguna}
+  \UCitem{Origen}{Teclado}
+  \UCitem{Salidas}{Listado de Centros de Recolección Propuestos con su respectivos datos en el sistema SIESM.}
+  \UCitem{Precondiciones}{ninguna}
+  \UCitem{Postcondiciones}{Ninguna}
+  \UCitem{Reglas de Negocio}{Ninguna}
+  \UCitem{Errores}{Ninguno}
+  \UCitem{Disparador(es)}{}
+  \UCitem{Condiciones de Término}{Ninguna}
+  \UCitem{Efectos Colaterales}{No aplica.}
+  \end{UseCase}
+ 
+ 
+%Trayectoria Principal : Happy Path
+\begin{UCtrayectoria}
+	\item \UCactor Selecciona opcion ver Centros de Recolección Propuestos via la \IUref{IU11}{Pantalla de Gestión de Mis Propuestas de Centros de Recolección.}(ver figura~\ref{IU11}) 
+	\UCpaso Verifica que se tenga acceso a internet.\refTray{A}
+	\UCpaso Despliega la \IUref{IU11}{Pantalla de Gestión de Mis Propuestas de Centros de Recolección.} (ver figura~\ref{IU11}) registrados.
+\end{UCtrayectoria}
+
+
+\begin{UCtrayectoriaA}{A}{Cuando no existe acceso a internet}
+	\UCpaso Muestra el MSG21-"No se tiene una conexion a internet".
+	\item \UCactor Oprime boton \IUbutton{Aceptar}..
+	\UCpaso Verifica si se tienen alojados en memoria registros de Centros de Recolección Propuestos.\refTray{B}
+	\UCpaso Continua en el paso 3 del CU09.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Cuando no existen registros de centros de recoleccion propuestos}
+	\UCpaso Muestra el MSG22-"No se tiene en memoria registros de Centros de Recolección Propuestos".	
+	\item \UCactor Oprime boton  \IUbutton{Aceptar}.
+	\UCpaso[] Termina el caso de uso.
+\end{UCtrayectoriaA}
+
+
+ 
+ 
+
+ 
+ 

@@ -1,0 +1,32 @@
+%--------------------------------------
+\section{IU03 Pantalla de recuperacion de contraseña}
+
+\subsection{Objetivo}
+	Contar con un medio por el cual podamos recuperar nuestra contraseña en caso de olvidarla por medio de nuestro correo electronico.
+
+\subsection{Diseño}
+	Esta pantalla \IUref{IU03}{Pantalla de recuperación de contraseña} (ver figura~\ref{IU03}) aparece al oprimir \IUbutton{Recuperar contraseña}.
+
+\IUfig[.5]{IUs/IU03}{IU03}{Pantalla de recuperacion de contraseña.}
+
+\subsection{Salidas}
+
+	Ninguna.
+
+\subsection{Entradas}
+Usuario o correo electronico con el que se registro la cuenta.
+
+\subsection{Comandos}
+\begin{itemize}
+	\item \IUbutton{Enviar}: Verifica que el usuario o correo electronico pertenezca a alguna cuenta registrada en el sistema, si es asi muestra el mensaje - "La contraseña ah sido enviada a su correo electronico" y muestra la \IUref{IU01}{Pantalla de Control de Acceso} (ver figura~\ref{IU01}).
+\end{itemize}
+
+\subsection{Mensajes}
+
+\begin{Citemize}
+	\item El usuario no coincide con ninguna cuenta.
+	\item El correo electronico no esta vinculado a ninguna cuenta.
+	\item La contraseña ah sido enviada a su correo electronico
+\end{Citemize}
+
+\clearpage

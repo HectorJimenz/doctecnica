@@ -1,0 +1,52 @@
+\begin{UseCase}{CU25}{Configurar alertas sísmicas}{
+		Permite realizar la configuración de una alerta sísmica que le servirá al actor cuando llegue a haber un sismo en la ciudad y de esta manera pueda saber que habrá un sismo y pueda buscar algún refugio cercano. \\
+		
+		Al configurar una alerta sísmica el actor podrá elegir el tono en el que esta sonará cada vez que haya un sismo. \\
+}
+	\UCitem{Versión}{0.1}
+	\UCccsection{Datos para el control Interno}	
+	\UCitem{Autor}{Eduardo Pérez Gómez}
+	\UCccitem{Evaluador}{Ulises Veléz Saldaña}
+	\UCitem{Operación}{Configurar}
+	\UCccitem{Prioridad}{Alta}
+	\UCccitem{Complejidad}{Media}
+	\UCccitem{Volatilidad}{Media}
+	\UCccitem{Madurez}{Media}
+	\UCitem{Estatus}{Edición}
+	\UCitem{Fecha del último estatus}{26 de marzo de 2018}
+	\UCccsection{Revisión Version 0.1}
+	\UCccitem{Fecha}{}
+	\UCccitem{Evaluador}{Ulises Veléz Saldaña}
+	\UCccitem{Resultado}{}
+	\UCccitem{Observaciones}{}
+	\UCsection{Atributos}
+	\UCitem{Actor(es)}{\refElem{ciudadano}}
+	\UCitem{Propósito}{Contar con un medio en el que el actor pueda configurar la alerta sísmica desea que suene cuando haya un sismo}
+	\UCitem{Entradas}{Ninguna}
+	\UCitem{Origen}{No aplica}
+	\UCitem{Salidas}{Mensaje de confirmación.}
+	\UCitem{Precondiciones}{Ninguna}
+	\UCitem{Postcondiciones}{Se configurará la nueva alerta sísmica}
+	\UCitem{Reglas de Negocio}{Ninguna}
+	\UCitem{Errores}{Ninguno}
+	\UCitem{Disparador(es)}{}
+	\UCitem{Condiciones de Término}{Se muestra el mensaje 1 en pantalla}
+	\UCitem{Efectos Colaterales}{Se podrá configurar el tono de la alerta sísmica.}
+	
+\end{UseCase}
+
+
+%Trayectoria Principal : Happy Path
+
+\begin{UCtrayectoria}
+	\UCpaso Revisa la lista de usuarios que desean recibir notificaciones.\refTray{A}
+	\UCpaso Notifica al \UCactor que debe realizar la inscripción de aspirantes con el mensaje Cargar Aspirantes.
+	\item \UCactor Ingresa al Calmécac.\refTray{B}
+	\UCpaso Le
+\end{UCtrayectoria}
+
+
+\begin{UCtrayectoriaA}{A}{Cuando no existen mensajes}
+	\UCpaso lalala
+	\item \UCactor lololol
+\end{UCtrayectoriaA}
